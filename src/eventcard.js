@@ -1,4 +1,5 @@
 import React from 'react';
+import './eventcard.css'
 
 export default function EventCard() {
   return (
