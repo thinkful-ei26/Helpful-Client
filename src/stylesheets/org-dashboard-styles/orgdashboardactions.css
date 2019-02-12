@@ -4,7 +4,8 @@
   padding-right: 20%;
 }
 .org-dashboard-sidebar button {
-  padding: 1%;
+  padding: 3%;
   color: orange;
   margin: 1%;
+  min-height:4rem;
 }
