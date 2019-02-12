@@ -1,9 +1,9 @@
 import React from 'react';
 import EventCard from './eventcard';
-import OrgDashboardActions from './orgdashboardactions';
-import './dashboard.css';
+import OrgDashboardActions from '../components/orgdashboardactions';
+import '../stylesheets/org-dashboard-styles/organization-dashboard.css';
 
-const Dashboard = () => {
+const OrganizationDashboard = () => {
   return (
     <div className="main-dashboard">
       <div className="org-blob">ORG BLOB</div>
@@ -15,4 +15,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default OrganizationDashboard;

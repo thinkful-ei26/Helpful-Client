@@ -1,5 +1,5 @@
 import React from 'react';
-import './eventcard.css'
+import '../stylesheets/org-dashboard-styles/eventcard.css'
 
 export default function EventCard() {
   return (

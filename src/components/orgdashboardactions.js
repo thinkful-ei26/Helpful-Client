@@ -1,5 +1,5 @@
 import React from 'react';
-import './orgdashboardactions.css';
+import '../stylesheets/org-dashboard-styles/orgdashboardactions.css';
 
 const OrgDashboardActions = () => {
   return (
