@@ -1,0 +1,12 @@
+.org-dashboard-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-right: 20%;
+  padding-top: 5%;
+}
+.org-dashboard-sidebar button {
+  padding: 1%;
+  color: orange;
+  margin: 1%;
+}

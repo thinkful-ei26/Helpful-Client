@@ -1,12 +1,12 @@
 import React from 'react';
-import OrgDashboardEvents from './OrgDashboardEvents';
+import EventCard from './EventCard';
 import OrgEvents from './OrgEvents';
 
 const Dashboard = () => {
   return (
     <div className="main-dashboard">
-    <OrgEvents/>
-      <OrgDashboardEvents />
+      <OrgEvents />
+      <EventCard />
     </div>
   );
 };

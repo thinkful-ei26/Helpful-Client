@@ -1,12 +1,15 @@
 import React from 'react';
+import './orgevents.css';
+import OrgDashboardActions from './orgdashboardactions';
 
-const OrgEvents = () => {
+
+export default function OrgEvents() {
   return (
     <div className="org-events-main">
-      <div className="org-event">Event 1</div>
-      <div className="org-event">Event 2</div>
-      <div className="org-event">Event 3</div>
+      <OrgDashboardActions />
+      <div className="org-event-description">
+       
+      </div>
     </div>
   );
-};
-export default OrgEvents
+}
