@@ -1,0 +1,25 @@
+.orgDash {
+  padding: 10px;
+}
+
+.upcomingEvents {
+  margin-right: auto;
+  margin-left: auto;
+  width: 40%;
+}
+
+.nearbyEvents {
+  margin-right: auto;
+  margin-left: auto;
+  width: 40%;
+}
+
+.eventsHeader {
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
