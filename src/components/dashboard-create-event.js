@@ -11,7 +11,7 @@ export default function DashboardCreateEvent() {
             <label for="event-name"> Event name</label>
             <input type="text" placeholder="Event-name" />
           </div>
-          <div className="reate-event-row">
+          <div className="create-event-row">
             <label for="event-description"> Description</label>
             <input type="text" placeholder="Description" />
           </div>
@@ -30,8 +30,8 @@ export default function DashboardCreateEvent() {
             <input type="text" />
           </div>
           <div className="submit-cancel-buttons">
-            <button>Submit</button>
-            <button>Cancell</button>
+            <button className='submit'>Submit</button>
+            <button>Cancel</button>
           </div>
         </fieldset>
       </form>

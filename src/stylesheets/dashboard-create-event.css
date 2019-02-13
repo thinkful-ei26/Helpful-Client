@@ -1,19 +1,14 @@
 .create-event-form {
-   
-  /* display: inline-block; */
-  /* flex-direction:row; */
-  /* margin-right: auto; */
-  /* margin-left: auto; */
-  /* width: 40%; */
-  /* justify-content: space-around; */
-  /* padding: 2%; */
-  /* margin: 2%; */
+   width: 50%;
+  
 }
 .create-event-row {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* flex:1; */
-  /* padding: 2%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+width: 30%;
+
+  padding: 1%;
 }
 
 .create-org-form {
@@ -27,6 +22,8 @@
   padding: 2%;
 }
 
-.org-main{
-    display: flex;
+.submit-cancel-buttons{
+}
+.submit {
+    margin-right: 10%;
 }

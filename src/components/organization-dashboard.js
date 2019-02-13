@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OrgEventCard from './orgeventcard'
+import OrgEventCard from './orgeventcard';
 import DashboardCreateEvent from './dashboard-create-event';
 import '../stylesheets/dashboard.css';
 
@@ -13,14 +13,12 @@ const OrganizationDashboard = () => {
         alt="user profile pic"
         src="https://via.placeholder.com/150"
       />
-
-      {showView}
-
       <div className="org-main">
         <button onClick={() => setView(DashboardCreateEvent)}>
           Create a new event
         </button>
       </div>
+      {showView}
     </article>
   );
 };
