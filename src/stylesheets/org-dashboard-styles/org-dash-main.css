@@ -1,8 +1,6 @@
 .org-dash-main-wrapper {
   display: flex;
 }
-.orgDash {
-}
 
 .org-main-buttons {
   display: flex;
@@ -11,18 +9,12 @@
   padding-bottom: 1%;
 }
 .org-main-button {
-  padding: 5%;
-  height: 18%;
+  padding: 10px;
+  height: 80px;
   margin: 10%;
   border-radius: 5%;
-  /* flex-grow:1; */
 }
 
-.navButtons {
-}
-
-.navButtons > button {
-}
-.org-main-events{
-    flex:2;
+.org-main-events {
+  flex: 2;
 }
