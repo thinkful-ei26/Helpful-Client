@@ -5,8 +5,8 @@ const OrgDashboardActions = () => {
   return (
     <div className="org-dashboard-sidebar">
       <button>Create New Event</button>
-      <button>Invite Member</button>
-      <button>Promote Member</button>
+      <button disabled>Invite Member</button>
+      <button disabled>Promote Member</button>
     </div>
   );
 };
