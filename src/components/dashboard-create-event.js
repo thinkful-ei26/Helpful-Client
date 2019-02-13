@@ -6,7 +6,7 @@ export default function DashboardCreateEvent() {
     <div className="create-event-form">
       <form action="submit">
         <fieldset>
-          <legend>Create an event</legend>
+          <legend>Create an event</legend> 
           <div className="create-event-row">
             <label for="event-name"> Event name</label>
             <input type="text" placeholder="Event-name" />

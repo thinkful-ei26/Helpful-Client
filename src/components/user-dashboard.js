@@ -2,20 +2,11 @@ import React, { useState } from 'react';
 import EventList from './event-list';
 import FollowedOrgs from './followed-organizations';
 import CreatedOrgs from './created-organizations';
+import createOrgForm from './creat-org-form';
 import '../stylesheets/user-dashboard.css';
 
 
 export default function UserDashboard() {
-  // // renders or routes to event filter - not built
-  // const [findEvents, setFindingEvents] = useState('False'); 
-  // // routes to or renders create org form
-  // const [createOrg, setCreateOrg] = useState('False'); 
-  // // renders FollowedOrgs component
-  // // render CreatedOrgs component
-  // const [showCreatedOrgs, setShowCreatedOrgs] = useState('False');
-  // const [showFollowedOrgs, setShowFollowedOrgs] = useState('False'); 
-  // // renders EventList component
-  // const [showEventList, setShowEventList] = useState('True');
 
   const [showView, setView] = useState(EventList)
 
@@ -31,7 +22,7 @@ export default function UserDashboard() {
         <article className="nav">
           <button onClick={() => setView(EventList)}>My Events</button>
           {/* <button onClick={setView()}>Find Events</button> */}
-          {/* <button onClick={setView()}>Create Organization</button> */}
+          <button onClick={() => setView(createOrgForm)}>Create Organization</button>
           <button onClick={() => setView(FollowedOrgs)}>Followed Organizations</button>
           <button onClick={() =>setView(CreatedOrgs)}>Created Organizations</button>
         </article>

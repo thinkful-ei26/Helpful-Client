@@ -1,10 +1,24 @@
 .create-event-form{
     display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
     /* justify-content: space-around; */
     /* padding: 2%; */
     /* margin: 2%; */
 }
 .create-event-row{
     /* flex:1; */
+    padding: 2%;
+}
+
+.create-org-form {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+}
+
+.create-org-row {
     padding: 2%;
 }
