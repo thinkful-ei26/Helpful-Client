@@ -6,22 +6,17 @@ import LandingPage from "./components/layout/landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <NavBar />
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-          {/* <LandingPage /> */}
-          {/* <Login /> */}
-          {/* <Register /> */}
-        </div>
-      </Router>
-    );
-  }
-}
+const App = () => {
+  return (
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+      </div>
+    </Router>
+  );
+};
 
 export default App;
