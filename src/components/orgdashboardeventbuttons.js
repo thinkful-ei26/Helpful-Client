@@ -1,7 +1,7 @@
 import React from 'react';
-import '../stylesheets/org-dashboard-styles/orgdashboardactions.css';
+import '../stylesheets/org-dashboard-styles/orgdashboardeventbuttons.css';
 
-const OrgDashboardActions = () => {
+const OrgDashboardEventButtons = () => {
   return (
     <div className="org-dashboard-sidebar">
       <button>Create New Event</button>
@@ -11,4 +11,4 @@ const OrgDashboardActions = () => {
   );
 };
 
-export default OrgDashboardActions;
+export default OrgDashboardEventButtons;

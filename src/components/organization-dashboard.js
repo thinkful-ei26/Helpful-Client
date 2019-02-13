@@ -1,6 +1,6 @@
 import React from 'react';
 import EventCard from './eventcard';
-import OrgDashboardActions from '../components/orgdashboardactions';
+import OrgDashboardEventButtons from '../components/orgdashboardeventbuttons';
 import '../stylesheets/org-dashboard-styles/organization-dashboard.css';
 
 const OrganizationDashboard = () => {
@@ -8,7 +8,7 @@ const OrganizationDashboard = () => {
     <div className="main-dashboard">
       <div className="org-blob">ORG BLOB</div>
       <div className="dashboard-content">
-        <OrgDashboardActions />
+        <OrgDashboardEventButtons />
         <EventCard />
       </div>
     </div>
