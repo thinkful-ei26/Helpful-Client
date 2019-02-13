@@ -33,7 +33,7 @@ export default function UserDashboard() {
           {/* <button onClick={setView()}>Find Events</button> */}
           {/* <button onClick={setView()}>Create Organization</button> */}
           <button onClick={() => setView(FollowedOrgs)}>Followed Organizations</button>
-          <button onClick={() => setView(CreatedOrgs)}>Created Organizations</button>
+          <button onClick={() =>setView(CreatedOrgs)}>Created Organizations</button>
         </article>
     
       </article>
