@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import '../stylesheets/user-dashboard.css';
 
 export default class UserDashboard extends Component {
+  state={
+    description:'',
+    name:'',
+    
+  }
   render() {
     return (
       <div className="orgDash">
