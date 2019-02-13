@@ -1,7 +1,7 @@
 import React from 'react';
 import '../stylesheets/dashboard-create-event.css'
 
-export default function createOrgForm() {
+export default function CreateOrgForm() {
 
   return (
 
@@ -12,29 +12,29 @@ export default function createOrgForm() {
           <legend>Create an Organization</legend> 
 
           <div className="create-org-row">
-            <label for="org-name"> Event name</label>
+            <label htmlFor="org-name"> Event name</label>
             <input type="text" placeholder="Organization name" />
           </div>
 
           <div className="create-org-row">
-            <label for="org-description"> Description</label>
+            <label htmlFor="org-description"> Description</label>
             <input type="text" placeholder="Description" />
           </div>
 
           <div className="create-org-row">
-            <label for="org-location" placeholder="Location">
+            <label htmlFor="org-location" placeholder="Location">
               Location
             </label>
             <input type="text" />
           </div>
 
           {/* <div className="create-org-row">
-            <label for="event-date"> Date</label>
+            <label htmlFor="event-date"> Date</label>
             <input type="text" placeholder="Date" />
           </div> */}
 
           <div className="create-org-row">
-            <label for="org-contact"> Contact</label>
+            <label htmlFor="org-contact"> Contact</label>
             <input type="text" />
           </div>
 
