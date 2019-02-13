@@ -3,7 +3,7 @@ import EventCard from './eventcard';
 import OrgDashboardActions from './orgdashboardactions';
 import './dashboard.css';
 
-const Dashboard = () => {
+const OrganizationDashboard = () => {
   return (
     <div className="main-dashboard">
       <div className="org-blob">ORG BLOB</div>
@@ -15,4 +15,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default OrganizationDashboard;
