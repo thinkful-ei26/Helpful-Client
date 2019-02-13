@@ -1,5 +1,6 @@
 import React from 'react';
 import OranizationCard from './organization-card';
+import createOrgForm from './creat-org-form';
 
 export default function CreatedOrgs(props) {
   return(
@@ -18,7 +19,7 @@ export default function CreatedOrgs(props) {
         <p>Looks like you haven't created any organiations yet...</p>
         <p>Click here to create an organization and start hosting events</p>
 
-        <button>Create Organization</button>
+        <button onClick={() => props.setView(createOrgForm)}>Create Organization</button>
       </section>
     </div>
     

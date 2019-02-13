@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import EventCard from './eventcard'
 import '../stylesheets/event-list.css';
 
 export default function EventList(props) {
+
+  useEffect(() => {
+    
+  })
+
   return (
     <article>
         <section className="upcomingEvents">
