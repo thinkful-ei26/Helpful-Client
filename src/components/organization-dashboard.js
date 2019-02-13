@@ -3,7 +3,20 @@ import EventCard from './eventcard';
 import OrgDashboardEventButtons from '../components/orgdashboardeventbuttons';
 import '../stylesheets/org-dashboard-styles/organization-dashboard.css';
 
-const OrganizationDashboard = () => {
+export default class OrganizationDashboard extends React.Component {
+ state= {
+   eventname: '',
+   description:'',
+   location:'',
+   date:'',
+   contact:''
+ }
+
+ 
+ 
+ 
+ 
+ render(){
   return (
     <div className="main-dashboard">
       <div className="org-blob">ORG BLOB</div>
@@ -13,6 +26,6 @@ const OrganizationDashboard = () => {
       </div>
     </div>
   );
+}
 };
 
-export default OrganizationDashboard;
