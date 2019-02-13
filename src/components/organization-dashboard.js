@@ -16,11 +16,11 @@ const OrganizationDashboard = () => {
 
       {showView}
 
-      <article className="nav">
+      <div className="org-main">
         <button onClick={() => setView(DashboardCreateEvent)}>
           Create a new event
         </button>
-      </article>
+      </div>
     </article>
   );
 };
