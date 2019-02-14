@@ -1,0 +1,16 @@
+.org-public-page-main{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+.org-public-header{
+    background-color:red;
+    display:flex;
+}
+.org-public-hero{}
+.org-public-logo{
+    border: 1px solid black;
+}
+.org-public-social{
+    
+}
