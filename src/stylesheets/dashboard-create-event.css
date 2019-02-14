@@ -1,0 +1,10 @@
+.create-event-form{
+    display: flex;
+    /* justify-content: space-around; */
+    /* padding: 2%; */
+    /* margin: 2%; */
+}
+.create-event-row{
+    /* flex:1; */
+    padding: 2%;
+}
