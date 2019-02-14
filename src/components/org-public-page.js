@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import OrgPublicPageEventList from './org-public-page-event-list';
 import '../stylesheets/org-public-page.css';
 
 export default function OrgPublicPage() {
+  const [view, setView] = useState(<OrgPublicPageEventList />);
   return (
     <div className="org-public-page-main">
       <div className="org-public-header">
@@ -39,6 +41,7 @@ export default function OrgPublicPage() {
           <p>lorem ipsum</p>
         </div>
       </div>
+      <div className="org-public-events">{view}</div>
 
       <div className="org-public-footer">Footer</div>
     </div>

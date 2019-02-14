@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import EventPage from './components/event-page';
+// import EventPage from './components/event-page';
 import OrgPublicPage from './components/org-public-page'
 
 import './App.css';

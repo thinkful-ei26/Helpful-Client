@@ -2,7 +2,6 @@ import React from 'react';
 import '../stylesheets/org-dashboard-styles/eventcard.css';
 
 export default function EventCard(props) {
-  console.log('LOG',props.event);
   return (
     <article className="event-card">
       <h3>{props.event.name}</h3>
