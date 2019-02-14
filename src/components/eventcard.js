@@ -5,7 +5,7 @@ export default function EventCard(props) {
   console.log('LOG',props.event);
   return (
     <article className="event-card">
-      {/* <h3>{props.event.name}</h3> */}
+      <h3>{props.event.name}</h3>
 
       <p className="org-event-description">{props.event.description}</p>
 

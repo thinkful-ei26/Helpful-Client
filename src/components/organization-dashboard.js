@@ -8,12 +8,7 @@ import '../stylesheets/org-dashboard-styles/org-dash-main.css';
 const OrganizationDashboard = () => {
   const [view, setView] = useState(<EventList/>);
 
-// componentDidMount() {
-//   axios.get( `${API_BASE_URL}/event/all`)
-//     .then(res => {
-//       
-//     });
-// }
+
 
   return (
     <article className="orgDash">
@@ -27,7 +22,7 @@ const OrganizationDashboard = () => {
       <div className="org-dash-main-wrapper">
         <div className="org-main-buttons">
           <button className='org-main-button'onClick={() => setView(<EventList/>)}>
-            SHow Scheduled Events
+            Show Scheduled Events
           </button>
           <button className='org-main-button'onClick={() => setView(DashboardCreateEvent)}>
             Create a new event
