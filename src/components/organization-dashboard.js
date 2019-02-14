@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import OrgEventCard from './orgeventcard';
 import DashboardCreateEvent from './dashboard-create-event';
 import OrgDashboardAddUser from './org-dashboard-add-user';
+// import EventList from './event-list'
 import '../stylesheets/org-dashboard-styles/org-dash-main.css';
 
 const OrganizationDashboard = () => {
@@ -13,7 +14,7 @@ const OrganizationDashboard = () => {
       <img
         className="profilePic"
         alt="user profile pic"
-        src="https://via.placeholder.com/150"
+        src="https://placekitten.com/g/150/150"
       />
       <div className="org-dash-main-wrapper">
         <div className="org-main-buttons">
@@ -22,6 +23,12 @@ const OrganizationDashboard = () => {
           </button>
           <button className='org-main-button'onClick={() => setView(OrgDashboardAddUser)}>
             Add Admin
+          </button>
+           <button disabled className='org-main-button'onClick={() => setView()}>
+            Extension
+          </button>
+           <button disabled className='org-main-button'onClick={() => setView()}>
+            Extension
           </button>
          </div>
          <div className='org-main-events'>

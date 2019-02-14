@@ -9,7 +9,7 @@ export default function OrgDashboardAddUser() {
           <legend>Add User Roles</legend>
           <div className="create-event-row">
             <label for="event-name"> Name</label>
-            <input type="text" placeholder="Event-name" />
+            <input type="text" placeholder="member-name" />
           </div>
           <div className="create-event-row">
             <label for="event-description"> Description</label>
