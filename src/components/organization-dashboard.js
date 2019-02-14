@@ -30,10 +30,10 @@ const OrganizationDashboard = () => {
             Add Admin
           </button>
            <button disabled className='org-main-button'onClick={() => setView()}>
-            Extension
+            Invite Members
           </button>
            <button disabled className='org-main-button'onClick={() => setView()}>
-            Extension
+            Promote Event
           </button>
          </div>
          <div className='org-main-events'>
