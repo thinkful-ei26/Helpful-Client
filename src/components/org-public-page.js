@@ -18,13 +18,13 @@ export default function OrgPublicPage() {
           </ul>
         </div>
       </div>
+      <div className="org-public-calltoaction">
+        <button>Follow us</button>
+        <button disabled>Button 2</button>
+        <button disabled>Button 3</button>
+      </div>
 
       <div className="org-public-content">
-        <div className="org-public-calltoaction">
-          <button>Button 1</button>
-          <button>Button 2</button>
-          <button>Button 3</button>
-        </div>
         <div className="org-public-text-area">
           <h1>Organization name</h1>
           <p>

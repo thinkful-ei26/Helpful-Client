@@ -2,54 +2,49 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  /* justify-content: center; */
 }
 .org-public-header {
   background-color: rgb(231, 220, 220);
   display: flex;
 }
-.org-public-hero {
-}
 .org-public-logo {
   border: 1px solid black;
 }
-.org-public-social{
-    background-color: #e0f1f1;
-    margin: auto;
-    padding: 1%;
-
+.org-public-social {
+  background-color: #e0f1f1;
+  margin: auto;
+  padding: 1%;
 }
-.org-public-social ul{
-    display: flex;
-    flex-direction: row;
-
+.org-public-social ul {
+  display: flex;
+  flex-direction: row;
 }
-.org-public-social ul li{
-    list-style: none;
-    padding-right: 1%;
+.org-public-social ul li {
+  list-style: none;
+  padding-right: 1%;
 }
-.org-public-calltoaction{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    padding: 5%;
+.org-public-calltoaction {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 5%;
 }
-.org-public-calltoaction{
-    
-}
-
-.org-public-content{
-    display: flex;
-    border: 1 px solid black;
-    background-color: grey;
-    margin: 0 10% 10%; 
-    padding: 10%;
-}
-.org-public-footer{
-    background-color: rgb(232, 243, 232);
-}
-.org-public-text-area{
-    display: flex;
-    flex-direction: column;
+.org-public-calltoaction button{
+    margin: 2%;
+    /* padding: %; */
 }
 
+.org-public-content {
+  display: flex;
+  border: 1 px solid black;
+  background-color: grey;
+  margin: 0 10% 10%;
+  padding: 10%;
+}
+.org-public-footer {
+  background-color: rgb(232, 243, 232);
+}
+.org-public-text-area {
+  display: flex;
+  flex-direction: column;
+}
