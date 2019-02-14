@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import OrgEventCard from './orgeventcard';
 import DashboardCreateEvent from './dashboard-create-event';
 import OrgDashboardAddUser from './org-dashboard-add-user';
 import EventList from './event-list'
