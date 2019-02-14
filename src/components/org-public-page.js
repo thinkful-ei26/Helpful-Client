@@ -5,7 +5,6 @@ export default function OrgPublicPage() {
   return (
     <div className="org-public-page-main">
       <div className="org-public-header">
-        {/* <div className="org-public-hero"></div> */}
         <div className="org-public-logo">
           <img src="https://lorempixel.com/g/100/100" alt="" />
         </div>
