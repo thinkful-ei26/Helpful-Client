@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { registerUser } from "../../actions/authActions";
+
 const Register = () => {
   // onChange = e => {
   //   this.setState({ [e.target.id]: e.target.value })
@@ -8,6 +10,13 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const newUser = {
+    userName: this.state.userName,
+    email: this.state.email,
+    password: this.state.password,
+    passwordConfirmation: this.state.passwordConfirmation
+  };
+  this.registerUser(newUser, this.props.history);
   // const [state, setState] = useState("");
   // const [state, setState] = useState("");
   return (
