@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
-import OrgEventCard from './orgeventcard';
+// import OrgEventCard from './orgeventcard';
 import DashboardCreateEvent from './dashboard-create-event';
 import OrgDashboardAddUser from './org-dashboard-add-user';
-// import EventList from './event-list'
+import EventList from './event-list'
 import '../stylesheets/org-dashboard-styles/org-dash-main.css';
 
 const OrganizationDashboard = () => {
-  const [showView, setView] = useState(OrgEventCard);
+  const [view, setView] = useState(<EventList/>);
+
+// componentDidMount() {
+//   axios.get( `${API_BASE_URL}/event/all`)
+//     .then(res => {
+//       
+//     });
+// }
+
   return (
     <article className="orgDash">
       <h2>ORG NAME</h2>
@@ -18,6 +26,9 @@ const OrganizationDashboard = () => {
       />
       <div className="org-dash-main-wrapper">
         <div className="org-main-buttons">
+          <button className='org-main-button'onClick={() => setView(<EventList/>)}>
+            SHow Scheduled Events
+          </button>
           <button className='org-main-button'onClick={() => setView(DashboardCreateEvent)}>
             Create a new event
           </button>
@@ -32,7 +43,7 @@ const OrganizationDashboard = () => {
           </button>
          </div>
          <div className='org-main-events'>
-        {showView}
+        {view}
          </div>
       </div>
     </article>
