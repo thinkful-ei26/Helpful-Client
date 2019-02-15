@@ -6,12 +6,16 @@ export default function DashboardCreateEvent() {
     <div className="create-event-form">
       <form action="submit">
         <fieldset>
-          <legend>Create an event</legend>
+
+          <legend>Create an event</legend> 
+
           <div className="create-event-row">
             <label for="event-name"> Event name</label>
             <input type="text" placeholder="Event-name" />
           </div>
+
           <div className="create-event-row">
+
             <label for="event-description"> Description</label>
             <input type="text" placeholder="Description" />
           </div>
@@ -29,10 +33,12 @@ export default function DashboardCreateEvent() {
             <label for="event-contact"> Contact</label>
             <input type="text" />
           </div>
+
           <div className="submit-cancel-buttons">
             <button className='submit'>Submit</button>
             <button>Cancel</button>
           </div>
+
         </fieldset>
       </form>
     </div>

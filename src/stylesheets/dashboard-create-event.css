@@ -1,3 +1,4 @@
+
 .create-event-form {
   width: 50%;
 }
@@ -30,3 +31,11 @@ button{
 .submit {
   margin-right: 10%;
 }
+
+.orgCreateSuccess {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+}
+
