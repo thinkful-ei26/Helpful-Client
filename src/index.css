@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#logo {
+  height: 3.5rem;
+  width: 3.5rem;
+  overflow: hidden;
+}
