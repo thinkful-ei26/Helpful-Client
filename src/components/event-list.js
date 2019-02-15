@@ -14,15 +14,16 @@ export default function EventList(props) {
     const eventsRequest = await axios(
         `${API_BASE_URL}/event/all`,
     );
-    console.log('setEvents setting to: ', eventsRequest.data)
-    return setEvents(eventsRequest.data);
-  }
+    setEvents(eventsRequest.data);
+  };
 
   useEffect(() => {
     fetchData();
   }, []);
-  
-  if (events) {
+
+  if (events === null) {
+    return 'Loading...';
+  }
 
   return (
     <article>
@@ -31,25 +32,21 @@ export default function EventList(props) {
 
           <div className="eventsContainer">
             <EventCard event={events[0]}/>
-            <EventCard />
-            <EventCard />
+            <EventCard event={events[1]}/>
+            <EventCard event={events[2]}/>
           </div>
     </section>
 
     <section className="nearbyEvents">
       <h3 className="eventsHeader">Events Nearby</h3>
 
-      {/* <div className="eventsContainer">
-        <EventCard />
-        <EventCard />
-        <EventCard />
-      </div> */}
+      <div className="eventsContainer">
+        <EventCard event={events[3]}/>
+        <EventCard event={events[4]}/>
+        <EventCard event={events[5]}/>
+      </div>
     </section>
     </article>
-  )
-  }
-  return (
-    <p>loading...</p>
   )
   
 }
