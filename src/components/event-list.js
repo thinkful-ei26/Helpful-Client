@@ -43,8 +43,8 @@ export default function EventList(props) {
             <EventCard event={events[2]}/>
           </div>
     </section>
-  // PRODUCTION TODO ---> populate event cards with specific nearby events, and pass data down
-  // to event cards more dynamically than just event[0]
+  {/* // PRODUCTION TODO ---> populate event cards with specific nearby events, and pass data down
+  // to event cards more dynamically than just event[0] */}
     
     <section className="nearbyEvents">
       <h3 className="eventsHeader">Events Nearby</h3>

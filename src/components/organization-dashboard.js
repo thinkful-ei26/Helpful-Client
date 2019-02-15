@@ -8,8 +8,6 @@ import '../stylesheets/org-dashboard-styles/org-dash-main.css';
 const OrganizationDashboard = () => {
   const [view, setView] = useState(<EventList/>);
 
-
-
   return (
     <article className="orgDash">
       <h2>ORG NAME</h2>
@@ -24,10 +22,10 @@ const OrganizationDashboard = () => {
           <button className='org-main-button'onClick={() => setView(<EventList/>)}>
             Show Scheduled Events
           </button>
-          <button className='org-main-button'onClick={() => setView(DashboardCreateEvent)}>
+          <button className='org-main-button'onClick={() => setView(<DashboardCreateEvent/>)}>
             Create a new event
           </button>
-          <button className='org-main-button'onClick={() => setView(OrgDashboardAddUser)}>
+          <button className='org-main-button'onClick={() => setView(<OrgDashboardAddUser/>)}>
             Add Admin
           </button>
            <button disabled className='org-main-button'onClick={() => setView()}>

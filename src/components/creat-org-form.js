@@ -10,7 +10,6 @@ export default function CreateOrgForm() {
     name: '',
     description: '',
     location: '',
-    date: '',
     contact: '',
     imgUrl: '',
   })
