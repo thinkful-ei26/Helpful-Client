@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import OrgPublicPageEventList from './org-public-page-event-list';
+// import OrgUserRateForm from './org-user-rate-form';
 import '../stylesheets/org-public-page.css';
 
 export default function OrgPublicPage() {
-  const [view] = useState(<OrgPublicPageEventList />);
+  const [view, setView] = useState(<OrgPublicPageEventList />);
   return (
     <div className="org-public-page-main">
       <div className="org-public-header">
-        <div className="org-public-logo"></div>
+        <div className="org-public-logo" />
         <div className="org-public-social">
           <ul>
             <li>link 1</li>
@@ -18,11 +19,28 @@ export default function OrgPublicPage() {
       </div>
 
       <div className="org-public-content">
-        <div className="org-public-calltoaction">
-          <button>Follow us</button>
-          <button disabled>Button 2</button>
-          <button disabled>Button 3</button>
-        </div>
+        <aside className="org-public-calltoaction">
+          <button disabled>Follow us</button>
+          {/* <button
+            className="user-rate"
+            onClick={() => setView(OrgUserRateForm)}
+          >
+            Rate us
+          </button> */}
+          {/* <button disabled>Button 3</button> */}
+          {/* <label for="rate-us">Rate us!</label> */}
+          <form action="rate-us">
+            <label for="rate-us">Rate us!</label>
+            <select name="" id="">
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+            </select>
+            <button>Submit</button>
+          </form>
+        </aside>
         <div className="org-public-text-area">
           <h1>Organization name</h1>
           <p>
@@ -38,7 +56,9 @@ export default function OrgPublicPage() {
           <p>lorem ipsum</p>
         </div>
       </div>
-      <div className="org-public-events">{view}</div>
+      <div className="org-public-events">
+        {view}
+      </div>
 
       <div className="org-public-footer">Footer</div>
     </div>
