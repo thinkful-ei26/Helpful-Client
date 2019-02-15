@@ -1,26 +1,35 @@
-.create-event-form{
-    display: flex;
-    margin-right: auto;
-    margin-left: auto;
-    width: 40%;
-    /* justify-content: space-around; */
-    /* padding: 2%; */
-    /* margin: 2%; */
+
+.create-event-form {
+  width: 50%;
 }
-.create-event-row{
-    /* flex:1; */
-    padding: 2%;
+.create-event-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  padding: 3%;
+}
+button{
+  padding: 3%;
+  margin: 5%;
+  border-radius: 5%;
 }
 
 .create-org-form {
-    display: flex;
-    margin-right: auto;
-    margin-left: auto;
-    width: 40%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  width: 40%;
 }
 
 .create-org-row {
-    padding: 2%;
+  padding: 2%;
+}
+
+.submit-cancel-buttons {
+}
+.submit {
+  margin-right: 10%;
 }
 
 .orgCreateSuccess {
@@ -29,3 +38,4 @@
     margin-left: auto;
     width: 40%;
 }
+

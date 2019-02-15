@@ -1,3 +1,4 @@
+
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import OranizationCard from './organization-card';
@@ -35,13 +36,17 @@ export default function CreatedOrgs(props) {
         <h3>Orgnizations I Created</h3>
 
         <div>
+
           <OranizationCard org={orgs[0]}/>
+
           <OranizationCard />
           <OranizationCard />
         </div>
       </section>
 
+
       
+
     </div>
     
   )

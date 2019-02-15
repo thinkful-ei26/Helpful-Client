@@ -1,10 +1,13 @@
+
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {API_BASE_URL} from '../config';
+
 import OranizationCard from './organization-card';
 import '../stylesheets/followed-orgs.css';
 
 export default function FollowedOrgs(props) {
+
 
   const [orgs, setOrgs] = useState(null);
 
@@ -36,7 +39,9 @@ export default function FollowedOrgs(props) {
         <h3>Orgnizations I Follow</h3>
 
         <div>
+
           <OranizationCard org={orgs[0]}/>
+
           <OranizationCard />
           <OranizationCard />
         </div>
