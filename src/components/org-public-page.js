@@ -7,7 +7,7 @@ export default function OrgPublicPage() {
   return (
     <div className="org-public-page-main">
       <div className="org-public-header">
-        <div className="org-public-logo" />
+        <div className="org-public-logo"></div>
         <div className="org-public-social">
           <ul>
             <li>link 1</li>
