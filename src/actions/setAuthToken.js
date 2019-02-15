@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const setAuthToken = token => {
+export const setAuthToken = token => {
   token
-    ? (axios.defaults.heads.common["Authorization"] = token)
+    ? (axios.defaults.headers.common["Authorization"] = token)
     : delete axios.defaults.headers.common["Authorization"];
 };
 
