@@ -1,0 +1,13 @@
+.followedOrgsList {
+  margin-right: auto;
+  margin-left: auto;
+  width: 40%;
+}
+
+.followedOrgsList > h3 {
+  text-align: center;
+}
+
+.noFollowedOrgs {
+  text-align: center;
+}

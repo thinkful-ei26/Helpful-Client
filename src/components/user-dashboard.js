@@ -1,43 +1,59 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import EventList from './event-list';
+import FollowedOrgs from './followed-organizations';
+import CreatedOrgs from './created-organizations';
+import CreateOrgForm from './creat-org-form';
 import '../stylesheets/user-dashboard.css';
 
-export default class UserDashboard extends Component {
-  render() {
+
+export default function UserDashboard() {
+
+  const [showView, setView] = useState(<EventList />)
+
+  // setView((<EventList />, 'url-string')=>(component,url){ ... } );
     return (
-      <div className="orgDash">
-        <h2>User Name</h2>
-
-        <img
-          className="profilePic"
-          alt="user profile pic"
-          src="https://via.placeholder.com/150"
-        />
-
-        <section className="upcomingEvents">
-          <h3 className="eventsHeader">My Upcoming Events</h3>
-
-          <div className="eventsContainer">
-            event cards go here....
-            {/* render event card components */}
-          </div>
-        </section>
-
-        <section className="nearbyEvents">
-          <h3 className="eventsHeader">Events Nearby</h3>
-
-          <div className="eventsContainer">
-            event cards go here....
-            {/* render event card components */}
-          </div>
-        </section>
+      <article className="orgDash">
+    
+        {showView}
 
         <article className="nav">
-          <button>Find Events</button>
-          <button>Create Organization</button>
-          <button>Followed Organizations</button>
-          <button>Created Organizations</button>
+          <h2>User Name</h2>
+
+          <img className="profilePic" alt="user profile pic" src="https://via.placeholder.com/150" />
+
+          <div className="navButtons">
+            <button onClick={() => setView(<EventList />)}>My Events</button>
+            {/* <button onClick={setView()}>Find Events</button> */}
+            <button onClick={() => setView(<CreateOrgForm />)}>Create Organization</button>
+            <button onClick={() => setView(<FollowedOrgs />)}>Followed Organizations</button>
+            <button onClick={() =>setView(<CreatedOrgs setView={setView}/>)}>Created Organizations</button>
+          </div>
         </article>
-      </div>
-    );
-  }
+    
+      </article>
+    )
+  
+  
+    // return (
+    //   <article className="orgDash">
+    //     <h2>User Name</h2>
+
+    //     <img className="profilePic" alt="user profile pic" src="https://via.placeholder.com/150" />
+
+    //     <EventList /> 
+
+    //     <FollowedOrgs />
+
+    //     <CreatedOrgs />
+
+    //     <article className="nav">
+    //       <button>Find Events</button>
+    //       <button>Create Organization</button>
+    //       <button>Followed Organizations</button>
+    //       <button>Created Organizations</button>
+    //     </article>
+    
+    //   </article>
+    // )
+  
 }
