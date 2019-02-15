@@ -36,7 +36,7 @@ export function EventPage(props) {
     }
 
     const createRsvp = async() => {
-        const createRsvpResult = await axios({
+        await axios({
             method: 'post',
             url: `${API_BASE_URL}/rsvp`,
             data: {
@@ -48,7 +48,7 @@ export function EventPage(props) {
     }
 
     const removeRsvp = async() => {
-        const deleteRsvpResult = await axios({
+        await axios({
             method: 'delete',
             url: `${API_BASE_URL}/rsvp/user`,
             data: {
