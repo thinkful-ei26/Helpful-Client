@@ -3,29 +3,26 @@ import OrgPublicPageEventList from './org-public-page-event-list';
 import '../stylesheets/org-public-page.css';
 
 export default function OrgPublicPage() {
-  const [view, setView] = useState(<OrgPublicPageEventList />);
+  const [view] = useState(<OrgPublicPageEventList />);
   return (
     <div className="org-public-page-main">
       <div className="org-public-header">
-        <div className="org-public-logo">
-          <img src="https://lorempixel.com/g/100/100" alt="" />
-        </div>
+        <div className="org-public-logo" />
         <div className="org-public-social">
           <ul>
-            <li>social 1</li>
-            <li>social 2</li>
-            <li>social 3</li>
-            <li>social 4</li>
+            <li>link 1</li>
+            <li>link 2</li>
+            <li>link 3</li>
           </ul>
         </div>
       </div>
-      <div className="org-public-calltoaction">
-        <button>Follow us</button>
-        <button disabled>Button 2</button>
-        <button disabled>Button 3</button>
-      </div>
 
       <div className="org-public-content">
+        <div className="org-public-calltoaction">
+          <button>Follow us</button>
+          <button disabled>Button 2</button>
+          <button disabled>Button 3</button>
+        </div>
         <div className="org-public-text-area">
           <h1>Organization name</h1>
           <p>

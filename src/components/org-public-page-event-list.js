@@ -9,7 +9,7 @@ export default function OrgPublicPageEventList(props) {
   const [events, setEvents] = useState(null);
 
   const fetchData = async () => {
-    const eventsRequest = await axios(`${API_BASE_URL}/event/all`);
+    const eventsRequest = await axios(`${API_BASE_URL}/event/org/5c636994cdf4a255043e528e`);
     return setEvents(eventsRequest.data);
   };
 
