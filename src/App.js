@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <div className="App"> 
         {/* <OrgPublicPage/> */}
-        {/* <UserDashboard /> */}
-        <OrganizationDashboard/>
+        <UserDashboard />
+        {/* <OrganizationDashboard/> */}
       </div>
     );
   }
