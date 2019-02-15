@@ -8,11 +8,11 @@ export default function OrgDashboardAddUser() {
         <fieldset>
           <legend>Add User Roles</legend>
           <div className="create-event-row">
-            <label for="event-name"> Name</label>
+            <label htmlFor="event-name"> Name</label>
             <input type="text" placeholder="member-name" />
           </div>
           <div className="create-event-row">
-            <label for="event-description"> Description</label>
+            <label htmlFor="event-description"> Description</label>
             <select name="assign-admin-privileges" id="">
               <option value="admin">Admin</option>
               <option value="">Blank 1</option>
