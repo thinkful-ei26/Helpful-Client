@@ -1,0 +1,41 @@
+
+.create-event-form {
+  width: 50%;
+}
+.create-event-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  padding: 3%;
+}
+button{
+  padding: 3%;
+  margin: 5%;
+  border-radius: 5%;
+}
+
+.create-org-form {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  width: 40%;
+}
+
+.create-org-row {
+  padding: 2%;
+}
+
+.submit-cancel-buttons {
+}
+.submit {
+  margin-right: 10%;
+}
+
+.orgCreateSuccess {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+}
+

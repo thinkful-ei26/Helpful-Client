@@ -1,0 +1,20 @@
+.org-dash-main-wrapper {
+  display: flex;
+}
+
+.org-main-buttons {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20%;
+  padding-bottom: 1%;
+}
+.org-main-button {
+  padding: 10px;
+  height: 80px;
+  margin: 10%;
+  border-radius: 5%;
+}
+
+.org-main-events {
+  flex: 2;
+}
