@@ -8,12 +8,14 @@ import '../stylesheets/followed-orgs.css';
 
 export default function FollowedOrgs(props) {
 
+  // PRODUCTION TODO --> currently getting all orgs, need to refactor to
+  // get only user followed orgs
 
   const [orgs, setOrgs] = useState(null);
 
   const fetchData = async() => {
     const request = await axios(
-        `${API_BASE_URL}/event/all`,
+        `${API_BASE_URL}/org/all`,
     );
     setOrgs(request.data);
   };
@@ -39,11 +41,9 @@ export default function FollowedOrgs(props) {
         <h3>Orgnizations I Follow</h3>
 
         <div>
-
           <OranizationCard org={orgs[0]}/>
-
-          <OranizationCard />
-          <OranizationCard />
+          <OranizationCard org={orgs[1]}/>
+          <OranizationCard org={orgs[2]}/>
         </div>
       </section>
 
