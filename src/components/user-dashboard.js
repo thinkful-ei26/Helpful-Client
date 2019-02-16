@@ -29,7 +29,7 @@ export default function UserDashboard(props) {
           <button onClick={() => setView(<CreateOrgForm />)}>Create Organization</button>
           <button onClick={() => setView(<FollowedOrgs />)}>Followed Organizations</button>
           <button onClick={() => setView(<CreatedOrgs setView={setView} />)}>Created Organizations</button>
-          <button onClick={() => props.history.push('/search')} > dash</button>
+          <button onClick={() => props.history.push('/search')} >Search Tool</button>
         </div>
       </article>
 

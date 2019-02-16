@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_BASE_URL } from '../config';
-import { Link } from 'react-router-dom';
 
 import '../stylesheets/search-org.css';
 
@@ -39,7 +38,7 @@ export default function SearchOrg(props) {
             </div>
         })
         return (<div>
-            <ul>{listNames}</ul>
+            <h3>{listNames}</h3>
         </div>)
     } else {
         return (<div>

@@ -23,8 +23,6 @@ const App = () => {
         <Route exact path="/search" component={Search} />
         <Route exact path="/organization" component={OrgPublicPage} />
         <Route exact path="/event" component={EventPage} />
-
-
       </div>
     </Router>
   );
