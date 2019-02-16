@@ -1,0 +1,28 @@
+.filtered-event{
+    background: rgb(1, 140, 255);   
+    border-radius: 20px;
+    margin-bottom:10px;
+    margin-left:20%;
+    margin-right:20%;
+    padding:10px;
+    border: black 2px solid;
+}
+
+.filtered-event span{
+    display:flex;
+    align-items: column;
+}
+
+.filtered-event-title{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+/* .text-shadow{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+} */
