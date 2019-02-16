@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { Link, Route } from "react-router-dom";
-import {API_BASE_URL} from '../../config';
+import { API_BASE_URL } from '../../config';
 
 import setAuthToken from "../../actions/setAuthToken";
 import jwt_decode from "jwt-decode";
@@ -15,33 +15,33 @@ const Login = () => {
 
 
   // ********************** this component needs some refactoring and also to point to dashboard when a user has token **************
-  const loginUser = async(history) => {
+  const loginUser = async (history) => {
     let data = {
       username: user,
       password
     }
     axios
-    .post("/auth/login", data)
-    .then(res => {
-      // Set token to localStorage
-      const token = res.data.authToken;
-      localStorage.setItem("jwtToken", token);
-      // Set token to Auth header
-      setAuthToken(token);
-      // Decode token to get user data
-      const decoded = jwt_decode(token);
-      // Set current user
-      setCurrentUser(decoded);
-      let mytoken = localStorage.getItem("jwtToken")
-      console.log(mytoken)
-    })
-    .then( () => {
-      history.push('/');
-    })
+      .post("/auth/login", data)
+      .then(res => {
+        // Set token to localStorage
+        const token = res.data.authToken;
+        localStorage.setItem("jwtToken", token);
+        // Set token to Auth header
+        setAuthToken(token);
+        // Decode token to get user data
+        const decoded = jwt_decode(token);
+        // Set current user
+        setCurrentUser(decoded);
+        let mytoken = localStorage.getItem("jwtToken")
+        console.log(mytoken)
+      })
+      .then(() => {
+        history.push('/dashboard');
+      })
   }
 
   return (
-    <Route render={({history}) => (
+    <Route render={({ history }) => (
       <div className="container">
         <div className="row" style={{ marginTop: "4rem" }}>
           <div className="col s8 offset-s2">
@@ -57,25 +57,25 @@ const Login = () => {
             </div>
             <form noValidate onSubmit={e => e.preventDefault()}>
               <div className="input-field col s12">
-                <input 
-                  id="email" 
+                <input
+                  id="email"
                   type="text"
                   onChange={e => setUser(e.target.value)}
                 />
                 <label htmlFor="email">Username or Email</label>
               </div>
               <div className="input-field col s12">
-                <input 
-                  id="password" 
-                  type="password" 
+                <input
+                  id="password"
+                  type="password"
                   onChange={e => setPassword(e.target.value)}
                 />
                 <label htmlFor="password">Password</label>
               </div>
               <div className="input-field col s12">
-                <input 
-                  id="passwordConfirmation" 
-                  type="password" 
+                <input
+                  id="passwordConfirmation"
+                  type="password"
                   onChange={e => setConfirmPassword(e.target.value)}
                 />
                 <label htmlFor="passwordConfirmation">Confirm Password</label>
