@@ -21,14 +21,6 @@ export default function OrgPublicPage() {
       <div className="org-public-content">
         <aside className="org-public-calltoaction">
           <button disabled>Follow us</button>
-          {/* <button
-            className="user-rate"
-            onClick={() => setView(OrgUserRateForm)}
-          >
-            Rate us
-          </button> */}
-          {/* <button disabled>Button 3</button> */}
-          {/* <label for="rate-us">Rate us!</label> */}
           <form action="rate-us">
             <label for="rate-us">Rate us!</label>
             <select name="" id="">
