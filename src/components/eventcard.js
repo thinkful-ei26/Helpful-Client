@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '../stylesheets/org-dashboard-styles/eventcard.css'
 
 export default function EventCard(props) {
@@ -18,6 +19,7 @@ export default function EventCard(props) {
       <p className="org-event-location">Where: {props.event.location}</p>
 
       <p className="org-event-contact">Contact: {props.event.contact}</p>
+
     </article>
   );
 }
