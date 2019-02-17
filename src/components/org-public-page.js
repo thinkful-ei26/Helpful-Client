@@ -15,29 +15,29 @@ export default function OrgPublicPage() {
   });
   return (
     <div className="org-public-page-main center container valign-wrapper">
-      <div class="fixed-action-btn">
-        <a class="btn-floating btn-large teal lighten-2">
-          <i class="large material-icons">add</i>
+      <div className="fixed-action-btn">
+        <a className="btn-floating btn-large teal lighten-2">
+          <i className="large material-icons">add</i>
         </a>
         <ul>
           <li>
-            <a class="btn-floating red">
-              <i class="material-icons">comment</i>
+            <a className="btn-floating red">
+              <i className="material-icons">comment</i>
             </a>
           </li>
           <li>
-            <a class="btn-floating pink darken-4">
-              <i class="material-icons">share</i>
+            <a className="btn-floating pink darken-4">
+              <i className="material-icons">share</i>
             </a>
           </li>
           <li>
-            <a class="btn-floating purple darken-2">
-              <i class="material-icons">publish</i>
+            <a className="btn-floating purple darken-2">
+              <i className="material-icons">publish</i>
             </a>
           </li>
           <li>
-            <a class="btn-floating light-blue darken-3">
-              <i class="material-icons">notifications</i>
+            <a className="btn-floating light-blue darken-3">
+              <i className="material-icons">notifications</i>
             </a>
           </li>
         </ul>
@@ -51,17 +51,16 @@ export default function OrgPublicPage() {
             className="responsive-img"
             src="http://lorempixel.com/200/200/"
           />
-          <p>
+          <p className="flow-text">
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
             officia deserunt mollit anim id est laborum.
           </p>
-          <p>
+          <p className="flow-text">
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur.
           </p>
-          <p>lorem ipsum</p>
         </div>
         <div className="org-public-events">{view}</div>
       </div>

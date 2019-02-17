@@ -9,6 +9,7 @@ import UserDashboard from "./components/user-dashboard";
 import Search from "./components/search";
 import OrgPublicPage from "./components/org-public-page";
 import EventPage from "./components/event-page";
+import Footer from "./components/layout/footer";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route exact path="/search" component={Search} />
         <Route exact path="/organization" component={OrgPublicPage} />
         <Route exact path="/event" component={EventPage} />
+        <Footer />
       </div>
     </Router>
   );
