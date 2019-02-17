@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import EventCard from './eventcard';
 import { API_BASE_URL } from '../config';
-
+/***TODO:RENDER EVENTS BY ORGANIZATION************** */
 import '../stylesheets/event-list.css';
 
 export default function OrgPublicPageEventList(props) {

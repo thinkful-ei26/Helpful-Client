@@ -1,10 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import OrgPublicPageEventList from './org-public-page-event-list';
+import axios from 'axios';
+import { API_BASE_URL } from '../config';
 // import OrgUserRateForm from './org-user-rate-form';
+
 import '../stylesheets/org-public-page.css';
 
 export default function OrgPublicPage() {
   const [view, setView] = useState(<OrgPublicPageEventList />);
+  const [formData, setFormData] = useState({
+    rating: ''
+  });
+  const [success, setSuccess] = useState(false);
+
+  const rateOrg = async () => {
+    const rateOrgResult = await axios({
+      method: 'post',
+      url: `${API_BASE_URL}/org`,
+      data: formData
+    });
+    setSuccess(true);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    rateOrg();
+  };
+
+  if (success) {
+    return <p className="orgCreateSuccess">Organization created succefully!</p>;
+  }
   return (
     <div className="org-public-page-main">
       <div className="org-public-header">
@@ -21,7 +46,7 @@ export default function OrgPublicPage() {
       <div className="org-public-content">
         <aside className="org-public-calltoaction">
           <button disabled>Follow us</button>
-          <form action="rate-us">
+          <form action="submit" onSubmit={e => handleSubmit(e)}>
             <label for="rate-us">Rate us!</label>
             <select name="" id="">
               <option value="">1</option>
@@ -30,7 +55,13 @@ export default function OrgPublicPage() {
               <option value="">4</option>
               <option value="">5</option>
             </select>
-            <button>Submit</button>
+            <button
+              onClick={e =>
+                setFormData({ ...formData, rating: e.target.value })
+              }
+            >
+              Submit
+            </button>
           </form>
         </aside>
         <div className="org-public-text-area">
@@ -48,9 +79,7 @@ export default function OrgPublicPage() {
           <p>lorem ipsum</p>
         </div>
       </div>
-      <div className="org-public-events">
-        {view}
-      </div>
+      <div className="org-public-events">{view}</div>
 
       <div className="org-public-footer">Footer</div>
     </div>
