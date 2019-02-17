@@ -1,37 +1,25 @@
-
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./App.css";
-import NavBar from "./components/layout/navbar";
-import LandingPage from "./components/layout/landing";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
-<<<<<<< HEAD
-import OrgPublicPage from './components/org-public-page'
-=======
-import UserDashboard from './components/user-dashboard';
-import Search from './components/search';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
+import NavBar from './components/layout/navbar';
+import LandingPage from './components/layout/landing';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
 import OrgPublicPage from './components/org-public-page';
-import EventPage from './components/event-page';
->>>>>>> origin/master
+import UserCanRateOrg from './components/user-can-rate-org';
+import CreateOrgForm from './components/creat-org-form';
 
 const App = () => {
   return (
     <Router>
       <div className="App">
-      <OrgPublicPage/>
+        {/* <OrgPublicPage/> */}
+        <UserCanRateOrg />
+        {/* <CreateOrgForm /> */}
         {/* <NavBar />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/register" component={Register} />
-<<<<<<< HEAD
         <Route exact path="/login" component={Login} /> */}
-=======
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/dashboard" component={UserDashboard} />
-        <Route exact path="/search" component={Search} />
-        <Route exact path="/organization" component={OrgPublicPage} />
-        <Route exact path="/event" component={EventPage} />
->>>>>>> origin/master
       </div>
     </Router>
   );

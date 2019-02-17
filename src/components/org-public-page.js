@@ -1,40 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import OrgPublicPageEventList from './org-public-page-event-list';
-import axios from 'axios';
-import { API_BASE_URL } from '../config';
-// import OrgUserRateForm from './org-user-rate-form';
+// import axios from 'axios';
+// import { API_BASE_URL } from '../config';
 /*TODO:
-1.  RENDER EVENTS BY ORGANIZATIO ID IN OrgPublicPageEventList
-2.  GET POST TO WORK HERE
+1.  Render events by organization ID in OrgPublicPageEventList
+2.  POST for user ratings not working yet
 3.  Style select to a star system
-4.  Render current rating like amz does?*/
+4.  Render current rating like amz does?
+5.  Refactor user-can-rate to separate component*/
 
 import '../stylesheets/org-public-page.css';
 
 export default function OrgPublicPage() {
-  const [view, setView] = useState(<OrgPublicPageEventList />);//This renders events, (not org specific yet)
-  const [formData, setFormData] = useState({
-    rating: ''
-  });
-  const [success, setSuccess] = useState(false);
+  const [view, setView] = useState(<OrgPublicPageEventList />); //This renders events, (not org specific yet)
 
-  const rateOrg = async () => {
-    const rateOrgResult = await axios({
-      method: 'post',
-      url: `${API_BASE_URL}/org`,//don't have the right endpoint yet
-      data: formData
-    });
-    setSuccess(true);
-  };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    rateOrg();
-  };
-
-  if (success) {
-    return <p className="orgCreateSuccess">Organization created succefully!</p>;
-  }
   return (
     <div className="org-public-page-main">
       <div className="org-public-header">
@@ -51,23 +31,7 @@ export default function OrgPublicPage() {
       <div className="org-public-content">
         <aside className="org-public-calltoaction">
           <button disabled>Follow us</button>
-          <form action="submit" onSubmit={e => handleSubmit(e)}>
-            <label for="rate-us">Rate us!</label>
-            <select name="" id="">
-              <option value="">1</option>
-              <option value="">2</option>
-              <option value="">3</option>
-              <option value="">4</option>
-              <option value="">5</option>
-            </select>
-            <button
-              onClick={e =>
-                setFormData({ ...formData, rating: e.target.value })
-              }
-            >
-              Submit
-            </button>
-          </form>
+         
         </aside>
         <div className="org-public-text-area">
           <h1>Organization name</h1>
