@@ -15,7 +15,12 @@ export default function SearchEvent(props) {
             method: 'get',
             url: `${API_BASE_URL}/event/all`,
             data: {
+            },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
             }
+
         });
         setEvents(getEvents.data)
     }
