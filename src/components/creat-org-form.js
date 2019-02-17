@@ -20,14 +20,12 @@ export default function CreateOrgForm() {
     const createOrgResult = await axios({
       method: 'post',
       url: `${API_BASE_URL}/org`,
-      data: formData
-    },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
-        }
-      });
+      data: formData,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+      }
+    });
     setSuccess(true);
   }
 
