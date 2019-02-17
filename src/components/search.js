@@ -17,6 +17,10 @@ export default function Search(props) {
             method: 'post',
             url: `${API_BASE_URL}/rsvp`,
             data: {
+            },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
             }
         });
     }
@@ -29,6 +33,10 @@ export default function Search(props) {
             method: 'post',
             url: `${API_BASE_URL}/rsvp`,
             data: {
+            },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
             }
         });
     }

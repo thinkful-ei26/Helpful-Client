@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {API_BASE_URL} from '../config';
+import { API_BASE_URL } from '../config';
 import '../stylesheets/dashboard-create-event.css';
 
 export default function DashboardCreateEvent() {
@@ -17,11 +17,15 @@ export default function DashboardCreateEvent() {
 
   const [success, setSuccess] = useState(false)
 
-  const createOrg = async() => {
+  const createOrg = async () => {
     const createOrgResult = await axios({
-        method: 'post',
-        url: `${API_BASE_URL}/event`,
-        data: formData
+      method: 'post',
+      url: `${API_BASE_URL}/event`,
+      data: formData,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+      }
     });
     setSuccess(true);
   }
@@ -43,42 +47,42 @@ export default function DashboardCreateEvent() {
         onSubmit={e => handleSubmit(e)} >
         <fieldset>
 
-          <legend>Create an event</legend> 
+          <legend>Create an event</legend>
 
           <div className="create-event-row">
             <label htmlFor="event-name"> Event name</label>
-            <input type="text" placeholder="Event-name" 
-              onChange={e => setFormData({...formData, name: e.target.value})} />
+            <input type="text" placeholder="Event-name"
+              onChange={e => setFormData({ ...formData, name: e.target.value })} />
           </div>
 
           <div className="create-event-row">
 
             <label htmlFor="event-description"> Description</label>
-            <input type="text" placeholder="Description" 
-              onChange={e => setFormData({...formData, description: e.target.value})} />
+            <input type="text" placeholder="Description"
+              onChange={e => setFormData({ ...formData, description: e.target.value })} />
           </div>
           <div className="create-event-row">
             <label htmlFor="event-location" placeholder="Location">
               Location
             </label>
-            <input type="text" 
-              onChange={e => setFormData({...formData, location: e.target.value})} />
+            <input type="text"
+              onChange={e => setFormData({ ...formData, location: e.target.value })} />
           </div>
           <div className="create-event-row">
             <label htmlFor="event-date"> Date</label>
             <input type="text" placeholder="Date"
-              onChange={e => setFormData({...formData, date: e.target.value})} />
+              onChange={e => setFormData({ ...formData, date: e.target.value })} />
           </div>
           <div className="create-event-row">
             <label htmlFor="event-contact"> Contact</label>
-            <input type="text" 
-            onChange={e => setFormData({...formData, contact: e.target.value})} />
+            <input type="text"
+              onChange={e => setFormData({ ...formData, contact: e.target.value })} />
           </div>
 
           <div className="create-event-row">
             <label htmlFor="eventImg">Image</label>
             <input type="text" placeholder="Paste Image URL here!"
-              onChange={e => setFormData({...formData, imgUrl: e.target.value})} />
+              onChange={e => setFormData({ ...formData, imgUrl: e.target.value })} />
           </div>
 
           <div className="submit-cancel-buttons">
