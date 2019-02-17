@@ -3,11 +3,16 @@ import OrgPublicPageEventList from './org-public-page-event-list';
 import axios from 'axios';
 import { API_BASE_URL } from '../config';
 // import OrgUserRateForm from './org-user-rate-form';
+/*TODO:
+1.  RENDER EVENTS BY ORGANIZATIO ID IN OrgPublicPageEventList
+2.  GET POST TO WORK HERE
+3.  Style select to a star system
+4.  Render current rating like amz does?*/
 
 import '../stylesheets/org-public-page.css';
 
 export default function OrgPublicPage() {
-  const [view, setView] = useState(<OrgPublicPageEventList />);
+  const [view, setView] = useState(<OrgPublicPageEventList />);//This renders events, (not org specific yet)
   const [formData, setFormData] = useState({
     rating: ''
   });
@@ -16,7 +21,7 @@ export default function OrgPublicPage() {
   const rateOrg = async () => {
     const rateOrgResult = await axios({
       method: 'post',
-      url: `${API_BASE_URL}/org`,
+      url: `${API_BASE_URL}/org`,//don't have the right endpoint yet
       data: formData
     });
     setSuccess(true);
