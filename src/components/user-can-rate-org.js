@@ -1,17 +1,17 @@
-// import React, { useState, useEffect } from 'react';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+// import React from 'react';
 import M from 'materialize-css';
-// import axios from 'axios';
-// import { API_BASE_URL } from '../config';
+import axios from 'axios';
+import { API_BASE_URL } from '../config';
 import '../stylesheets/user-can-rate-org.css';
 
 class UserCanRateOrg extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: 'One star' };
+    this.state = { value: '' };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     document.addEventListener('DOMContentLoaded', function() {
@@ -24,13 +24,13 @@ class UserCanRateOrg extends React.Component {
     this.setState({ value: event.target.value });
   }
 
-  handleSubmit(event) {
-    console.log('LOG user rating ', this.state.value);
-    event.preventDefault();
-  }
+  // handleSubmit(event) {
+  //   console.log('LOG user rating ', this.state.value);
+  //   event.preventDefault();
+  // }
 
   render() {
-    console.log('LOG 2', this.state.value);
+    console.log('LOG', this.state.value);
     return (
       <div className="row">
         <form onSubmit={this.handleSubmit} action="#">
@@ -39,9 +39,11 @@ class UserCanRateOrg extends React.Component {
               defaultValue={this.state.value}
               onChange={this.handleChange}
             >
-              ><option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+              <option value="5">5 stars</option>
+              <option value="4">4 stars</option>
+              <option value="3">3 stars</option>
+              <option value="2">2 stars</option>
+              <option value="1">1 star</option>
             </select>
             <label>Rate this group</label>
           </div>
@@ -52,4 +54,3 @@ class UserCanRateOrg extends React.Component {
 }
 
 export default UserCanRateOrg;
-
