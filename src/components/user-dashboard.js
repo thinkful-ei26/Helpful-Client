@@ -1,24 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EventList from "./event-list";
 import FollowedOrgs from "./followed-organizations";
-import CreatedOrgs from "./created-organizations";
 import CreateOrgForm from "./creat-org-form";
-import Search from "./search";
-import { Link } from "react-router-dom";
+import "../stylesheets/user-dashboard.css";
 import M from "materialize-css";
+import { API_BASE_URL } from "../config";
 
 export default function UserDashboard(props) {
   const [showView, setView] = useState(<EventList />);
 
-  document.addEventListener("DOMContentLoaded", function() {
-    let elems = document.querySelectorAll(".sidenav");
-    let instances = M.Sidenav.init(elems, {});
+  const logoutUser = async () => {
+    await localStorage.removeItem("jwtToken");
+    props.history.push("/");
+  };
+
+  useEffect(() => {
+    document.addEventListener("DOMContentLoaded", function() {
+      let elems = document.querySelectorAll(".sidenav");
+      let instances = M.Sidenav.init(elems, {
+        draggable: true
+      });
+    });
   });
 
   // setView((<EventList />, 'url-string')=>(component,url){ ... } );
   return (
     <div className="dashboard center container">
-      <ul id="slide-out" class="sidenav">
+      <ul id="slide-out" class="sidenav sidenav-fixed">
         <li>
           <div class="user-view">
             <div class="background">
@@ -73,10 +81,18 @@ export default function UserDashboard(props) {
             <i class="material-icons">search</i>Search Tool
           </a>
         </li>
+        <li>
+          <div class="divider" />
+        </li>
+        <li>
+          <a class="waves-effect" onClick={logoutUser}>
+            <i class="material-icons">power_settings_new</i>Logout
+          </a>
+        </li>
       </ul>
-      <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
-        {/* <i class="material-icons">menu</i> */}
-        you really shouldnt click me
+      <a href="#" data-target="slide-out" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+        {/* you really shouldnt click me */}
       </a>
       <div className="container center">{showView}</div>
     </div>
