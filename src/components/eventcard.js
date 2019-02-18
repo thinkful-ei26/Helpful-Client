@@ -5,7 +5,7 @@ import '../stylesheets/org-dashboard-styles/eventcard.css'
 export default function EventCard(props) {
 
   if (!props.event) {
-    return 'Loading...';
+    return null;
   }
 
   return (
