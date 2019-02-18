@@ -32,33 +32,35 @@ export default function UserCanRateOrg() {
   if (success) {
     return <p className="orgCreateSuccess">Thank you for rating us!</p>;
   }
-    //5c6ad21d8368687005177507 orgId for test post
+  //5c6ad21d8368687005177507 orgId for test post
   return (
-    <form
-      action="submit"
-      className="create-org-form"
-      id="createOrgForm"
-      onSubmit={e => handleSubmit(e)}
-    >
-      <fieldset>
-        <div className="create-org-row">
-          <div class="input-field col s12">
-            <select>
-              <option value="" disabled selected>
-                5 stars
-              </option>
-              <option value="1">1 star</option>
-              <option value="2">2 stars</option>
-              <option value="3">3 stars</option>
-              <option value="4">4 stars</option>
-              <option value="5">5 stars</option>
-            </select>
-            <label>Rate this group</label>
-          </div>
-        </div>
+    <div className="container">
+      <div className="row">
+        <form
+          action="submit"
+          className="col s4 offset-s4"
+          onSubmit={e => handleSubmit(e)}
+        >
+          <fieldset>
+            <div className="create-org-row">
+              <div>
+                <select>
+                  <option value="" disabled selected>
+                    Rate this group
+                  </option>
+                  <option value="1">1 star</option>
+                  <option value="2">2 stars</option>
+                  <option value="3">3 stars</option>
+                  <option value="4">4 stars</option>
+                  <option value="5">5 stars</option>
+                </select>
+              </div>
+            </div>
 
-        <button type="submit">Submit</button>
-      </fieldset>
-    </form>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
   );
 }
