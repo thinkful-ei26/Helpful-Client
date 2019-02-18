@@ -4,12 +4,12 @@ import FollowedOrgs from "./followed-organizations";
 import CreatedOrgs from "./created-organizations";
 import CreateOrgForm from "./creat-org-form";
 import Search from "./search";
-import "../stylesheets/user-dashboard.css";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
 
 export default function UserDashboard(props) {
   const [showView, setView] = useState(<EventList />);
+
   document.addEventListener("DOMContentLoaded", function() {
     let elems = document.querySelectorAll(".sidenav");
     let instances = M.Sidenav.init(elems, {});
