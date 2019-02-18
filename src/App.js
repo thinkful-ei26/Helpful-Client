@@ -1,15 +1,15 @@
-
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/layout/navbar";
 import LandingPage from "./components/layout/landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import UserDashboard from './components/user-dashboard';
-import Search from './components/search';
-import OrgPublicPage from './components/org-public-page';
-import EventPage from './components/event-page';
+import UserDashboard from "./components/user-dashboard";
+import Search from "./components/search";
+import OrgPublicPage from "./components/org-public-page";
+import EventPage from "./components/event-page";
+import Footer from "./components/layout/footer";
 
 const App = () => {
   return (
@@ -23,6 +23,7 @@ const App = () => {
         <Route exact path="/search" component={Search} />
         <Route exact path="/organization" component={OrgPublicPage} />
         <Route exact path="/event" component={EventPage} />
+        <Footer />
       </div>
     </Router>
   );
