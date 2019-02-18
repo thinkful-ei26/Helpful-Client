@@ -53,9 +53,7 @@ export default function Search(props) {
 
 
     return (<div>
-        <div className="search-header">
-            <h1>nav bar and stuff here</h1>
-        </div>
+
         <div className='filter-form'>
             <h2> Filter by:</h2>
             <div>
