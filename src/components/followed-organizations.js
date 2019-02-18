@@ -1,28 +1,23 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { API_BASE_URL } from "../config";
 
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { API_BASE_URL } from '../config';
-
-import OranizationCard from './organization-card';
-import '../stylesheets/followed-orgs.css';
+import OrganizationCard from "./organization-card";
+import "../stylesheets/followed-orgs.css";
 
 export default function FollowedOrgs(props) {
-
   // PRODUCTION TODO --> currently getting all orgs, need to refactor to
   // get only user followed orgs
 
   const [orgs, setOrgs] = useState(null);
 
   const fetchData = async () => {
-    const request = await axios(
-      `${API_BASE_URL}/org/all`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
-        }
+    const request = await axios(`${API_BASE_URL}/org/all`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
-    );
+    });
     setOrgs(request.data);
   };
 
@@ -38,7 +33,7 @@ export default function FollowedOrgs(props) {
 
         <button>Find Organizations</button>
       </section>
-    )
+    );
   }
 
   return (
@@ -47,13 +42,11 @@ export default function FollowedOrgs(props) {
         <h3>Orgnizations I Follow</h3>
 
         <div>
-          <OranizationCard org={orgs[0]} />
-          <OranizationCard org={orgs[1]} />
-          <OranizationCard org={orgs[2]} />
+          <OrganizationCard org={orgs[0]} />
+          <OrganizationCard org={orgs[1]} />
+          <OrganizationCard org={orgs[2]} />
         </div>
       </section>
-
     </div>
-
-  )
+  );
 }

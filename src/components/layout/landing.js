@@ -5,7 +5,10 @@ const LandingPage = () => {
   return (
     <Route
       render={({ history }) => (
-        <div style={{ height: "75vh" }} className="container valign-wrapper">
+        <div
+          style={{ height: "75vh" }}
+          className="container valign-wrapper no-side-nav"
+        >
           <div className="row" style={{ marginTop: "4rem" }}>
             <div className="col s12 center-align">
               <p className="flow-text">
