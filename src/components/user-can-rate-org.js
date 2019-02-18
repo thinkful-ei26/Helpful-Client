@@ -13,7 +13,7 @@ export default function UserCanRateOrg() {
   const postRating = async () => {
     const postRatingResult = await axios({
       method: 'post',
-      url: `${API_BASE_URL}/`,
+      url: `${API_BASE_URL}/org`,
       data: formData
     });
     setSuccess(true);
