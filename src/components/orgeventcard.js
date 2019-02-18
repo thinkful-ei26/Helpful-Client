@@ -5,7 +5,7 @@ export default function OrgEventCard() {
   return (
     <div>
       <div className="event-card">
-        Name: Event 1
+        Name: This is a Group
         <div className="org-event-description">
           Description: This is the event description
         </div>
