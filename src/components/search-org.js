@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_BASE_URL } from '../config';
-
+import { InitialMap } from './map';
 import '../stylesheets/search-org.css';
 
 export default function SearchOrg(props) {
 
-    const [orgs, setOrgs] = useState(null);
+    // const [orgs, setOrgs] = useState(null);
 
     const fetchData = async () => {
 
@@ -23,13 +23,12 @@ export default function SearchOrg(props) {
         setOrgs(getOrgs.data)
     }
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     fetchData();
+    // }, []);
 
-    if (orgs) {
-        console.log(orgs)
-        const listNames = orgs.map((org, index) => {
+    if (props.orgs) {
+        const listNames = props.orgs.map((org, index) => {
             return <div onClick={() => props.history.push('/organization')} className='filtered-event'>
                 <div className='filtered-event-title'>
                     <h2>{org.name}</h2>
@@ -42,6 +41,13 @@ export default function SearchOrg(props) {
             </div>
         })
         return (<div>
+            <InitialMap
+                isMarkerShown
+                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={<div style={{ height: `400px` }} />}
+                mapElement={<div style={{ height: `100%` }} />}
+            />
             <h3>{listNames}</h3>
         </div>)
     } else {

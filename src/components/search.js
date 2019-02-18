@@ -8,30 +8,33 @@ import '../stylesheets/search.css';
 export default function Search(props) {
 
     const [component, setComponent] = useState('');
+    const [events, setEvents] = useState(null);
+    const [orgs, setOrgs] = useState(null);
 
     /* Call these on click */
-
     const getEvent = async () => {
 
-        const getEventPage = await axios({
-            method: 'post',
-            url: `${API_BASE_URL}/rsvp`,
+        const getEvents = await axios({
+            method: 'get',
+            url: `${API_BASE_URL}/event/all`,
             data: {
             },
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
             }
+
         });
+        setEvents(getEvents.data)
     }
 
     /* Call these on click */
 
     const getOrg = async () => {
 
-        const getEventPage = await axios({
-            method: 'post',
-            url: `${API_BASE_URL}/rsvp`,
+        const getOrgs = await axios({
+            method: 'get',
+            url: `${API_BASE_URL}/org/all`,
             data: {
             },
             headers: {
@@ -39,7 +42,14 @@ export default function Search(props) {
                 'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
             }
         });
+        setOrgs(getOrgs.data)
     }
+
+    useEffect(() => {
+        getEvent();
+        getOrg();
+    }, []);
+
 
 
     return (<div>
@@ -61,8 +71,8 @@ export default function Search(props) {
         </div>
 
         <div className="search-container">
-            <button className="search-org-button" onClick={() => setComponent(<SearchOrg history={props.history} />)}> Search Organizations</button>
-            <button className="search-event-button" onClick={() => setComponent(<SearchEvent history={props.history} />)}> Search Events</button>
+            <button className="search-org-button" onClick={() => setComponent(<SearchOrg history={props.history} orgs={orgs} />)}> Search Organizations</button>
+            <button className="search-event-button" onClick={() => setComponent(<SearchEvent history={props.history} events={events} />)}> Search Events</button>
         </div>
         {component}
     </div>)
