@@ -5,11 +5,11 @@ import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 
 // Register User
 export const registerUser = (userData, history) => dispatch => {
-  console.log(userData, history)
-  console.log('help')
+  console.log(userData, history);
+  console.log("help");
   axios
     .post("/users/register", userData)
-    .then(res => history.push("/login")) // re-direct to login on successful register
+    .then(() => history.push("/login")) // re-direct to login on successful register
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
@@ -19,7 +19,7 @@ export const registerUser = (userData, history) => dispatch => {
 };
 // Login - get user token
 export const loginUser = userData => dispatch => {
-  console.log('something')
+  console.log("something");
   axios
     .post("/users/login", userData)
     .then(res => {
