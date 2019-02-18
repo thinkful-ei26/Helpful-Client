@@ -13,7 +13,7 @@ export default function UserCanRateOrg() {
   const postRating = async () => {
     const postRatingResult = await axios({
       method: 'post',
-      url: `${API_BASE_URL}/org`,
+      url: `${API_BASE_URL}/`,
       data: formData
     });
     setSuccess(true);
@@ -32,6 +32,7 @@ export default function UserCanRateOrg() {
   if (success) {
     return <p className="orgCreateSuccess">Thank you for rating us!</p>;
   }
+    //5c6ad21d8368687005177507 orgId for test post
   return (
     <form
       action="submit"
@@ -44,13 +45,13 @@ export default function UserCanRateOrg() {
           <div class="input-field col s12">
             <select>
               <option value="" disabled selected>
-                Rate us
+                5 stars
               </option>
               <option value="1">1 star</option>
               <option value="2">2 stars</option>
               <option value="3">3 stars</option>
               <option value="4">4 stars</option>
-              <option value="5">5stars</option>
+              <option value="5">5 stars</option>
             </select>
             <label>Rate this group</label>
           </div>

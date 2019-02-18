@@ -52,6 +52,7 @@ export default function OrgPublicPage() {
             className="responsive-img"
             src="http://lorempixel.com/200/200/"
           />
+          <UserCanRateOrg />
           <p className="flow-text">
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
             officia deserunt mollit anim id est laborum.
