@@ -8,7 +8,7 @@ import '../stylesheets/user-can-rate-org.css';
 class UserCanRateOrg extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: 'blue' };
+    this.state = { value: 'One star' };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,27 +32,24 @@ class UserCanRateOrg extends React.Component {
   render() {
     console.log('LOG 2', this.state.value);
     return (
-      <div className="userCanRateOrg">
-        <div className="row">
-          <form onSubmit={this.handleSubmit} action="#">
-            <div className="input-field col s2">
-              <select value={this.state.value} onChange={this.handleChange}>
-                <option value="" disabled selected>
-                  Rate this group
-                </option>
-                <option value="">One star</option>
-                <option value="">Two star</option>
-                <option value="">Three star</option>
-                <option value="">Four star</option>
-                <option value="">Five star</option>
-                <label>Rate this group</label>
-              </select>
-            </div>
-          </form>
-        </div>
+      <div className="row">
+        <form onSubmit={this.handleSubmit} action="#">
+          <div className="input-field col s2">
+            <select
+              defaultValue={this.state.value}
+              onChange={this.handleChange}
+            >
+              ><option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <label>Rate this group</label>
+          </div>
+        </form>
       </div>
     );
   }
 }
 
 export default UserCanRateOrg;
+
