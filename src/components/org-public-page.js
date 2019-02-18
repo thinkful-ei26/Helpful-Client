@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import OrgPublicPageEventList from "./org-public-page-event-list";
-import "../stylesheets/org-public-page.css";
-import M from "materialize-css";
+import React, { useState } from 'react';
+import OrgPublicPageEventList from './org-public-page-event-list';
+import UserCanRateOrg from './user-can-rate-org';
+import '../stylesheets/org-public-page.css';
+import M from 'materialize-css';
 
 export default function OrgPublicPage() {
   const [view] = useState(<OrgPublicPageEventList />);
-  document.addEventListener("DOMContentLoaded", function() {
-    let elems = document.querySelectorAll(".fixed-action-btn");
+  document.addEventListener('DOMContentLoaded', function() {
+    let elems = document.querySelectorAll('.fixed-action-btn');
     let instances = M.FloatingActionButton.init(elems, {
-      direction: "left",
+      direction: 'left',
       // toolbarEnabled: true
       hoverEnabled: true
     });
@@ -51,6 +52,7 @@ export default function OrgPublicPage() {
             className="responsive-img"
             src="http://lorempixel.com/200/200/"
           />
+          <UserCanRateOrg />
           <p className="flow-text">
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
             officia deserunt mollit anim id est laborum.
