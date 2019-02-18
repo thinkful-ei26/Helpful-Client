@@ -8,15 +8,13 @@ const LandingPage = () => {
         <div style={{ height: "75vh" }} className="container valign-wrapper">
           <div className="row" style={{ marginTop: "4rem" }}>
             <div className="col s12 center-align">
-              <h4>
-                <span style={{ fontFamily: "monospace" }} className="bold">
-                  Words
-                </span>
+              <p className="flow-text">
+                <span style={{ fontFamily: "monospace" }}>Words </span>
                 Subway tile butcher taiyaki quinoa, cornhole ramps organic
                 viral. Humblebrag hexagon jean shorts fanny pack. Franzen jean
                 shorts plaid fixie, salvia XOXO vegan vice migas vexillologist
                 pok pok scenester +1 unicorn ennui.
-              </h4>
+              </p>
               <button
                 onClick={() => history.push(`/register`)}
                 style={{
