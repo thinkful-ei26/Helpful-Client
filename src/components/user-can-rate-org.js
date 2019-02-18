@@ -40,25 +40,19 @@ export default function UserCanRateOrg() {
       onSubmit={e => handleSubmit(e)}
     >
       <fieldset>
-        <legend>Create an Organization</legend>
-
         <div className="create-org-row">
-          {/* <label htmlFor="org-name"> Organization name</label>
-          <input
-            type="text"
-            placeholder="Organization name"
-            onChange={e => setFormData({ ...formData, name: e.target.value })}
-          /> */}
           <div class="input-field col s12">
             <select>
               <option value="" disabled selected>
-                Choose your option
+                Rate us
               </option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+              <option value="1">1 star</option>
+              <option value="2">2 stars</option>
+              <option value="3">3 stars</option>
+              <option value="4">4 stars</option>
+              <option value="5">5stars</option>
             </select>
-            <label>Materialize Select</label>
+            <label>Rate this group</label>
           </div>
         </div>
 
