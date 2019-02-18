@@ -8,20 +8,20 @@ export default function SearchOrg(props) {
 
     // const [orgs, setOrgs] = useState(null);
 
-    const fetchData = async () => {
+    // const fetchData = async () => {
 
-        const getOrgs = await axios({
-            method: 'get',
-            url: `${API_BASE_URL}/org/all`,
-            data: {
-            },
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
-            }
-        });
-        setOrgs(getOrgs.data)
-    }
+    //     const getOrgs = await axios({
+    //         method: 'get',
+    //         url: `${API_BASE_URL}/org/all`,
+    //         data: {
+    //         },
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+    //         }
+    //     });
+    //     setOrgs(getOrgs.data)
+    // }
 
     // useEffect(() => {
     //     fetchData();
