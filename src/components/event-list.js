@@ -6,14 +6,27 @@ import { API_BASE_URL } from '../config';
 
 
 import '../stylesheets/event-list.css';
+import { callbackify } from 'util';
 
 export default function EventList(props) {
-  // let events = [];
 
   const [events, setEvents] = useState(null);
-
+  const [rsvpEvents, setRsvpEvents] = useState(null);
 
   const fetchData = async () => {
+    const rsvpEventsRequest = await axios(
+      `${API_BASE_URL}/rsvp/user`, 
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+        }
+      }
+    );
+    setRsvpEvents(rsvpEventsRequest.data);
+    // added .populate(eventId) to server endpoint so now rsvpEventsRequest.data has events populated.
+
+    // get all events
     const eventsRequest = await axios(
       `${API_BASE_URL}/event/all`,
       {
@@ -24,19 +37,33 @@ export default function EventList(props) {
       }
     );
     setEvents(eventsRequest.data);
-
   };
+
+  // gets all the events out of each individual rsvp.eventId and into array
+  let rsvpEventList = [];
+  const generateRsvpEventList = (rsvpData) => {
+    rsvpData.forEach(rsvp => {
+      // console.log('single event: ', rsvp.eventId)
+      rsvpEventList.push(rsvp.eventId);
+    })
+  }
 
   useEffect(() => {
     fetchData();
   }, []);
 
+  // generate EventCard components with rsvpEvent data
+  let rsvpEventCardList;
+  if (rsvpEvents) {
+    generateRsvpEventList(rsvpEvents);
+    rsvpEventCardList = rsvpEventList.map(event => {
+      return <EventCard event={event}/>
+    })
+  }
 
   if (events === null) {
     return 'Loading...';
   }
-  // PRODUCTION TODO ---> populate event cards with user specific event data (right now its just getting all events), 
-  // and pass data down to event cards more dynamically than just event[0]
 
   return (
     <article>
@@ -44,9 +71,7 @@ export default function EventList(props) {
         <h3 className="eventsHeader">My Upcoming Events</h3>
 
         <div className="eventsContainer">
-          <EventCard event={events[0]} />
-          <EventCard event={events[1]} />
-          <EventCard event={events[2]} />
+          {rsvpEventCardList}
         </div>
       </section>
       {/* // PRODUCTION TODO ---> populate event cards with specific nearby events, and pass data down
@@ -54,11 +79,12 @@ export default function EventList(props) {
 
       <section className="nearbyEvents">
         <h3 className="eventsHeader">Events Nearby</h3>
-
+  
         <div className="eventsContainer">
-          <EventCard event={events[3]} />
-          <EventCard event={events[4]} />
-          <EventCard event={events[5]} />
+          {/* currently rendering all events, not nearby events */}
+          <EventCard event={events[0]} />
+          <EventCard event={events[1]} />
+          <EventCard event={events[2]} />
         </div>
       </section>
     </article>
