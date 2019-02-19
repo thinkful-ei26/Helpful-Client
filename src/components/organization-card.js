@@ -7,10 +7,19 @@ export default function OrganizationCard(props) {
   }
 
   return (
-    <section className="orgCard">
-      <h3>{props.org.name}</h3>
-
-      <p>About: {props.org.description}</p>
-    </section>
+    <div className="row">
+      <div className="card">
+        <div className="card-image">
+          <img src="http://lorempixel.com/500/500" />
+          <span className="card-title">{props.org.name}</span>
+        </div>
+        <div className="card-content">
+          <p>{props.org.description}</p>
+        </div>
+        <div className="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import EventList from "./event-list";
 import FollowedOrgs from "./followed-organizations";
 import CreateOrgForm from "./creat-org-form";
-import "../stylesheets/user-dashboard.css";
 import M from "materialize-css";
 import { API_BASE_URL } from "../config";
 
@@ -14,6 +13,12 @@ export default function UserDashboard(props) {
     props.history.push("/");
   };
 
+  document.addEventListener("DOMContentLoaded", function() {
+    let elems = document.querySelectorAll(".sidenav");
+    let instances = M.Sidenav.init(elems, {
+      draggable: true
+    });
+  });
   useEffect(() => {
     document.addEventListener("DOMContentLoaded", function() {
       let elems = document.querySelectorAll(".sidenav");
@@ -21,29 +26,29 @@ export default function UserDashboard(props) {
         draggable: true
       });
     });
-  });
+  }, []);
 
   // setView((<EventList />, 'url-string')=>(component,url){ ... } );
   return (
     <div className="dashboard center container">
-      <ul id="slide-out" class="sidenav sidenav-fixed">
+      <ul id="slide-out" className="sidenav sidenav-fixed">
         <li>
-          <div class="user-view">
-            <div class="background">
+          <div className="user-view">
+            <div className="background">
               <img src="http://lorempixel.com/300/300" alt="user background" />
             </div>
             <a href="#user">
               <img
-                class="circle"
+                className="circle"
                 src="http://lorempixel.com/150/150"
                 alt="user profile"
               />
             </a>
             <a href="#name">
-              <span class="white-text name">Johnny User</span>
+              <span className="white-text name">Johnny User</span>
             </a>
             <a href="#email">
-              <span class="white-text email">johnnyquest@test.com</span>
+              <span className="white-text email">johnnyquest@test.com</span>
             </a>
           </div>
         </li>
@@ -51,47 +56,58 @@ export default function UserDashboard(props) {
         <li>
           <a
             href="events"
-            class="waves-effect"
+            className="waves-effect"
             onClick={() => setView(<EventList />)}
           >
-            <i class="material-icons">assignment</i>My Events
+            <i className="material-icons">assignment</i>My Events
           </a>
         </li>
         <li>
-          <div class="divider" />
+          <div className="divider" />
         </li>
         <li>
-          <a class="waves-effect" onClick={() => setView(<CreateOrgForm />)}>
-            <i class="material-icons">create</i>Create Organization
+          <a
+            className="waves-effect"
+            onClick={() => setView(<CreateOrgForm />)}
+          >
+            <i className="material-icons">create</i>Create Organization
           </a>
         </li>
         <li>
-          <div class="divider" />
+          <div className="divider" />
         </li>
         <li>
-          <a class="waves-effect" onClick={() => setView(<FollowedOrgs />)}>
-            <i class="material-icons">subscriptions</i>Followed Organizations
+          <a className="waves-effect" onClick={() => setView(<FollowedOrgs />)}>
+            <i className="material-icons">subscriptions</i>Followed
+            Organizations
           </a>
         </li>
         <li>
-          <div class="divider" />
+          <div className="divider" />
         </li>
         <li>
-          <a class="waves-effect" onClick={() => props.history.push("/search")}>
-            <i class="material-icons">search</i>Search Tool
+          <a
+            className="waves-effect"
+            onClick={() => props.history.push("/search")}
+          >
+            <i className="material-icons">search</i>Search Tool
           </a>
         </li>
         <li>
-          <div class="divider" />
+          <div className="divider" />
         </li>
         <li>
-          <a class="waves-effect" onClick={logoutUser}>
-            <i class="material-icons">power_settings_new</i>Logout
+          <a className="waves-effect" onClick={logoutUser}>
+            <i className="material-icons">power_settings_new</i>Logout
           </a>
         </li>
       </ul>
-      <a href="#" data-target="slide-out" class="sidenav-trigger">
-        <i class="material-icons">menu</i>
+      <a
+        href="#"
+        data-target="slide-out"
+        className="sidenav-trigger hide-on-large-only"
+      >
+        <i className="material-icons">menu</i>
         {/* you really shouldnt click me */}
       </a>
       <div className="container center">{showView}</div>

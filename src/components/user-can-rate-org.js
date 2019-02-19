@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { API_BASE_URL } from '../config';
-import M from 'materialize-css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { API_BASE_URL } from "../config";
+import M from "materialize-css";
 
 export default function UserCanRateOrg() {
   const [formData, setFormData] = useState({
-    rating: ''
+    rating: ""
   });
 
   const [success, setSuccess] = useState(false);
 
   const postRating = async () => {
     const postRatingResult = await axios({
-      method: 'post',
+      method: "post",
       url: `${API_BASE_URL}/org`,
       data: formData
     });
@@ -24,8 +24,8 @@ export default function UserCanRateOrg() {
     postRating();
   };
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
+  document.addEventListener("DOMContentLoaded", function() {
+    var elems = document.querySelectorAll("select");
     var instances = M.FormSelect.init(elems, {});
   });
 
@@ -36,29 +36,31 @@ export default function UserCanRateOrg() {
   return (
     <div className="container">
       <div className="row">
-        <form
-          action="submit"
-          className="col s4 offset-s4"
-          onSubmit={e => handleSubmit(e)}
-        >
-          <fieldset>
-            <div className="create-org-row">
-              <div>
-                <select>
-                  <option value="" disabled selected>
-                    Rate this group
-                  </option>
-                  <option value="1">1 star</option>
-                  <option value="2">2 stars</option>
-                  <option value="3">3 stars</option>
-                  <option value="4">4 stars</option>
-                  <option value="5">5 stars</option>
-                </select>
-              </div>
-            </div>
+        <form action="submit" onSubmit={e => handleSubmit(e)}>
+          <div className="create-org-row col s4">
+            <select>
+              <option value="" disabled selected>
+                Rate this group
+              </option>
+              <option value="1">1 star</option>
+              <option value="2">2 stars</option>
+              <option value="3">3 stars</option>
+              <option value="4">4 stars</option>
+              <option value="5">5 stars</option>
+            </select>
+          </div>
 
-            <button type="submit">Submit</button>
-          </fieldset>
+          <button
+            onClick={() => console.log("HERE")}
+            style={{
+              width: "150px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px"
+            }}
+            className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
+          >
+            Register
+          </button>
         </form>
       </div>
     </div>
