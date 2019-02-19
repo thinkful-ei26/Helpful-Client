@@ -31,15 +31,16 @@ export default function SearchEvent(props) {
 
     if (props.events) {
         const listNames = props.events.map(event => {
-            return <div onClick={() => props.history.push('/event')} className='filtered-event'>
-                <div className='filtered-event-title'>
-                    <h2>{event.name}</h2>
-                    <img alt='eventimg' src={event.imgUrl} />
+            return <div onClick={() => props.history.push('/event')} class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">{event.name}</span>
+                    <p>{event.description}</p>
                 </div>
-                <p>{event.description}</p>
-                <span>Date: {event.date}</span>
-                <span>Location: {event.location}</span>
-                <span>Contact: {event.contact}</span>
+                <div class="card-action">
+                    <span>{event.date}</span>
+                    <span>{event.location}</span>
+                    <span>{event.contact}</span>
+                </div>
             </div>
         })
         return (<div>

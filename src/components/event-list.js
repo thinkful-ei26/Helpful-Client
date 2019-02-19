@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import EventCard from "./eventcard";
 import { API_BASE_URL } from "../config";
-import React, { useEffect, useState } from 'react';
 import '../stylesheets/event-list.css';
 import { callbackify } from 'util';
 
@@ -37,14 +36,6 @@ export default function EventList(props) {
     setEvents(eventsRequest.data);
   };
 
-  // gets all the events out of each individual rsvp.eventId and into array
-  let rsvpEventList = [];
-  const generateRsvpEventList = rsvpData => {
-    rsvpData.forEach(rsvp => {
-      // console.log('single event: ', rsvp.eventId)
-      rsvpEventList.push(rsvp.eventId);
-    });
-  };
 
   // gets all the events out of each individual rsvp.eventId and into array
   let rsvpEventList = [];
