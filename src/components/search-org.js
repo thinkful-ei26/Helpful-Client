@@ -29,7 +29,7 @@ export default function SearchOrg(props) {
 
     if (props.orgs) {
         const listNames = props.orgs.map(org => {
-            return <div onClick={() => props.history.push('/org')} class="card blue-grey darken-1">
+            return <div onClick={() => props.history.push('/organization')} class="card blue-grey darken-1">
                 <div class="card-content white-text">
                     <span class="card-title">{org.name}</span>
                     <p>{org.description}</p>
