@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import EventCard from './eventcard';
 import { API_BASE_URL } from '../config';
-
-
 import '../stylesheets/event-list.css';
 import { callbackify } from 'util';
 
@@ -52,6 +50,7 @@ export default function EventList(props) {
     fetchData();
   }, []);
 
+  // TODO limit results on page
   // generate EventCard components with rsvpEvent data
   let rsvpEventCardList;
   if (rsvpEvents) {
