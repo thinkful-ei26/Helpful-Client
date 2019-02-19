@@ -8,16 +8,23 @@ export default function OrganizationCard(props) {
 
   return (
     <div className="row">
-      <div className="card">
-        <div className="card-image">
-          <img src="http://lorempixel.com/500/500" />
-          <span className="card-title">{props.org.name}</span>
-        </div>
-        <div className="card-content">
-          <p>{props.org.description}</p>
-        </div>
-        <div className="card-action">
-          <a href="#">This is a link</a>
+      <div className="s12">
+        <div className="card">
+          <div className="card-image">
+            <img src="http://lorempixel.com/400/400" />
+            <span className=" card-title orgCard">Group logo, etc.</span>
+          </div>
+          <div className="card-content">
+            <p className="flow-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            </p>
+            <h2>{props.org.name}</h2>
+          </div>
+          <div className="card-action">
+            <p className="flow-text">
+              <a href="#"> About: {props.org.description}</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
