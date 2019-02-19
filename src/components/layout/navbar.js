@@ -6,8 +6,6 @@ import CreateOrgForm from "../../components/creat-org-form";
 import M from "materialize-css";
 
 const NavBar = props => {
-  const [showView, setView] = useState(<EventList />);
-
   const logoutUser = async () => {
     await localStorage.removeItem("jwtToken");
     props.history.push("/");
@@ -15,9 +13,7 @@ const NavBar = props => {
 
   useEffect(() => {
     let elems = document.querySelectorAll(".sidenav");
-    let instances = M.Sidenav.init(elems, {
-      draggable: true
-    });
+    let instances = M.Sidenav.init(elems, {});
     return instances;
   }, []);
   return (
@@ -46,7 +42,7 @@ const NavBar = props => {
               <li>
                 <a
                   href="#events"
-                  className="waves-effect"
+                  className="text-black"
                   onClick={() => props.history.push("/event")}
                 >
                   My Events
@@ -88,6 +84,89 @@ const NavBar = props => {
           </div>
         </div>
       </nav>
+      <ul id="slide-out" className="sidenav">
+        <li>
+          <div className="user-view">
+            <div className="background">
+              <img src="http://lorempixel.com/300/300" alt="user background" />
+            </div>
+            <a href="#user">
+              <img
+                className="circle"
+                src="http://lorempixel.com/150/150"
+                alt="user profile"
+              />
+            </a>
+            <a href="#name">
+              <span className="white-text name">Johnny User</span>
+            </a>
+            <a href="#email">
+              <span className="white-text email">johnnyquest@test.com</span>
+            </a>
+          </div>
+        </li>
+
+        <li>
+          <a
+            href="#events"
+            className="waves-effect"
+            onClick={() => props.history.push("/event")}
+          >
+            <i className="material-icons">assignment</i>My Events
+          </a>
+        </li>
+        <li>
+          <div className="divider" />
+        </li>
+        <li>
+          <a
+            className="waves-effect"
+            onClick={() => props.history.push("/createorgform")}
+          >
+            <i className="material-icons black-text">create</i>Create
+            Organization
+          </a>
+        </li>
+        <li>
+          <div className="divider" />
+        </li>
+        <li>
+          <a
+            className="waves-effect"
+            onClick={() => props.history.push("/followedorgs")}
+          >
+            <i className="material-icons">subscriptions</i>Followed
+            Organizations
+          </a>
+        </li>
+        <li>
+          <div className="divider" />
+        </li>
+        <li>
+          <a
+            className="waves-effect"
+            onClick={() => props.history.push("/search")}
+          >
+            <i className="material-icons">search</i>Search Tool
+          </a>
+        </li>
+        <li>
+          <div className="divider" />
+        </li>
+        <li>
+          <a className="waves-effect" onClick={logoutUser}>
+            <i className="material-icons">power_settings_new</i>Logout
+          </a>
+        </li>
+      </ul>
+      <a
+        id="hamburger"
+        href="#"
+        data-target="slide-out"
+        className="sidenav-trigger hide-on-large-only text-teal darken-4"
+      >
+        <i className="material-icons hamburger">menu</i>
+      </a>
     </div>
   );
 };

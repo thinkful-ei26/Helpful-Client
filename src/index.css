@@ -24,3 +24,22 @@ code {
 .brand-logo {
   left: 50px;
 }
+
+.sidenav-trigger {
+  position: absolute;
+}
+
+nav ul a {
+  color: teal !important;
+}
+
+.hamburger {
+  color: teal !important;
+  height: 50px;
+}
+
+#hamburger {
+  font-size: 2.5rem !important;
+  margin-left: 12px;
+  margin-top: 2px;
+}
