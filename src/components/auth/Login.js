@@ -19,7 +19,7 @@ const Login = () => {
       password
     };
     axios
-      .post("/auth/login", data)
+      .post(`${API_BASE_URL}/auth/login`, data)
       .then(res => {
         // Set token to localStorage
         const token = res.data.authToken;

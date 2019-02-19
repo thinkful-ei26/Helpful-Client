@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Route } from "react-router-dom";
 import { registerUser } from "../../actions/authActions";
 import axios from "axios";
-
+import { API_BASE_URL } from "../../config";
 const Register = () => {
   // onChange = e => {
   //   this.setState({ [e.target.id]: e.target.value })
@@ -27,7 +27,9 @@ const Register = () => {
       password,
       passwordConfirmation
     };
-    axios.post("/users/register", usersData).then(() => history.push("/login")); // re-direct to login on successful register
+    axios
+      .post(`${API_BASE_URL}/users/register`, usersData)
+      .then(() => history.push("/login")); // re-direct to login on successful register
   };
 
   return (

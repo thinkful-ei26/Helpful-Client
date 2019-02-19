@@ -57,21 +57,33 @@ export default function EventList(props) {
   }
 
   return (
-    <div classname="">
-      <h3 className="eventsHeader">My Upcoming Events</h3>
-      <div className="row">
-        <div className="eventsContainer col s6">{rsvpEventCardList}</div>
-      </div>
-      {/* // PRODUCTION TODO ---> populate event cards with specific nearby events, and pass data down
-  // to event cards more dynamically than just event[0] */}
-
-      <h3 className="eventsHeader">Events Nearby</h3>
-      <div className="row">
-        {/* currently rendering all events, not nearby events */}
-        <EventCard className="col s4" event={events[0]} />
-        <EventCard className="col s4" event={events[1]} />
-        <EventCard className="col s4" event={events[2]} />
+    <div className="row">
+      <div className="col s12">
+        <div className="section">
+          <div className="col s12">
+            <span className="title">My Upcoming Events</span>
+          </div>
+          <div className="eventsContainer col s12 m6 l4">
+            {rsvpEventCardList}
+          </div>
+        </div>
+        <div className="section">
+          <div className="col s12">
+            <span className="nearby">Events Nearby</span>
+          </div>
+          <div className="col s12 m6 l4">
+            <EventCard className="col s12 m6 l4" event={events[0]} />
+          </div>
+          <div className="col s12 m6 l4">
+            <EventCard className="col s12 m6 l4" event={events[1]} />
+          </div>
+          <div className="col s12 m6 l4">
+            <EventCard className="col s12 m6 l4" event={events[2]} />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+// {/* // PRODUCTION TODO ---> populate event cards with specific nearby events, and pass data down
+// // to event cards more dynamically than just event[0] */}
