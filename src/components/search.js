@@ -51,7 +51,7 @@ export default function Search(props) {
 
   return (<div>
 
-    <div className='filter-form'>
+    {/* <div className='filter-form'>
       <h2> Filter by:</h2>
       <div>
         <span className='big-font'> Distance(miles): </span>
@@ -63,12 +63,32 @@ export default function Search(props) {
           <option value='150'>150</option>
         </select>
       </div>
-    </div>
+    </div> */}
 
     <div className="search-container">
-      <button className="search-org-button" onClick={() => setComponent(<SearchOrg history={props.history} orgs={orgs} />)}> Search Organizations</button>
-      <button className="search-event-button" onClick={() => setComponent(<SearchEvent history={props.history} events={events} />)}> Search Events</button>
+      <button
+        onClick={() => setComponent(<SearchOrg history={props.history} orgs={orgs} />)}
+        style={{
+          width: "175px",
+          borderRadius: "3px",
+          letterSpacing: "1.5px"
+        }}
+        className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
+      >
+        Organizations
+        </button>
+      <button
+        onClick={() => setComponent(<SearchEvent history={props.history} events={events} />)}
+        style={{
+          width: "175px",
+          borderRadius: "3px",
+          letterSpacing: "1.5px"
+        }}
+        className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
+      >
+        Events
+              </button>
     </div>
     {component}
-  </div>)
+  </div >)
 }

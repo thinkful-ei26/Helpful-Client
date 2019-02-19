@@ -29,15 +29,16 @@ export default function SearchOrg(props) {
 
     if (props.orgs) {
         const listNames = props.orgs.map(org => {
-            return <div onClick={() => props.history.push('/org')} className='filtered-event'>
-                <div className='filtered-event-title'>
-                    <h2>{org.name}</h2>
-                    <img alt='eventimg' src={org.imgUrl} />
+            return <div onClick={() => props.history.push('/org')} class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">{org.name}</span>
+                    <p>{org.description}</p>
                 </div>
-                <p>{org.description}</p>
-                <span>Date: {org.date}</span>
-                <span>Location: {org.location}</span>
-                <span>Contact: {org.contact}</span>
+                <div class="card-action">
+                    <span>{org.date}</span>
+                    <span>{org.location}</span>
+                    <span>{org.contact}</span>
+                </div>
             </div>
         })
 
