@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 import EventList from "../event-list";
 import FollowedOrgs from "../followed-organizations";
 import CreateOrgForm from "../../components/creat-org-form";
 import M from "materialize-css";
-import { API_BASE_URL } from "../../config";
 
 const NavBar = props => {
   const [showView, setView] = useState(<EventList />);
@@ -47,7 +47,7 @@ const NavBar = props => {
                 <a
                   href="#events"
                   className="waves-effect"
-                  onClick={() => setView(<EventList />)}
+                  onClick={() => props.history.push("/event")}
                 >
                   My Events
                 </a>
@@ -56,7 +56,7 @@ const NavBar = props => {
               <li>
                 <a
                   className="waves-effect"
-                  onClick={() => setView(<CreateOrgForm />)}
+                  onClick={() => props.history.push("/createorgform")}
                 >
                   Create Organization
                 </a>
@@ -65,7 +65,7 @@ const NavBar = props => {
               <li>
                 <a
                   className="waves-effect"
-                  onClick={() => setView(<FollowedOrgs />)}
+                  onClick={() => props.history.push("/followedorgs")}
                 >
                   Followed
                 </a>
@@ -92,4 +92,4 @@ const NavBar = props => {
   );
 };
 
-export default NavBar;
+export default withRouter(NavBar);
