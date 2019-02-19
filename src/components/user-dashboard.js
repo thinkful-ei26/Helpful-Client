@@ -13,24 +13,17 @@ export default function UserDashboard(props) {
     props.history.push("/");
   };
 
-  document.addEventListener("DOMContentLoaded", function() {
+  useEffect(() => {
     let elems = document.querySelectorAll(".sidenav");
     let instances = M.Sidenav.init(elems, {
       draggable: true
     });
-  });
-  useEffect(() => {
-    document.addEventListener("DOMContentLoaded", function() {
-      let elems = document.querySelectorAll(".sidenav");
-      let instances = M.Sidenav.init(elems, {
-        draggable: true
-      });
-    });
+    return instances;
   }, []);
 
   // setView((<EventList />, 'url-string')=>(component,url){ ... } );
   return (
-    <div className="dashboard center container">
+    <div className="dashboard">
       <ul id="slide-out" className="sidenav sidenav-fixed">
         <li>
           <div className="user-view">
@@ -55,7 +48,7 @@ export default function UserDashboard(props) {
 
         <li>
           <a
-            href="events"
+            href="#events"
             className="waves-effect"
             onClick={() => setView(<EventList />)}
           >
@@ -110,7 +103,7 @@ export default function UserDashboard(props) {
         <i className="material-icons">menu</i>
         {/* you really shouldnt click me */}
       </a>
-      <div className="container center">{showView}</div>
+      <div className="">{showView}</div>
     </div>
   );
 }

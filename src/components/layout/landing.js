@@ -1,13 +1,11 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 const LandingPage = () => {
+  const queryAuthRedirect = localStorage.getItem("jwtToken");
   return (
     <Route
       render={({ history }) => (
-        <div
-          style={{ height: "75vh" }}
-          className="container valign-wrapper no-side-nav"
-        >
+        <div style={{ height: "75vh" }} className="container valign-wrapper ">
           <div className="row" style={{ marginTop: "4rem" }}>
             <div className="col s12 center-align">
               <p className="flow-text">

@@ -7,7 +7,7 @@ const NavBar = () => {
         <div className="nav-wrapper white">
           <a href="/" className="col s5 brand-logo center black-text">
             <img id="logo" src="/icon.png" alt="helpful" />
-            Helpfull
+            Helpful
           </a>
         </div>
       </nav>
