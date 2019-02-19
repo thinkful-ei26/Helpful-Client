@@ -38,12 +38,13 @@ export default function FollowedOrgs(props) {
 
   return (
     <React.Fragment>
-      <h3>Organizations I Follow</h3>
-
-      <div>
-        <OrganizationCard org={orgs[0]} />
-        <OrganizationCard org={orgs[1]} />
-        <OrganizationCard org={orgs[2]} />
+      <div className="container">
+        <h3>Organizations I Follow</h3>
+        <div className="row">
+          <OrganizationCard org={orgs[0]} />
+          <OrganizationCard org={orgs[1]} />
+          <OrganizationCard org={orgs[2]} />
+        </div>
       </div>
     </React.Fragment>
   );
