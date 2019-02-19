@@ -28,13 +28,3 @@ export default function OrganizationCard(props) {
     </div>
   );
 }
-
-
-
-
-    // font-family: 'Indie Flower', cursive;
-
-    // font-family: 'Josefin Sans', sans-serif;
-
-    // font-family: 'Karla', sans-serif;
-
