@@ -33,6 +33,16 @@ const NavBar = props => {
 
               <ul id="nav-mobile" className="right hide-on-med-and-down text-black">
                 <li>
+                  <a
+                    href="#dashboard"
+                    className="waves-effect waves-teal"
+                    onClick={() => props.history.push("/dashboard")}
+                  >
+                    Dashboard
+                  </a>
+                </li>
+
+                <li>
                   <a href="#events" className="waves-effect waves-teal" onClick={() => props.history.push("/event")}>
                     My Events
                   </a>
@@ -92,6 +102,14 @@ const NavBar = props => {
           </div>
         </li>
 
+        <li>
+          <a href="#dashboard" className="waves-effect waves-teal" onClick={() => props.history.push("/dashboard")}>
+            <i className="material-icons">dashboard</i>Dashboard
+          </a>
+        </li>
+        <li>
+          <div className="divider" />
+        </li>
         <li>
           <a href="#events" className="waves-effect" onClick={() => props.history.push("/event")}>
             <i className="material-icons">assignment</i>My Events

@@ -6,52 +6,45 @@ import SearchEvent from "./search-event";
 import "../stylesheets/search.css";
 
 export default function Search(props) {
-
-  const [component, setComponent] = useState('');
+  const [component, setComponent] = useState("");
   const [events, setEvents] = useState(null);
   const [orgs, setOrgs] = useState(null);
 
   /* Call these on click */
   const getEvent = async () => {
-
     const getEvents = await axios({
-      method: 'get',
+      method: "get",
       url: `${API_BASE_URL}/event/all`,
-      data: {
-      },
+      data: {},
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+        "Content-Type": "application/json",
+        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
-
     });
-    setEvents(getEvents.data)
-  }
+    setEvents(getEvents.data);
+  };
 
   const getOrg = async () => {
-
     const getOrgs = await axios({
-      method: 'get',
+      method: "get",
       url: `${API_BASE_URL}/org/all`,
-      data: {
-      },
+      data: {},
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+        "Content-Type": "application/json",
+        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     });
-    setOrgs(getOrgs.data)
-  }
+    setOrgs(getOrgs.data);
+  };
 
   useEffect(() => {
     getEvent();
     getOrg();
   }, []);
 
-
-  return (<div>
-
-    {/* <div className='filter-form'>
+  return (
+    <div className="container">
+      {/* <div className='filter-form'>
       <h2> Filter by:</h2>
       <div>
         <span className='big-font'> Distance(miles): </span>
@@ -65,30 +58,31 @@ export default function Search(props) {
       </div>
     </div> */}
 
-    <div className="search-container">
-      <button
-        onClick={() => setComponent(<SearchOrg history={props.history} orgs={orgs} />)}
-        style={{
-          width: "175px",
-          borderRadius: "3px",
-          letterSpacing: "1.5px"
-        }}
-        className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
-      >
-        Organizations
+      <div className="search-container center">
+        <button
+          onClick={() => setComponent(<SearchOrg history={props.history} orgs={orgs} />)}
+          style={{
+            width: "175px",
+            borderRadius: "3px",
+            letterSpacing: "1.5px"
+          }}
+          className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
+        >
+          Organizations
         </button>
-      <button
-        onClick={() => setComponent(<SearchEvent history={props.history} events={events} />)}
-        style={{
-          width: "175px",
-          borderRadius: "3px",
-          letterSpacing: "1.5px"
-        }}
-        className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
-      >
-        Events
-              </button>
+        <button
+          onClick={() => setComponent(<SearchEvent history={props.history} events={events} />)}
+          style={{
+            width: "175px",
+            borderRadius: "3px",
+            letterSpacing: "1.5px"
+          }}
+          className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
+        >
+          Events
+        </button>
+      </div>
+      {component}
     </div>
-    {component}
-  </div >)
+  );
 }
