@@ -28,7 +28,7 @@ export default function UserCanRateOrg() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, {});
   });
-
+ 
   if (success) {
     return <p className="orgCreateSuccess">Thank you for rating us!</p>;
   }
