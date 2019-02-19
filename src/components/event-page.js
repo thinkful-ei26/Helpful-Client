@@ -12,9 +12,9 @@ export function EventPage(props) {
     const [rsvp, setRsvp] = useState(null);
 
     // placeholder id ************* These get changed out with props ************************
-    let eventId = '5c636a0ecdf4a255043e528f';
+    let eventId = '5c672e599c1d0960cd0a79d7';
     let orgId = '5c636994cdf4a255043e528e';
-    let userId = '5c63687ccdf4a255043e528d';
+    let userId = '5c6724162471b2041cfb6909';
 
     // fetch state
     const fetchData = async () => {
@@ -52,8 +52,8 @@ export function EventPage(props) {
         );
         setRsvp(rsvpResult.data)
     }
-
     const createRsvp = async () => {
+        console.log(eventId);
         await axios({
             method: 'post',
             url: `${API_BASE_URL}/rsvp`,
