@@ -41,7 +41,8 @@
 
 .filter-form{
     display:flex;
-    flex-direction: column;
+    margin-left: 45%;
+    background-color: gray;
 }
 
 .big-font{
