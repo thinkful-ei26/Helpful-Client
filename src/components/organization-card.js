@@ -1,9 +1,9 @@
-import React from 'react';
-import '../stylesheets/org-card.css';
+import React from "react";
+import "../stylesheets/org-card.css";
 
 export default function OrganizationCard(props) {
   if (!props.org) {
-    return 'Loading...';
+    return "Loading...";
   }
 
   return (
@@ -21,7 +21,9 @@ export default function OrganizationCard(props) {
             <h2>{props.org.name}</h2>
           </div>
           <div className="card-action">
-            <p className="flow-text"><a href="#"> About: {props.org.description}</a></p>
+            <p className="flow-text">
+              <a href="#"> About: {props.org.description}</a>
+            </p>
           </div>
         </div>
       </div>

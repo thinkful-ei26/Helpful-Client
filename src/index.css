@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: block;
 }
 
 code {
@@ -17,4 +18,9 @@ code {
   height: 3.5rem;
   width: 3.5rem;
   overflow: hidden;
+  position: absolute;
+}
+
+.brand-logo {
+  left: 50px;
 }

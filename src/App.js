@@ -10,12 +10,16 @@ import Search from "./components/search";
 import OrgPublicPage from "./components/org-public-page";
 import EventPage from "./components/event-page";
 import Footer from "./components/layout/footer";
+import CreateOrgForm from "./components/creat-org-form";
+import FollowedOrgs from "./components/followed-organizations";
 
 const App = () => {
   return (
     <Router>
       <div className="App">
         <NavBar />
+        <Route exact path="/createorgform" component={CreateOrgForm} />
+        <Route exact path="/followedorgs" component={FollowedOrgs} />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
