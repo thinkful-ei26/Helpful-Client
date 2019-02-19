@@ -28,18 +28,19 @@ export default function SearchOrg(props) {
     // }, []);
 
     if (props.orgs) {
-        const listNames = props.orgs.map((org, index) => {
-            return <div onClick={() => props.history.push('/organization')} className='filtered-event'>
+        const listNames = props.orgs.map(org => {
+            return <div onClick={() => props.history.push('/org')} className='filtered-event'>
                 <div className='filtered-event-title'>
                     <h2>{org.name}</h2>
                     <img alt='eventimg' src={org.imgUrl} />
                 </div>
                 <p>{org.description}</p>
                 <span>Date: {org.date}</span>
-                <span>Location:{org.location}</span>
-                <span>Contact: {org.contact} for more information.</span>
+                <span>Location: {org.location}</span>
+                <span>Contact: {org.contact}</span>
             </div>
         })
+
         return (<div>
             <InitialMap
                 isMarkerShown
