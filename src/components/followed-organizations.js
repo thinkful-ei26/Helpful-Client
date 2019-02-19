@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { API_BASE_URL } from "../config";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
-import OrganizationCard from "./organization-card";
-import "../stylesheets/followed-orgs.css";
+import OrganizationCard from './organization-card';
+import '../stylesheets/followed-orgs.css';
 
 export default function FollowedOrgs(props) {
   // PRODUCTION TODO --> currently getting all orgs, need to refactor to
@@ -14,8 +14,8 @@ export default function FollowedOrgs(props) {
   const fetchData = async () => {
     const request = await axios(`${API_BASE_URL}/org/all`, {
       headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
       }
     });
     setOrgs(request.data);
@@ -37,16 +37,13 @@ export default function FollowedOrgs(props) {
   }
 
   return (
-    <div>
-      <section className="followedOrgsList">
-        <h3>Orgnizations I Follow</h3>
-
-        <div>
-          <OrganizationCard org={orgs[0]} />
-          <OrganizationCard org={orgs[1]} />
-          <OrganizationCard org={orgs[2]} />
-        </div>
-      </section>
-    </div>
+    <React.Fragment>
+      <h3>Organizations I Follow</h3>
+      <div>
+        <OrganizationCard org={orgs[0]} />
+        <OrganizationCard org={orgs[1]} />
+        <OrganizationCard org={orgs[2]} />
+      </div>
+    </React.Fragment>
   );
 }

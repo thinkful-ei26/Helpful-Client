@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import "../../stylesheets/landing-page.css";
+// import "../../stylesheets/landing-page.css";
 const LandingPage = () => {
   return (
     <Route
