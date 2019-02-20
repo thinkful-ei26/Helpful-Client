@@ -28,7 +28,7 @@ export default function FollowedOrgs(props) {
   let followedOrgCards;
   if (orgs) {
     followedOrgCards = orgs.map(org => {
-      return <OrganizationCard org={org}/>
+      return <OrganizationCard history={props.history} org={org}/>
     })
   }
   
