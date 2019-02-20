@@ -25,6 +25,14 @@ export default function FollowedOrgs(props) {
     fetchData();
   }, []);
 
+  let followedOrgCards;
+  if (orgs) {
+    followedOrgCards = orgs.map(org => {
+      return <OrganizationCard history={props.history} org={org}/>
+    })
+  }
+  
+
   if (orgs === null) {
     return (
       <section className="noFollowedOrgs">
@@ -42,9 +50,10 @@ export default function FollowedOrgs(props) {
         <span className="title">Organizations I Follow</span>
       </div>
       <div className="row">
-        <OrganizationCard org={orgs[0]} />
+        {followedOrgCards}
+        {/* <OrganizationCard org={orgs[0]} />
         <OrganizationCard org={orgs[1]} />
-        <OrganizationCard org={orgs[2]} />
+        <OrganizationCard org={orgs[2]} /> */}
       </div>
     </React.Fragment>
   );

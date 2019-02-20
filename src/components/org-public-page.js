@@ -1,13 +1,94 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import { API_BASE_URL } from '../config';
 import OrgPublicPageEventList from "./org-public-page-event-list";
 import UserCanRateOrg from "./user-can-rate-org";
 import "../stylesheets/org-public-page.css";
 import M from "materialize-css";
 
-export default function OrgPublicPage() {
+export default function OrgPublicPage(props) {
+
+  let followButton;
+  const orgId =  props.location.state.org.id;
   const [view] = useState(<OrgPublicPageEventList />);
+  const [following, setFollowing] = useState(false);
+  // holds follow data obj from server
+  const [followData, setFollowdata] = useState(null);
+  
+  const generateFollowButton = () => {
+    if (!following) {
+      followButton = 
+      <button className="follow-button"
+        onClick={() => followOrg()}>
+        Follow
+      </button>
+    } else {
+      followButton = 
+      <button 
+        className="unfollow-button"
+        onClick={() => unFollowOrg()}>
+        Unfollow
+      </button>
+    }
+  }
+
+  // check to see if user is following this org or not, and call generateFollowButton()
+  const fetchFollow = async() => {
+    const request = await axios(`${API_BASE_URL}/follow/following/${orgId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
+      }
+    })
+    .then(res => {
+      if (res.data.following) {
+        setFollowing(true);
+        setFollowdata(res.data);
+      }
+      generateFollowButton();
+    })
+  }
+
+  // follow an organization
+  const followOrg = async() => {
+    await axios({
+      method: 'post',
+      url: `${API_BASE_URL}/follow`,
+      data: {orgId,},
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+      }
+    })
+    .then(res => {
+      if (res.status === 200) {
+        setFollowing(true);
+        setFollowdata(res.data);
+      }
+    }) 
+  }
+
+  const unFollowOrg = async() => {
+    await axios({
+      method: 'delete',
+      url: `${API_BASE_URL}/follow`,
+      data: {
+        followId: followData.id,
+      },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+      }
+    })
+    .then(res => {
+      if (res.status === 200) {
+        setFollowing(false);
+      }
+    })
+  }
 
   useEffect(() => {
+    fetchFollow();
     let elems = document.querySelectorAll(".fixed-action-btn");
     let instances = M.FloatingActionButton.init(elems, {
       direction: "left",
@@ -25,6 +106,7 @@ export default function OrgPublicPage() {
   //     hoverEnabled: true
   //   });
   // });
+
   return (
     <div className="org-public-page-main center container valign-wrapper">
       <div className="fixed-action-btn">
@@ -59,6 +141,9 @@ export default function OrgPublicPage() {
         <div className="org-public-text-area">
           <h1>Organization Name</h1>
           <img alt="Organization Logo" className="responsive-img" src="http://lorempixel.com/200/200/" />
+
+          {followButton}
+
           <UserCanRateOrg />
           <p className="flow-text">
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
