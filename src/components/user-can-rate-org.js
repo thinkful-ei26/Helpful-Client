@@ -53,7 +53,7 @@ export default function UserCanRateOrg() {
                   </select>
                 </div>
               </div>
-              <a class="waves-effect waves-light btn">Submit</a>
+              <a className="waves-effect waves-light btn">Submit</a>
             </fieldset>
           </form>
         </div>
