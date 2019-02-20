@@ -6,20 +6,26 @@ import UserCanRateOrg from "./user-can-rate-org";
 import "../stylesheets/org-public-page.css";
 import M from "materialize-css";
 
-export default function OrgPublicPage() {
+export default function OrgPublicPage(props) {
   const [view] = useState(<OrgPublicPageEventList />);
+  const [following, setFollowing] = useState(false);
 
-  // need to pass the orgId down to this component 
+  // org data object lives in props.location.state.org
+  // console.log('org data: ', props.location.state.org)
+
+  // follow an organization
+  const orgId =  props.location.state.org.id;
   const followOrg = async() => {
     await axios({
       method: 'post',
       url: `${API_BASE_URL}/follow`,
-      // data: orgId,
+      data: {orgId,},
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
       }
     })
+    setFollowing(true);
   }
 
   useEffect(() => {
@@ -77,7 +83,7 @@ export default function OrgPublicPage() {
           <img alt="Organization Logo" className="responsive-img" src="http://lorempixel.com/200/200/" />
 
           <button className="follow-button"
-            // onclick={() => followOrg()}
+            onClick={() => followOrg()}
           >
             Follow
           </button>
