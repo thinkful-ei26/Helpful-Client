@@ -3,14 +3,30 @@ import axios from "axios";
 import EventCard from "./eventcard";
 import { API_BASE_URL } from "../config";
 import '../stylesheets/event-list.css';
-import { callbackify } from 'util';
 
-export default function EventList(props) {
+export default function EventList() {
 
   const [events, setEvents] = useState(null);
   const [rsvpEvents, setRsvpEvents] = useState(null);
+  const [location, setLocation] = useState(null);
 
-  const fetchData = async () => {
+  // get user location
+  const fetchUserLocation = async () => {
+    if(!location) {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            let results = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            setLocation(results)
+          });
+      }
+    }
+  }
+  
+  // get all rsvp'd events
+  const fetchRsvpData = async () => {
     const rsvpEventsRequest = await axios(
       `${API_BASE_URL}/rsvp/user`,
       {
@@ -21,47 +37,71 @@ export default function EventList(props) {
       }
     );
     setRsvpEvents(rsvpEventsRequest.data);
-    // added .populate(eventId) to server endpoint so now rsvpEventsRequest.data has events populated.
+  }
 
-    // get all events
-    const eventsRequest = await axios(
-      `${API_BASE_URL}/event/all`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+  // get all events *filter if user allows location*
+  const fetchEventData = async () => {
+    if(!location) {
+      const allEventsRequest = await axios(
+        `${API_BASE_URL}/event/all`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+          }
         }
+      )
+      if(allEventsRequest.data) {
+        setEvents(allEventsRequest.data)
       }
-    );
-    setEvents(eventsRequest.data);
-  };
-
+    } 
+    else {
+      const localEventsRequest = await axios(
+        `${API_BASE_URL}/event/location/10`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+          },
+          data: location
+        }
+      )
+      if(localEventsRequest.data) {
+        setEvents(localEventsRequest.data)
+      }
+    }
+  }
+      
+  useEffect(() => {
+    fetchUserLocation()
+    fetchRsvpData()
+    fetchEventData()
+  }, [location]);
 
   // gets all the events out of each individual rsvp.eventId and into array
   let rsvpEventList = [];
   const generateRsvpEventList = (rsvpData) => {
     rsvpData.forEach(rsvp => {
-
-      console.log('single event: ', rsvp)
       rsvpEventList.push(rsvp.eventId);
     })
   }
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  // generate EventCard components with rsvpEvent data
-  let rsvpEventCardList;
+  // generate EventCard components with event data
+  let rsvpEventCardList, localEventCardList;
+  let eventTitle = 'Nearby Events'
   if (rsvpEvents) {
     generateRsvpEventList(rsvpEvents);
     rsvpEventCardList = rsvpEventList.map(event => {
       return <EventCard event={event} />;
     });
   }
-
-  if (events === null) {
-    return "Loading...";
+  if(events) {
+    localEventCardList = events.map(event => {
+      return <EventCard event={event} />;
+    });
+  }
+  if(!location) {
+    eventTitle = 'All Events'
   }
 
   return (
@@ -77,21 +117,15 @@ export default function EventList(props) {
         </div>
         <div className="section">
           <div className="col s12">
-            <span className="nearby">Events Nearby</span>
+            <span className="nearby">{eventTitle}</span>
           </div>
-          <div className="col s12 m6 l4">
-            <EventCard className="col s12 m6 l4" event={events[0]} />
-          </div>
-          <div className="col s12 m6 l4">
-            <EventCard className="col s12 m6 l4" event={events[1]} />
-          </div>
-          <div className="col s12 m6 l4">
-            <EventCard className="col s12 m6 l4" event={events[2]} />
+          <div className="eventsContainer col s12 m6 l4">
+            {localEventCardList}
           </div>
         </div>
       </div>
     </div>
   );
 }
-// {/* // PRODUCTION TODO ---> populate event cards with specific nearby events, and pass data down
-// // to event cards more dynamically than just event[0] */}
+
+// TODO add button to toggle between nearby and all events or searching methods.
