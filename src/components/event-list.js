@@ -16,8 +16,8 @@ export default function EventList() {
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function(position) {
             let results = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
+                lat: Number(position.coords.latitude.toFixed(7)),
+                lng: Number(position.coords.longitude.toFixed(7))
             };
             setLocation(results)
           });
@@ -42,7 +42,7 @@ export default function EventList() {
   // get all events *filter if user allows location*
   const fetchEventData = async () => {
     if(!location) {
-      const allEventsRequest = await axios(
+      axios(
         `${API_BASE_URL}/event/all`,
         {
           headers: {
@@ -50,25 +50,26 @@ export default function EventList() {
             'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
           }
         }
-      )
-      if(allEventsRequest.data) {
-        setEvents(allEventsRequest.data)
-      }
+      ).then( res => {
+        if(res.data) {
+          setEvents(res.data)
+        }
+      })
     } 
-    else {
-      const localEventsRequest = await axios(
-        `${API_BASE_URL}/event/location/10`,
+    else if(location) {
+      axios.get(
+        `${API_BASE_URL}/event/location/2000/${location.lat}/${location.lng}`, // set at 2000 for testing
         {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
-          },
-          data: location
+          }
         }
-      )
-      if(localEventsRequest.data) {
-        setEvents(localEventsRequest.data)
-      }
+      ).then( res => {
+        if(res.data) {
+          setEvents(res.data)
+        }
+      })
     }
   }
       
