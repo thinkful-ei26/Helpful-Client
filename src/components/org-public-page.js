@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import { API_BASE_URL } from '../config';
 import OrgPublicPageEventList from "./org-public-page-event-list";
 import UserCanRateOrg from "./user-can-rate-org";
 import "../stylesheets/org-public-page.css";
@@ -6,6 +8,19 @@ import M from "materialize-css";
 
 export default function OrgPublicPage() {
   const [view] = useState(<OrgPublicPageEventList />);
+
+  // need to pass the orgId down to this component 
+  const followOrg = async() => {
+    await axios({
+      method: 'post',
+      url: `${API_BASE_URL}/follow`,
+      // data: orgId,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+      }
+    })
+  }
 
   useEffect(() => {
     let elems = document.querySelectorAll(".fixed-action-btn");
@@ -16,6 +31,7 @@ export default function OrgPublicPage() {
     });
     return instances;
   }, []);
+
 
   // document.addEventListener('DOMContentLoaded', function() {
   //   let elems = document.querySelectorAll('.fixed-action-btn');
@@ -59,6 +75,13 @@ export default function OrgPublicPage() {
         <div className="org-public-text-area">
           <h1>Organization Name</h1>
           <img alt="Organization Logo" className="responsive-img" src="http://lorempixel.com/200/200/" />
+
+          <button className="follow-button"
+            // onclick={() => followOrg()}
+          >
+            Follow
+          </button>
+
           <UserCanRateOrg />
           <p className="flow-text">
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
