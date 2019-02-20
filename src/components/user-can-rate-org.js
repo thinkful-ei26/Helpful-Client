@@ -28,7 +28,7 @@ export default function UserCanRateOrg() {
     var elems = document.querySelectorAll("select");
     var instances = M.FormSelect.init(elems, {});
   });
-
+ 
   if (success) {
     return <p className="orgCreateSuccess">Thank you for rating us!</p>;
   }
@@ -53,7 +53,7 @@ export default function UserCanRateOrg() {
                   </select>
                 </div>
               </div>
-              <a class="waves-effect waves-light btn">Submit</a>
+              <a className="waves-effect waves-light btn">Submit</a>
             </fieldset>
           </form>
         </div>
