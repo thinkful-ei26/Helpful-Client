@@ -6,6 +6,48 @@ import CreateOrgForm from "../../components/creat-org-form";
 import M from "materialize-css";
 
 const NavBar = props => {
+  let token = localStorage.getItem("jwtToken");
+  let navRight;
+  if(token) {
+    navRight = 
+      <ul id="nav-mobile" className="right hide-on-med-and-down text-black">
+        <li>
+          <a className="waves-effect waves-teal" onClick={() => props.history.push("/dashboard")}>
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a className="waves-effect waves-teal" onClick={() => props.history.push("/event")}>
+            My Events
+          </a>
+        </li>
+
+        <li>
+          <a className="waves-effect waves-teal" onClick={() => props.history.push("/createorgform")}>
+            Create Organization
+          </a>
+        </li>
+
+        <li>
+          <a className="waves-effect waves-teal" onClick={() => props.history.push("/followedorgs")}>
+            Followed
+          </a>
+        </li>
+        <li>
+          <a className="waves-effect waves-teal" onClick={() => props.history.push("/search")}>
+            Search Tool
+          </a>
+        </li>
+
+        <li>
+          <a className="waves-effect waves-teal" onClick={() => logoutUser()}>
+            Logout
+          </a>
+        </li>
+      </ul>
+  }
+
   const logoutUser = async () => {
     await localStorage.removeItem("jwtToken");
     props.history.push("/");
@@ -30,55 +72,10 @@ const NavBar = props => {
                   Helpful
                 </a>
               </div>
-
-              <ul id="nav-mobile" className="right hide-on-med-and-down text-black">
-                <li>
-                  <a
-                    href="#dashboard"
-                    className="waves-effect waves-teal"
-                    onClick={() => props.history.push("/dashboard")}
-                  >
-                    Dashboard
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#events" className="waves-effect waves-teal" onClick={() => props.history.push("/event")}>
-                    My Events
-                  </a>
-                </li>
-
-                <li>
-                  <a className="waves-effect waves-teal" onClick={() => props.history.push("/createorgform")}>
-                    Create Organization
-                  </a>
-                </li>
-
-                <li>
-                  <a className="waves-effect waves-teal" onClick={() => props.history.push("/followedorgs")}>
-                    Followed
-                  </a>
-                </li>
-                <li>
-                  <a className="waves-effect waves-teal" onClick={() => props.history.push("/search")}>
-                    Search Tool
-                  </a>
-                </li>
-
-                <li>
-                  <a className="waves-effect waves-teal" onClick={logoutUser}>
-                    Logout
-                  </a>
-                </li>
-              </ul>
+              {navRight}
             </div>
           </div>
-          <a
-            id="hamburger"
-            href="#"
-            data-target="slide-out"
-            className="sidenav-trigger hide-on-large-only text-teal darken-4"
-          >
+          <a id="hamburger" data-target="slide-out" className="sidenav-trigger hide-on-large-only text-teal darken-4">
             <i className="material-icons hamburger">menu</i>
           </a>
         </nav>
@@ -143,7 +140,7 @@ const NavBar = props => {
           <div className="divider" />
         </li>
         <li>
-          <a className="waves-effect" onClick={logoutUser}>
+          <a className="waves-effect" onClick={() => logoutUser()}>
             <i className="material-icons">power_settings_new</i>Logout
           </a>
         </li>
