@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 const LandingPage = () => {
-  const queryAuthRedirect = localStorage.getItem("jwtToken");
+    let token = localStorage.getItem("jwtToken");
   return (
     <Route
       render={({ history }) => (
