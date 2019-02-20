@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
-const LandingPage = () => {
-    let token = localStorage.getItem("jwtToken");
+const LandingPage = (props) => {
+  let token = localStorage.getItem("jwtToken");
+  if(token) {
+    props.history.push('/dashboard')
+  }
+
   return (
     <Route
       render={({ history }) => (
