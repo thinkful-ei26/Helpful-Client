@@ -7,7 +7,7 @@ import M from "materialize-css";
 
 const NavBar = props => {
   let token = localStorage.getItem("jwtToken");
-  let navRight;
+  let navRight, sideNav;
   if(token) {
     navRight = 
       <ul id="nav-mobile" className="right hide-on-med-and-down text-black">
@@ -46,6 +46,10 @@ const NavBar = props => {
           </a>
         </li>
       </ul>
+    sideNav = 
+    <a id="hamburger" data-target="slide-out" className="sidenav-trigger hide-on-large-only text-teal darken-4">
+      <i className="material-icons hamburger">menu</i>
+    </a>
   }
 
   const logoutUser = async () => {
@@ -75,9 +79,7 @@ const NavBar = props => {
               {navRight}
             </div>
           </div>
-          <a id="hamburger" data-target="slide-out" className="sidenav-trigger hide-on-large-only text-teal darken-4">
-            <i className="material-icons hamburger">menu</i>
-          </a>
+          {sideNav}
         </nav>
       </div>
 
