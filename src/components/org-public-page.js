@@ -7,27 +7,49 @@ import "../stylesheets/org-public-page.css";
 import M from "materialize-css";
 
 export default function OrgPublicPage(props) {
+
+  let followButton;
+  const orgId =  props.location.state.org.id;
   const [view] = useState(<OrgPublicPageEventList />);
   const [following, setFollowing] = useState(false);
   // holds follow data obj from server
   const [followData, setFollowdata] = useState(null);
-  // check to see if users following, conditionally render follow/unfollow button
-  // GET following?
+  
+  const generateFollowButton = () => {
+    if (!following) {
+      followButton = 
+      <button className="follow-button"
+        onClick={() => followOrg()}>
+        Follow
+      </button>
+    } else {
+      followButton = 
+      <button 
+        className="unfollow-button"
+        onClick={() => unFollowOrg()}>
+        Unfollow
+      </button>
+    }
+  }
 
-  // org data object lives in props.location.state.org
-  // console.log('org data: ', props.location.state.org)
-
-  // check to see if user is following this org or not
+  // check to see if user is following this org or not, and call generateFollowButton()
   const fetchFollow = async() => {
-    const request = await axios(`${API_BASE_URL}/follow/user`, {
+    const request = await axios(`${API_BASE_URL}/follow/following/${orgId}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     })
+    .then(res => {
+      if (res.data.following) {
+        setFollowing(true);
+        setFollowdata(res.data);
+      }
+      generateFollowButton();
+    })
   }
+
   // follow an organization
-  const orgId =  props.location.state.org.id;
   const followOrg = async() => {
     await axios({
       method: 'post',
@@ -39,7 +61,6 @@ export default function OrgPublicPage(props) {
       }
     })
     .then(res => {
-      // console.log(res)
       if (res.status === 200) {
         setFollowing(true);
         setFollowdata(res.data);
@@ -67,6 +88,7 @@ export default function OrgPublicPage(props) {
   }
 
   useEffect(() => {
+    fetchFollow();
     let elems = document.querySelectorAll(".fixed-action-btn");
     let instances = M.FloatingActionButton.init(elems, {
       direction: "left",
@@ -84,21 +106,6 @@ export default function OrgPublicPage(props) {
   //     hoverEnabled: true
   //   });
   // });
-  let followButton;
-  if (!following) {
-    followButton = 
-    <button className="follow-button"
-      onClick={() => followOrg()}>
-      Follow
-    </button>
-  } else {
-    followButton = 
-    <button 
-      className="follow-button"
-      onClick={() => unFollowOrg()}>
-      Unfollow
-    </button>
-  }
 
   return (
     <div className="org-public-page-main center container valign-wrapper">
