@@ -7,6 +7,7 @@ import "../stylesheets/org-public-page.css";
 import M from "materialize-css";
 import getOrgs from "../utils/fetchOrg";
 import getOrgEvents from "../utils/fetchEvent";
+import RenderJsonToCsv from "./scratch";
 
 export default function OrgPublicPage(props) {
   // const [view, setView] = useState(<OrgPublicPageEventList />);
@@ -155,6 +156,7 @@ export default function OrgPublicPage(props) {
           </div>
           <div className="container">
             <p>Hey{orgEvents}</p>
+            <RenderJsonToCsv />
           </div>
         </div>
       </div>
