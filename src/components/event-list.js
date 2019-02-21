@@ -7,6 +7,7 @@ import "../stylesheets/event-list.css";
 export default function EventList() {
   const [events, setEvents] = useState(null);
   const [rsvpEvents, setRsvpEvents] = useState(null);
+  const [meetups, setMeetups] = useState(null);
   const [location, setLocation] = useState(null);
 
   // get user location
@@ -65,12 +66,36 @@ export default function EventList() {
           }
         });
     }
+<<<<<<< HEAD
   };
 
   useEffect(() => {
     fetchUserLocation();
     fetchRsvpData();
     fetchEventData();
+=======
+  }
+
+  // get all user meetup
+  const fetchMeetupData = async () => {
+    const meetupRequest = await axios(
+      `${API_BASE_URL}/meetup/all`,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer '.concat(localStorage.getItem("jwtToken"))
+        }
+      }
+    );
+    setMeetups(meetupRequest.data);
+  }
+      
+  useEffect(() => {
+    fetchUserLocation()
+    fetchRsvpData()
+    fetchEventData()
+    fetchMeetupData()
+>>>>>>> create-meetup component and render meetups in dashboard
   }, [location]);
 
   // gets all the events out of each individual rsvp.eventId and into array
@@ -82,8 +107,13 @@ export default function EventList() {
   };
 
   // generate EventCard components with event data
+<<<<<<< HEAD
   let rsvpEventCardList, localEventCardList;
   let eventTitle = "Nearby Events";
+=======
+  let rsvpEventCardList, localEventCardList, meetupCardList;
+  let eventTitle = 'Nearby Events'
+>>>>>>> create-meetup component and render meetups in dashboard
   if (rsvpEvents) {
     generateRsvpEventList(rsvpEvents);
     rsvpEventCardList = rsvpEventList.map(event => {
@@ -95,8 +125,18 @@ export default function EventList() {
       return <EventCard event={event} />;
     });
   }
+<<<<<<< HEAD
   if (!location) {
     eventTitle = "All Events";
+=======
+  if(meetups) {
+    meetupCardList = meetups.map(event => {
+      return <EventCard event={event} />;
+    });
+  }
+  if(!location) {
+    eventTitle = 'All Events'
+>>>>>>> create-meetup component and render meetups in dashboard
   }
 
   return (
@@ -116,6 +156,14 @@ export default function EventList() {
           </div>
           <div className="eventsContainer col s12 m6 l4">
             {localEventCardList}
+          </div>
+        </div>
+        <div className="section">
+          <div className="col s12">
+            <span className="title">My Meetups</span>
+          </div>
+          <div className="eventsContainer col s12 m6 l4">
+            {meetupCardList}
           </div>
         </div>
       </div>

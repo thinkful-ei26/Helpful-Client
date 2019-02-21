@@ -30,6 +30,12 @@ const NavBar = props => {
         </li>
 
         <li>
+          <a className="waves-effect waves-teal" onClick={() => props.history.push("/create-meetup")}>
+            Create Meetup
+          </a>
+        </li>
+
+        <li>
           <a className="waves-effect waves-teal" onClick={() => props.history.push("/followedorgs")}>
             Followed
           </a>
@@ -120,6 +126,14 @@ const NavBar = props => {
         <li>
           <a className="waves-effect" onClick={() => props.history.push("/createorgform")}>
             <i className="material-icons black-text">create</i>Create Organization
+          </a>
+        </li>
+        <li>
+          <div className="divider" />
+        </li>
+        <li>
+          <a className="waves-effect" onClick={() => props.history.push("/create-meetup")}>
+            <i className="material-icons black-text">create</i>Create Meetup
           </a>
         </li>
         <li>
