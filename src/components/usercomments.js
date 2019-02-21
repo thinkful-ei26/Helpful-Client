@@ -7,7 +7,6 @@ const UserComments = () => {
   const [comments, setComments] = useState([]);
   const onChange = event => {
     setComment(event.target.value);
-    console.log(event.target.value);
   };
 
   const createComment = async comment => {
@@ -29,19 +28,6 @@ const UserComments = () => {
       .catch(error => console.log(error));
   };
 
-  // const fetchComments = async comment => {
-  //   const fetchCommentsResult = await axios({
-  //     method: 'get',
-  //     url: `${API_BASE_URL}/comments`,
-  //     // data: { comment, orgId: '5c6db84cca88852e5c895aeb' },
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
-  //     }
-  //   });
-  //   setComments(fetchCommentsResult.data)
-  // };
-  /******************************************* */
   const fetchComments = async () => {
     const fetchCommentsResult = await axios(`${API_BASE_URL}/comments`, {
       headers: {
@@ -51,18 +37,13 @@ const UserComments = () => {
     });
     setComments(fetchCommentsResult.data);
   };
-  /****************************************************************************/
   useEffect(() => {
     fetchComments();
   }, []);
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    createComment();
-  };
+
 
   const onSubmit = event => {
-    console.log('************', comment);
     event.preventDefault();
     setComments([...comments, comment]);
     createComment(comment);
