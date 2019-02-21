@@ -9,6 +9,22 @@ export default function Search(props) {
   const [component, setComponent] = useState("");
   const [events, setEvents] = useState(null);
   const [orgs, setOrgs] = useState(null);
+  const [location, setLocation] = useState(null);
+
+  // get user location
+  const fetchUserLocation = async () => {
+    if(!location) {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            let results = {
+                lat: Number(position.coords.latitude.toFixed(7)),
+                lng: Number(position.coords.longitude.toFixed(7))
+            };
+            setLocation(results)
+          });
+      }
+    }
+  }
 
   /* Call these on click */
   const getEvent = async () => {
@@ -38,6 +54,7 @@ export default function Search(props) {
   };
 
   useEffect(() => {
+    fetchUserLocation();
     getEvent();
     getOrg();
   }, []);
