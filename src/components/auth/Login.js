@@ -31,7 +31,6 @@ const Login = () => {
         // Set current user
         setCurrentUser(decoded);
         let mytoken = localStorage.getItem("jwtToken");
-        console.log(mytoken);
       })
       .then(() => {
         history.push("/dashboard");
