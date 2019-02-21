@@ -9,13 +9,15 @@ import getOrgs from "../utils/fetchOrg";
 import getOrgEvents from "../utils/fetchEvent";
 
 export default function OrgPublicPage(props) {
-  // const [view, setView] = useState(<OrgPublicPageEventList />);
+
+  // const orgId =  props.location.state.org.id;
+  const [view] = useState(<OrgPublicPageEventList />);
   const [following, setFollowing] = useState(false);
   const [followData, setFollowdata] = useState(null);
   const [orgs, setOrgs] = useState(null);
   const [orgEvents, setOrgEvents] = useState(null);
 
-  const orgId = props.match.params.id;
+  const orgId = props.match.params.id; 
 
   const fetchData = props => {
     getOrgs(orgId).then(res => setOrgs(res.data));
@@ -23,23 +25,46 @@ export default function OrgPublicPage(props) {
   const fetchEvents = () => {
     getOrgEvents(orgId).then(res => setOrgEvents(res.data));
   };
-  let followButton;
+  
+
+  
+  const generateFollowButton = () => {
+    
+    if (!following) {
+      return(
+      <button className="follow-button"
+        onClick={() => followOrg()}>
+        Follow
+      </button>
+    )} else if (following) {
+      return(
+      <button 
+        className="unfollow-button"
+        onClick={() => unFollowOrg()}>
+        Unfollow
+      </button>
+      )}
+  }
+  
 
   // check to see if user is following this org or not, and call generateFollowButton()
-  const fetchFollow = async () => {
-    const request = await axios(`${API_BASE_URL}/follow/following/${orgId}`, {
+  const fetchFollow = async() => {
+    await axios(`${API_BASE_URL}/follow/following/${orgId}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
-    }).then(res => {
-      if (res.data.following) {
-        setFollowing(true);
-        setFollowdata(res.data);
+    })
+    .then(res => {
+      if (res.data) {
+        setFollowing(true); 
+        setFollowdata(res.data); 
+
+      } else if (!res.data) {
+        setFollowing(false); 
       }
-      generateFollowButton();
-    });
-  };
+    })
+  }
 
   // follow an organization
   const followOrg = async () => {
@@ -76,25 +101,10 @@ export default function OrgPublicPage(props) {
       }
     });
   };
-  const generateFollowButton = () => {
-    if (!following) {
-      followButton = (
-        <button className="follow-button" onClick={() => followOrg()}>
-          Follow
-        </button>
-      );
-    } else {
-      followButton = (
-        <button className="unfollow-button" onClick={() => unFollowOrg()}>
-          Unfollow
-        </button>
-      );
-    }
-  };
+  
 
-  // useEffect(() => {
-  //   fetchFollow();
-  //   let elems = document.querySelectorAll(".fixed-action-btn");
+  // document.addEventListener('DOMContentLoaded', function() {
+  //   let elems = document.querySelectorAll('.fixed-action-btn');
   //   let instances = M.FloatingActionButton.init(elems, {
   //     direction: "left",
   //     // toolbarEnabled: true
@@ -108,7 +118,7 @@ export default function OrgPublicPage(props) {
     fetchData(props);
     fetchEvents();
   }, [props.match.params.id]);
-
+  
   if (orgs) {
     return (
       <div className="org-public-page-main center container valign-wrapper">
@@ -148,11 +158,14 @@ export default function OrgPublicPage(props) {
               className="responsive-img"
               src={orgs.imgUrl}
             />
-            {followButton}
+            
             <UserCanRateOrg />
             <p className="flow-text">{orgs.description}</p>
             <p className="flow-text">{orgs.location}</p>
           </div>
+
+          {generateFollowButton()}
+
           <div className="container">
             <p>Hey{orgEvents}</p>
           </div>
