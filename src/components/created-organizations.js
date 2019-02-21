@@ -11,6 +11,7 @@ export default function CreatedOrgs(props) {
   const [orgs, setOrgs] = useState(null);
 
   const fetchData = async () => {
+    console.log('fetching...')
     const request = await axios(`${API_BASE_URL}/role/user`, {
       headers: {
         "Content-Type": "application/json",
