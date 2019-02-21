@@ -38,6 +38,7 @@ const App = () => {
           <Route exact path="/organization/:id" component={OrgPublicPage} />
           <Route exact path="/createdorgs" component={CreatedOrgs} />
           <Route exact path="/orgdashboard/:id" component={OrganizationDashboard} />
+          <Route component={ErrorPage} />
         </Switch>
         <Footer />
       </div>
