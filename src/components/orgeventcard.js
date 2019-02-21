@@ -1,4 +1,5 @@
 import React from 'react';
+import UserComments from './usercomments'
 import '../stylesheets/org-dashboard-styles/eventcard.css';
 
 export default function OrgEventCard() {
@@ -37,6 +38,7 @@ export default function OrgEventCard() {
         </div>
         <div className="org-event-contact">Contact: Mr. B</div>
       </div>
+      <UserComments/>
     </div>
   );
 }
