@@ -17,7 +17,7 @@ const UserComments = () => {
     <div>
       <form onSubmit={onSubmit}>
         <label>Comments</label>
-        <textarea style={{ background: 'blue' }} onChange={onChange} />
+        <textarea style={{ background: '#ccc' }} onChange={onChange} />
         <button type="submit">Add a public comment</button>
       </form>
       <ul>
