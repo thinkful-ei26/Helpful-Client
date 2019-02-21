@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/layout/navbar";
 import LandingPage from "./components/layout/landing";
@@ -13,6 +13,7 @@ import Footer from "./components/layout/footer";
 import CreateOrgForm from "./components/creat-org-form";
 import FollowedOrgs from "./components/followed-organizations";
 import OrganizationList from "./components/organization-list";
+import ErrorPage from "./components/layout/errorPage";
 
 const App = () => {
   return (
@@ -20,17 +21,19 @@ const App = () => {
       <div className="App">
         <NavBar />
         {/* <OrganizationList /> */}
-
-        <Route exact path="/createorgform" component={CreateOrgForm} />
-        <Route exact path="/followedorgs" component={FollowedOrgs} />
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/dashboard" component={UserDashboard} />
-        <Route exact path="/search" component={Search} />
-        {/* <Route exact path="/organization" component={OrgPublicPage} /> */}
-        <Route exact path="/event" component={EventPage} />
-        <Route exact path="/organization/:id" component={OrgPublicPage} />
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/createorgform" component={CreateOrgForm} />
+          <Route exact path="/followedorgs" component={FollowedOrgs} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/dashboard" component={UserDashboard} />
+          <Route exact path="/search" component={Search} />
+          {/* <Route exact path="/organization" component={OrgPublicPage} /> */}
+          <Route exact path="/event" component={EventPage} />
+          <Route exact path="/organization/:id" component={OrgPublicPage} />
+          <Route component={ErrorPage} />
+        </Switch>
         <Footer />
       </div>
     </Router>
