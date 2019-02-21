@@ -4,10 +4,8 @@ import { API_BASE_URL } from "../config";
 import OrgPublicPageEventList from "./org-public-page-event-list";
 import UserCanRateOrg from "./user-can-rate-org";
 import "../stylesheets/org-public-page.css";
-import M from "materialize-css";
 import getOrgs from "../utils/fetchOrg";
 import getOrgEvents from "../utils/fetchEvent";
-import RenderJsonToCsv from "./scratch";
 
 export default function OrgPublicPage(props) {
 
@@ -169,7 +167,6 @@ export default function OrgPublicPage(props) {
 
           <div className="container">
             <p>Hey{orgEvents}</p>
-            <RenderJsonToCsv />
           </div>
         </div>
       </div>

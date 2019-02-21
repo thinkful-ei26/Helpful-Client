@@ -13,7 +13,6 @@ import Footer from "./components/layout/footer";
 import CreateOrgForm from "./components/creat-org-form";
 import FollowedOrgs from "./components/followed-organizations";
 import OrganizationList from "./components/organization-list";
-import RenderJsonToCsv from "./components/scratch";
 
 const App = () => {
   return (
