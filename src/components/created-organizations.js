@@ -27,11 +27,13 @@ export default function CreatedOrgs(props) {
   let orgCards;
   if (orgs) {
     orgCards = orgs.map(org => {
+      console.log(org);
       if (org.organizationId) {
         return <OrganizationCard history={props.history} org={org.organizationId}
-    
+        admin={org.role}
         />
       }
+      return null;
     })
   }
 
