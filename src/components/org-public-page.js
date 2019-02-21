@@ -13,7 +13,6 @@ export default function OrgPublicPage(props) {
   const [followData, setFollowdata] = useState(null);
   const [orgs, setOrgs] = useState(null);
 
-  console.log("hi im props", props);
   const orgId = props.match.params.id;
 
   const fetchData = props => {
@@ -145,7 +144,7 @@ export default function OrgPublicPage(props) {
               src={orgs.imgUrl}
             />
             {followButton}
-            {/* <UserCanRateOrg /> */}
+            <UserCanRateOrg />
             <p className="flow-text">{orgs.description}</p>
             <p className="flow-text">{orgs.location}</p>
           </div>
