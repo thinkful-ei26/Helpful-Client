@@ -2,7 +2,6 @@ import React from "react";
 import { followOrg, unFollowOrg } from "../utils/followOrg";
 
 const GenerateButton = props => {
-  console.log("i am here now", props);
   if (props.toggle) {
     return (
       <React.Fragment>

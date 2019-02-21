@@ -20,6 +20,7 @@ const App = () => {
       <div className="App">
         <NavBar />
         {/* <OrganizationList /> */}
+
         <Route exact path="/createorgform" component={CreateOrgForm} />
         <Route exact path="/followedorgs" component={FollowedOrgs} />
         <Route exact path="/" component={LandingPage} />

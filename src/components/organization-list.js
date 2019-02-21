@@ -19,7 +19,6 @@ const OrganizationList = () => {
       }
     }).then(res => {
       if (res.data) {
-        console.log(res);
         setOrganizations(res.data);
       }
     });
