@@ -12,12 +12,13 @@ export default function FollowedOrgs(props) {
   const [orgs, setOrgs] = useState(null);
 
   const fetchData = async () => {
-    const request = await axios(`${API_BASE_URL}/org/all`, {
+    const request = await axios(`${API_BASE_URL}/follow/user`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     });
+    console.log(request.data)
     setOrgs(request.data);
   };
 
@@ -28,7 +29,9 @@ export default function FollowedOrgs(props) {
   let followedOrgCards;
   if (orgs) {
     followedOrgCards = orgs.map(org => {
-      return <OrganizationCard history={props.history} org={org}/>
+      if (org.organizationId) {
+        return <OrganizationCard history={props.history} org={org.organizationId}/>
+      }
     })
   }
   
@@ -51,9 +54,6 @@ export default function FollowedOrgs(props) {
       </div>
       <div className="row">
         {followedOrgCards}
-        {/* <OrganizationCard org={orgs[0]} />
-        <OrganizationCard org={orgs[1]} />
-        <OrganizationCard org={orgs[2]} /> */}
       </div>
     </React.Fragment>
   );

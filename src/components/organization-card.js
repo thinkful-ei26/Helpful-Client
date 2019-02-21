@@ -21,10 +21,10 @@ export default function OrganizationCard(props) {
             <p className="flow-text">{props.org.name}</p>
           </div>
           <div className="card-action">
-            <p className="flow-text truncate">
+            <div className="flow-text truncate">
               <p> Where: {props.org.location}</p>
               <p> Contact: {props.org.contact}</p>
-            </p>
+            </div>
           </div>
         </div>
       </div>
