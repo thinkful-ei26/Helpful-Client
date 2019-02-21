@@ -82,7 +82,53 @@ const NavBar = props => {
                   Helpful
                 </a>
               </div>
-              {navRight}
+
+              <ul id="nav-mobile" className="right hide-on-med-and-down text-black">
+                <li>
+                  <a
+                    href="#dashboard"
+                    className="waves-effect waves-teal"
+                    onClick={() => props.history.push("/dashboard")}
+                  >
+                    Dashboard
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#events" className="waves-effect waves-teal" onClick={() => props.history.push("/event")}>
+                    My Events
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#createorg" className="waves-effect waves-teal" onClick={() => props.history.push("/createorgform")}>
+                    Create Organization
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#createdorgs" className="waves-effect waves-teal" onClick={() => props.history.push("/createdorgs")}>
+                    My Created Organizations
+                  </a>
+                </li>
+
+                <li>
+                  <a className="waves-effect waves-teal" onClick={() => props.history.push("/followedorgs")}>
+                    Followed
+                  </a>
+                </li>
+                <li>
+                  <a className="waves-effect waves-teal" onClick={() => props.history.push("/search")}>
+                    Search Tool
+                  </a>
+                </li>
+
+                <li>
+                  <a className="waves-effect waves-teal" onClick={logoutUser}>
+                    Logout
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
           {sideNav}

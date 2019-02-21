@@ -32,6 +32,7 @@ export default function FollowedOrgs(props) {
       if (org.organizationId) {
         return <OrganizationCard history={props.history} org={org.organizationId}/>
       }
+      return null;
     })
   }
   

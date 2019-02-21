@@ -11,7 +11,7 @@ export default function CreatedOrgs(props) {
   const [orgs, setOrgs] = useState(null);
 
   const fetchData = async () => {
-    const request = await axios(`${API_BASE_URL}/org/all`, {
+    const request = await axios(`${API_BASE_URL}/role/user`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
@@ -23,6 +23,17 @@ export default function CreatedOrgs(props) {
   useEffect(() => {
     fetchData();
   }, []);
+
+  let orgCards;
+  if (orgs) {
+    orgCards = orgs.map(org => {
+      if (org.organizationId) {
+        return <OrganizationCard history={props.history} org={org.organizationId}
+    
+        />
+      }
+    })
+  }
 
   if (orgs === null) {
     return (
@@ -43,9 +54,7 @@ export default function CreatedOrgs(props) {
         <h3>Orgnizations I Created</h3>
 
         <div>
-          <OrganizationCard org={orgs[0]} />
-          <OrganizationCard org={orgs[1]} />
-          <OrganizationCard org={orgs[2]} />
+          {orgCards}
         </div>
       </section>
     </div>
