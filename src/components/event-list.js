@@ -66,14 +66,6 @@ export default function EventList() {
           }
         });
     }
-<<<<<<< HEAD
-  };
-
-  useEffect(() => {
-    fetchUserLocation();
-    fetchRsvpData();
-    fetchEventData();
-=======
   }
 
   // get all user meetup
@@ -95,7 +87,6 @@ export default function EventList() {
     fetchRsvpData()
     fetchEventData()
     fetchMeetupData()
->>>>>>> create-meetup component and render meetups in dashboard
   }, [location]);
 
   // gets all the events out of each individual rsvp.eventId and into array
@@ -107,13 +98,8 @@ export default function EventList() {
   };
 
   // generate EventCard components with event data
-<<<<<<< HEAD
-  let rsvpEventCardList, localEventCardList;
-  let eventTitle = "Nearby Events";
-=======
   let rsvpEventCardList, localEventCardList, meetupCardList;
   let eventTitle = 'Nearby Events'
->>>>>>> create-meetup component and render meetups in dashboard
   if (rsvpEvents) {
     generateRsvpEventList(rsvpEvents);
     rsvpEventCardList = rsvpEventList.map(event => {
@@ -125,10 +111,6 @@ export default function EventList() {
       return <EventCard event={event} />;
     });
   }
-<<<<<<< HEAD
-  if (!location) {
-    eventTitle = "All Events";
-=======
   if(meetups) {
     meetupCardList = meetups.map(event => {
       return <EventCard event={event} />;
@@ -136,7 +118,6 @@ export default function EventList() {
   }
   if(!location) {
     eventTitle = 'All Events'
->>>>>>> create-meetup component and render meetups in dashboard
   }
 
   return (
