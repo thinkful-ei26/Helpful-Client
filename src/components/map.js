@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/marker-details.css';
 import {
     withGoogleMap,
     GoogleMap,
@@ -7,18 +8,39 @@ import {
 } from 'react-google-maps';
 
 export const InitialMap = withGoogleMap(props => {
+
+    const dots = props.markers.map(marker => {
+        return <React.Fragment><Marker
+            position={marker.geoLocation}
+        />
+            <InfoWindow className='marker-detail' position={{
+                "lat": 40.5473,
+                "lng": -105.1076
+            }} >
+                <div>
+                    <h1>{marker.name}</h1>
+                </div>
+            </InfoWindow>
+        </React.Fragment>
+    })
+
     return (
         <GoogleMap
             ref={props.onMapLoad}
             defaultZoom={14}
-            defaultCenter={{ lat: 40.6944, lng: -73.9213 }}
+            defaultCenter={{
+                "lat": 40.5473,
+                "lng": -105.1076
+            }}
         >
-            {/* <Marker
-                key={props.index}
-                position={Marker.position}
-                onClick={() => props.onMarkClick(marker)}
+            <Marker
+                position={{
+                    "lat": 40.5473,
+                    "lng": -105.1076
+                }}
+            />
 
-            /> */}
-        </GoogleMap>
+            {dots}
+        </GoogleMap >
     )
 })

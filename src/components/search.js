@@ -13,15 +13,15 @@ export default function Search(props) {
 
   // get user location
   const fetchUserLocation = async () => {
-    if(!location) {
+    if (!location) {
       if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            let results = {
-                lat: Number(position.coords.latitude.toFixed(7)),
-                lng: Number(position.coords.longitude.toFixed(7))
-            };
-            setLocation(results)
-          });
+        navigator.geolocation.getCurrentPosition(function (position) {
+          let results = {
+            lat: Number(position.coords.latitude.toFixed(7)),
+            lng: Number(position.coords.longitude.toFixed(7))
+          };
+          setLocation(results)
+        });
       }
     }
   }
@@ -30,26 +30,27 @@ export default function Search(props) {
   const getEvent = async () => {
     const getEvents = await axios({
       method: "get",
-      url: `${API_BASE_URL}/event/all`,
-      data: {},
+      url: `${API_BASE_URL}/event/location/10000/45/-105`,
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     });
+    console.log(getEvents.data);
     setEvents(getEvents.data);
   };
 
   const getOrg = async () => {
     const getOrgs = await axios({
       method: "get",
-      url: `${API_BASE_URL}/org/all`,
-      data: {},
+      url: `${API_BASE_URL}/org/location/10000/45/-105`,
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     });
+    console.log(getOrgs.data);
+
     setOrgs(getOrgs.data);
   };
 
