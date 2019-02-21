@@ -6,19 +6,23 @@ import UserCanRateOrg from "./user-can-rate-org";
 import "../stylesheets/org-public-page.css";
 import M from "materialize-css";
 import getOrgs from "../utils/fetchOrg";
+import getOrgEvents from "../utils/fetchEvent";
 
 export default function OrgPublicPage(props) {
   // const [view, setView] = useState(<OrgPublicPageEventList />);
   const [following, setFollowing] = useState(false);
   const [followData, setFollowdata] = useState(null);
   const [orgs, setOrgs] = useState(null);
+  const [orgEvents, setOrgEvents] = useState(null);
 
   const orgId = props.match.params.id;
 
   const fetchData = props => {
     getOrgs(orgId).then(res => setOrgs(res.data));
   };
-
+  const fetchEvents = () => {
+    getOrgEvents(orgId).then(res => setOrgEvents(res.data));
+  };
   let followButton;
 
   // check to see if user is following this org or not, and call generateFollowButton()
@@ -102,6 +106,7 @@ export default function OrgPublicPage(props) {
   useEffect(() => {
     fetchFollow();
     fetchData(props);
+    fetchEvents();
   }, [props.match.params.id]);
 
   if (orgs) {
@@ -147,6 +152,9 @@ export default function OrgPublicPage(props) {
             <UserCanRateOrg />
             <p className="flow-text">{orgs.description}</p>
             <p className="flow-text">{orgs.location}</p>
+          </div>
+          <div className="container">
+            <p>Hey{orgEvents}</p>
           </div>
         </div>
       </div>
