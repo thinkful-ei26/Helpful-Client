@@ -10,8 +10,7 @@ import getOrgEvents from "../utils/fetchEvent";
 
 export default function OrgPublicPage(props) {
 
-  
-  const orgId =  props.location.state.org.id;
+  // const orgId =  props.location.state.org.id;
   const [view] = useState(<OrgPublicPageEventList />);
   const [following, setFollowing] = useState(false);
   const [followData, setFollowdata] = useState(null);
@@ -28,17 +27,16 @@ export default function OrgPublicPage(props) {
   };
   
 
+  
   const generateFollowButton = () => {
     
     if (!following) {
-      console.log('in generateFollowButton !following')
       return(
       <button className="follow-button"
         onClick={() => followOrg()}>
         Follow
       </button>
-    )} else {
-      console.log('in generateFollowButton following')
+    )} else if (following) {
       return(
       <button 
         className="unfollow-button"
@@ -50,27 +48,23 @@ export default function OrgPublicPage(props) {
   
 
   // check to see if user is following this org or not, and call generateFollowButton()
-  const fetchFollow = () => {
-    axios(`${API_BASE_URL}/follow/following/${orgId}`, {
+  const fetchFollow = async() => {
+    await axios(`${API_BASE_URL}/follow/following/${orgId}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     })
     .then(res => {
-      console.log(res);
-      if (res.data.following) {
-        setFollowing(true);
-        setFollowdata(res.data);
-        
+      if (res.data) {
+        setFollowing(true); 
+        setFollowdata(res.data); 
+
+      } else if (!res.data) {
+        setFollowing(false); 
       }
     })
-    .then(() => {
-      console.log(following);
-      generateFollowButton();
-      console.log('some string')
-    })
-  };
+  }
 
   // follow an organization
   const followOrg = async () => {
@@ -124,7 +118,7 @@ export default function OrgPublicPage(props) {
     fetchData(props);
     fetchEvents();
   }, [props.match.params.id]);
-
+  
   if (orgs) {
     return (
       <div className="org-public-page-main center container valign-wrapper">
@@ -170,6 +164,7 @@ export default function OrgPublicPage(props) {
             <p className="flow-text">{orgs.location}</p>
           </div>
 
+          {generateFollowButton()}
 
           <div className="container">
             <p>Hey{orgEvents}</p>
@@ -183,4 +178,4 @@ export default function OrgPublicPage(props) {
       <p>I am loading text</p>
     </div>
   );
-}}
+}
