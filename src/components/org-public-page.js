@@ -17,7 +17,7 @@ export default function OrgPublicPage(props) {
   const [orgs, setOrgs] = useState(null);
   const [orgEvents, setOrgEvents] = useState(null);
 
-  const orgId = props.match.params.id;
+  const orgId = props.match.params.id; 
 
   const fetchData = props => {
     getOrgs(orgId).then(res => setOrgs(res.data));
