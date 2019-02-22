@@ -7,13 +7,15 @@ const UserComments = () => {
   const [comments, setComments] = useState([]);
   const onChange = event => {
     setComment(event.target.value);
+    console.log(event.target.value);
+    console.log()
   };
 
   const createComment = async comment => {
     const createCommentResult = await axios({
       method: 'post',
       url: `${API_BASE_URL}/comments`,
-      data: { comment, orgId: '5c6db84cca88852e5c895aeb' },
+      data: { comment, orgId: '5c6f0af1de903f50d8dd524a' },
       headers: {
         'Content-Type': 'application/json',
         Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
@@ -41,18 +43,18 @@ const UserComments = () => {
     fetchComments();
   }, []);
 
-
-
   const onSubmit = event => {
     event.preventDefault();
     setComments([...comments, comment]);
     createComment(comment);
   };
 
-  const mapComments = comments.map((item, index) => <li key={index}>{item.comment}</li>);
+  const mapComments = comments.map((item, index) => (
+    <li key={index}>{item.comment}</li>
+  ));
 
   return (
-    <div>
+    <div className="user-comments">
       <form onSubmit={onSubmit}>
         <label>Comments</label>
         <textarea style={{ background: '#ccc' }} onChange={onChange} />
