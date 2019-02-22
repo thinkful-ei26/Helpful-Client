@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { Route, Redirect } from "react-router-dom";
-const LandingPage = (props) => {
+import React from "react";
+import { Route } from "react-router-dom";
+const LandingPage = props => {
   let token = localStorage.getItem("jwtToken");
-  if(token) {
-    props.history.push('/dashboard')
+  if (token) {
+    props.history.push("/dashboard");
   }
 
   return (

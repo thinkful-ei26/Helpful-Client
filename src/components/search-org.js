@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { InitialMap } from "./map";
 import "../stylesheets/search-org.css";
 import { Link } from "react-router-dom";
