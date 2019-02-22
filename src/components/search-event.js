@@ -10,9 +10,9 @@ export default function SearchEvent(props) {
 
 
   if (props.events) {
-    const listNames = props.events.map(event => {
-      const linkUrl = `/event/${event.id}`;
-      return <Link to={linkUrl}><div className="card blue-grey darken-1">
+    const listNames = props.events.map((event, index) => {
+      const linkUrl = `/event/${event.id}/${event.organizationId}`;
+      return <Link key={index} to={linkUrl}><div className="card blue-grey darken-1">
         <div className="card-content white-text">
           <span className="card-title">{event.name}</span>
           <p>{event.description}</p>

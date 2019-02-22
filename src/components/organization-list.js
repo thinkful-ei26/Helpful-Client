@@ -29,8 +29,8 @@ const OrganizationList = () => {
   }, []);
   let organizationList;
   if (organizations) {
-    organizationList = organizations.map(org => {
-      return <OrganizationCard org={org} />;
+    organizationList = organizations.map((org, index) => {
+      return <OrganizationCard key={index} org={org} />;
     });
   }
 

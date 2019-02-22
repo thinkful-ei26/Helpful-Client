@@ -9,8 +9,8 @@ import {
 
 export const InitialMap = withGoogleMap(props => {
 
-    const dots = props.markers.map(marker => {
-        return <React.Fragment><Marker
+    const dots = props.markers.map((marker, index) => {
+        return <React.Fragment key={index}><Marker
             position={marker.geoLocation}
         />
             <InfoWindow className='info-panel' position={{

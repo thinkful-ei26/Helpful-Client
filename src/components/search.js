@@ -36,7 +36,6 @@ export default function Search(props) {
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     });
-    console.log(getEvents.data);
     setEvents(getEvents.data);
   };
 
@@ -49,7 +48,6 @@ export default function Search(props) {
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     });
-    console.log(getOrgs.data);
 
     setOrgs(getOrgs.data);
   };
