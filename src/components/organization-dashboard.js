@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import DashboardCreateEvent from "./dashboard-create-event";
 import OrgDashboardAddUser from "./org-dashboard-add-user";
 import EventList from "./event-list";
 import "../stylesheets/org-dashboard-styles/org-dash-main.css";
 
-const OrganizationDashboard = () => {
+const OrganizationDashboard = props => {
   const [view, setView] = useState(<EventList />);
 
   return (
@@ -26,7 +27,9 @@ const OrganizationDashboard = () => {
           </button>
           <button
             className="org-main-button"
-            onClick={() => setView(<DashboardCreateEvent />)}
+            onClick={() =>
+              setView(<DashboardCreateEvent id={props.match.params.id} />)
+            }
           >
             Create a new event
           </button>
