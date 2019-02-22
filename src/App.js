@@ -12,12 +12,11 @@ import EventPage from "./components/event-page";
 import Footer from "./components/layout/footer";
 import CreateOrgForm from "./components/creat-org-form";
 import FollowedOrgs from "./components/followed-organizations";
-import OrganizationList from "./components/organization-list";
 import ErrorPage from "./components/layout/errorPage";
 import CreateMeetup from "./components/create-meetup";
 import CreatedOrgs from "./components/created-organizations";
 import OrganizationDashboard from "./components/organization-dashboard";
-import EventList from './components/event-list';
+import EventList from "./components/event-list";
 
 const App = () => {
   return (
@@ -38,7 +37,11 @@ const App = () => {
           <Route exact path="/create-meetup" component={CreateMeetup} />
           <Route exact path="/organization/:id" component={OrgPublicPage} />
           <Route exact path="/createdorgs" component={CreatedOrgs} />
-          <Route exact path="/orgdashboard/:id" component={OrganizationDashboard} />
+          <Route
+            exact
+            path="/orgdashboard/:id"
+            component={OrganizationDashboard}
+          />
           <Route exact path="/events" component={EventList} />
           <Route component={ErrorPage} />
         </Switch>

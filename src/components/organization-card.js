@@ -7,7 +7,6 @@ export default function OrganizationCard(props) {
 
   const checkAdmin = () => {
     if (props.admin) {
-      console.log(props.admin);
       setLink(`/orgdashboard/${props.org.id}`);
     }
   };

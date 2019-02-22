@@ -6,11 +6,9 @@ import UserCanRateOrg from "./user-can-rate-org";
 import "../stylesheets/org-public-page.css";
 import getOrgs from "../utils/fetchOrg";
 import getOrgEvents from "../utils/fetchEvent";
-import { PointMap } from './map';
-
+import { PointMap } from "./map";
 
 export default function OrgPublicPage(props) {
-
   // const orgId =  props.location.state.org.id;
   const [view] = useState(<OrgPublicPageEventList />);
   const [following, setFollowing] = useState(false);
@@ -27,34 +25,27 @@ export default function OrgPublicPage(props) {
   const fetchEvents = () => {
     getOrgEvents(orgId).then(res => {
       let newList = res.data.map((event, index) => {
-        return <li key={index}>{event.name}</li>
-      })
-      setOrgEvents(newList)
+        return <li key={index}>{event.name}</li>;
+      });
+      setOrgEvents(newList);
     });
   };
 
-
-
   const generateFollowButton = () => {
-
     if (!following) {
       return (
-        <button className="follow-button"
-          onClick={() => followOrg()}>
+        <button className="follow-button" onClick={() => followOrg()}>
           Follow
-      </button>
-      )
+        </button>
+      );
     } else if (following) {
       return (
-        <button
-          className="unfollow-button"
-          onClick={() => unFollowOrg()}>
+        <button className="unfollow-button" onClick={() => unFollowOrg()}>
           Unfollow
-      </button>
-      )
+        </button>
+      );
     }
-  }
-
+  };
 
   // check to see if user is following this org or not, and call generateFollowButton()
   const fetchFollow = async () => {
@@ -63,17 +54,15 @@ export default function OrgPublicPage(props) {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
-    })
-      .then(res => {
-        if (res.data) {
-          setFollowing(true);
-          setFollowdata(res.data);
-
-        } else if (!res.data) {
-          setFollowing(false);
-        }
-      })
-  }
+    }).then(res => {
+      if (res.data) {
+        setFollowing(true);
+        setFollowdata(res.data);
+      } else if (!res.data) {
+        setFollowing(false);
+      }
+    });
+  };
 
   // follow an organization
   const followOrg = async () => {
@@ -113,14 +102,16 @@ export default function OrgPublicPage(props) {
 
   if (orgMap === null) {
     if (orgs) {
-      setOrgMap(<PointMap
-        marker={orgs}
-        isMarkerShown
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `400px` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-      />)
+      setOrgMap(
+        <PointMap
+          marker={orgs}
+          isMarkerShown
+          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `400px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
+      );
     }
   }
 
@@ -141,37 +132,8 @@ export default function OrgPublicPage(props) {
   }, [props.match.params.id]);
 
   if (orgs) {
-
     return (
       <div className="org-public-page-main center container valign-wrapper">
-        <div className="fixed-action-btn">
-          <a className="btn-floating btn-large teal lighten-2">
-            <i className="large material-icons">add</i>
-          </a>
-          <ul>
-            <li>
-              <a className="btn-floating red">
-                <i className="material-icons">comment</i>
-              </a>
-            </li>
-            <li>
-              <a className="btn-floating pink darken-4">
-                <i className="material-icons">share</i>
-              </a>
-            </li>
-            <li>
-              <a className="btn-floating purple darken-2">
-                <i className="material-icons">publish</i>
-              </a>
-            </li>
-            <li>
-              <a className="btn-floating light-blue darken-3">
-                <i className="material-icons">notifications</i>
-              </a>
-            </li>
-          </ul>
-        </div>
-
         <div className="org-public-content container">
           <div className="org-public-text-area">
             <span className="header">{orgs.name}</span>

@@ -15,24 +15,24 @@ export default function Search(props) {
   const fetchUserLocation = async () => {
     if (!location) {
       if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(function (position) {
+        navigator.geolocation.getCurrentPosition(function(position) {
           let results = {
             lat: Number(position.coords.latitude.toFixed(7)),
             lng: Number(position.coords.longitude.toFixed(7))
           };
-          setLocation(results)
+          setLocation(results);
         });
       }
     }
-  }
+  };
 
   /* Call these on click */
   const getEvent = async () => {
     if (location === null) {
-
     } else {
-      const url = `${API_BASE_URL}/event/location/10000/${location.lat}/${location.lng}`;
-      console.log(url);
+      const url = `${API_BASE_URL}/event/location/10000/${location.lat}/${
+        location.lng
+      }`;
       const getEvents = await axios({
         method: "get",
         url: url,
@@ -58,19 +58,15 @@ export default function Search(props) {
     setOrgs(getOrgs.data);
   };
 
-
   useEffect(() => {
     fetchUserLocation();
     getEvent();
     getOrg();
   }, [location]);
 
-
-
   if (location === null) {
-    return <div></div>
+    return <div />;
   } else {
-    console.log(location)
     return (
       <div className="container">
         {/* <div className='filter-form'>
@@ -89,7 +85,15 @@ export default function Search(props) {
 
         <div className="search-container center">
           <button
-            onClick={() => setComponent(<SearchOrg history={props.history} location={location} orgs={orgs} />)}
+            onClick={() =>
+              setComponent(
+                <SearchOrg
+                  history={props.history}
+                  location={location}
+                  orgs={orgs}
+                />
+              )
+            }
             style={{
               width: "175px",
               borderRadius: "3px",
@@ -98,9 +102,17 @@ export default function Search(props) {
             className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
           >
             Organizations
-        </button>
+          </button>
           <button
-            onClick={() => setComponent(<SearchEvent history={props.history} location={location} events={events} />)}
+            onClick={() =>
+              setComponent(
+                <SearchEvent
+                  history={props.history}
+                  location={location}
+                  events={events}
+                />
+              )
+            }
             style={{
               width: "175px",
               borderRadius: "3px",
@@ -109,7 +121,7 @@ export default function Search(props) {
             className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
           >
             Events
-        </button>
+          </button>
         </div>
         {component}
       </div>
