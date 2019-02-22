@@ -13,12 +13,13 @@ export const InitialMap = withGoogleMap(props => {
         return <React.Fragment><Marker
             position={marker.geoLocation}
         />
-            <InfoWindow className='marker-detail' position={{
+            <InfoWindow className='info-panel' position={{
                 "lat": 40.5473,
                 "lng": -105.1076
             }} >
-                <div>
-                    <h1>{marker.name}</h1>
+                <div className='marker-detail' >
+                    <span>{marker.name}</span>
+                    <p>{marker.description}</p>
                 </div>
             </InfoWindow>
         </React.Fragment>
