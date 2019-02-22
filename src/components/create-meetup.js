@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
 import "../stylesheets/dashboard-create-event.css";
@@ -106,9 +106,7 @@ export default function CreateMeetup() {
             <label htmlFor="orgImg">Date</label>
             <input
               type="date"
-              onChange={e =>
-                setFormData({ ...formData, date: e.target.value })
-              }
+              onChange={e => setFormData({ ...formData, date: e.target.value })}
             />
           </div>
 

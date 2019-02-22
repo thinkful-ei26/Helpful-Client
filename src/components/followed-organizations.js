@@ -18,7 +18,7 @@ export default function FollowedOrgs(props) {
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     });
-    console.log(request.data)
+    console.log(request.data);
     setOrgs(request.data);
   };
 
@@ -26,13 +26,15 @@ export default function FollowedOrgs(props) {
     fetchData();
   }, []);
 
-  const followedOrgCards = orgs.map((org, index) => {
-    if (org.organizationId) {
-      return <OrganizationCard key={index} history={props.history} org={org.organizationId} />
-    }
-  })
-
-
+  const followedOrgCards = orgs.map((org, index) =>
+    org.organizationId ? (
+      <OrganizationCard
+        key={index}
+        history={props.history}
+        org={org.organizationId}
+      />
+    ) : null
+  );
 
   if (orgs === null || orgs.length === 0) {
     return (
@@ -50,9 +52,7 @@ export default function FollowedOrgs(props) {
       <div className="container">
         <span className="title">Organizations I Follow</span>
       </div>
-      <div className="row">
-        {followedOrgCards}
-      </div>
+      <div className="row">{followedOrgCards}</div>
     </React.Fragment>
   );
 }
