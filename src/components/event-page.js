@@ -37,7 +37,7 @@ export function EventPage(props) {
 
         // check if user has a reservation
         const rsvpResult = await axios(
-            `${API_BASE_URL}/rsvp/${eventId}`,
+            `${API_BASE_URL}/rsvp/specific/${eventId}`,
             {
                 headers: {
                     "Content-Type": "application/json",
@@ -45,7 +45,9 @@ export function EventPage(props) {
                 }
             }
         );
-        setRsvp(rsvpResult.data);
+        if(rsvpResult.data !== null) {
+            setRsvp(rsvpResult.data.rsvp);
+        }
     };
     const createRsvp = async () => {
         await axios({
@@ -65,10 +67,7 @@ export function EventPage(props) {
     const removeRsvp = async () => {
         await axios({
             method: "delete",
-            url: `${API_BASE_URL}/rsvp/user`,
-            data: {
-                eventId
-            },
+            url: `${API_BASE_URL}/rsvp/user/${eventId}`,
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
