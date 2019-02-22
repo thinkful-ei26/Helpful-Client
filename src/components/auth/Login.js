@@ -3,14 +3,12 @@ import axios from "axios";
 import { Link, Route } from "react-router-dom";
 import { API_BASE_URL } from "../../config";
 
-import setAuthToken from "../../actions/setAuthToken";
 import jwt_decode from "jwt-decode";
 
 const Login = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   // ********************** this component needs some refactoring and also to point to dashboard when a user has token **************
   const loginUser = async history => {
@@ -18,19 +16,17 @@ const Login = () => {
       username: user,
       password
     };
+
     axios
       .post(`${API_BASE_URL}/auth/login`, data)
       .then(res => {
         // Set token to localStorage
         const token = res.data.authToken;
         localStorage.setItem("jwtToken", token);
-        // Set token to Auth header
-        setAuthToken(token);
         // Decode token to get user data
         const decoded = jwt_decode(token);
         // Set current user
         setCurrentUser(decoded);
-        let mytoken = localStorage.getItem("jwtToken");
       })
       .then(() => {
         history.push("/dashboard");
