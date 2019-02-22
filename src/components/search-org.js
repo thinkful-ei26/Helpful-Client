@@ -4,6 +4,9 @@ import '../stylesheets/search-org.css';
 import { Link } from 'react-router-dom';
 
 export default function SearchOrg(props) {
+
+
+
   console.log(props.orgs)
   if (props.orgs) {
     const listNames = props.orgs.map((org, index) => {
@@ -24,6 +27,7 @@ export default function SearchOrg(props) {
 
     return (<div>
       <InitialMap
+        location={props.location}
         markers={props.orgs}
         isMarkerShown
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
