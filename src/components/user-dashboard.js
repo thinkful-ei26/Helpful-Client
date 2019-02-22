@@ -4,6 +4,7 @@ import FollowedOrgs from "./followed-organizations";
 import M from "materialize-css";
 import { API_BASE_URL } from "../config";
 import OrganizationList from "./organization-list";
+import RenderUserRole from "./renderuserrole"
 
 export default function UserDashboard(props) {
   const [showView, setView] = useState(<EventList />);
@@ -14,6 +15,7 @@ export default function UserDashboard(props) {
     <div className="container">
       <div className="section">{showView}</div>
       <div className="section">{showOrg}</div>
+      <RenderUserRole/>
     </div>
   );
 }
