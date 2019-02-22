@@ -3,7 +3,7 @@ import axios from 'axios';
 import { API_BASE_URL } from '../config';
 import '../stylesheets/dashboard-create-event.css';
 
-export default function DashboardCreateEvent() {
+export default function DashboardCreateEvent(props) {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -12,12 +12,12 @@ export default function DashboardCreateEvent() {
     date: '',
     contact: '',
     imgUrl: '',
-    orgId: '000000000001' // placeholder ID PRODUCTION TODO --> make this a real ID
+    orgId: props.id, 
   })
 
   const [success, setSuccess] = useState(false)
 
-  const createOrg = async () => {
+  const createEvent = async () => {
     const createOrgResult = await axios({
       method: 'post',
       url: `${API_BASE_URL}/event`,
@@ -32,7 +32,7 @@ export default function DashboardCreateEvent() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    createOrg();
+    createEvent();
   }
 
   if (success) {
