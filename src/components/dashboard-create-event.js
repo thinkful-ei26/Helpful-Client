@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
 import "../stylesheets/dashboard-create-event.css";
@@ -17,7 +17,7 @@ export default function DashboardCreateEvent(props) {
   const [success, setSuccess] = useState(false);
 
   const createEvent = async () => {
-    const createOrgResult = await axios({
+    await axios({
       method: "post",
       url: `${API_BASE_URL}/event`,
       data: formData,
@@ -25,8 +25,7 @@ export default function DashboardCreateEvent(props) {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
-    });
-    setSuccess(true);
+    }).then(() => setSuccess(true));
   };
 
   const handleSubmit = e => {

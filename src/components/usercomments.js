@@ -1,40 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { API_BASE_URL } from '../config';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { API_BASE_URL } from "../config";
+import axios from "axios";
 
 const UserComments = () => {
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   const onChange = event => {
     setComment(event.target.value);
-    console.log(event.target.value);
-    console.log()
   };
 
   const createComment = async comment => {
     const createCommentResult = await axios({
-      method: 'post',
+      method: "post",
       url: `${API_BASE_URL}/comments`,
-      data: { comment, orgId: '5c6f0af1de903f50d8dd524a' },
+      data: { comment, orgId: "5c6f0af1de903f50d8dd524a" },
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
+        "Content-Type": "application/json",
+        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     })
       .then(() => {
-        return '';
+        return "";
       })
       .then(() => {
         fetchComments();
       })
-      .catch(error => console.log(error));
+      .catch(error => console.error(error));
   };
 
   const fetchComments = async () => {
     const fetchCommentsResult = await axios(`${API_BASE_URL}/comments`, {
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
+        "Content-Type": "application/json",
+        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     });
     setComments(fetchCommentsResult.data);
@@ -57,7 +55,7 @@ const UserComments = () => {
     <div className="user-comments">
       <form onSubmit={onSubmit}>
         <label>Comments</label>
-        <textarea style={{ background: '#ccc' }} onChange={onChange} />
+        <textarea style={{ background: "#ccc" }} onChange={onChange} />
         <button type="submit">Add a public comment</button>
       </form>
       <ul>{mapComments}</ul>

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import DashboardCreateEvent from "./dashboard-create-event";
 import OrgDashboardAddUser from "./org-dashboard-add-user";
-import EventList from "./event-list";
 import getOrgs from "../utils/fetchOrg";
 import getOrgEvents from "../utils/fetchEvent";
-import EventCard from "./eventcard";
 import OrgPublicPageEventList from "./org-public-page-event-list";
 import "../stylesheets/org-dashboard-styles/org-dash-main.css";
 
