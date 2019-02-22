@@ -36,6 +36,12 @@ const NavBar = props => {
         </li>
 
         <li>
+          <a className="waves-effect waves-teal" onClick={() => props.history.push("/createdorgs")}>
+            My Created Organizations
+          </a>
+        </li>
+
+        <li>
           <a className="waves-effect waves-teal" onClick={() => props.history.push("/followedorgs")}>
             Followed
           </a>

@@ -1,17 +1,32 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "../stylesheets/org-card.css";
 import { Link } from "react-router-dom";
 
 export default function OrganizationCard(props) {
+
+  const [link, setLink] = useState(`/organization/${props.org.id}`)
+
+  const checkAdmin = () => {
+    if (props.admin) {
+      console.log(props.admin)
+      setLink(`/orgdashboard/${props.org.id}`)
+    }
+  }
+  
+  useEffect(() => {
+    checkAdmin();
+  }, [])
+
   if (!props.org) {
     return "Loading...";
   }
 
   return (
-    <Link to={`/organization/${props.org.id}`}>
-      <div
+    <Link to={link}>
+      <div 
       // route to org page and passes org data in state
       >
+        
         <div className="card">
           <div className="card-image small">
             <img src={props.org.imgUrl} />

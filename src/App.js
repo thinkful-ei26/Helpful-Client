@@ -12,23 +12,34 @@ import EventPage from "./components/event-page";
 import Footer from "./components/layout/footer";
 import CreateOrgForm from "./components/creat-org-form";
 import FollowedOrgs from "./components/followed-organizations";
+import OrganizationList from "./components/organization-list";
+import ErrorPage from "./components/layout/errorPage";
 import CreateMeetup from "./components/create-meetup";
+import CreatedOrgs from "./components/created-organizations";
+import OrganizationDashboard from "./components/organization-dashboard";
 
 const App = () => {
   return (
     <Router>
       <div className="App">
         <NavBar />
-        <Route exact path="/createorgform" component={CreateOrgForm} />
-        <Route exact path="/create-meetup" component={CreateMeetup} />
-        <Route exact path="/followedorgs" component={FollowedOrgs} />
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/dashboard" component={UserDashboard} />
-        <Route exact path="/search" component={Search} />
-        <Route exact path="/organization" component={OrgPublicPage} />
-        <Route exact path="/event" component={EventPage} />
+        {/* <OrganizationList /> */}
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/createorgform" component={CreateOrgForm} />
+          <Route exact path="/followedorgs" component={FollowedOrgs} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/dashboard" component={UserDashboard} />
+          <Route exact path="/search" component={Search} />
+          {/* <Route exact path="/organization" component={OrgPublicPage} /> */}
+          <Route exact path="/event" component={EventPage} />
+          <Route exact path="/create-meetup" component={CreateMeetup} />
+          <Route exact path="/organization/:id" component={OrgPublicPage} />
+          <Route exact path="/createdorgs" component={CreatedOrgs} />
+          <Route exact path="/orgdashboard/:id" component={OrganizationDashboard} />
+          <Route component={ErrorPage} />
+        </Switch>
         <Footer />
       </div>
     </Router>
