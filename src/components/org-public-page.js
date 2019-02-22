@@ -6,6 +6,8 @@ import UserCanRateOrg from "./user-can-rate-org";
 import "../stylesheets/org-public-page.css";
 import getOrgs from "../utils/fetchOrg";
 import getOrgEvents from "../utils/fetchEvent";
+import { PointMap } from './map';
+
 
 export default function OrgPublicPage(props) {
 
@@ -15,6 +17,7 @@ export default function OrgPublicPage(props) {
   const [followData, setFollowdata] = useState(null);
   const [orgs, setOrgs] = useState(null);
   const [orgEvents, setOrgEvents] = useState(null);
+  const [orgMap, setOrgMap] = useState(null);
 
   const orgId = props.match.params.id;
 
@@ -108,6 +111,18 @@ export default function OrgPublicPage(props) {
     });
   };
 
+  if (orgMap === null) {
+    if (orgs) {
+      setOrgMap(<PointMap
+        marker={orgs}
+        isMarkerShown
+        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `400px` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />)
+    }
+  }
 
   // document.addEventListener('DOMContentLoaded', function() {
   //   let elems = document.querySelectorAll('.fixed-action-btn');
@@ -165,7 +180,7 @@ export default function OrgPublicPage(props) {
               className="responsive-img"
               src={orgs.imgUrl}
             />
-
+            {orgMap}
             <UserCanRateOrg />
             <p className="flow-text">{orgs.description}</p>
             <p className="flow-text">{orgs.location}</p>

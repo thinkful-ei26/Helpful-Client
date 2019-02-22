@@ -27,6 +27,7 @@ export default function SearchEvent(props) {
     })
     return (<div>
       <InitialMap
+        location={props.location}
         markers={props.events}
         isMarkerShown
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"

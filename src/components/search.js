@@ -28,15 +28,21 @@ export default function Search(props) {
 
   /* Call these on click */
   const getEvent = async () => {
-    const getEvents = await axios({
-      method: "get",
-      url: `${API_BASE_URL}/event/location/10000/45/-105`,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
-      }
-    });
-    setEvents(getEvents.data);
+    if (location === null) {
+
+    } else {
+      const url = `${API_BASE_URL}/event/location/10000/${location.lat}/${location.lng}`;
+      console.log(url);
+      const getEvents = await axios({
+        method: "get",
+        url: url,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
+        }
+      });
+      setEvents(getEvents.data);
+    }
   };
 
   const getOrg = async () => {
@@ -52,15 +58,22 @@ export default function Search(props) {
     setOrgs(getOrgs.data);
   };
 
+
   useEffect(() => {
     fetchUserLocation();
     getEvent();
     getOrg();
-  }, []);
+  }, [location]);
 
-  return (
-    <div className="container">
-      {/* <div className='filter-form'>
+
+
+  if (location === null) {
+    return <div></div>
+  } else {
+    console.log(location)
+    return (
+      <div className="container">
+        {/* <div className='filter-form'>
       <h2> Filter by:</h2>
       <div>
         <span className='big-font'> Distance(miles): </span>
@@ -74,31 +87,32 @@ export default function Search(props) {
       </div>
     </div> */}
 
-      <div className="search-container center">
-        <button
-          onClick={() => setComponent(<SearchOrg history={props.history} orgs={orgs} />)}
-          style={{
-            width: "175px",
-            borderRadius: "3px",
-            letterSpacing: "1.5px"
-          }}
-          className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
-        >
-          Organizations
+        <div className="search-container center">
+          <button
+            onClick={() => setComponent(<SearchOrg history={props.history} location={location} orgs={orgs} />)}
+            style={{
+              width: "175px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px"
+            }}
+            className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
+          >
+            Organizations
         </button>
-        <button
-          onClick={() => setComponent(<SearchEvent history={props.history} events={events} />)}
-          style={{
-            width: "175px",
-            borderRadius: "3px",
-            letterSpacing: "1.5px"
-          }}
-          className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
-        >
-          Events
+          <button
+            onClick={() => setComponent(<SearchEvent history={props.history} location={location} events={events} />)}
+            style={{
+              width: "175px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px"
+            }}
+            className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
+          >
+            Events
         </button>
+        </div>
+        {component}
       </div>
-      {component}
-    </div>
-  );
+    );
+  }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
-
+import { PointMap } from './map';
 import "../stylesheets/event-page.css";
 
 export function EventPage(props) {
@@ -9,6 +9,7 @@ export function EventPage(props) {
     const [event, setEvent] = useState(null);
     const [organization, setOrganization] = useState(null);
     const [rsvp, setRsvp] = useState(null);
+    const [eventMap, setEventMap] = useState(null);
 
     // placeholder id ************* These get changed out with props ************************
     console.log(props)
@@ -77,6 +78,7 @@ export function EventPage(props) {
     };
 
     useEffect(() => {
+
         fetchData();
     }, []);
 
@@ -99,6 +101,21 @@ export function EventPage(props) {
         );
     }
 
+    if (eventMap === null) {
+        if (event) {
+            setEventMap(<PointMap
+
+                marker={event}
+                isMarkerShown
+                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={<div style={{ height: `400px` }} />}
+                mapElement={<div style={{ height: `100%` }} />}
+            />)
+        }
+    }
+
+
     return (
         <section className="event">
             <div className="organization-container">
@@ -108,6 +125,7 @@ export function EventPage(props) {
                     alt={organization.name}
                 />
                 <h2 className="organization-name">{organization.name}</h2>
+                {eventMap}
                 <div className="organization-contact">{organization.contact}</div>
             </div>
             <div className="event-container">
