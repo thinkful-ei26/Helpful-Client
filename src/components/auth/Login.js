@@ -23,7 +23,7 @@ const Login = () => {
                 const token = res.data.authToken;
                 localStorage.setItem("jwtToken", token);
                 // Set token to Auth header
-                setAuthToken(token);
+                //setAuthToken(token);
                 // Decode token to get user data
                 const decoded = jwt_decode(token);
                 // Set current user
@@ -35,21 +35,6 @@ const Login = () => {
             });
     };
 
-    axios
-      .post(`${API_BASE_URL}/auth/login`, data)
-      .then(res => {
-        // Set token to localStorage
-        const token = res.data.authToken;
-        localStorage.setItem("jwtToken", token);
-        // Decode token to get user data
-        const decoded = jwt_decode(token);
-        // Set current user
-        setCurrentUser(decoded);
-      })
-      .then(() => {
-        history.push("/dashboard");
-      });
-  };
 
     return (
         <Route
