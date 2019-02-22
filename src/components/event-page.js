@@ -33,44 +33,48 @@ export function EventPage(props) {
     });
     setOrganization(orgResult.data);
 
-    // check if user has a reservation
-    const rsvpResult = await axios(`${API_BASE_URL}/rsvp/${eventId}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
-      }
-    });
-    setRsvp(rsvpResult.data);
-  };
-  const createRsvp = async () => {
-    await axios({
-      method: "post",
-      url: `${API_BASE_URL}/rsvp`,
-      data: {
-        eventId
-      },
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
-      }
-    });
-    setRsvp(true);
-  };
 
-  const removeRsvp = async () => {
-    await axios({
-      method: "delete",
-      url: `${API_BASE_URL}/rsvp/user`,
-      data: {
-        eventId
-      },
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
-      }
-    });
-    setRsvp(false);
-  };
+        // check if user has a reservation
+        const rsvpResult = await axios(
+            `${API_BASE_URL}/rsvp/specific/${eventId}`,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
+                }
+            }
+        );
+        if(rsvpResult.data !== null) {
+            setRsvp(rsvpResult.data.rsvp);
+        }
+    };
+    const createRsvp = async () => {
+        await axios({
+            method: "post",
+            url: `${API_BASE_URL}/rsvp`,
+            data: {
+                eventId
+            },
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
+            }
+        });
+        setRsvp(true);
+    };
+
+    const removeRsvp = async () => {
+        await axios({
+            method: "delete",
+            url: `${API_BASE_URL}/rsvp/user/${eventId}`,
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
+            }
+        });
+        setRsvp(false);
+    };
+
 
   useEffect(() => {
     fetchData();
