@@ -9,6 +9,7 @@ export default function UserCanRateOrg() {
 
     const [success, setSuccess] = useState(false);
 
+<<<<<<< HEAD
 
     const postRating = async () => {
         await axios({
@@ -63,4 +64,56 @@ export default function UserCanRateOrg() {
             </div>
         </div>
     );
+=======
+  const postRating = async () => {
+    const postRatingResult = await axios({
+      method: "post",
+      url: `${API_BASE_URL}/org`,
+      data: formData
+    });
+    setSuccess(true);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    postRating();
+  };
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var elems = document.querySelectorAll("select");
+    var instances = M.FormSelect.init(elems, {});
+  });
+ 
+  if (success) {
+    return <p className="orgCreateSuccess">Thank you for rating us!</p>;
+  }
+  //5c6ad21d8368687005177507 orgId for test post
+  return (
+    // <div className="container">
+    //   <div className="row">
+    //     <div className="center">
+    //       <form action="submit" className="" onSubmit={e => handleSubmit(e)}>
+            // <fieldset>
+              // <div className="create-org-row">
+                <div style={{heigh:'500px',color:'red'}}>
+                  <select className='browser-default'>
+                    <option value="" disabled selected>
+                      Rate this group
+                    </option>
+                    <option value="1">1 star</option>
+                    <option value="2">2 stars</option>
+                    <option value="3">3 stars</option>
+                    <option value="4">4 stars</option>
+                    <option value="5">5 stars</option>
+                  </select>
+                </div>
+              // </div>
+              // <a className="waves-effect waves-light btn">Submit</a>
+            // </fieldset>
+    //       </form>
+    //     </div>
+    //   </div>
+    // </div>
+  );
+>>>>>>> updates
 }
