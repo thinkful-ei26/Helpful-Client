@@ -5,11 +5,11 @@ import { PointMap } from "./map";
 import "../stylesheets/event-page.css";
 
 export function EventPage(props) {
-  // initial state
-  const [event, setEvent] = useState(null);
-  const [organization, setOrganization] = useState(null);
-  const [rsvp, setRsvp] = useState(null);
-  const [eventMap, setEventMap] = useState(null);
+    // initial state
+    const [event, setEvent] = useState(null);
+    const [organization, setOrganization] = useState(null);
+    const [rsvp, setRsvp] = useState(null);
+    const [eventMap, setEventMap] = useState(null);
 
 
     // placeholder id ************* These get changed out with props ************************
@@ -92,9 +92,9 @@ export function EventPage(props) {
     }, []);
 
 
-  if (event === null || organization === null) {
-    return "Loading...";
-  }
+    if (event === null || organization === null) {
+        return "Loading...";
+    }
 
     let rsvpButton;
     if (!rsvp) {
@@ -126,7 +126,7 @@ export function EventPage(props) {
         }
 
     }
-  }
+
 
     return (
         <section className='event'>
