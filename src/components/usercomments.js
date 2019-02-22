@@ -2,20 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { API_BASE_URL } from '../config';
 import axios from 'axios';
 
-const UserComments = () => {
+const UserComments = (props) => {
   const [comment, setComment] = useState('');
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState(['a coment']);
   const onChange = event => {
     setComment(event.target.value);
-    console.log(event.target.value);
-    console.log()
   };
 
   const createComment = async comment => {
     const createCommentResult = await axios({
       method: 'post',
       url: `${API_BASE_URL}/comments`,
-      data: { comment, orgId: '5c6f0af1de903f50d8dd524a' },
+      data: { comment, eventId: props.eventId },
       headers: {
         'Content-Type': 'application/json',
         Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
@@ -31,7 +29,7 @@ const UserComments = () => {
   };
 
   const fetchComments = async () => {
-    const fetchCommentsResult = await axios(`${API_BASE_URL}/comments`, {
+    const fetchCommentsResult = await axios(`${API_BASE_URL}/comments/event/${props.eventId}`, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
