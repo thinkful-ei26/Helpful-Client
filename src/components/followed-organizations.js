@@ -18,7 +18,6 @@ export default function FollowedOrgs(props) {
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     });
-    console.log(request.data);
     setOrgs(request.data);
   };
 

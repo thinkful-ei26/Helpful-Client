@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
-import M from "materialize-css";
 
 export default function UserCanRateOrg() {
   const [formData, setFormData] = useState({
@@ -11,12 +10,11 @@ export default function UserCanRateOrg() {
   const [success, setSuccess] = useState(false);
 
   const postRating = async () => {
-    const postRatingResult = await axios({
+    await axios({
       method: "post",
       url: `${API_BASE_URL}/org`,
       data: formData
-    });
-    setSuccess(true);
+    }).then(() => setSuccess(true));
   };
 
   const handleSubmit = e => {
@@ -24,11 +22,6 @@ export default function UserCanRateOrg() {
     postRating();
   };
 
-  document.addEventListener("DOMContentLoaded", function() {
-    var elems = document.querySelectorAll("select");
-    var instances = M.FormSelect.init(elems, {});
-  });
- 
   if (success) {
     return <p className="orgCreateSuccess">Thank you for rating us!</p>;
   }
@@ -53,7 +46,9 @@ export default function UserCanRateOrg() {
                   </select>
                 </div>
               </div>
-              <a className="waves-effect waves-light btn">Submit</a>
+              <a href="#submit" className="waves-effect waves-light btn">
+                Submit
+              </a>
             </fieldset>
           </form>
         </div>
