@@ -18,7 +18,7 @@ const NavBar = props => {
         </li>
 
         <li>
-          <a className="waves-effect waves-teal" onClick={() => props.history.push("/event")}>
+          <a className="waves-effect waves-teal" onClick={() => props.history.push("/events")}>
             My Events
           </a>
         </li>

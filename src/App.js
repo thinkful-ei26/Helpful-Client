@@ -17,6 +17,7 @@ import ErrorPage from "./components/layout/errorPage";
 import CreateMeetup from "./components/create-meetup";
 import CreatedOrgs from "./components/created-organizations";
 import OrganizationDashboard from "./components/organization-dashboard";
+import EventList from './components/event-list';
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
           <Route exact path="/organization/:id" component={OrgPublicPage} />
           <Route exact path="/createdorgs" component={CreatedOrgs} />
           <Route exact path="/orgdashboard/:id" component={OrganizationDashboard} />
+          <Route exact path="/events" component={EventList} />
           <Route component={ErrorPage} />
         </Switch>
         <Footer />
