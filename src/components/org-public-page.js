@@ -16,53 +16,60 @@ export default function OrgPublicPage(props) {
   const [orgs, setOrgs] = useState(null);
   const [orgEvents, setOrgEvents] = useState(null);
 
-  const orgId = props.match.params.id; 
+  const orgId = props.match.params.id;
 
   const fetchData = props => {
     getOrgs(orgId).then(res => setOrgs(res.data));
   };
   const fetchEvents = () => {
-    getOrgEvents(orgId).then(res => setOrgEvents(res.data));
+    getOrgEvents(orgId).then(res => {
+      let newList = res.data.map((event, index) => {
+        return <li key={index}>{event.name}</li>
+      })
+      setOrgEvents(newList)
+    });
   };
-  
 
-  
+
+
   const generateFollowButton = () => {
-    
+
     if (!following) {
-      return(
-      <button className="follow-button"
-        onClick={() => followOrg()}>
-        Follow
+      return (
+        <button className="follow-button"
+          onClick={() => followOrg()}>
+          Follow
       </button>
-    )} else if (following) {
-      return(
-      <button 
-        className="unfollow-button"
-        onClick={() => unFollowOrg()}>
-        Unfollow
+      )
+    } else if (following) {
+      return (
+        <button
+          className="unfollow-button"
+          onClick={() => unFollowOrg()}>
+          Unfollow
       </button>
-      )}
+      )
+    }
   }
-  
+
 
   // check to see if user is following this org or not, and call generateFollowButton()
-  const fetchFollow = async() => {
+  const fetchFollow = async () => {
     await axios(`${API_BASE_URL}/follow/following/${orgId}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
     })
-    .then(res => {
-      if (res.data) {
-        setFollowing(true); 
-        setFollowdata(res.data); 
+      .then(res => {
+        if (res.data) {
+          setFollowing(true);
+          setFollowdata(res.data);
 
-      } else if (!res.data) {
-        setFollowing(false); 
-      }
-    })
+        } else if (!res.data) {
+          setFollowing(false);
+        }
+      })
   }
 
   // follow an organization
@@ -100,7 +107,7 @@ export default function OrgPublicPage(props) {
       }
     });
   };
-  
+
 
   // document.addEventListener('DOMContentLoaded', function() {
   //   let elems = document.querySelectorAll('.fixed-action-btn');
@@ -117,8 +124,9 @@ export default function OrgPublicPage(props) {
     fetchData(props);
     fetchEvents();
   }, [props.match.params.id]);
-  
+
   if (orgs) {
+
     return (
       <div className="org-public-page-main center container valign-wrapper">
         <div className="fixed-action-btn">
@@ -157,7 +165,7 @@ export default function OrgPublicPage(props) {
               className="responsive-img"
               src={orgs.imgUrl}
             />
-            
+
             <UserCanRateOrg />
             <p className="flow-text">{orgs.description}</p>
             <p className="flow-text">{orgs.location}</p>

@@ -9,7 +9,7 @@ export default function FollowedOrgs(props) {
   // PRODUCTION TODO --> currently getting all orgs, need to refactor to
   // get only user followed orgs
 
-  const [orgs, setOrgs] = useState(null);
+  const [orgs, setOrgs] = useState([]);
 
   const fetchData = async () => {
     const request = await axios(`${API_BASE_URL}/follow/user`, {
@@ -26,17 +26,15 @@ export default function FollowedOrgs(props) {
     fetchData();
   }, []);
 
-  let followedOrgCards;
-  if (orgs) {
-    followedOrgCards = orgs.map(org => {
-      if (org.organizationId) {
-        return <OrganizationCard history={props.history} org={org.organizationId}/>
-      }
-    })
-  }
-  
+  const followedOrgCards = orgs.map((org, index) => {
+    if (org.organizationId) {
+      return <OrganizationCard key={index} history={props.history} org={org.organizationId} />
+    }
+  })
 
-  if (orgs === null) {
+
+
+  if (orgs === null || orgs.length === 0) {
     return (
       <section className="noFollowedOrgs">
         <p>Looks like you haven't followed any organizations yet...</p>

@@ -14,7 +14,7 @@ export default function EventList() {
   const fetchUserLocation = async () => {
     if (!location) {
       if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(function(position) {
+        navigator.geolocation.getCurrentPosition(function (position) {
           let results = {
             lat: Number(position.coords.latitude.toFixed(7)),
             lng: Number(position.coords.longitude.toFixed(7))
@@ -81,7 +81,7 @@ export default function EventList() {
     );
     setMeetups(meetupRequest.data);
   }
-      
+
   useEffect(() => {
     fetchUserLocation()
     fetchRsvpData()
@@ -102,21 +102,21 @@ export default function EventList() {
   let eventTitle = 'Nearby Events'
   if (rsvpEvents) {
     generateRsvpEventList(rsvpEvents);
-    rsvpEventCardList = rsvpEventList.map(event => {
-      return <EventCard event={event} />;
+    rsvpEventCardList = rsvpEventList.map((event, index) => {
+      return <EventCard key={index} event={event} />;
     });
   }
   if (events) {
-    localEventCardList = events.map(event => {
-      return <EventCard event={event} />;
+    localEventCardList = events.map((event, index) => {
+      return <EventCard key={index} event={event} />;
     });
   }
-  if(meetups) {
-    meetupCardList = meetups.map(event => {
-      return <EventCard event={event} />;
+  if (meetups) {
+    meetupCardList = meetups.map((event, index) => {
+      return <EventCard key={index} event={event} />;
     });
   }
-  if(!location) {
+  if (!location) {
     eventTitle = 'All Events'
   }
 
