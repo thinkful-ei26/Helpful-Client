@@ -16,6 +16,7 @@ export default function DashboardCreateEvent(props) {
 
     const [success, setSuccess] = useState(false);
 
+
     const createEvent = async () => {
         await axios({
             method: "post",
@@ -29,6 +30,7 @@ export default function DashboardCreateEvent(props) {
             },
         }).then(() => setSuccess(true));
     };
+
 
     const handleSubmit = e => {
         e.preventDefault();

@@ -9,6 +9,7 @@ import getOrgEvents from "../utils/fetchEvent";
 import { PointMap } from "./map";
 
 export default function OrgPublicPage(props) {
+
     // const orgId =  props.location.state.org.id;
     const [view] = useState(<OrgPublicPageEventList />);
     const [following, setFollowing] = useState(false);
@@ -123,6 +124,7 @@ export default function OrgPublicPage(props) {
         }
     }
 
+
     // document.addEventListener('DOMContentLoaded', function() {
     //   let elems = document.querySelectorAll('.fixed-action-btn');
     //   let instances = M.FloatingActionButton.init(elems, {
@@ -140,6 +142,7 @@ export default function OrgPublicPage(props) {
     }, [props.match.params.id]);
 
     if (orgs) {
+
         return (
             <div className='org-public-page-main center container valign-wrapper'>
                 <div className='org-public-content container'>
@@ -168,6 +171,7 @@ export default function OrgPublicPage(props) {
     return (
         <div>
             <p>I am loading text</p>
+
         </div>
     );
 }

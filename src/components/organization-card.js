@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 export default function OrganizationCard(props) {
     const [link, setLink] = useState(`/organization/${props.org.id}`);
 
+
     const checkAdmin = () => {
         if (props.admin) {
             setLink(`/orgdashboard/${props.org.id}`);
         }
     };
+
 
     useEffect(() => {
         checkAdmin();

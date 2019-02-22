@@ -19,6 +19,7 @@ import OrganizationDashboard from "./components/organization-dashboard";
 import EventList from "./components/event-list";
 
 const App = () => {
+
     return (
         <Router>
             <div className='App'>
@@ -69,6 +70,7 @@ const App = () => {
             </div>
         </Router>
     );
+
 };
 
 export default App;

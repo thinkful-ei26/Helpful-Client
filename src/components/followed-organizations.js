@@ -6,6 +6,7 @@ import OrganizationCard from "./organization-card";
 import "../stylesheets/followed-orgs.css";
 
 export default function FollowedOrgs(props) {
+
     // PRODUCTION TODO --> currently getting all orgs, need to refactor to
     // get only user followed orgs
 
@@ -42,6 +43,7 @@ export default function FollowedOrgs(props) {
             <section className='noFollowedOrgs'>
                 <p>Looks like you haven't followed any organizations yet...</p>
                 <p>Click here to checkout the organizations near you!</p>
+
 
                 <Link to='/search'> Search for Organizations near you!</Link>
             </section>

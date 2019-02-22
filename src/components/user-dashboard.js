@@ -4,6 +4,7 @@ import OrganizationList from "./organization-list";
 import RenderUserRole from "./renderuserrole";
 
 export default function UserDashboard(props) {
+
     // const [showView, setView] = useState(<EventList />);
     // const [showOrg, setShowOrg] = useState(<OrganizationList />);
 
@@ -15,4 +16,5 @@ export default function UserDashboard(props) {
             <RenderUserRole />
         </div>
     );
+
 }

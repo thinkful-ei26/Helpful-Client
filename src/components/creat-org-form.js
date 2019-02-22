@@ -14,6 +14,7 @@ export default function CreateOrgForm() {
 
     const [success, setSuccess] = useState(false);
 
+
     const createOrg = async () => {
         await axios({
             method: "post",
@@ -27,6 +28,7 @@ export default function CreateOrgForm() {
             },
         }).then(() => setSuccess(true));
     };
+
 
     const handleSubmit = e => {
         e.preventDefault();

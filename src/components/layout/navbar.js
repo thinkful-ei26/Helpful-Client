@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import M from "materialize-css";
 
 const NavBar = props => {
+
     let token = localStorage.getItem("jwtToken");
     let navRight, sideNav;
     if (token) {
@@ -93,10 +94,12 @@ const NavBar = props => {
         );
     }
 
+
     const logoutUser = async () => {
         await localStorage.removeItem("jwtToken");
         props.history.push("/");
     };
+
 
     useEffect(() => {
         let elems = document.querySelectorAll(".sidenav");
@@ -127,6 +130,7 @@ const NavBar = props => {
                     </div>
                     {sideNav}
                 </nav>
+
             </div>
 
             <ul id='slide-out' className='sidenav'>
@@ -237,6 +241,7 @@ const NavBar = props => {
             </ul>
         </React.Fragment>
     );
+
 };
 
 export default withRouter(NavBar);

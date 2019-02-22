@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export default function SearchEvent(props) {
     // const [events, setEvents] = useState(null);
 
+
     if (props.events) {
         const listNames = props.events.map((event, index) => {
             const linkUrl = `/event/${event.id}/${event.organizationId}`;
@@ -46,4 +47,5 @@ export default function SearchEvent(props) {
             </div>
         );
     }
+
 }

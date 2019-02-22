@@ -11,6 +11,7 @@ export default function Search(props) {
     const [orgs, setOrgs] = useState(null);
     const [location, setLocation] = useState(null);
 
+
     // get user location
     const fetchUserLocation = async () => {
         if (!location) {
@@ -23,8 +24,10 @@ export default function Search(props) {
                     setLocation(results);
                 });
             }
+
         }
     };
+
 
     /* Call these on click */
     const getEvent = async () => {
@@ -74,6 +77,7 @@ export default function Search(props) {
         return (
             <div className='container'>
                 {/* <div className='filter-form'>
+
       <h2> Filter by:</h2>
       <div>
         <span className='big-font'> Distance(miles): </span>
@@ -86,6 +90,7 @@ export default function Search(props) {
         </select>
       </div>
     </div> */}
+
 
                 <div className='search-container center'>
                     <button
@@ -129,4 +134,5 @@ export default function Search(props) {
             </div>
         );
     }
+
 }

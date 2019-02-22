@@ -3,6 +3,7 @@ import { API_BASE_URL } from "../config";
 import axios from "axios";
 
 const RenderUserRole = () => {
+
     const [role, setRole] = useState("Member");
 
     const fetchRole = async () => {
@@ -20,6 +21,7 @@ const RenderUserRole = () => {
     useEffect(() => {
         fetchRole();
     }, [role]);
+
 
     return (
         <div>

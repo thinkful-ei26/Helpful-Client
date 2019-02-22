@@ -8,6 +8,7 @@ import {
 } from "react-google-maps";
 
 export const InitialMap = withGoogleMap(props => {
+
     const dots = props.markers.map((marker, index) => {
         return (
             <React.Fragment key={index}>
@@ -23,6 +24,7 @@ export const InitialMap = withGoogleMap(props => {
             </React.Fragment>
         );
     });
+
 
     return (
         <GoogleMap

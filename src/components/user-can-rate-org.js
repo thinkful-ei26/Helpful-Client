@@ -9,6 +9,7 @@ export default function UserCanRateOrg() {
 
     const [success, setSuccess] = useState(false);
 
+
     const postRating = async () => {
         await axios({
             method: "post",
@@ -17,10 +18,12 @@ export default function UserCanRateOrg() {
         }).then(() => setSuccess(true));
     };
 
+
     const handleSubmit = e => {
         e.preventDefault();
         postRating();
     };
+
 
     if (success) {
         return <p className='orgCreateSuccess'>Thank you for rating us!</p>;

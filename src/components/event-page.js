@@ -5,11 +5,12 @@ import { PointMap } from "./map";
 import "../stylesheets/event-page.css";
 
 export function EventPage(props) {
-    // initial state
-    const [event, setEvent] = useState(null);
-    const [organization, setOrganization] = useState(null);
-    const [rsvp, setRsvp] = useState(null);
-    const [eventMap, setEventMap] = useState(null);
+  // initial state
+  const [event, setEvent] = useState(null);
+  const [organization, setOrganization] = useState(null);
+  const [rsvp, setRsvp] = useState(null);
+  const [eventMap, setEventMap] = useState(null);
+
 
     // placeholder id ************* These get changed out with props ************************
     let eventId = props.match.params.eventId;
@@ -47,6 +48,7 @@ export function EventPage(props) {
             },
         });
         setRsvp(rsvpResult.data);
+
     };
     const createRsvp = async () => {
         await axios({
@@ -68,10 +70,12 @@ export function EventPage(props) {
     const removeRsvp = async () => {
         await axios({
             method: "delete",
+
             url: `${API_BASE_URL}/rsvp/user`,
             data: {
                 eventId,
             },
+
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer ".concat(
@@ -82,13 +86,15 @@ export function EventPage(props) {
         setRsvp(false);
     };
 
+
     useEffect(() => {
         fetchData();
     }, []);
 
-    if (event === null || organization === null) {
-        return "Loading...";
-    }
+
+  if (event === null || organization === null) {
+    return "Loading...";
+  }
 
     let rsvpButton;
     if (!rsvp) {
@@ -118,7 +124,9 @@ export function EventPage(props) {
                 />
             );
         }
+
     }
+  }
 
     return (
         <section className='event'>
@@ -145,6 +153,7 @@ export function EventPage(props) {
             </div>
         </section>
     );
+
 }
 
 export default EventPage;

@@ -10,6 +10,7 @@ export default function CreatedOrgs(props) {
 
     const [orgs, setOrgs] = useState(null);
 
+
     const fetchData = async () => {
         const request = await axios(`${API_BASE_URL}/role/user`, {
             headers: {
@@ -22,9 +23,11 @@ export default function CreatedOrgs(props) {
         setOrgs(request.data);
     };
 
+
     useEffect(() => {
         fetchData();
     }, []);
+
 
     let orgCards;
     if (orgs) {
@@ -43,6 +46,7 @@ export default function CreatedOrgs(props) {
         });
     }
 
+
     if (orgs === null) {
         return (
             <section className='noFollowedOrgs'>
@@ -59,6 +63,7 @@ export default function CreatedOrgs(props) {
         );
     }
 
+
     return (
         <div>
             <section className='followedOrgsList'>
@@ -68,4 +73,5 @@ export default function CreatedOrgs(props) {
             </section>
         </div>
     );
+
 }

@@ -4,6 +4,7 @@ import "../stylesheets/search-org.css";
 import { Link } from "react-router-dom";
 
 export default function SearchOrg(props) {
+
     if (props.orgs) {
         const listNames = props.orgs.map((org, index) => {
             const linkUrl = `/organization/${org.id}`;
@@ -46,4 +47,5 @@ export default function SearchOrg(props) {
             </div>
         );
     }
+
 }
