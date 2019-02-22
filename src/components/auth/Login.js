@@ -10,7 +10,6 @@ const Login = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   // ********************** this component needs some refactoring and also to point to dashboard when a user has token **************
   const loginUser = async history => {

@@ -10,7 +10,7 @@ const UserComments = () => {
   };
 
   const createComment = async comment => {
-    const createCommentResult = await axios({
+    await axios({
       method: "post",
       url: `${API_BASE_URL}/comments`,
       data: { comment, orgId: "5c6f0af1de903f50d8dd524a" },
