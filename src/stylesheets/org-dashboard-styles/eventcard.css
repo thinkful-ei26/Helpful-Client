@@ -1,9 +1,8 @@
-.event-card{
+.event-card {
     background-color: #f2ecea;
     padding: 2%;
-    margin:2%;
+    margin: 2%;
     border: 1px solid #f8f6f2;
     border-radius: 2%;
     width: 50%;
 }
-

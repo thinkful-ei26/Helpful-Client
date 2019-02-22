@@ -1,36 +1,34 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
 
 export function GeoLocation(props) {
-
     // initial state
     const [location, setLocation] = useState(null);
 
     // fetch state
-    const fetchLocation = async() => {
+    const fetchLocation = async () => {
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 let results = {
                     latitude: position.coords.latitude,
-                    longitude: position.coords.longitude
+                    longitude: position.coords.longitude,
                 };
-                setLocation(results)
-              });
+                setLocation(results);
+            });
         }
-    }
-    
+    };
+
     useEffect(() => {
         fetchLocation();
-    }, );
+    });
 
     if (location === null) {
-        return 'Loading...';
+        return "Loading...";
     }
 
     return (
         <section className='location'>
             {location.latitude}
-            <br/>
+            <br />
             {location.longitude}
         </section>
     );

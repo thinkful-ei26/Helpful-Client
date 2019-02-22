@@ -19,36 +19,56 @@ import OrganizationDashboard from "./components/organization-dashboard";
 import EventList from "./components/event-list";
 
 const App = () => {
-  return (
-    <Router>
-      <div className="App">
-        <NavBar />
-        {/* <OrganizationList /> */}
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/createorgform" component={CreateOrgForm} />
-          <Route exact path="/followedorgs" component={FollowedOrgs} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/dashboard" component={UserDashboard} />
-          <Route exact path="/search" component={Search} />
-          {/* <Route exact path="/organization" component={OrgPublicPage} /> */}
-          <Route exact path="/event/:eventId/:orgId" component={EventPage} />
-          <Route exact path="/create-meetup" component={CreateMeetup} />
-          <Route exact path="/organization/:id" component={OrgPublicPage} />
-          <Route exact path="/createdorgs" component={CreatedOrgs} />
-          <Route
-            exact
-            path="/orgdashboard/:id"
-            component={OrganizationDashboard}
-          />
-          <Route exact path="/events" component={EventList} />
-          <Route component={ErrorPage} />
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <div className='App'>
+                <NavBar />
+                {/* <OrganizationList /> */}
+                <Switch>
+                    <Route exact path='/' component={LandingPage} />
+                    <Route
+                        exact
+                        path='/createorgform'
+                        component={CreateOrgForm}
+                    />
+                    <Route
+                        exact
+                        path='/followedorgs'
+                        component={FollowedOrgs}
+                    />
+                    <Route exact path='/register' component={Register} />
+                    <Route exact path='/login' component={Login} />
+                    <Route exact path='/dashboard' component={UserDashboard} />
+                    <Route exact path='/search' component={Search} />
+                    {/* <Route exact path="/organization" component={OrgPublicPage} /> */}
+                    <Route
+                        exact
+                        path='/event/:eventId/:orgId'
+                        component={EventPage}
+                    />
+                    <Route
+                        exact
+                        path='/create-meetup'
+                        component={CreateMeetup}
+                    />
+                    <Route
+                        exact
+                        path='/organization/:id'
+                        component={OrgPublicPage}
+                    />
+                    <Route exact path='/createdorgs' component={CreatedOrgs} />
+                    <Route
+                        exact
+                        path='/orgdashboard/:id'
+                        component={OrganizationDashboard}
+                    />
+                    <Route exact path='/events' component={EventList} />
+                    <Route component={ErrorPage} />
+                </Switch>
+                <Footer />
+            </div>
+        </Router>
+    );
 };
 
 export default App;

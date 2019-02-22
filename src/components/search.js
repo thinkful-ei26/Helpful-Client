@@ -6,70 +6,74 @@ import SearchEvent from "./search-event";
 import "../stylesheets/search.css";
 
 export default function Search(props) {
-  const [component, setComponent] = useState("");
-  const [events, setEvents] = useState(null);
-  const [orgs, setOrgs] = useState(null);
-  const [location, setLocation] = useState(null);
+    const [component, setComponent] = useState("");
+    const [events, setEvents] = useState(null);
+    const [orgs, setOrgs] = useState(null);
+    const [location, setLocation] = useState(null);
 
-  // get user location
-  const fetchUserLocation = async () => {
-    if (!location) {
-      if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          let results = {
-            lat: Number(position.coords.latitude.toFixed(7)),
-            lng: Number(position.coords.longitude.toFixed(7))
-          };
-          setLocation(results);
-        });
-      }
-    }
-  };
-
-  /* Call these on click */
-  const getEvent = async () => {
-    if (location === null) {
-    } else {
-      const url = `${API_BASE_URL}/event/location/10000/${location.lat}/${
-        location.lng
-      }`;
-      const getEvents = await axios({
-        method: "get",
-        url: url,
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
+    // get user location
+    const fetchUserLocation = async () => {
+        if (!location) {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    let results = {
+                        lat: Number(position.coords.latitude.toFixed(7)),
+                        lng: Number(position.coords.longitude.toFixed(7)),
+                    };
+                    setLocation(results);
+                });
+            }
         }
-      });
-      setEvents(getEvents.data);
-    }
-  };
+    };
 
-  const getOrg = async () => {
-    const getOrgs = await axios({
-      method: "get",
-      url: `${API_BASE_URL}/org/location/10000/45/-105`,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
-      }
-    });
+    /* Call these on click */
+    const getEvent = async () => {
+        if (location === null) {
+        } else {
+            const url = `${API_BASE_URL}/event/location/10000/${location.lat}/${
+                location.lng
+            }`;
+            const getEvents = await axios({
+                method: "get",
+                url: url,
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer ".concat(
+                        localStorage.getItem("jwtToken")
+                    ),
+                },
+            });
+            setEvents(getEvents.data);
+        }
+    };
 
-    setOrgs(getOrgs.data);
-  };
+    const getOrg = async () => {
+        const getOrgs = await axios({
+            method: "get",
+            url: `${API_BASE_URL}/org/location/10000/45/-105`,
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer ".concat(
+                    localStorage.getItem("jwtToken")
+                ),
+            },
+        });
 
-  useEffect(() => {
-    fetchUserLocation();
-    getEvent();
-    getOrg();
-  }, [location]);
+        setOrgs(getOrgs.data);
+    };
 
-  if (location === null) {
-    return <div />;
-  } else {
-    return (
-      <div className="container">
-        {/* <div className='filter-form'>
+    useEffect(() => {
+        fetchUserLocation();
+        getEvent();
+        getOrg();
+    }, [location]);
+
+    if (location === null) {
+        return <div />;
+    } else {
+        return (
+            <div className='container'>
+                {/* <div className='filter-form'>
       <h2> Filter by:</h2>
       <div>
         <span className='big-font'> Distance(miles): </span>
@@ -83,48 +87,46 @@ export default function Search(props) {
       </div>
     </div> */}
 
-        <div className="search-container center">
-          <button
-            onClick={() =>
-              setComponent(
-                <SearchOrg
-                  history={props.history}
-                  location={location}
-                  orgs={orgs}
-                />
-              )
-            }
-            style={{
-              width: "175px",
-              borderRadius: "3px",
-              letterSpacing: "1.5px"
-            }}
-            className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
-          >
-            Organizations
-          </button>
-          <button
-            onClick={() =>
-              setComponent(
-                <SearchEvent
-                  history={props.history}
-                  location={location}
-                  events={events}
-                />
-              )
-            }
-            style={{
-              width: "175px",
-              borderRadius: "3px",
-              letterSpacing: "1.5px"
-            }}
-            className="btn btn-large waves-effect waves-light hoverable teal lighten-2"
-          >
-            Events
-          </button>
-        </div>
-        {component}
-      </div>
-    );
-  }
+                <div className='search-container center'>
+                    <button
+                        onClick={() =>
+                            setComponent(
+                                <SearchOrg
+                                    history={props.history}
+                                    location={location}
+                                    orgs={orgs}
+                                />
+                            )
+                        }
+                        style={{
+                            width: "175px",
+                            borderRadius: "3px",
+                            letterSpacing: "1.5px",
+                        }}
+                        className='btn btn-large waves-effect waves-light hoverable teal lighten-2'>
+                        Organizations
+                    </button>
+                    <button
+                        onClick={() =>
+                            setComponent(
+                                <SearchEvent
+                                    history={props.history}
+                                    location={location}
+                                    events={events}
+                                />
+                            )
+                        }
+                        style={{
+                            width: "175px",
+                            borderRadius: "3px",
+                            letterSpacing: "1.5px",
+                        }}
+                        className='btn btn-large waves-effect waves-light hoverable teal lighten-2'>
+                        Events
+                    </button>
+                </div>
+                {component}
+            </div>
+        );
+    }
 }
