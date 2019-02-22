@@ -15,12 +15,13 @@ export default function UserCanRateOrg() {
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_BASE_URL } from '../config';
-import M from 'materialize-css';
+// import M from 'materialize-css';
 
 export default function UserCanRateOrg() {
-  const [formData, setFormData] = useState({
-    rating: ''
+  const [rating, setRating] = useState({
+    rating: Number(5)
   });
+<<<<<<< HEAD
 >>>>>>> updates to rating
 
     const postRating = async () => {
@@ -79,26 +80,65 @@ export default function UserCanRateOrg() {
 =======
   const postRating = async () => {
     const postRatingResult = await axios({
+=======
+  const [ratings, setRatings] = useState([]);
+
+  const onChange = event => {
+    setRating(event.target.value);
+  };
+
+  const createRating = async () => {
+    await axios({
+>>>>>>> user-can-rate captures current rating, captures historic ratings
       method: 'post',
-      url: `${API_BASE_URL}/org`,
-      data: formData
+      url: `${API_BASE_URL}/org`, //CHECK THIS******************************
+      data: { rating },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
+      }
+    })
+      .then(() => {
+        console.log('RATING', rating);
+        return rating;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+  const fetchRatings = async () => {
+    const fetchRatingsResult = await axios(`${API_BASE_URL}/orgrating`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
+      }
     });
-    setSuccess(true);
+    console.log('$$$$$$$$$$$$$$$$', fetchRatingsResult.data[0].rating);
+    setRatings(fetchRatingsResult.data);
+  };
+  useEffect(() => {
+    console.log('##############', ratings);
+    console.log('@@@@@@@@@@@@@', rating.rating);
+    fetchRatings();
+  }, []);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    setRatings([...ratings, rating]);
+    createRating(rating);
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    postRating();
-  };
+  // const avg = 0;
+  // if (ratings) {
+  //   let avg;
+  //   let sum = ratings.reduce(function(a, b) {
+  //     return a + b;
+  //   });
+  //   return (avg = sum / ratings.length);
+  // }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, {});
-  });
+  // console.log('*************', avg);
 
-  if (success) {
-    return <p className="orgCreateSuccess">Thank you for rating us!</p>;
-  }
   //5c6ad21d8368687005177507 orgId for test post
   return (
     <div className="container">
@@ -109,7 +149,7 @@ export default function UserCanRateOrg() {
               <div className="create-org-row">
                 <div style={{ heigh: '500px', color: 'red' }}>
                   <label>Rate this group</label>
-                  <select className="browser-default">
+                  <select onChange={onChange} className="browser-default">
                     <option defaultValue="1">1 star</option>
                     <option defaultValue="2">2 stars</option>
                     <option defaultValue="3">3 stars</option>
@@ -119,6 +159,7 @@ export default function UserCanRateOrg() {
                 </div>
               </div>
               <a className="waves-effect waves-light btn">Submit</a>
+              <div> </div>
             </fieldset>
           </form>
         </div>
