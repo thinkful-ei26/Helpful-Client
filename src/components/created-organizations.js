@@ -11,7 +11,6 @@ export default function CreatedOrgs(props) {
   const [orgs, setOrgs] = useState(null);
 
   const fetchData = async () => {
-    console.log('fetching...')
     const request = await axios(`${API_BASE_URL}/role/user`, {
       headers: {
         "Content-Type": "application/json",
@@ -28,14 +27,18 @@ export default function CreatedOrgs(props) {
   let orgCards;
   if (orgs) {
     orgCards = orgs.map((org, index) => {
-      console.log(org);
       if (org.organizationId) {
-        return <OrganizationCard key={index} history={props.history} org={org.organizationId}
-          admin={org.role}
-        />
+        return (
+          <OrganizationCard
+            key={index}
+            history={props.history}
+            org={org.organizationId}
+            admin={org.role}
+          />
+        );
       }
       return null;
-    })
+    });
   }
 
   if (orgs === null) {
@@ -56,9 +59,7 @@ export default function CreatedOrgs(props) {
       <section className="followedOrgsList">
         <h3>Orgnizations I Created</h3>
 
-        <div>
-          {orgCards}
-        </div>
+        <div>{orgCards}</div>
       </section>
     </div>
   );
