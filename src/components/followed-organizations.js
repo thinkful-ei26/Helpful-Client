@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
-
+import { Link } from 'react-router-dom'
 import OrganizationCard from "./organization-card";
 import "../stylesheets/followed-orgs.css";
 
@@ -42,7 +42,7 @@ export default function FollowedOrgs(props) {
         <p>Looks like you haven't followed any organizations yet...</p>
         <p>Click here to checkout the organizations near you!</p>
 
-        <button>Find Organizations</button>
+        <Link to='/search'> Search for Organizations near you!</Link>
       </section>
     );
   }
