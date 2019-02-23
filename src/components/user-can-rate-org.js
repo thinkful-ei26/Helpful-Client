@@ -1,19 +1,15 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { API_BASE_URL } from "../config";
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 export default function UserCanRateOrg() {
   const [rating, setRating] = useState({
     rating: Number(5)
   });
-
-    
-  const postRating = async () => {
-    const postRatingResult = await axios({
-  const onChange = event => {
-    setRating(event.target.value);
-  };
+  const [ratings, setRatings] = useState([]);
+  const onChange= event =>{
+    setRating(event.target.value)
+  }
 
   const createRating = async () => {
     await axios({
@@ -29,10 +25,14 @@ export default function UserCanRateOrg() {
         console.log('RATING', rating);
         return rating;
       })
+      .then(() => {
+        fetchRatings();
+      })
       .catch(error => {
         console.log(error);
       });
   };
+
   const fetchRatings = async () => {
     const fetchRatingsResult = await axios(`${API_BASE_URL}/orgrating`, {
       headers: {
@@ -43,6 +43,7 @@ export default function UserCanRateOrg() {
     console.log('$$$$$$$$$$$$$$$$', fetchRatingsResult.data[0].rating);
     setRatings(fetchRatingsResult.data);
   };
+
   useEffect(() => {
     console.log('##############', ratings);
     console.log('@@@@@@@@@@@@@', rating.rating);
@@ -54,6 +55,7 @@ export default function UserCanRateOrg() {
     setRatings([...ratings, rating]);
     createRating(rating);
   };
+
 
   // const avg = 0;
   // if (ratings) {
