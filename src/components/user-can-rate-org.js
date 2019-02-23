@@ -4,12 +4,12 @@ import { API_BASE_URL } from '../config';
 
 export default function UserCanRateOrg() {
   const [rating, setRating] = useState({
-    rating: Number(5)
-  }); //Default rating set to 5
+    rating: 0
+  }); //Default rating set to 0
   const [ratings, setRatings] = useState([]);
   const onChange = event => {
     setRating(event.target.value);
-    console.log('****************', event.target.value);
+    console.log('****************', event.target.value); //The user input is captured.
   };
 
   const createRating = async () => {
@@ -41,17 +41,20 @@ export default function UserCanRateOrg() {
         Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
       }
     });
-    console.log('$$$$$$$$$$$$$$$$', fetchRatingsResult.data[0].rating);
+    console.log('$$$$$$$$$$$$$$$$', fetchRatingsResult.data[0].rating); //The stored rating is returned.
+    console.log('&&&&&&&&&&&&&&&&', ratings);
     setRatings(fetchRatingsResult.data);
   };
 
   useEffect(() => {
     fetchRatings();
+    console.log('PPPPPPPPPPPP', ratings);
   }, []);
 
-  const handleSubmit = event => {
+  const onSubmit = event => {
     event.preventDefault();
     setRatings([...ratings, rating]);
+    console.log('IIIIIIIIIIIIII', rating);
     createRating(rating);
   };
 
@@ -71,7 +74,7 @@ export default function UserCanRateOrg() {
     <div className="container">
       <div className="row">
         <div className="center">
-          <form action="submit" className="" onSubmit={e => handleSubmit(e)}>
+          <form action="submit" className="" onSubmit={e => onSubmit(e)}>
             <fieldset>
               <div className="create-org-row">
                 <div style={{ heigh: '500px', color: 'red' }}>
