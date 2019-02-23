@@ -3,16 +3,6 @@ import { API_BASE_URL } from "../config";
 import axios from "axios";
 
 const UserComments = () => {
-<<<<<<< HEAD
-=======
-  const [comment, setComment] = useState('');
-  const [comments, setComments] = useState([]);
-  const onChange = event => {
-    setComment(event.target.value);
-    // console.log(event.target.value);
-    // console.log()
-  };
->>>>>>> user-can-rate captures current rating, captures historic ratings
 
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]);
