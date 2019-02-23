@@ -5,7 +5,7 @@ import { API_BASE_URL } from '../config';
 export default function UserCanRateOrg() {
   const [rating, setRating] = useState({
     rating: Number(5)
-  });
+  }); //Default rating set to 5
   const [ratings, setRatings] = useState([]);
   const onChange = event => {
     setRating(event.target.value);
@@ -15,7 +15,7 @@ export default function UserCanRateOrg() {
   const createRating = async () => {
     await axios({
       method: 'post',
-      url: `${API_BASE_URL}/org`, //CHECK THIS******************************
+      url: `${API_BASE_URL}/orgrating`, //CHECK THIS******************************
       data: { rating },
       headers: {
         'Content-Type': 'application/json',
@@ -44,6 +44,10 @@ export default function UserCanRateOrg() {
     console.log('$$$$$$$$$$$$$$$$', fetchRatingsResult.data[0].rating);
     setRatings(fetchRatingsResult.data);
   };
+
+  useEffect(() => {
+    fetchRatings();
+  }, []);
 
   const handleSubmit = event => {
     event.preventDefault();
