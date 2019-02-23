@@ -7,10 +7,10 @@ export default function UserCanRateOrg() {
     rating: Number(5)
   });
   const [ratings, setRatings] = useState([]);
-  const onChange= event =>{
-    setRating(event.target.value)
-    console.log('****************',event.target.value)
-  }
+  const onChange = event => {
+    setRating(event.target.value);
+    console.log('****************', event.target.value);
+  };
 
   const createRating = async () => {
     await axios({
@@ -45,18 +45,11 @@ export default function UserCanRateOrg() {
     setRatings(fetchRatingsResult.data);
   };
 
-  useEffect(() => {
-    console.log('##############', ratings);
-    console.log('@@@@@@@@@@@@@', rating.rating);
-    fetchRatings();
-  }, []);
-
   const handleSubmit = event => {
     event.preventDefault();
     setRatings([...ratings, rating]);
     createRating(rating);
   };
-
 
   // const avg = 0;
   // if (ratings) {

@@ -3,7 +3,6 @@ import { API_BASE_URL } from "../config";
 import axios from "axios";
 
 const UserComments = () => {
-
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]);
     const onChange = event => {
