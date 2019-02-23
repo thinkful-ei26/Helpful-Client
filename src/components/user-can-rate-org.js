@@ -9,7 +9,7 @@ export default function UserCanRateOrg() {
   const [ratings, setRatings] = useState([]);
   const onChange = event => {
     setRating(event.target.value);
-    console.log('****************', event.target.value); //The user input is captured.
+    console.log('****************', event.target.value); //This works, user input is captured.
   };
 
   const createRating = async () => {
@@ -41,35 +41,29 @@ export default function UserCanRateOrg() {
         Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
       }
     });
-    console.log('$$$$$$$$$$$$$$$$', fetchRatingsResult.data[0].rating); //The stored rating is returned.
-    console.log('&&&&&&&&&&&&&&&&', ratings);
+    console.log('$$$$$$$$$$$$$$$$', fetchRatingsResult.data); //The stored rating is returned.
+    const fetchResult = fetchRatingsResult.data;
+    console.log('&&&&&&&&&&&&&&&&', fetchResult);
     setRatings(fetchRatingsResult.data);
   };
 
   useEffect(() => {
     fetchRatings();
-    console.log('PPPPPPPPPPPP', ratings);
   }, []);
 
   const onSubmit = event => {
     event.preventDefault();
     setRatings([...ratings, rating]);
-    console.log('IIIIIIIIIIIIII', rating);
     createRating(rating);
   };
+  const ratingAvg = fetchResult => {
+    let result = [];
+    fetchResult.map(obj => {
+      result.push(obj.rating);
+    });
+    return result.reduce((a, b) => a + b, 0) / result.length;
+  };
 
-  // const avg = 0;
-  // if (ratings) {
-  //   let avg;
-  //   let sum = ratings.reduce(function(a, b) {
-  //     return a + b;
-  //   });
-  //   return (avg = sum / ratings.length);
-  // }
-
-  // console.log('*************', avg);
-
-  //5c6ad21d8368687005177507 orgId for test post
   return (
     <div className="container">
       <div className="row">
@@ -88,8 +82,8 @@ export default function UserCanRateOrg() {
                   </select>
                 </div>
               </div>
-              <a className="waves-effect waves-light btn">Submit</a>
-              <div> </div>
+              <button className="waves-effect waves-light btn">Submit</button>
+               <div>Rating Average:  </div> 
             </fieldset>
           </form>
         </div>
