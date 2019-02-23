@@ -9,6 +9,7 @@ export default function UserCanRateOrg() {
   const [ratings, setRatings] = useState([]);
   const onChange= event =>{
     setRating(event.target.value)
+    console.log('****************',event.target.value)
   }
 
   const createRating = async () => {
