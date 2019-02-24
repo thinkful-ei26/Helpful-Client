@@ -84,7 +84,7 @@ export default function UserCanRateOrg() {
               </div>
             </fieldset>
           </form>
-          <div> Average Rating:{ratingAvg(ratings)} </div>
+          <div> Average Rating: {ratingAvg(ratings)}  from {ratings.length} reviews</div>
           <ul> Your Rating: {rating}</ul>
         </div>
       </div>
