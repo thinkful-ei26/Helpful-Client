@@ -21,7 +21,6 @@ export default function UserCanRateOrg() {
       }
     })
       .then(() => {
-        console.log('RATING', rating);
         return rating;
       })
       .then(() => {
@@ -31,7 +30,6 @@ export default function UserCanRateOrg() {
         console.log(error);
       });
   };
-  const ratingsResult = [];
   const fetchRatings = async () => {
     const fetchRatingsResult = await axios(`${API_BASE_URL}/orgrating`, {
       headers: {
@@ -40,8 +38,7 @@ export default function UserCanRateOrg() {
       }
     });
 
-    console.log('$$$$$$$$$$$$$$$$', fetchRatingsResult.data); //The stored rating is returned.
-    setRatings(fetchRatingsResult.data); //Is this right?
+    setRatings(fetchRatingsResult.data);
   };
 
   useEffect(() => {
@@ -53,9 +50,7 @@ export default function UserCanRateOrg() {
     setRatings([...ratings, rating]);
     createRating(rating);
   };
-  // const ratingAvg = ratings.map((item, index) => (
-  //   <li key={index}>{item.rating}</li>
-  // ));
+
   const ratingAvg = ratings => {
     let result = [];
     ratings.map(obj => {
@@ -84,7 +79,10 @@ export default function UserCanRateOrg() {
               </div>
             </fieldset>
           </form>
-          <div> Average Rating: {ratingAvg(ratings)}  from {ratings.length} reviews</div>
+          <div>
+            {' '}
+            Average Rating: {ratingAvg(ratings)} out of {ratings.length} reviews
+          </div>
           <ul> Your Rating: {rating}</ul>
         </div>
       </div>
