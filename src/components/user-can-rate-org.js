@@ -3,19 +3,17 @@ import axios from 'axios';
 import { API_BASE_URL } from '../config';
 
 export default function UserCanRateOrg() {
-  const [rating, setRating] = useState({
-    rating: 0
-  }); //Default rating set to 0
+  const [rating, setRating] = useState(0);
   const [ratings, setRatings] = useState([]);
+
   const onChange = event => {
     setRating(event.target.value);
-    console.log('****************', event.target.value); //This works, user input is captured.
   };
 
-  const createRating = async () => {
+  const createRating = async rating => {
     await axios({
       method: 'post',
-      url: `${API_BASE_URL}/orgrating`, //CHECK THIS******************************
+      url: `${API_BASE_URL}/orgrating`,
       data: { rating },
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +31,7 @@ export default function UserCanRateOrg() {
         console.log(error);
       });
   };
-
+  const ratingsResult = [];
   const fetchRatings = async () => {
     const fetchRatingsResult = await axios(`${API_BASE_URL}/orgrating`, {
       headers: {
@@ -41,10 +39,9 @@ export default function UserCanRateOrg() {
         Authorization: 'Bearer '.concat(localStorage.getItem('jwtToken'))
       }
     });
+
     console.log('$$$$$$$$$$$$$$$$', fetchRatingsResult.data); //The stored rating is returned.
-    const fetchResult = fetchRatingsResult.data;
-    console.log('&&&&&&&&&&&&&&&&', fetchResult);
-    setRatings(fetchRatingsResult.data);
+    setRatings(fetchRatingsResult.data); //Is this right?
   };
 
   useEffect(() => {
@@ -56,9 +53,12 @@ export default function UserCanRateOrg() {
     setRatings([...ratings, rating]);
     createRating(rating);
   };
-  const ratingAvg = fetchResult => {
+  // const ratingAvg = ratings.map((item, index) => (
+  //   <li key={index}>{item.rating}</li>
+  // ));
+  const ratingAvg = ratings => {
     let result = [];
-    fetchResult.map(obj => {
+    ratings.map(obj => {
       result.push(obj.rating);
     });
     return result.reduce((a, b) => a + b, 0) / result.length;
@@ -68,24 +68,24 @@ export default function UserCanRateOrg() {
     <div className="container">
       <div className="row">
         <div className="center">
-          <form action="submit" className="" onSubmit={e => onSubmit(e)}>
+          <form onSubmit={onSubmit}>
             <fieldset>
               <div className="create-org-row">
                 <div style={{ heigh: '500px', color: 'red' }}>
                   <label>Rate this group</label>
                   <select onChange={onChange} className="browser-default">
-                    <option defaultValue="1">1 star</option>
-                    <option defaultValue="2">2 stars</option>
-                    <option defaultValue="3">3 stars</option>
-                    <option defaultValue="4">4 stars</option>
-                    <option defaultValue="5">5 stars</option>
+                    <option defaultValue="1">1</option>
+                    <option defaultValue="2">2</option>
+                    <option defaultValue="3">3 </option>
+                    <option defaultValue="4">4</option>
+                    <option defaultValue="5">5 </option>
                   </select>
                 </div>
               </div>
-              <button className="waves-effect waves-light btn">Submit</button>
-               <div>Rating Average:  </div> 
             </fieldset>
           </form>
+          <div> Average Rating:{ratingAvg(ratings)} </div>
+          <ul> Your Rating: {rating}</ul>
         </div>
       </div>
     </div>
