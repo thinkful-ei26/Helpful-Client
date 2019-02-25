@@ -23,20 +23,11 @@ export function EventPage(props) {
                 ),
             },
         });
-        console.log(eventResult.data)
         setEvent(eventResult.data);
         setOrganization(eventResult.data.organizationId);
-        
-        // const orgResult = await axios(`${API_BASE_URL}/org/${orgId}`, {
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
-        //     }
-        // });
-        // setOrganization(orgResult.data);
 
         // check if user has a reservation
-        const rsvpResult = await axios(`${API_BASE_URL}/rsvp/${eventId}`, {
+        const rsvpResult = await axios(`${API_BASE_URL}/rsvp/specific/${eventId}`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer ".concat(
@@ -95,12 +86,14 @@ export function EventPage(props) {
 
     let rsvpButton;
     if (!rsvp) {
+        console.log(rsvp)
         rsvpButton = (
             <button className='event-rsvp-button' onClick={() => createRsvp()}>
                 RSVP
             </button>
         );
     } else {
+        console.log(rsvp)
         rsvpButton = (
             <button className='event-rsvp-button' onClick={() => removeRsvp()}>
                 Cancel Reservation
