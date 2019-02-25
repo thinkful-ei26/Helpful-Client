@@ -4,10 +4,10 @@ import { API_BASE_URL } from "../config";
 import { PointMap } from "./map";
 import "../stylesheets/event-page.css";
 
-export function EventPage(props) {
+export function MeetupPage(props) {
     // initial state
     const [event, setEvent] = useState(null);
-    const [organization, setOrganization] = useState(null);
+    const [user, setUser] = useState(null);
     const [rsvp, setRsvp] = useState(null);
     const [eventMap, setEventMap] = useState(null);
 
@@ -15,7 +15,7 @@ export function EventPage(props) {
 
     // fetch state
     const fetchData = async () => {
-        const eventResult = await axios(`${API_BASE_URL}/event/${eventId}`, {
+        const eventResult = await axios(`${API_BASE_URL}/meetup/${eventId}`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer ".concat(
@@ -23,20 +23,11 @@ export function EventPage(props) {
                 ),
             },
         });
-        console.log(eventResult.data)
         setEvent(eventResult.data);
-        setOrganization(eventResult.data.organizationId);
-        
-        // const orgResult = await axios(`${API_BASE_URL}/org/${orgId}`, {
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
-        //     }
-        // });
-        // setOrganization(orgResult.data);
+        setUser(eventResult.data.userId);
 
         // check if user has a reservation
-        const rsvpResult = await axios(`${API_BASE_URL}/rsvp/${eventId}`, {
+        const rsvpResult = await axios(`${API_BASE_URL}/rsvpmeetup/meetup/${eventId}`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer ".concat(
@@ -45,12 +36,13 @@ export function EventPage(props) {
             },
         });
         setRsvp(rsvpResult.data);
+        console.log(rsvp)
 
     };
     const createRsvp = async () => {
         await axios({
             method: "post",
-            url: `${API_BASE_URL}/rsvp`,
+            url: `${API_BASE_URL}/rsvpmeetup`,
             data: {
                 eventId,
             },
@@ -68,7 +60,7 @@ export function EventPage(props) {
         await axios({
             method: "delete",
 
-            url: `${API_BASE_URL}/rsvp/user`,
+            url: `${API_BASE_URL}/rsvpmeetup`,
             data: {
                 eventId,
             },
@@ -89,7 +81,7 @@ export function EventPage(props) {
     }, []);
 
 
-    if (event === null || organization === null) {
+    if (event === null || user === null) {
         return "Loading...";
     }
 
@@ -101,6 +93,7 @@ export function EventPage(props) {
             </button>
         );
     } else {
+      console.log(rsvp)
         rsvpButton = (
             <button className='event-rsvp-button' onClick={() => removeRsvp()}>
                 Cancel Reservation
@@ -124,19 +117,18 @@ export function EventPage(props) {
 
     }
 
-
     return (
         <section className='event'>
             <div className='organization-container'>
                 <img
                     className='event-image'
-                    src={organization.imgUrl}
-                    alt={organization.name}
+                    src={user.imgUrl}
+                    alt={user.name}
                 />
-                <h2 className='organization-name'>{organization.name}</h2>
+                <h2 className='organization-name'>{user.name}</h2>
                 {eventMap}
                 <div className='organization-contact'>
-                    {organization.contact}
+                    {user.username}
                 </div>
             </div>
             <div className='event-container'>
@@ -153,4 +145,4 @@ export function EventPage(props) {
 
 }
 
-export default EventPage;
+export default MeetupPage;
