@@ -5,6 +5,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "braces": "^2.3.2",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
     "jwt-decode": "^2.2.0",
     "materialize-css": "^1.0.0",
     "react": "^16.8.2",
