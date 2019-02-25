@@ -49,6 +49,7 @@ export default function CreateOrgForm() {
           <div className="create-org-row">
             <label htmlFor="org-name"> Organization name</label>
             <input
+              required
               type="text"
               placeholder="Organization name"
               onChange={e => setFormData({ ...formData, name: e.target.value })}
@@ -58,6 +59,7 @@ export default function CreateOrgForm() {
           <div className="create-org-row">
             <label htmlFor="org-description"> Description</label>
             <textarea
+              required
               type="text"
               form="createOrgForm"
               rows="5"
@@ -71,6 +73,7 @@ export default function CreateOrgForm() {
           <div className="create-org-row">
             <label htmlFor="org-location">Location</label>
             <input
+              required
               type="textarea"
               placeholder="Location"
               onChange={e =>
@@ -82,6 +85,7 @@ export default function CreateOrgForm() {
           <div className="create-org-row">
             <label htmlFor="org-contact"> Contact</label>
             <input
+              required
               type="text"
               placeholder="Contact info"
               onChange={e =>
