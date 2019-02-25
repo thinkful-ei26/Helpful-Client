@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { API_BASE_URL } from '../config';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { API_BASE_URL } from "../config";
+import axios from "axios";
 
 const UserComments = (props) => {
   const [comment, setComment] = useState('');
-  const [comments, setComments] = useState(['a coment']);
+  const [comments, setComments] = useState(['a comment']);
   const onChange = event => {
     setComment(event.target.value);
   };
@@ -24,9 +24,9 @@ const UserComments = (props) => {
       })
       .then(() => {
         fetchComments();
-      })
-      .catch(error => console.log(error));
-  };
+       })
+      .catch(error => console.error(error));
+    };
 
   const fetchComments = async () => {
     const fetchCommentsResult = await axios(`${API_BASE_URL}/comments/event/${props.eventId}`, {
@@ -41,26 +41,27 @@ const UserComments = (props) => {
     fetchComments();
   }, []);
 
-  const onSubmit = event => {
-    event.preventDefault();
-    setComments([...comments, comment]);
-    createComment(comment);
-  };
+    const onSubmit = event => {
+        event.preventDefault();
+        setComments([...comments, comment]);
+        createComment(comment);
+    };
 
-  const mapComments = comments.map((item, index) => (
-    <li key={index}>{item.comment}</li>
-  ));
+    const mapComments = comments.map((item, index) => (
+        <li key={index}>{item.comment}</li>
+    ));
 
-  return (
-    <div className="user-comments">
-      <form onSubmit={onSubmit}>
-        <label>Comments</label>
-        <textarea style={{ background: '#ccc' }} onChange={onChange} />
-        <button type="submit">Add a public comment</button>
-      </form>
-      <ul>{mapComments}</ul>
-    </div>
-  );
+    return (
+        <div className='user-comments'>
+            <form onSubmit={onSubmit}>
+                <label>Comments</label>
+                <textarea style={{ background: "#ccc" }} onChange={onChange} />
+                <button type='submit'>Add a public comment</button>
+            </form>
+            <ul>{mapComments}</ul>
+        </div>
+    );
+
 };
 
 export default UserComments;
