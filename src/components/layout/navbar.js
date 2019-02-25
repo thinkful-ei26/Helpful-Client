@@ -31,7 +31,7 @@ const NavBar = props => {
                         href='#createorganization'
                         className='waves-effect waves-teal'
                         onClick={() => props.history.push("/createorgform")}>
-                        Create Organization
+                        Make Group
                     </a>
                 </li>
 
@@ -40,7 +40,7 @@ const NavBar = props => {
                         href='#meetup'
                         className='waves-effect waves-teal'
                         onClick={() => props.history.push("/create-meetup")}>
-                        Create Meetup
+                        Make Meetup
                     </a>
                 </li>
 
@@ -49,7 +49,7 @@ const NavBar = props => {
                         href='#createdorganizations'
                         className='waves-effect waves-teal'
                         onClick={() => props.history.push("/createdorgs")}>
-                        My Created Organizations
+                        My Groups
                     </a>
                 </li>
 

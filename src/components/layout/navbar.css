@@ -1,8 +1,9 @@
 .navbar-container{
     border-bottom: 4px solid #e0e2e2;
+    height: 8rem;
 }
 nav {
-    margin: 0 15%;
+    margin: 0 10%;
     display: flex;
 }
 nav .logo-container {
@@ -15,7 +16,7 @@ nav .logo-container a {
 }
 
 .brand-logo {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 #logo1 {
     color: red;
@@ -39,3 +40,7 @@ text-decoration: none;
 color: orange;
 padding: 2%;
 }
+#nav-mobile a:hover {
+    color: #a0e4e5;
+    transition: 0.5s;
+  }
