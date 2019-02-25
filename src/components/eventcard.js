@@ -22,8 +22,8 @@ export default function EventCard(props) {
           <span>{props.event.location}</span>
           <span>{props.event.contact}</span>
         </div>
-        <UserComments/>
-      </div>
-    </Link>
+      <UserComments eventId={props.event.id} />
+    </div>
+  </Link>
   );
 }
