@@ -6,10 +6,9 @@ import { Link } from "react-router-dom";
 export default function SearchEvent(props) {
     // const [events, setEvents] = useState(null);
 
-
     if (props.events) {
         const listNames = props.events.map((event, index) => {
-            const linkUrl = `/event/${event.id}/${event.organizationId}`;
+            const linkUrl = `/event/${event.id}`;
             return (
                 <Link key={index} to={linkUrl}>
                     <div className='card blue-grey darken-1'>
@@ -47,5 +46,4 @@ export default function SearchEvent(props) {
             </div>
         );
     }
-
 }
