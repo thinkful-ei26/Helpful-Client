@@ -1,0 +1,47 @@
+/******DASHBOARD************/
+
+nav ul {
+  visibility: visible;
+}
+.dashboard-main{
+    border-left: 40px solid orange;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.event-title {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #4594d1;
+}
+li{
+    text-align: left;
+}
+.event-card {
+  flex-direction:row;
+}
+.event-details{
+    display:flex;
+    flex-direction: column;
+    line-height: 2;
+}
+
+.event-comment-area{
+    display:flex;
+}
+.event-comment-area button{
+    align-self:flex-start;
+    padding: 1%;
+    margin-left: 2%;
+    background: #4594d1;
+    color: orange;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 11%;
+}
+
+.my-groups{
+    border: 2px solid #4594d1;
+    flex:2;
+    /* width: 25rem; */
+}
+

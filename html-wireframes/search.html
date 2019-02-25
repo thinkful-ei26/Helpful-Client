@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>helpful</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Caveat|Concert+One|Prompt"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1><span id="red">help</span><span id="orange">full</span></h1>
+      <nav>
+        <ul>
+          <li id="login">Login</li>
+          <li>About</li>
+          <li>AnotherLink</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <fieldset>
+        <legend>Search</legend>
+        <h2>Find events and volunteer opportunities.</h2>
+        <form action="submit" class="form-search">
+            <label for="search">Filter your search by...</label>
+            <select name="event-search" id="event-search-select">
+              <option value="organization">Organization</option>
+              <option value="area-code-city">Area code or city</option>
+              <option value="area-code-city">Another search option</option>
+              <option value="area-code-city">Another search option</option>
+            </select>
+            <input type="text" />
+          
+            <button>Search</button>
+          
+        </form>
+      </fieldset>
+      <div class='search-results'></div>
+    </main>
+    <footer><span id="credit">brogrammers 2019</span></footer>
+  </body>
+</html>
+'

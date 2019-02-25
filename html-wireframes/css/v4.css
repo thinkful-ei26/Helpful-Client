@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+
+.container,
+.footer-container,
+.header-container {
+  /* font-family: 'PT Sans', sans-serif; */
+  /* font-family: 'PT Sans Narrow', sans-serif; */
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 15%;
+  background: whitesmoke;
+}
+.header-container {
+  border-bottom: 3px solid #e0e2e2;
+}
+header {
+  margin: 0 15%;
+  max-height: 4rem;
+  display: flex;
+}
+
+.logo {
+  font-size: 90%;
+  padding-right: 25%;
+  align-self: center;
+}
+.logo-style-one {
+  color:red;
+}
+.logo-style-two {
+  color: orange;
+}
+.main-content {
+}
+main {
+  padding: 5%;
+  min-height: 45vh;
+  background-image: url('../img/community.jpg');
+  background-size: cover;
+  background-color: #fff;
+}
+.text-box {
+  background-color: #fff;
+  opacity: 0.6;
+  padding: 4%;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+  color: #4594d1;
+}
+form {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5%;
+}
+form button {
+  padding: 2%;
+  width: 17%;
+  border-radius: 5%;
+  text-transform: uppercase;
+  font-weight: bold;
+  /* flex-shrink: 2; */
+}
+.button {
+  flex-shrink: 2;
+}
+.button-register {
+  color: orange;
+  background: #4594d1;
+}
+.button-login {
+  color: #4594d1;
+  background: orange;
+}
+nav {
+  color: orange;
+  font-weight: bold;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul li {
+  padding-right: 1.5rem;
+  list-style: none;
+  font-size: 60%;
+}
+.footer-container {
+  background: #4594d1;
+}
+footer {
+  font-size: 70%;
+  margin: 0 15%;
+  color: white;
+  padding: 2%;
+}
+
+.sub-footer {
+  font-size: 60%;
+  padding-top: 1%;
+  background: rgb(29, 147, 187);
+  color: white;
+  text-align: center;
+}
