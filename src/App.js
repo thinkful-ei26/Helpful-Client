@@ -10,7 +10,7 @@ import Search from "./components/search";
 import OrgPublicPage from "./components/org-public-page";
 import EventPage from "./components/event-page";
 import Footer from "./components/layout/footer";
-import CreateOrgForm from "./components/creat-org-form";
+import CreateOrgForm from "./components/create-org-form";
 import FollowedOrgs from "./components/followed-organizations";
 import ErrorPage from "./components/layout/errorPage";
 import CreateMeetup from "./components/create-meetup";
