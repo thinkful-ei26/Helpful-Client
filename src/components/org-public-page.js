@@ -152,7 +152,7 @@ export default function OrgPublicPage(props) {
                             src={orgs.imgUrl}
                         />
                         {orgMap}
-                        <UserCanRateOrg />
+                        <UserCanRateOrg orgId={orgId}/>
                         <UserComments/>
                         <p className='flow-text'>{orgs.description}</p>
                         <p className='flow-text'>{orgs.location}</p>
