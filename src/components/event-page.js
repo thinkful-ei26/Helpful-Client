@@ -26,17 +26,17 @@ export function EventPage(props) {
                 ),
             },
         });
+        console.log(eventResult.data)
         setEvent(eventResult.data);
-
-        const orgResult = await axios(`${API_BASE_URL}/org/${orgId}`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer ".concat(
-                    localStorage.getItem("jwtToken")
-                ),
-            },
-        });
-        setOrganization(orgResult.data);
+        setOrganization(eventResult.data.organizationId);
+        
+        // const orgResult = await axios(`${API_BASE_URL}/org/${orgId}`, {
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
+        //     }
+        // });
+        // setOrganization(orgResult.data);
 
         // check if user has a reservation
         const rsvpResult = await axios(`${API_BASE_URL}/rsvp/${eventId}`, {
