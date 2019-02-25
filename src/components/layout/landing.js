@@ -13,7 +13,7 @@ const LandingPage = props => {
             render={({ history }) => (
                 <div
                     style={{ height: "75vh" }}
-                    className='container valign-wrapper '>
+                    className='landing container valign-wrapper '>
                     <div className='row' style={{ marginTop: "4rem" }}>
                         <div className='col s12 center-align'>
                             <p className='flow-text'>
