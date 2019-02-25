@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import OrganizationCard from "./organization-card";
-import createOrgForm from "./creat-org-form";
+import createOrgForm from "./create-org-form";
 import { API_BASE_URL } from "../config";
 
 export default function CreatedOrgs(props) {

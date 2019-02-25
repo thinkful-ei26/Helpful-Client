@@ -11,12 +11,14 @@ export default function EventCard(props) {
   }
 
   return (
-    <Link to={linkUrl}>
+    
       <div className="card blue-grey darken-1">
-        <div className="card-content white-text">
-          <span className="card-title">{props.event.name}</span>
-          <p>{props.event.description}</p>
-        </div>
+        <Link to={linkUrl}>
+          <div className="card-content white-text">
+            <span className="card-title">{props.event.name}</span>
+            <p>{props.event.description}</p>
+          </div>
+        </Link>
         <div className="card-action">
           <span>{props.event.date}</span>
           <span>{props.event.location}</span>
@@ -24,6 +26,5 @@ export default function EventCard(props) {
         </div>
       <UserComments eventId={props.event.id} />
     </div>
-  </Link>
   );
 }
