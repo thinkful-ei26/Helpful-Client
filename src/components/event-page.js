@@ -11,10 +11,7 @@ export function EventPage(props) {
     const [rsvp, setRsvp] = useState(null);
     const [eventMap, setEventMap] = useState(null);
 
-
-    // placeholder id ************* These get changed out with props ************************
     let eventId = props.match.params.eventId;
-    let orgId = props.match.params.orgId;
 
     // fetch state
     const fetchData = async () => {
