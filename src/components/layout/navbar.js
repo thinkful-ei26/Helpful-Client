@@ -6,6 +6,21 @@ import "./navbar.css";
 const NavBar = props => {
     let token = localStorage.getItem("jwtToken");
     let navRight, sideNav;
+    //     <section class="header-container">
+    //   <header>
+    //     <span class="logo"><h1><span class='logo-style-one'>Help</span><span class='logo-style-two'>full</span></h1></span>
+    //     <nav>
+    //       <ul>
+    //         <li><a href='./dashboard.html'>Dashboard</a></li>
+    //         <li><a href="./creategroup">Create Group</a></li>
+    //         <li><a href="./followed">Followed</a></li>
+    //         <li><a href="./Search">Search</a></li>
+    //         <li><a href="./myevents">My Events</a></li>
+    //         <li><a href="./logout">Logout</a></li>
+    //       </ul>
+    //     </nav>
+    //   </header>
+    // </section>
     if (token) {
         navRight = (
             <ul
@@ -14,7 +29,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#dashboard'
-                        className='waves-effect waves-teal'
+                        className=''
                         onClick={() => props.history.push("/dashboard")}>
                         Dashboard
                     </a>
@@ -23,7 +38,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#events'
-                        className='waves-effect waves-teal'
+                        className=''
                         onClick={() => props.history.push("/events")}>
                         My Events
                     </a>
@@ -32,7 +47,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#createorganization'
-                        className='waves-effect waves-teal'
+                        className=''
                         onClick={() => props.history.push("/createorgform")}>
                         Create Organization
                     </a>
@@ -41,7 +56,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#meetup'
-                        className='waves-effect waves-teal'
+                        className=''
                         onClick={() => props.history.push("/create-meetup")}>
                         Create Meetup
                     </a>
@@ -50,7 +65,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#createdorganizations'
-                        className='waves-effect waves-teal'
+                        className=''
                         onClick={() => props.history.push("/createdorgs")}>
                         My Created Organizations
                     </a>
@@ -59,7 +74,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#followedorganizations'
-                        className='waves-effect waves-teal'
+                        className=''
                         onClick={() => props.history.push("/followedorgs")}>
                         Followed
                     </a>
@@ -67,7 +82,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#search'
-                        className='waves-effect waves-teal'
+                        className=''
                         onClick={() => props.history.push("/search")}>
                         Search Tool
                     </a>
@@ -76,7 +91,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#logout'
-                        className='waves-effect waves-teal'
+                        className=''
                         onClick={() => logoutUser()}>
                         Logout
                     </a>
@@ -130,7 +145,7 @@ const NavBar = props => {
                 </nav>
             </div>
 
-            <ul id='slide-out' className='sidenav'>
+            {/* <ul id='slide-out' className='sidenav'>
                 <li>
                     <div className='user-view'>
                         <div className='background'>
@@ -160,7 +175,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#dashboard'
-                        className='waves-effect waves-teal'
+                        className=''
                         onClick={() => props.history.push("/dashboard")}>
                         <i className='material-icons'>dashboard</i>Dashboard
                     </a>
@@ -235,7 +250,7 @@ const NavBar = props => {
                         Logout
                     </a>
                 </li>
-            </ul>
+            </ul> */}
         </React.Fragment>
     );
 };
