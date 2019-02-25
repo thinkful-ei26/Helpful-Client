@@ -1,64 +1,100 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
 
-export default function UserCanRateOrg() {
-    const [formData, setFormData] = useState({
-        rating: "",
-    });
+export default function UserCanRateOrg(props) {
+    const [rating, setRating] = useState(Number(0));
+    const [avg, setAvg] = useState(0);
+    const [length, setLength] = useState(0);
+    const onChange = event => {
+        console.log(`$$$$$$$$$$$$`, event.target.value);
+        setRating(event.target.value);
+    };
 
-    const [success, setSuccess] = useState(false);
-
-
-    const postRating = async () => {
+    const createRating = async rating => {
         await axios({
             method: "post",
-            url: `${API_BASE_URL}/org`,
-            data: formData,
-        }).then(() => setSuccess(true));
+            url: `${API_BASE_URL}/orgrating`,
+            data: { rating, orgId: props.orgId },
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer ".concat(
+                    localStorage.getItem("jwtToken")
+                ),
+            },
+        })
+            .then(() => {
+                return "";
+            })
+            .then(() => {
+                fetchRatings();
+            })
+            .catch(error => {
+                console.log(error);
+                console.log("Your POST request did not complete");
+            });
+    };
+    const fetchRatings = async () => {
+        const fetchRatingsResult = await axios(
+            `${API_BASE_URL}/orgrating/org/${props.orgId}`,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer ".concat(
+                        localStorage.getItem("jwtToken")
+                    ),
+                },
+            }
+        );
+
+        setAvg(fetchRatingsResult.data.avg);
+        setLength(fetchRatingsResult.data.length);
+    };
+
+    useEffect(() => {
+        fetchRatings();
+    }, []);
+
+    const onSubmit = event => {
+        event.preventDefault();
+        createRating(rating);
     };
 
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        postRating();
-    };
-
-
-    if (success) {
-        return <p className='orgCreateSuccess'>Thank you for rating us!</p>;
-    }
-    //5c6ad21d8368687005177507 orgId for test post
     return (
         <div className='container'>
             <div className='row'>
                 <div className='center'>
-                    <form
-                        action='submit'
-                        className=''
-                        onSubmit={e => handleSubmit(e)}>
+                    <form onSubmit={onSubmit}>
                         <fieldset>
                             <div className='create-org-row'>
-                                <div>
-                                    <select>
-                                        <option value='' disabled selected>
-                                            Rate this group
-                                        </option>
-                                        <option value='1'>1 star</option>
-                                        <option value='2'>2 stars</option>
-                                        <option value='3'>3 stars</option>
-                                        <option value='4'>4 stars</option>
-                                        <option value='5'>5 stars</option>
-                                    </select>
+                                <div style={{ height: "3rem" }}>
+                                    <label>Rate this group</label>
+                                    <input
+                                        onChange={onChange}
+                                        type='number'
+                                        list='userrating'
+                                        min='1'
+                                        max='5'
+                                    />
+                                    <ratinglist
+                                        id='rating'
+                                        className='browser-default'>
+                                        <option defaultValue='1' />
+                                        <option defaultValue='2' />
+                                        <option defaultValue='3' />
+                                        <option defaultValue='4' />
+                                        <option defaultValue='5' />
+                                    </ratinglist>
                                 </div>
                             </div>
-                            <a
-                                href='#submit'
-                                className='waves-effect waves-light btn'>
-                                Submit
-                            </a>
                         </fieldset>
+                        <button type='submit'>Submit your rating</button>
                     </form>
+                    <div>
+                        Average Rating: {avg} out of {length} reviews
+                    </div>
+                    <ul> Your Rating: {rating}</ul>
                 </div>
             </div>
         </div>
