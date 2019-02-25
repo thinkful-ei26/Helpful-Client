@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
-import M from "materialize-css";
+// import M from "materialize-css";
 
 const NavBar = props => {
 
@@ -103,8 +103,8 @@ const NavBar = props => {
 
     useEffect(() => {
         let elems = document.querySelectorAll(".sidenav");
-        let instances = M.Sidenav.init(elems, {});
-        return instances;
+        // let instances = M.Sidenav.init(elems, {});
+        // return instances;
     }, []);
     return (
         <React.Fragment>
