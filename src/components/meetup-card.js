@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 // import "../stylesheets/org-dashboard-styles/eventcard.css";
 
 export default function MeetupCard(props) {
-  const linkUrl = `/meetup/${props.meetup.id}`;
+  const linkUrl = `/meetup/${props.event.id}`;
 
-  if (!props.meetup) {
+  if (!props.event) {
     return null;
   }
-
+  
   return (
     <Link to={linkUrl}>
       <div className="card blue-grey darken-1">

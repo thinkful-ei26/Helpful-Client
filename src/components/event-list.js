@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import EventCard from "./eventcard";
+import MeetupCard from "./meetup-card";
 import { API_BASE_URL } from "../config";
 import "../stylesheets/event-list.css";
 
 export default function EventList() {
     const [events, setEvents] = useState(null);
     const [rsvpEvents, setRsvpEvents] = useState(null);
+    const [rsvpMeetups, setRsvpMeetups] = useState(null);
     const [meetups, setMeetups] = useState(null);
     const [location, setLocation] = useState(null);
 
@@ -36,6 +38,20 @@ export default function EventList() {
             },
         });
         setRsvpEvents(rsvpEventsRequest.data);
+    };
+
+    // get all meetuprsvps
+    const fetchMeetupRsvpData = async () => {
+        const rsvpMeetupsRequest = await axios(`${API_BASE_URL}/rsvpmeetup/user`, {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer ".concat(
+                    localStorage.getItem("jwtToken")
+                ),
+            },
+        });
+        setRsvpMeetups(rsvpMeetupsRequest.data);
+        console.log(rsvpMeetups)
     };
 
     // get all events *filter if user allows location*
@@ -78,7 +94,7 @@ export default function EventList() {
 
     // get all user meetup
     const fetchMeetupData = async () => {
-        const meetupRequest = await axios(`${API_BASE_URL}/meetup/all`, {
+        const meetupRequest = await axios(`${API_BASE_URL}/meetup/owner`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer ".concat(
@@ -94,6 +110,7 @@ export default function EventList() {
         fetchRsvpData();
         fetchEventData();
         fetchMeetupData();
+        fetchMeetupRsvpData();
     }, [location]);
 
     // gets all the events out of each individual rsvp.eventId and into array
@@ -104,13 +121,26 @@ export default function EventList() {
         });
     };
 
+    let rsvpMeetupList = [];
+    const generateRsvpMeetupList = rsvpData => {
+        rsvpData.forEach(rsvp => {
+            rsvpMeetupList.push(rsvp.eventId);
+        });
+    };
+
     // generate EventCard components with event data
-    let rsvpEventCardList, localEventCardList, meetupCardList;
+    let rsvpEventCardList, rsvpMeetupCardList, localEventCardList, meetupCardList;
     let eventTitle = "Nearby Events";
     if (rsvpEvents) {
         generateRsvpEventList(rsvpEvents);
         rsvpEventCardList = rsvpEventList.map((event, index) => {
             return <EventCard key={index} event={event} />;
+        });
+    }
+    if (rsvpMeetups) {
+        generateRsvpMeetupList(rsvpMeetups);
+        rsvpMeetupCardList = rsvpMeetupList.map((event, index) => {
+            return <MeetupCard key={index} event={event} />;
         });
     }
     if (events) {
@@ -120,7 +150,7 @@ export default function EventList() {
     }
     if (meetups) {
         meetupCardList = meetups.map((event, index) => {
-            return <EventCard key={index} event={event} />;
+            return <MeetupCard key={index} event={event} />;
         });
     }
     if (!location) {
@@ -136,6 +166,7 @@ export default function EventList() {
                     </div>
                     <div className='eventsContainer col s12 m6 l4'>
                         {rsvpEventCardList}
+                        {rsvpMeetupCardList}
                     </div>
                 </div>
                 <div className='section'>

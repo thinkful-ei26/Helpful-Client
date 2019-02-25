@@ -17,6 +17,7 @@ import CreateMeetup from "./components/create-meetup";
 import CreatedOrgs from "./components/created-organizations";
 import OrganizationDashboard from "./components/organization-dashboard";
 import EventList from "./components/event-list";
+import MeetupPage from "./components/meetup-page";
 
 const App = () => {
 
@@ -46,6 +47,11 @@ const App = () => {
                         exact
                         path='/event/:eventId'
                         component={EventPage}
+                    />
+                    <Route
+                        exact
+                        path='/meetup/:eventId'
+                        component={MeetupPage}
                     />
                     <Route
                         exact
