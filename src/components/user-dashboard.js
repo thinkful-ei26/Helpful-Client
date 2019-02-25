@@ -13,7 +13,7 @@ export default function UserDashboard(props) {
         <div className='container'>
             <EventList />
             <OrganizationList />
-            <RenderUserRole />
+            {/* <RenderUserRole />  --> for extension */} 
         </div>
     );
 
