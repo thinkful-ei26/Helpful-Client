@@ -44,7 +44,7 @@ const App = () => {
                     {/* <Route exact path="/organization" component={OrgPublicPage} /> */}
                     <Route
                         exact
-                        path='/event/:eventId/:orgId'
+                        path='/event/:eventId'
                         component={EventPage}
                     />
                     <Route
