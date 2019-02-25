@@ -2,6 +2,8 @@ import React from "react";
 import EventList from "./event-list";
 import OrganizationList from "./organization-list";
 import RenderUserRole from "./renderuserrole";
+import CreatedOrgs from "./created-organizations";
+import FollowedOrgs from "./followed-organizations";
 
 export default function UserDashboard(props) {
 
@@ -12,7 +14,9 @@ export default function UserDashboard(props) {
     return (
         <div className='container'>
             <EventList />
-            <OrganizationList />
+            <CreatedOrgs />
+            <FollowedOrgs />
+            {/* <OrganizationList /> */}
             {/* <RenderUserRole />  --> for extension */} 
         </div>
     );
