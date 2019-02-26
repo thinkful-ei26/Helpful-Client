@@ -1,35 +1,37 @@
 /******DASHBOARD************/
 
 nav ul {
-  visibility: visible;
+    visibility: visible;
 }
-.dashboard-main{
+.dashboard-main {
     border-left: 40px solid orange;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
+    /* text-align: center; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* margin-top: -5rem; */
 }
+
 .event-title {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #4594d1;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #4594d1;
 }
-li{
+li {
     text-align: left;
 }
 .event-card {
-  flex-direction:row;
+    flex-direction: row;
 }
-.event-details{
-    display:flex;
+.event-details {
+    display: flex;
     flex-direction: column;
     line-height: 2;
 }
 
-.event-comment-area{
-    display:flex;
-}
-.event-comment-area button{
-    align-self:flex-start;
+/* .event-comment-area {
+    display: flex;
+} */
+/* .event-comment-area button {
+    align-self: flex-start;
     padding: 1%;
     margin-left: 2%;
     background: #4594d1;
@@ -37,11 +39,68 @@ li{
     font-weight: bold;
     font-size: 1rem;
     border-radius: 11%;
+} */
+/**********DASHBOARD ASIDES****************/
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+}
+.my-events {
+    order: 3;
+    width: 30%;
+    margin-top: -14rem;
+    padding: 2%;
+    /* display:flex; */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+}
+.my-events ul {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.my-groups{
-    border: 2px solid #4594d1;
-    flex:2;
-    /* width: 25rem; */
+.dashboard-aside-following {
+    order: 1;
+    flex-direction: row;
+    /* padding-left: 2%; */
+    /* align-self: flex-start; */
+}
+.dashboard-aside-following,
+ul {
+    padding: 2%;
+    display: flex;
+    margin: auto;
+    width: 100%;
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    /* height: 70vh; */
+    background: white;
+}
+.dashboard-aside-mygroups {
+    /* display: flex; */
+    border-left: 1px solid orange;
+    order: 2;
+    align-self: flex-end;
+    /* align-items: stretch; */
 }
 
+.dashboard-aside-mygroups ul {
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    /* align-items: stretch; */
+}
+.dashboard-aside-mygroups,ul,li{
+  padding: 2%;
+}
+aside h3 {
+    font-size: 1rem;
+}
+.dashboard-aside-container,
+aside,
+ul,
+li {
+    /* padding-bottom: 0.5rem; */
+}

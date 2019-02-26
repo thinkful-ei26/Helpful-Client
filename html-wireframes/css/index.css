@@ -32,7 +32,7 @@ header {
 
 .logo {
   font-size: 90%;
-  padding-right: 25%;
+  padding-right: 20%;
   align-self: center;
 }
 .logo-style-one {
@@ -47,14 +47,14 @@ nav {
   font-weight: bold;
 }
 nav ul {
-  visibility: hidden;
+  visibility: visible;
   display: flex;
   flex-wrap: wrap;
 }
 ul li {
   padding-right: 1.5rem;
   list-style: none;
-  font-size: 60%;
+  font-size: 50%;
 }
 a {
   text-decoration: none;
