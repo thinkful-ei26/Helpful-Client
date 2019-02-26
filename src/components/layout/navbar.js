@@ -5,7 +5,7 @@ import "./navbar.css";
 const NavBar = props => {
     let token = localStorage.getItem("jwtToken");
     let navRight, sideNav;
-    if (token) {
+    // if (token) {
         navRight = (
             <ul id='nav-mobile' className=''>
                 <li>
@@ -89,7 +89,7 @@ const NavBar = props => {
                 <i className='material-icons hamburger'>menu</i>
             </a>
         );
-    }
+    // }
 
     const logoutUser = async () => {
         await localStorage.removeItem("jwtToken");
