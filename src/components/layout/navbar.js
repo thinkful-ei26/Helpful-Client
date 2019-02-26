@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
-import "./navbar.css";
 
 const NavBar = props => {
     let token = localStorage.getItem("jwtToken");
@@ -80,15 +79,15 @@ const NavBar = props => {
                 </li>
             </ul>
         );
-        sideNav = (
-            <a
-                href='#menu'
-                id='hamburger'
-                data-target='slide-out'
-                className='sidenav-trigger hide-on-large-only text-teal darken-4'>
-                <i className='material-icons hamburger'>menu</i>
-            </a>
-        );
+        // sideNav = (
+        //     <a
+        //         href='#menu'
+        //         id='hamburger'
+        //         data-target='slide-out'
+        //         className='sidenav-trigger hide-on-large-only text-teal darken-4'>
+        //         <i className='material-icons hamburger'>menu</i>
+        //     </a>
+        // );
     // }
 
     const logoutUser = async () => {
@@ -123,7 +122,7 @@ const NavBar = props => {
                 </nav>
             </div>
 
-            <ul id='slide-out' className='sidenav'>
+            {/* <ul id='slide-out' className='sidenav'>
                 <li>
                     <div className='user-view'>
                         <div className='background'>
@@ -228,7 +227,7 @@ const NavBar = props => {
                         Logout
                     </a>
                 </li>
-            </ul>
+            </ul> */}
         </React.Fragment>
     );
 };

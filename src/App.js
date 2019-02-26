@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/layout/navbar";
 import LandingPage from "./components/layout/landing";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
+// import Register from "./components/auth/Register";
+// import Login from "./components/auth/Login";
 import UserDashboard from "./components/user-dashboard";
 import Search from "./components/search";
 import OrgPublicPage from "./components/org-public-page";
@@ -26,7 +26,7 @@ const App = () => {
                 <NavBar />
                 {/* <OrganizationList /> */}
                 <Switch>
-                    {/* <Route exact path='/' component={LandingPage} /> */}
+                    <Route exact path='/' component={LandingPage} />
                     {/* <Route
                         exact
                         path='/createorgform'

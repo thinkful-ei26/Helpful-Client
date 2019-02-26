@@ -1,5 +1,77 @@
-.App {
-box-sizing: border-box;
-margin:0;
-font-family: 'Montserrat', sans-serif;
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
 }
+.App {
+margin: 0;
+}
+
+/*********HEADER STYLES*******************/
+.navbar-container {
+    border-bottom: 4px solid #e0e2e2;
+    /* height: 6rem; */
+}
+nav {
+    margin: 0 10%;
+    display: flex;
+}
+nav .logo-container {
+    display: flex;
+    margin: auto 3rem auto 0;
+}
+nav .logo-container a {
+    margin: auto;
+    text-decoration: none;
+}
+
+.brand-logo {
+    font-size: 3rem;
+    font-weight: bold;
+}
+#logo1 {
+    color: red;
+}
+#logo2 {
+    color: orange;
+}
+nav .logo-img {
+    height: 8rem;
+}
+#nav-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#nav-mobile li {
+    padding: 1rem;
+}
+#nav-mobile li a {
+    text-decoration: none;
+    color: orange;
+}
+#nav-mobile a:hover {
+    color: #a0e4e5;
+    transition: 0.5s;
+}
+/*******FOOTER STYLES*******************/
+footer{
+    background-color:#4594d1;
+    color: white;
+}
+.footer-container{
+    margin: 0 10%;
+    padding: 2rem;
+}
+footer h5{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem;
+}
+.footer-about{
+    line-height: 2;
+}
+.footer-copyright{
+    text-align: center;
+}
+/***********LANDING PAGE******************/
