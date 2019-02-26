@@ -28,7 +28,8 @@ const Register = () => {
         };
         axios
             .post(`${API_BASE_URL}/users/register`, usersData)
-            .then(() => history.push("/login")); // re-direct to login on successful register
+            .then(() => history.push("/login")) // re-direct to login on successful register
+            .catch(err => alert("Username already Exists"));
     };
 
     return (

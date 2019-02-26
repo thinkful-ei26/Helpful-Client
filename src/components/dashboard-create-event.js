@@ -28,7 +28,11 @@ export default function DashboardCreateEvent(props) {
                     localStorage.getItem("jwtToken")
                 ),
             },
-        }).then(() => setSuccess(true));
+        })
+            .then(() => setSuccess(true))
+            .catch(err => {
+                alert('Event name and description must be unique');
+            });
     };
 
 
