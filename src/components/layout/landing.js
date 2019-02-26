@@ -1,54 +1,33 @@
 import React from "react";
 import { Route } from "react-router-dom";
 const LandingPage = props => {
-
     let token = localStorage.getItem("jwtToken");
     if (token) {
         props.history.push("/dashboard");
     }
 
-
     return (
         <Route
             render={({ history }) => (
-                <div
-                    style={{ height: "75vh" }}
-                    className='container valign-wrapper '>
-                    <div className='row' style={{ marginTop: "4rem" }}>
-                        <div className='col s12 center-align'>
-                            <p className='flow-text'>
-                                <span style={{ fontFamily: "monospace" }}>
-                                    Words{" "}
-                                </span>
-                                Subway tile butcher taiyaki quinoa, cornhole
-                                ramps organic viral. Humblebrag hexagon jean
-                                shorts fanny pack. Franzen jean shorts plaid
-                                fixie, salvia XOXO vegan vice migas
-                                vexillologist pok pok scenester +1 unicorn
-                                ennui.
+                <div className='landing-container'>
+                    <div className='landing-main'>
+                        <div className='landing-text-box'>
+                            <p>
+                                Helpfull is where communities come together.{" "}
+                                <p>Help. Do good. Make friends. </p>
                             </p>
+                        </div>
+
+                        <form>
                             <button
                                 onClick={() => history.push(`/register`)}
-                                style={{
-                                    width: "150px",
-                                    borderRadius: "3px",
-                                    letterSpacing: "1.5px",
-                                }}
-                                className='btn btn-large waves-effect waves-light hoverable teal lighten-2'>
+                                className=''>
                                 Register
                             </button>
-                            <button
-                                onClick={() => history.push(`/login`)}
-                                style={{
-                                    marginLeft: "2rem",
-                                    width: "150px",
-                                    borderRadius: "3px",
-                                    letterSpacing: "1.5px",
-                                }}
-                                className='btn btn-large waves-effect white hoverable black-text'>
+                            <button onClick={() => history.push(`/login`)}>
                                 Log In
                             </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             )}

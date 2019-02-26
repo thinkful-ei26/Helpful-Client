@@ -15,8 +15,8 @@ const Footer = () => {
                         profile and publicize your events here.
                     </p>
                 </div>
-                <div className='footer-copyright'>2019&copy; brogrammers </div>
             </div>
+            <div className='footer-copyright'>2019&copy; brogrammers </div>
         </footer>
     );
 };

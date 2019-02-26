@@ -4,13 +4,13 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 .App {
-margin: 0;
+    margin: 0;
 }
 
 /*********HEADER STYLES*******************/
 .navbar-container {
     border-bottom: 4px solid #e0e2e2;
-    /* height: 6rem; */
+    height: 6rem;
 }
 nav {
     margin: 0 10%;
@@ -26,7 +26,7 @@ nav .logo-container a {
 }
 
 .brand-logo {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 #logo1 {
@@ -36,7 +36,7 @@ nav .logo-container a {
     color: orange;
 }
 nav .logo-img {
-    height: 8rem;
+    height: 6rem;
 }
 #nav-mobile {
     display: flex;
@@ -55,23 +55,59 @@ nav .logo-img {
     transition: 0.5s;
 }
 /*******FOOTER STYLES*******************/
-footer{
-    background-color:#4594d1;
+footer {
+    background-color: #4594d1;
     color: white;
 }
-.footer-container{
+.footer-container {
     margin: 0 10%;
-    padding: 2rem;
+    padding: 1rem;
 }
-footer h5{
+footer h5 {
     font-size: 2rem;
     font-weight: bold;
     margin: 1rem;
 }
-.footer-about{
+.footer-about {
     line-height: 2;
 }
-.footer-copyright{
+.footer-copyright {
+    padding: 1%;
+    font-size: 0.8rem;
+    background: #549dd8;
     text-align: center;
 }
 /***********LANDING PAGE******************/
+.landing-container {
+    margin: 0 10%;
+    display: flex;
+    background-color: pink;
+    justify-content: center;
+    background-image: url("./images/community.jpg");
+    background-size: cover;
+}
+.landing-main {
+    min-height: 52vh;
+    padding: 3%;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    /* justify-content: space-around; */
+}
+.landing-text-box{
+    opacity:.5;
+    background: #fff;
+    padding: 10%;
+    font-size:2rem;
+    color: #0965ac;
+    font-weight: bold;
+}
+.landing-container button{
+    text-transform: uppercase;
+    color: #4594d1;
+    background-color:orange;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1rem;
+    width: 25%;
+}
