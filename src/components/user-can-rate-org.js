@@ -4,6 +4,7 @@ import { API_BASE_URL } from "../config";
 
 export default function UserCanRateOrg(props) {
     const [rating, setRating] = useState(Number(0));
+    const [userRating, setUserRating] = useState([]);
     const [avg, setAvg] = useState(0);
     const [length, setLength] = useState(0);
     const onChange = event => {
@@ -49,6 +50,19 @@ export default function UserCanRateOrg(props) {
 
         setAvg(fetchRatingsResult.data.avg);
         setLength(fetchRatingsResult.data.length);
+
+        const fetchUserRating = await axios(
+            `${API_BASE_URL}/orgrating/user/${props.orgId}`,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer ".concat(
+                        localStorage.getItem("jwtToken")
+                    ),
+                },
+            }
+        );
+        setUserRating(fetchUserRating.data)
     };
 
     useEffect(() => {
@@ -60,6 +74,14 @@ export default function UserCanRateOrg(props) {
         createRating(rating);
     };
 
+    if (userRating.length) {
+        return(
+            <div>
+                <p>Average Rating: {avg} out of {length} reviews</p>
+                <p> Your Rating: {rating}</p>
+            </div>
+        );
+    } 
 
     return (
         <div className='container'>
@@ -77,7 +99,7 @@ export default function UserCanRateOrg(props) {
                                         min='1'
                                         max='5'
                                     />
-                                    <ratinglist
+                                    {/* <ratinglist
                                         id='rating'
                                         className='browser-default'>
                                         <option defaultValue='1' />
@@ -85,7 +107,7 @@ export default function UserCanRateOrg(props) {
                                         <option defaultValue='3' />
                                         <option defaultValue='4' />
                                         <option defaultValue='5' />
-                                    </ratinglist>
+                                    </ratinglist> */}
                                 </div>
                             </div>
                         </fieldset>
