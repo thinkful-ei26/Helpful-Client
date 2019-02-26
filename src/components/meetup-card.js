@@ -1,5 +1,4 @@
 import React from "react";
-import UserComments from './usercomments'
 import { Link } from 'react-router-dom';
 // import "../stylesheets/org-dashboard-styles/eventcard.css";
 

@@ -13,11 +13,11 @@ import Footer from "./components/layout/footer";
 import CreateOrgForm from "./components/create-org-form";
 import FollowedOrgs from "./components/followed-organizations";
 import ErrorPage from "./components/layout/errorPage";
-import CreateMeetup from "./components/create-meetup";
+// import CreateMeetup from "./components/create-meetup";
 import CreatedOrgs from "./components/created-organizations";
 import OrganizationDashboard from "./components/organization-dashboard";
 import EventList from "./components/event-list";
-import MeetupPage from "./components/meetup-page";
+// import MeetupPage from "./components/meetup-page";
 
 const App = () => {
 
@@ -48,16 +48,16 @@ const App = () => {
                         path='/event/:eventId'
                         component={EventPage}
                     />
-                    <Route
+                    {/* <Route
                         exact
                         path='/meetup/:eventId'
                         component={MeetupPage}
-                    />
-                    <Route
+                    /> */}
+                    {/* <Route
                         exact
                         path='/create-meetup'
                         component={CreateMeetup}
-                    />
+                    /> */}
                     <Route
                         exact
                         path='/organization/:id'
