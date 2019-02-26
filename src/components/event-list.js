@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import EventCard from "./eventcard";
-import MeetupCard from "./meetup-card";
+// import MeetupCard from "./meetup-card";
 import { API_BASE_URL } from "../config";
 import "../stylesheets/event-list.css";
 
 export default function EventList() {
     const [events, setEvents] = useState(null);
     const [rsvpEvents, setRsvpEvents] = useState(null);
-    const [rsvpMeetups, setRsvpMeetups] = useState(null);
-    const [meetups, setMeetups] = useState(null);
+    // const [rsvpMeetups, setRsvpMeetups] = useState(null);
+    // const [meetups, setMeetups] = useState(null);
     const [location, setLocation] = useState(null);
 
     // get user location
@@ -41,18 +41,18 @@ export default function EventList() {
     };
 
     // get all meetuprsvps
-    const fetchMeetupRsvpData = async () => {
-        const rsvpMeetupsRequest = await axios(`${API_BASE_URL}/rsvpmeetup/user`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer ".concat(
-                    localStorage.getItem("jwtToken")
-                ),
-            },
-        });
-        setRsvpMeetups(rsvpMeetupsRequest.data);
-        console.log(rsvpMeetups)
-    };
+    // const fetchMeetupRsvpData = async () => {
+    //     const rsvpMeetupsRequest = await axios(`${API_BASE_URL}/rsvpmeetup/user`, {
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             Authorization: "Bearer ".concat(
+    //                 localStorage.getItem("jwtToken")
+    //             ),
+    //         },
+    //     });
+    //     setRsvpMeetups(rsvpMeetupsRequest.data);
+    //     console.log(rsvpMeetups)
+    // };
 
     // get all events *filter if user allows location*
     const fetchEventData = async () => {
@@ -93,24 +93,24 @@ export default function EventList() {
     };
 
     // get all user meetup
-    const fetchMeetupData = async () => {
-        const meetupRequest = await axios(`${API_BASE_URL}/meetup/owner`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer ".concat(
-                    localStorage.getItem("jwtToken")
-                ),
-            },
-        });
-        setMeetups(meetupRequest.data);
-    };
+    // const fetchMeetupData = async () => {
+    //     const meetupRequest = await axios(`${API_BASE_URL}/meetup/owner`, {
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             Authorization: "Bearer ".concat(
+    //                 localStorage.getItem("jwtToken")
+    //             ),
+    //         },
+    //     });
+    //     setMeetups(meetupRequest.data);
+    // };
 
     useEffect(() => {
         fetchUserLocation();
         fetchRsvpData();
         fetchEventData();
-        fetchMeetupData();
-        fetchMeetupRsvpData();
+        // fetchMeetupData();
+        // fetchMeetupRsvpData();
     }, [location]);
 
     // gets all the events out of each individual rsvp.eventId and into array
@@ -121,15 +121,16 @@ export default function EventList() {
         });
     };
 
-    let rsvpMeetupList = [];
-    const generateRsvpMeetupList = rsvpData => {
-        rsvpData.forEach(rsvp => {
-            rsvpMeetupList.push(rsvp.eventId);
-        });
-    };
+    // let rsvpMeetupList = [];
+    // const generateRsvpMeetupList = rsvpData => {
+    //     rsvpData.forEach(rsvp => {
+    //         rsvpMeetupList.push(rsvp.eventId);
+    //     });
+    // };
 
     // generate EventCard components with event data
-    let rsvpEventCardList, rsvpMeetupCardList, localEventCardList, meetupCardList;
+    let rsvpEventCardList, localEventCardList;
+    // let rsvpMeetupCardList, meetupCardList;
     let eventTitle = "Nearby Events";
     if (rsvpEvents) {
         generateRsvpEventList(rsvpEvents);
@@ -137,22 +138,22 @@ export default function EventList() {
             return <EventCard key={index} event={event} />;
         });
     }
-    if (rsvpMeetups) {
-        generateRsvpMeetupList(rsvpMeetups);
-        rsvpMeetupCardList = rsvpMeetupList.map((event, index) => {
-            return <MeetupCard key={index} event={event} />;
-        });
-    }
+    // if (rsvpMeetups) {
+    //     generateRsvpMeetupList(rsvpMeetups);
+    //     rsvpMeetupCardList = rsvpMeetupList.map((event, index) => {
+    //         return <MeetupCard key={index} event={event} />;
+    //     });
+    // }
     if (events) {
         localEventCardList = events.map((event, index) => {
             return <EventCard key={index} event={event} />;
         });
     }
-    if (meetups) {
-        meetupCardList = meetups.map((event, index) => {
-            return <MeetupCard key={index} event={event} />;
-        });
-    }
+    // if (meetups) {
+    //     meetupCardList = meetups.map((event, index) => {
+    //         return <MeetupCard key={index} event={event} />;
+    //     });
+    // }
     if (!location) {
         eventTitle = "All Events";
     }
@@ -166,7 +167,7 @@ export default function EventList() {
                     </div>
                     <div className='eventsContainer col s12 m6 l4'>
                         {rsvpEventCardList}
-                        {rsvpMeetupCardList}
+                        {/* {rsvpMeetupCardList} */}
                     </div>
                 </div>
                 <div className='section'>
@@ -177,14 +178,14 @@ export default function EventList() {
                         {localEventCardList}
                     </div>
                 </div>
-                <div className='section'>
+                {/* <div className='section'>
                     <div className='col s12'>
                         <span className='title'>My Meetups</span>
                     </div>
                     <div className='eventsContainer col s12 m6 l4'>
                         {meetupCardList}
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
