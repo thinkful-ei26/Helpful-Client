@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
 import { PointMap } from "./map";
+import UserComments from './usercomments'
 import "../stylesheets/event-page.css";
 
 export function EventPage(props) {
@@ -140,6 +141,7 @@ export function EventPage(props) {
                 <div className='event-description'>{event.description}</div>
                 <div className='event-contact'>{event.contact}</div>
                 {rsvpButton}
+                <UserComments eventId={eventId} />
             </div>
         </section>
     );
