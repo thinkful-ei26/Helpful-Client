@@ -7,7 +7,9 @@ describe('Landing Test', () => {
 
   it('renders', () => {
     const wrapper = shallow(<Landing />);
-    expect(wrapper.find('.landing')).toBeDefined();
+    expect(wrapper.find('.container')).toBeDefined();
+    expect(wrapper.find('.flow-text')).toBeDefined();
+    expect(wrapper.find('.container')).toBeDefined();
   });
 
 });

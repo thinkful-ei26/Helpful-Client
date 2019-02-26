@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
-import "./navbar.css";
-// import M from "materialize-css";
 
 const NavBar = props => {
     let token = localStorage.getItem("jwtToken");
