@@ -1,5 +1,4 @@
 import React from "react";
-import UserComments from './usercomments'
 import { Link } from 'react-router-dom';
 // import "../stylesheets/org-dashboard-styles/eventcard.css";
 
@@ -24,7 +23,6 @@ export default function EventCard(props) {
           <span>{props.event.location}</span>
           <span>{props.event.contact}</span>
         </div>
-      <UserComments eventId={props.event.id} />
     </div>
   );
 }

@@ -45,6 +45,7 @@ const UserComments = (props) => {
         event.preventDefault();
         setComments([...comments, comment]);
         createComment(comment);
+        document.getElementById("comment-form").reset();
     };
 
     const mapComments = comments.map((item, index) => (
@@ -53,7 +54,7 @@ const UserComments = (props) => {
 
     return (
         <div className='user-comments'>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} id="comment-form">
                 <label>Comments</label>
                 <textarea style={{ background: "#ccc" }} onChange={onChange} />
                 <button type='submit'>Add a public comment</button>
