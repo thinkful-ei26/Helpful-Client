@@ -38,6 +38,7 @@ button {
     width: 40%;
 }
 
+/* styling for form input areas */
 input:invalid {
     border: 2px dashed red;
   }

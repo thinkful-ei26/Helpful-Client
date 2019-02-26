@@ -1,5 +1,5 @@
 import React from "react";
-// import '../stylesheets/dashboard-create-event.css';
+import '../stylesheets/dashboard-create-event.css';
 
 export default function OrgDashboardAddUser() {
     return (
@@ -9,16 +9,16 @@ export default function OrgDashboardAddUser() {
                     <legend>Add User Roles</legend>
                     <div className='create-event-row'>
                         <label htmlFor='event-name'> Name</label>
-                        <input type='text' placeholder='member-name' />
+                        <input required type='text' placeholder='member-name' />
                     </div>
-                    <div className='create-event-row'>
+                    {/* <div className='create-event-row'>
                         <label htmlFor='event-description'> Description</label>
                         <select name='assign-admin-privileges' id=''>
                             <option value='admin'>Admin</option>
                             <option value=''>Blank 1</option>
                             <option value=''>Blank 2</option>
                         </select>
-                    </div>
+                    </div> */}
                     <div className='submit-cancel-buttons'>
                         <button className='submit'>Submit</button>
                         <button>Cancel</button>
