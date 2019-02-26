@@ -1,6 +1,8 @@
 import React from "react";
 import '../stylesheets/dashboard-create-event.css';
 
+// ------- TODO connect this form to server to create admin roles -----------
+
 export default function OrgDashboardAddUser() {
     return (
         <div className='create-event-form'>
