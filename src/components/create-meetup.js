@@ -14,7 +14,7 @@ export default function CreateMeetup() {
     });
 
     const [success, setSuccess] = useState(false);
-
+    // TODO error check this if we bring it live
     const setMeetup = async () => {
         await axios({
             method: "post",

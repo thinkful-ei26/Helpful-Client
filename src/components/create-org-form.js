@@ -23,8 +23,16 @@ export default function CreateOrgForm() {
         "Content-Type": "application/json",
         Authorization: "Bearer ".concat(localStorage.getItem("jwtToken"))
       }
-    });
-    setSuccess(true);
+    })
+      .then(res => {
+        console.log('tag');
+        setSuccess(true);
+      })
+      .catch(err => {
+        console.log('tag');
+        alert('Organization already Exists');
+        setSuccess(false);
+      });
   };
 
   const handleSubmit = e => {

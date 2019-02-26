@@ -20,18 +20,26 @@ const Login = () => {
             .post(`${API_BASE_URL}/auth/login`, data)
             .then(res => {
                 // Set token to localStorage
-                const token = res.data.authToken;
-                localStorage.setItem("jwtToken", token);
-                // Set token to Auth header
-                //setAuthToken(token);
-                // Decode token to get user data
-                const decoded = jwt_decode(token);
-                // Set current user
-                setCurrentUser(decoded);
-                let mytoken = localStorage.getItem("jwtToken");
+                if (res.data.reason) {
+                    alert(res.data.message)
+                    return 'login';
+                } else {
+                    const token = res.data.authToken;
+                    console.log(res.data);
+                    localStorage.setItem("jwtToken", token);
+                    // Set token to Auth header
+                    //setAuthToken(token);
+                    // Decode token to get user data
+                    const decoded = jwt_decode(token);
+                    // Set current user
+                    setCurrentUser(decoded);
+                    let mytoken = localStorage.getItem("jwtToken");
+                    return 'dashboard';
+                }
+
             })
-            .then(() => {
-                history.push("/dashboard");
+            .then(destination => {
+                history.push(`/${destination}`);
             });
     };
 
