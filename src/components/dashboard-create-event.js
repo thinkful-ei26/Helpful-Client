@@ -50,6 +50,7 @@ export default function DashboardCreateEvent(props) {
                     <div className='create-event-row'>
                         <label htmlFor='event-name'> Event name</label>
                         <input
+                            required
                             type='text'
                             placeholder='Event-name'
                             onChange={e =>
@@ -64,6 +65,7 @@ export default function DashboardCreateEvent(props) {
                     <div className='create-event-row'>
                         <label htmlFor='event-description'> Description</label>
                         <input
+                            required
                             type='text'
                             placeholder='Description'
                             onChange={e =>
@@ -79,6 +81,7 @@ export default function DashboardCreateEvent(props) {
                             Location
                         </label>
                         <input
+                            required
                             type='text'
                             onChange={e =>
                                 setFormData({
@@ -91,6 +94,7 @@ export default function DashboardCreateEvent(props) {
                     <div className='create-event-row'>
                         <label htmlFor='event-date'> Date</label>
                         <input
+                            required
                             type='text'
                             placeholder='Date'
                             onChange={e =>
@@ -104,6 +108,7 @@ export default function DashboardCreateEvent(props) {
                     <div className='create-event-row'>
                         <label htmlFor='event-contact'> Contact</label>
                         <input
+                            required
                             type='text'
                             onChange={e =>
                                 setFormData({
