@@ -153,7 +153,7 @@ export default function OrgPublicPage(props) {
                         />
                         {orgMap}
                         <UserCanRateOrg orgId={orgId}/>
-                        <UserComments/>
+                        {/* <UserComments/> */}
                         <p className='flow-text'>{orgs.description}</p>
                         <p className='flow-text'>{orgs.location}</p>
                     </div>
@@ -161,7 +161,7 @@ export default function OrgPublicPage(props) {
                     {generateFollowButton()}
 
                     <div className='container'>
-                        <p>Hey{orgEvents}</p>
+                        <p>{orgEvents}</p>
                     </div>
                 </div>
             </div>
