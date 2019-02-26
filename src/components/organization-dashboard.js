@@ -52,26 +52,25 @@ const OrganizationDashboard = props => {
               Create a new event
                         </button>
 
-            <button
+            {/* <button
               className='org-main-button'
               onClick={() => setView(<OrgDashboardAddUser />)}>
               Add Admin
-                        </button>
+                        </button> */}
 
-            <button
+            {/* <button
               disabled
               className='org-main-button'
               onClick={() => setView()}>
               Invite Members
-                        </button>
-            <button
+                        </button> */}
+            {/* <button
               disabled
               className='org-main-button'
               onClick={() => setView()}>
               Promote Event
-                        </button>
+                        </button> */}
             <button
-              disabled
               className="org-main-button"
             >
               <Link to={publicPageUrl}>View your public page</Link>
