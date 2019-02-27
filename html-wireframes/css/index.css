@@ -1,143 +1,142 @@
 body {
-  margin: 0;
-  box-sizing: border-box;
-  font-size: 1.5rem;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.5rem;
 }
-
+* {
+    font-family: "Montserrat", sans-serif;
+    /* font-family: 'PT Sans', sans-serif; */
+    /* font-family: 'PT Sans Narrow', sans-serif; */
+    /* font-family: 'Source Sans Pro', sans-serif; */
+}
 .container,
 .footer-container,
 .header-container {
-  /* font-family: 'PT Sans', sans-serif; */
-  /* font-family: 'PT Sans Narrow', sans-serif; */
-  /* font-family: 'Source Sans Pro', sans-serif; */
-  font-family: 'Montserrat', sans-serif;
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 15%;
-  background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    margin: 0 15%;
+    background: whitesmoke;
 }
 /****************HEADER************************************/
 .header-container {
-  border-bottom: 3px solid #e0e2e2;
+    border-bottom: 3px solid #e0e2e2;
 }
 header {
-  margin: 0 15%;
-  max-height: 4rem;
-  display: flex;
+    margin: 0 15%;
+    max-height: 4rem;
+    display: flex;
 }
 
 .logo {
-  font-size: 90%;
-  padding-right: 20%;
-  align-self: center;
+    font-size: 90%;
+    padding-right: 20%;
+    align-self: center;
 }
 .logo-style-one {
-  color: red;
+    color: red;
 }
 .logo-style-two {
-  color: orange;
+    color: orange;
 }
 /*********NAV*******************************************/
 nav {
-  color: orange;
-  font-weight: bold;
+    color: orange;
+    font-weight: bold;
 }
 nav ul {
-  visibility: visible;
-  display: flex;
-  flex-wrap: wrap;
+    visibility: visible;
+    display: flex;
+    flex-wrap: wrap;
 }
 ul li {
-  padding-right: 1.5rem;
-  list-style: none;
-  font-size: 50%;
+    padding-right: 1.5rem;
+    list-style: none;
+    font-size: 50%;
 }
 a {
-  text-decoration: none;
-  color: orange;
+    text-decoration: none;
+    color: orange;
 }
 
 nav a:hover {
-  color: #a0e4e5;
-  transition: 0.5s;
+    color: #a0e4e5;
+    transition: 0.5s;
 }
 
 /************MAIN******************************************/
 
 .landing-page-main {
-  padding: 5%;
-  min-height: 45vh;
-  background-image: url('../img/community.jpg');
-  background-size: cover;
-  background-color: #fff;
+    padding: 5%;
+    min-height: 45vh;
+    background-image: url("../img/community.jpg");
+    background-size: cover;
+    background-color: #fff;
 }
 .text-box {
-  background-color: #fff;
-  opacity: 0.5;
-  padding: 4%;
+    background-color: #fff;
+    opacity: 0.5;
+    padding: 4%;
 }
 
 p {
-  text-align: center;
-  font-weight: bold;
-  color: #4594d1;
+    text-align: center;
+    font-weight: bold;
+    color: #4594d1;
 }
 form {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5%;
 }
 form button {
-  padding: 2%;
-  width: 17%;
-  border-radius: 5%;
-  text-transform: uppercase;
-  font-weight: bold;
-  /* flex-shrink: 2; */
+    padding: 2%;
+    width: 17%;
+    border-radius: 5%;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .button {
-  flex-shrink: 2;
+    flex-shrink: 2;
 }
 .button-register {
-  color: orange;
-  background: #4594d1;
+    color: orange;
+    background: #4594d1;
 }
 .button-register:hover {
-  color: #4594d1;
-  background: orange;
-  transition: 1s;
+    color: #4594d1;
+    background: orange;
+    transition: 1s;
 }
 .button-login {
-  color: #4594d1;
-  background: orange;
+    color: #4594d1;
+    background: orange;
 }
 .button-login:hover {
-  color: orange;
-  background: #4594d1;
-  transition: 1s;
-
+    color: orange;
+    background: #4594d1;
+    transition: 1s;
 }
 
 /*****FOOTER************************************/
 
 .footer-container {
-  background: #4594d1;
+    background: #4594d1;
 }
 footer {
-  font-size: 70%;
-  margin: 0 15%;
-  color: white;
-  padding: 2%;
+    font-size: 70%;
+    margin: 0 15%;
+    color: white;
+    padding: 2%;
 }
 
 .sub-footer {
-  font-size: 60%;
-  padding-top: 1%;
-  background: rgb(29, 147, 187);
-  color: white;
-  text-align: center;
+    font-size: 60%;
+    padding-top: 1%;
+    background: rgb(29, 147, 187);
+    color: white;
+    text-align: center;
 }
