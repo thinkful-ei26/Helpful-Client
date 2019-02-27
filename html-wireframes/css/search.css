@@ -1,14 +1,15 @@
 .container-search {
     display: flex;
     margin: 0 15%;
-    /* min-height: 80vh; */
     border-left: 40px solid orange;
     padding: 5%;
-    background: rgb(224, 235, 238);
+    background: whitesmoke;
+    /* background: rgba(238, 196, 184,.4); */
 }
 .hero-box {
     display: flex;
     flex-direction: column;
+    border-left: 20px #4594d1 solid;
 }
 .search-hero {
     color: #0b88f4;
@@ -22,12 +23,11 @@ img {
     width: 15rem;
 }
 .form-search {
-
+    color: #0b88f4;
     height: 20rem;
     display: flex;
     flex-direction: column;
     margin: -10% 0 0 10%;
-
 }
 #event-search-select {
     padding: 2%;
