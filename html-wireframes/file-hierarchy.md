@@ -15,13 +15,11 @@ my created org (createdorgs) DONE
         - show scheduled
         - create new org
         - view public page
+            - org-public-page.js
+            - user-can-rate-org.js
+            - org-public-page-event-list.js
 followed
 search.js
-    - org-public-page.js
-        - user-can-rate-org.js
-        - org-public-page-event-list.js
-    - events
-
 2. READY FOR TRELLO
     - NAV
     - FOOTER
@@ -40,5 +38,4 @@ search.js
 
 4. PENDING VIEWS
     - 404
-    - organization (org-public-page)
     - orgdashboard
