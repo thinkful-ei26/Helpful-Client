@@ -1,0 +1,28 @@
+.organization-page-main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15%;
+    border-left: 40px solid orange;
+    padding: 0 5%;
+    color: #0b88f4;
+    justify-content: center;
+    background: whitesmoke;
+    font-size: 75%;
+}
+.org-card {
+}
+.org-hero {
+}
+
+.org-rating-area{
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+}
+form, button{
+    /* margin: auto; */
+}
