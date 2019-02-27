@@ -1,3 +1,5 @@
+1. COMPONENT HIERARCHY:
+
 landing DONE
 dashboard DONE
     - eventcard DONE
@@ -17,3 +19,19 @@ followed
 search
     - organization (orgpublicpage)
     - events
+
+2. READY FOR TRELLO
+    - NAV
+    - FOOTER
+    - LANDING
+    - DASHBOARD
+
+
+3. WIREFRAME MAP(COMPONENT NAME --> HTML WIREFRAME --> STYLE SHEET)
+    navbar.js(layout) -> index.html -> index.css
+    footer.js(layout) -> index.html -> index.css
+    user-dashboard.js -> dashboard.html -> dashboard.css
+
+
+4. PENDING 
+    - errorPage.js
