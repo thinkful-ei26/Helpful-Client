@@ -5,13 +5,6 @@ nav ul {
 }
 .dashboard-main {
     border-left: 40px solid orange;
-<<<<<<< HEAD
-=======
-    /* text-align: center; */
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* margin-top: -5rem; */
->>>>>>> aaa91a27c01671719adcd331d81fcf8a70fa0119
 }
 
 .event-title {
@@ -30,22 +23,7 @@ li {
     line-height: 2;
 }
 
-<<<<<<< HEAD
-=======
-/* .event-comment-area {
-    display: flex;
-} */
-/* .event-comment-area button {
-    align-self: flex-start;
-    padding: 1%;
-    margin-left: 2%;
-    background: #4594d1;
-    color: orange;
-    font-weight: bold;
-    font-size: 1rem;
-    border-radius: 11%;
-} */
->>>>>>> aaa91a27c01671719adcd331d81fcf8a70fa0119
+
 /**********DASHBOARD ASIDES****************/
 .dashboard-main {
     display: flex;
@@ -56,12 +34,6 @@ li {
     width: 30%;
     margin-top: -14rem;
     padding: 2%;
-<<<<<<< HEAD
-=======
-    /* display:flex; */
-    /* flex-direction: column; */
-    /* flex-wrap: wrap; */
->>>>>>> aaa91a27c01671719adcd331d81fcf8a70fa0119
 }
 .my-events ul {
     display: flex;
@@ -71,11 +43,6 @@ li {
 .dashboard-aside-following {
     order: 1;
     flex-direction: row;
-<<<<<<< HEAD
-=======
-    /* padding-left: 2%; */
-    /* align-self: flex-start; */
->>>>>>> aaa91a27c01671719adcd331d81fcf8a70fa0119
 }
 .dashboard-aside-following,
 ul {
@@ -87,34 +54,17 @@ ul {
 aside {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
     background: white;
 }
 .dashboard-aside-mygroups {
     border-left: 1px solid orange;
     order: 2;
     align-self: flex-end;
-=======
-    /* height: 70vh; */
-    background: white;
-}
-.dashboard-aside-mygroups {
-    /* display: flex; */
-    border-left: 1px solid orange;
-    order: 2;
-    align-self: flex-end;
-    /* align-items: stretch; */
->>>>>>> aaa91a27c01671719adcd331d81fcf8a70fa0119
 }
 
 .dashboard-aside-mygroups ul {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-=======
-    /* height: 100vh; */
-    /* align-items: stretch; */
->>>>>>> aaa91a27c01671719adcd331d81fcf8a70fa0119
 }
 .dashboard-aside-mygroups,ul,li{
   padding: 2%;
@@ -122,12 +72,3 @@ aside {
 aside h3 {
     font-size: 1rem;
 }
-<<<<<<< HEAD
-=======
-.dashboard-aside-container,
-aside,
-ul,
-li {
-    /* padding-bottom: 0.5rem; */
-}
->>>>>>> aaa91a27c01671719adcd331d81fcf8a70fa0119
