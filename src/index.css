@@ -1,4 +1,5 @@
-body {
+/* old stuff, commented out for safety */
+/* body {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -42,4 +43,82 @@ nav ul a {
     font-size: 2.5rem !important;
     margin-left: 12px;
     margin-top: 2px;
+} */
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+* {
+    font-family: "Montserrat", sans-serif;
+    /* font-family: 'PT Sans', sans-serif; */
+    /* font-family: 'PT Sans Narrow', sans-serif; */
+    /* font-family: 'Source Sans Pro', sans-serif; */
+}
+.container,
+.footer-container,
+.header-container {
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15%;
+    background: whitesmoke;
+}
+
+/************MAIN******************************************/
+
+.landing-page-main {
+    padding: 5%;
+    min-height: 45vh;
+    background-image: url("./img/community.jpg");
+    background-size: cover;
+    background-color: #fff;
+}
+.text-box {
+    background-color: #fff;
+    opacity: 0.5;
+    padding: 4%;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+    color: #4594d1;
+}
+form {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5%;
+}
+form button {
+    padding: 2%;
+    width: 17%;
+    border-radius: 5%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.button {
+    flex-shrink: 2;
+}
+.button-register {
+    color: orange;
+    background: #4594d1;
+}
+.button-register:hover {
+    color: #4594d1;
+    background: orange;
+    transition: 1s;
+}
+.button-login {
+    color: #4594d1;
+    background: orange;
+}
+.button-login:hover {
+    color: orange;
+    background: #4594d1;
+    transition: 1s;
 }
