@@ -122,3 +122,23 @@ form button {
     background: #4594d1;
     transition: 1s;
 }
+
+/*****FOOTER************************************/
+
+.footer-container {
+    background: #4594d1;
+}
+footer {
+    font-size: 70%;
+    margin: 0 15%;
+    color: white;
+    padding: 2%;
+}
+
+.sub-footer {
+    font-size: 60%;
+    padding-top: 1%;
+    background: rgb(29, 147, 187);
+    color: white;
+    text-align: center;
+}
