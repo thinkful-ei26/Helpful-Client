@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import { API_BASE_URL } from "../../config";
+import "../../stylesheets/register.css";
 const Register = () => {
     // onChange = e => {
     //   this.setState({ [e.target.id]: e.target.value })
