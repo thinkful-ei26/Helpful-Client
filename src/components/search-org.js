@@ -10,16 +10,18 @@ export default function SearchOrg(props) {
             const linkUrl = `/organization/${org.id}`;
             return (
                 <Link key={index} to={linkUrl}>
-                    {" "}
-                    <div className='card blue-grey darken-1'>
-                        <div className='card-content white-text'>
-                            <span className='card-title'>{org.name}</span>
-                            <p>{org.description}</p>
-                        </div>
-                        <div className='card-action'>
-                            <span>{org.date}</span>
-                            <span>{org.location}</span>
-                            <span>{org.contact}</span>
+                    <div className='card'>
+                        <img className='search-img' alt='' src={org.imgUrl}></img>
+                        <div className='search-column'>
+                            <div>
+                                <span className='search-title'>{org.name}</span>
+                                <p className='search-description'>{org.description}</p>
+                            </div>
+                            <div className='customHr'></div>
+                            <div className='search-info'>
+                                <span><span>Where:</span> {org.location}</span>
+                                <span><span>Contact us:</span> {org.contact}</span>
+                            </div>
                         </div>
                     </div>
                 </Link>

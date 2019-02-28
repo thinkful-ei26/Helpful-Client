@@ -75,6 +75,7 @@
     }
     .search-description{
         color: white;
+        font-size: 3vw;
     }
     .search-info{
         display: flex;
