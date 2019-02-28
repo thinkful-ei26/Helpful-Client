@@ -59,3 +59,13 @@ export const PointMap = withGoogleMap(props => {
         </GoogleMap>
     );
 });
+
+export const LoadingMap = withGoogleMap(props => {
+    return (
+        <GoogleMap
+            ref={props.onMapLoad}
+            defaultZoom={14}
+            defaultCenter={props.location}>
+        </GoogleMap>
+    );
+});

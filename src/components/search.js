@@ -6,12 +6,17 @@ import SearchEvent from "./search-event";
 import "../stylesheets/search.css";
 
 export default function Search(props) {
-    const [component, setComponent] = useState("");
     const [events, setEvents] = useState(null);
     const [orgs, setOrgs] = useState(null);
     const [location, setLocation] = useState(null);
     const [distance, setDistance] = useState(10000);
     const [type, setType] = useState('organizations');
+    const [component, setComponent] = useState(<SearchOrg
+        history={props.history}
+        location={location}
+        orgs={orgs}
+    />);
+
 
 
     // get user location
