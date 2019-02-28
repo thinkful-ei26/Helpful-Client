@@ -247,110 +247,6 @@ button,
 }
 
 /* End Bryan CSS */
-<<<<<<< HEAD
-=======
-
-/* Bryan */
-
-.containerB {
-    margin: 0 auto;
-    max-width: 1280px;
-    width: 90%;
-    background: whitesmoke;
-}
-
-.text-center {
-    text-align: center;
-}
-@media only screen and (min-width: 601px) {
-    .containerB {
-        width: 85%;
-    }
-}
-
-@media only screen and (min-width: 993px) {
-    .containerB {
-        width: 70%;
-    }
-}
-
-.responsive-img {
-    width: 100%;
-    height: auto;
-}
-
-.rate-area {
-    float: left;
-    border-style: none;
-}
-
-.rate-area:not(:checked) > input {
-    position: absolute;
-    left: -9999px;
-    clip: rect(0, 0, 0, 0);
-}
-
-.rate-area:not(:checked) > label {
-    float: right;
-    width: 1em;
-    padding: 0 0.1em;
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-    font-size: 400%;
-    line-height: 1.2;
-    color: lightgrey;
-    text-shadow: 1px 1px #bbb;
-}
-
-.rate-area:not(:checked) > label:before {
-    content: "★ ";
-}
-
-.rate-area > input:checked ~ label {
-    color: gold;
-    text-shadow: 1px 1px #c60;
-    font-size: 450% !important;
-}
-
-.rate-area:not(:checked) > label:hover,
-.rate-area:not(:checked) > label:hover ~ label {
-    color: gold;
-}
-
-.rate-area > input:checked + label:hover,
-.rate-area > input:checked + label:hover ~ label,
-.rate-area > input:checked ~ label:hover,
-.rate-area > input:checked ~ label:hover ~ label,
-.rate-area > label:hover ~ input:checked ~ label {
-    color: gold;
-    text-shadow: 1px 1px goldenrod;
-}
-
-.rate-area > label:active {
-    position: relative;
-    top: 2px;
-    left: 2px;
-}
-
-.follow-button,
-.unfollow-button {
-    /* width: 8rem; */
-    /* padding: 3%; */
-    /* border-radius: 5%; */
-    background: orange;
-    /* margin: 5% auto; */
-    font-weight: bold;
-}
-
-button,
-.button-center {
-    position: relative;
-    left: 19.59378439743%;
-}
-
-/* End Bryan CSS */
->>>>>>> css/orgpublicpage
 
 /************MAIN******************************************/
 
@@ -433,11 +329,7 @@ footer {
         position: absolute;
         top: 0;
         right: 0;
-<<<<<<< HEAD
-        padding-right: 10px;
-=======
         padding-right: 6%;
->>>>>>> css/orgpublicpage
     }
 
     .logo {
