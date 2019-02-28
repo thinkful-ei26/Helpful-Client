@@ -10,7 +10,7 @@ export default function Search(props) {
     const [events, setEvents] = useState(null);
     const [orgs, setOrgs] = useState(null);
     const [location, setLocation] = useState(null);
-    const [distance, setDistance] = useState(50);
+    const [distance, setDistance] = useState(10000);
     const [type, setType] = useState('organizations');
 
 
@@ -114,7 +114,7 @@ export default function Search(props) {
         fetchUserLocation();
         getEvent();
         getOrg();
-    }, [location]);
+    }, [location, orgs]);
 
     if (location === null) {
         return <div />;
