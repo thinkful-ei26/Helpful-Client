@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 
 const NavBar = props => {
@@ -96,12 +96,6 @@ const NavBar = props => {
         await localStorage.removeItem("jwtToken");
         props.history.push("/");
     };
-
-    useEffect(() => {
-        let elems = document.querySelectorAll(".sidenav");
-        // let instances = M.Sidenav.init(elems, {});
-        // return instances;
-    }, []);
     
     return (
         <React.Fragment>
