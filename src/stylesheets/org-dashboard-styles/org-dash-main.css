@@ -1,5 +1,16 @@
-.org-dash-main-wrapper {
+.orgDash {
     display: flex;
+    flex: row;
+    flex-wrap: wrap;
+}
+
+.orgDash h2 {
+    padding-left: 10px;
+    color: orange;
+}
+
+.orgDash img {
+    padding-left: 10px;
 }
 
 .org-main-buttons {
@@ -9,12 +20,35 @@
     padding-bottom: 1%;
 }
 .org-main-button {
+    background: #4594d1;
+    color: black;
     padding: 10px;
     height: 80px;
+    width: 172px;
     margin: 10%;
     border-radius: 5%;
 }
 
+.org-main-button:hover {
+    background: orange;
+    transition: 1s;
+}
+
 .org-main-events {
     flex: 2;
+}
+
+@media only screen and (max-width: 360px) {
+    .org-dash-side-bar {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .org-dash-side-bar h2 {
+        padding: 0;
+    }
+
+    .org-main-events {
+        margin-right: 20px;
+    }
 }
