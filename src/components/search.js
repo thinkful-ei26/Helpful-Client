@@ -10,13 +10,15 @@ export default function Search(props) {
     const [events, setEvents] = useState(null);
     const [orgs, setOrgs] = useState(null);
     const [location, setLocation] = useState(null);
+    const [distance, setDistance] = useState(50);
+    const [type, setType] = useState('organizations');
 
 
     // get user location
     const fetchUserLocation = async () => {
         if (!location) {
             if ("geolocation" in navigator) {
-                navigator.geolocation.getCurrentPosition(function(position) {
+                navigator.geolocation.getCurrentPosition(function (position) {
                     let results = {
                         lat: Number(position.coords.latitude.toFixed(7)),
                         lng: Number(position.coords.longitude.toFixed(7)),
@@ -28,14 +30,53 @@ export default function Search(props) {
         }
     };
 
+    const onSelectChange = e => {
+        console.log(e.target.value);
+        setType(e.target.value);
+        getEvent();
+        getOrg();
+    }
+
+    const onSubmit = e => {
+        e.preventDefault();
+        console.log(distance);
+        if (type === 'organizations') {
+            setComponent(
+                <SearchOrg
+                    history={props.history}
+                    location={location}
+                    orgs={orgs}
+                />
+            )
+        }
+        if (type === 'events') {
+            setComponent(
+                <SearchEvent
+                    history={props.history}
+                    location={location}
+                    events={events}
+                />
+            )
+        }
+
+
+    }
+
+    /* on click */
+
+    const onChange = e => {
+        e.preventDefault();
+        console.log(e.target.value);
+        setDistance(e.target.value);
+    }
 
     /* Call these on click */
     const getEvent = async () => {
         if (location === null) {
         } else {
-            const url = `${API_BASE_URL}/event/location/10000/${location.lat}/${
+            const url = `${API_BASE_URL}/event/location/${distance}/${location.lat}/${
                 location.lng
-            }`;
+                }`;
             const getEvents = await axios({
                 method: "get",
                 url: url,
@@ -51,18 +92,22 @@ export default function Search(props) {
     };
 
     const getOrg = async () => {
-        const getOrgs = await axios({
-            method: "get",
-            url: `${API_BASE_URL}/org/location/10000/45/-105`,
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer ".concat(
-                    localStorage.getItem("jwtToken")
-                ),
-            },
-        });
-
-        setOrgs(getOrgs.data);
+        if (location === null) {
+        } else {
+            const getOrgs = await axios({
+                method: "get",
+                url: `${API_BASE_URL}/org/location/${distance}/${location.lat}/${
+                    location.lng
+                    }`,
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer ".concat(
+                        localStorage.getItem("jwtToken")
+                    ),
+                },
+            });
+            setOrgs(getOrgs.data);
+        }
     };
 
     useEffect(() => {
@@ -75,63 +120,49 @@ export default function Search(props) {
         return <div />;
     } else {
         return (
-            <div className='container'>
-                {/* <div className='filter-form'>
-
-      <h2> Filter by:</h2>
-      <div>
-        <span className='big-font'> Distance(miles): </span>
-        <select className='select-custom' onChange={e => console.log(e.target.value)}>
-          <option value='10'>10</option>
-          <option value='25'>25</option>
-          <option value='50'>50</option>
-          <option value='100'>100</option>
-          <option value='150'>150</option>
-        </select>
-      </div>
-    </div> */}
-
-
-                <div className='search-container center'>
-                    <button
-                        onClick={() =>
-                            setComponent(
-                                <SearchOrg
-                                    history={props.history}
-                                    location={location}
-                                    orgs={orgs}
+            <React.Fragment>
+                <div class="container-search">
+                    <div class='flex-container'>
+                        <div class="hero-box">
+                            <hero class="search-hero">
+                                <div class="text-box">Find events.</div>
+                                <img
+                                    src="./img/community5.jpg"
+                                    alt=""
                                 />
-                            )
-                        }
-                        style={{
-                            width: "175px",
-                            borderRadius: "3px",
-                            letterSpacing: "1.5px",
-                        }}
-                        className='btn btn-large waves-effect waves-light hoverable teal lighten-2'>
-                        Organizations
-                    </button>
-                    <button
-                        onClick={() =>
-                            setComponent(
-                                <SearchEvent
-                                    history={props.history}
-                                    location={location}
-                                    events={events}
+                            </hero>
+                            <hero class="search-hero">
+                                <div class="text-box">Volunteer.</div>
+                                <img
+                                    src="./img/community3.jpg"
+                                    alt=""
                                 />
-                            )
-                        }
-                        style={{
-                            width: "175px",
-                            borderRadius: "3px",
-                            letterSpacing: "1.5px",
-                        }}
-                        className='btn btn-large waves-effect waves-light hoverable teal lighten-2'>
-                        Events
-                    </button>
+                            </hero>
+                            <hero class="search-hero">
+                                <div class="text-box">Make Friends.</div>
+                                <img
+                                    src="./img/community4.jpg"
+                                    alt=""
+                                />
+                            </hero>
+                        </div>
+                        <form onSubmit={onSubmit} action="submit" class="form-search">
+                            <label for="search">Filter your search by...</label>
+                            <select onChange={onSelectChange} name="event-search" id="event-search-select">
+                                <option value="organizations">Organizations</option>
+                                <option value="events">Events</option>
+                            </select>
+                            <input onChange={onChange} type="text" placeholder="Enter Distance" />
+
+                            <button id="search-button">Search</button>
+                        </form>
+                        <div class="search-results"></div>
+                    </div>
+                    <div class='blocker'>
+                        {component}
+                    </div>
                 </div>
-                {component}
-            </div>
+            </React.Fragment >
         );
     }
 

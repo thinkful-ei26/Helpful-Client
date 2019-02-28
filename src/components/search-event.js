@@ -11,18 +11,23 @@ export default function SearchEvent(props) {
             const linkUrl = `/event/${event.id}`;
             return (
                 <Link key={index} to={linkUrl}>
-                    <div className='card blue-grey darken-1'>
-                        <div className='card-content white-text'>
-                            <span className='card-title'>{event.name}</span>
-                            <p>{event.description}</p>
-                        </div>
-                        <div className='card-action'>
-                            <span>{event.date}</span>
-                            <span>{event.location}</span>
-                            <span>{event.contact}</span>
+                    <div className='card'>
+                        <img className='search-img' alt='' src={event.imgUrl}></img>
+                        <div className='search-column'>
+                            <div>
+                                <span className='search-title'>{event.name}</span>
+                                <p className='search-description'>{event.description}</p>
+                            </div>
+                            <div className='customHr'></div>
+                            <div className='search-info'>
+                                <span><span>When:</span> {event.date}</span>
+                                <span><span>Where:</span> {event.location}</span>
+                                <span><span>Contact us:</span> {event.contact}</span>
+                            </div>
                         </div>
                     </div>
-                </Link>
+
+                </Link >
             );
         });
         return (
