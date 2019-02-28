@@ -15,23 +15,27 @@ my created org (createdorgs) DONE
         - show scheduled
         - create new org
         - view public page
+            - org-public-page.js
+            - user-can-rate-org.js
+            - org-public-page-event-list.js
 followed
-search
-    - organization (orgpublicpage)
-    - events
-
+search.js
 2. READY FOR TRELLO
     - NAV
     - FOOTER
     - LANDING
     - DASHBOARD
+    - SEARCH
 
 
 3. WIREFRAME MAP(COMPONENT NAME --> HTML WIREFRAME --> STYLE SHEET)
     navbar.js(layout) -> index.html -> index.css
     footer.js(layout) -> index.html -> index.css
     user-dashboard.js -> dashboard.html -> dashboard.css
+    org-public-page -> organization.html -> organization.css
 
 
-4. PENDING 
-    - errorPage.js
+
+4. PENDING VIEWS
+    - 404
+    - orgdashboard

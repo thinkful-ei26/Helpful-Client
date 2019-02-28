@@ -4,25 +4,46 @@
     margin: 0 15%;
     border-left: 40px solid orange;
     padding: 0 5%;
-    color: #0b88f4;
-    justify-content: center;
     background: whitesmoke;
     font-size: 75%;
 }
-.org-card {
+p{
+    color: black;
 }
-.org-hero {
-}
-
-.org-rating-area{
+.org-details {
     display: flex;
     flex-direction: column;
+    line-height: 2;
 }
-form{
+.org-rating-area {
     display: flex;
-    flex-direction: column; 
-    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+
 }
-form, button{
-    /* margin: auto; */
+form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+}
+.org-rating-form-input {
+    width: 20rem;
+    padding: 5%;
+    text-align: center;
+    margin: 5% auto;
+}
+form .org-rating-button {
+    width: 8rem;
+    padding: 3%;
+    border-radius: 5%;
+    color: #4594d1;
+    background: orange;
+    margin: 5% auto;
+    font-weight: bold;
+}
+
+.organization-geobox {
+    background: pink;
+    height: 15rem;
 }

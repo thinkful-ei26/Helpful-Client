@@ -19,9 +19,7 @@
     flex-direction: column;
     line-height: 2;
 }
-.event-comment-area {
-    display: flex;
-}
+
 .event-comment-area {
     display: flex;
     flex-direction: column;
