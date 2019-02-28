@@ -1,9 +1,13 @@
 .registration-container {
     background: whitesmoke;
-    margin: 0 15%;
-    display: flex;
-    flex-direction: column;
     padding: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.registraion-flex{
+    display: flex;
+    justify-content: center;
 }
 
 .registration-form {
@@ -22,7 +26,7 @@
     color: white;
     margin: 2% auto;
     background-color: #4594d1;
-    border-radius: 5%;
+    border: none;
 }
 
 .registration-form-submit-button:hover{

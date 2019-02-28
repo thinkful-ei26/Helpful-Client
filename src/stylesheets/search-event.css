@@ -36,7 +36,7 @@
     align-items: center;
 }
 
-.search-img{
+img .search-img{
     width: 20vw;
     height: 20vw;
     margin-right: 3vw;
@@ -61,9 +61,9 @@
         flex-direction: column;
         align-items: center;
     }
-    .search-img{
-        width: 30vw;
-        height: 30vw;
+    img .search-img{
+        width: 20vw;
+        height: 20vw;
         margin-right: 3vw;
     }
 

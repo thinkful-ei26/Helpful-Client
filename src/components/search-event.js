@@ -26,7 +26,6 @@ export default function SearchEvent(props) {
                             </div>
                         </div>
                     </div>
-
                 </Link >
             );
         });
