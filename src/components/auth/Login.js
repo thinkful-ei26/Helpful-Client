@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, Route } from "react-router-dom";
 import { API_BASE_URL } from "../../config";
+import "../../stylesheets/login.css";
 
 import jwt_decode from "jwt-decode";
 
@@ -21,8 +22,8 @@ const Login = () => {
             .then(res => {
                 // Set token to localStorage
                 if (res.data.reason) {
-                    alert(res.data.message)
-                    return 'login';
+                    alert(res.data.message);
+                    return "login";
                 } else {
                     const token = res.data.authToken;
                     console.log(res.data);
@@ -34,49 +35,46 @@ const Login = () => {
                     // Set current user
                     setCurrentUser(decoded);
                     let mytoken = localStorage.getItem("jwtToken");
-                    return 'dashboard';
+                    return "dashboard";
                 }
-
             })
             .then(destination => {
                 history.push(`/${destination}`);
             });
     };
 
-
     return (
         <Route
             render={({ history }) => (
-                <div className='container'>
-                    <div className='row' style={{ marginTop: "4rem" }}>
-                        <div className='col s8 offset-s2'>
-                            <Link to='/' className=' waves-effect btn-flat'>
-                                <i className='material-icons left'>
-                                    keyboard_backspace
-                                </i>
+                <div className='login-container'>
+                    <div className='row'>
+                        <div className=''>
+                            {/* <Link to='/' className=' '>
+                                <i className=''>keyboard_backspace</i>
                                 Back to home
-                            </Link>
-                            <div
-                                className='col s12'
-                                style={{ paddingLeft: "11.25px" }}>
+                            </Link> */}
+                            <div className=''>
                                 <h4>Login below</h4>
                                 <p className='grey-text text-darken-1'>
                                     Don't have an account?{" "}
                                     <Link to='/register'>Register</Link>
                                 </p>
                             </div>
-                            <form noValidate onSubmit={e => e.preventDefault()}>
-                                <div className='input-field col s12'>
+                            <form
+                                className='login-form'
+                                noValidate
+                                onSubmit={e => e.preventDefault()}>
+                            
+                                    <label htmlFor='email'>
+                                        Username or Email
+                                    </label>
                                     <input
                                         id='email'
                                         type='text'
                                         onChange={e => setUser(e.target.value)}
                                     />
-                                    <label htmlFor='email'>
-                                        Username or Email
-                                    </label>
-                                </div>
-                                <div className='input-field col s12'>
+                              
+                                    <label htmlFor='password'>Password</label>
                                     <input
                                         id='password'
                                         type='password'
@@ -84,24 +82,13 @@ const Login = () => {
                                             setPassword(e.target.value)
                                         }
                                     />
-                                    <label htmlFor='password'>Password</label>
-                                </div>
-                                <div
-                                    className='col s12'
-                                    style={{ paddingLeft: "11.25px" }}>
+                             
                                     <button
                                         onClick={() => loginUser(history)}
-                                        style={{
-                                            width: "150px",
-                                            borderRadius: "3px",
-                                            letterSpacing: "1.5px",
-                                            marginTop: "1rem",
-                                        }}
                                         type='submit'
-                                        className='btn btn-large waves-effect waves-light hoverable teal lighten-2'>
+                                        className='login-form-submit-button'>
                                         Log In
                                     </button>
-                                </div>
                             </form>
                         </div>
                     </div>
@@ -109,6 +96,6 @@ const Login = () => {
             )}
         />
     );
-}
+};
 
 export default Login;
