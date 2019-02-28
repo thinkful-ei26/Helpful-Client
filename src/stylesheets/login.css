@@ -16,6 +16,7 @@
     flex-direction: column;
     padding: 2%;
 }
+
 #email,
 #password,
 label {
@@ -34,4 +35,11 @@ button.login-form-submit-button {
 button.login-form-submit-button:hover {
     background: orange;
     transition: 0.5s;
+}
+
+@media only screen and (max-width: 360px) {
+
+    #email, #password, .emailLabel, .passwordLabel {
+        width: 12rem;
+    }
 }
