@@ -240,11 +240,8 @@ nav a:hover {
     font-weight: bold;
 }
 
-button,
-.button-center {
-    position: relative;
-    left: 19.59378439743%;
-}
+
+
 
 /* End Bryan CSS */
 
@@ -261,7 +258,7 @@ button,
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    opacity: 0.5;
+    opacity: 0.6;
     padding: 2%;
 }
 
@@ -272,6 +269,12 @@ button,
     margin: 2% 5%;
     font-weight: bold;
 }
+
+.landing-page-form{
+    display: flex;
+    justify-content: center;
+}
+
 .landing-page-form button {
     border-radius: 5%;
     text-transform: uppercase;
@@ -279,20 +282,26 @@ button,
     width: 10rem;
 }
 
-.button-register {
+button.button-register {
     color: orange;
     background: #4594d1;
+    border: none;
+    font-size: 2vw;
+    width:15vw;
 }
-.button-register:hover {
+button.button-register:hover {
     color: #4594d1;
     background: orange;
     transition: 1s;
 }
-.button-login {
+button.button-login {
     color: #4594d1;
     background: orange;
+    border: none;
+    font-size: 2vw;
+    width:15vw;
 }
-.button-login:hover {
+button.button-login:hover {
     color: orange;
     background: #4594d1;
     transition: 1s;
@@ -307,12 +316,12 @@ footer {
     font-size: 70%;
     margin: 0 15%;
     color: white;
-    padding: 2%;
+    padding: 3%;
 }
 
 .sub-footer {
     font-size: 60%;
-    padding-top: 1%;
+    padding: 2vh;
     background: rgb(29, 147, 187);
     color: white;
     text-align: center;

@@ -37,7 +37,7 @@ const Register = () => {
         <Route
             render={({ history }) => (
                 <div className='registration-container'>
-                    <div className='row' style={{ marginTop: "4rem" }}>
+                    <div className='registraion-flex' >
                         <div className=''>
                             <Link to='/' className=' waves-effect btn-flat'>
                                 <i className='material-icons left'>
@@ -93,23 +93,24 @@ const Register = () => {
                                     type='password'
                                 />
 
-                                
-                                    <button
-                                        className='registration-form-submit-button'
-                                        onClick={() => registerUser(history)}
-                                        style={{
-                                            width: "150px",
-                                            borderRadius: "3px",
-                                            letterSpacing: "1.5px",
-                                            marginTop: "1rem",
-                                        }}
-                                        type='submit'>
-                                        Sign Up
+
+                                <button
+                                    className='registration-form-submit-button'
+                                    onClick={() => registerUser(history)}
+                                    style={{
+                                        width: "150px",
+                                        borderRadius: "3px",
+                                        letterSpacing: "1.5px",
+                                        marginTop: "1rem",
+                                    }}
+                                    type='submit'>
+                                    Sign Up
                                     </button>
                             </form>
                         </div>
                     </div>
                 </div>
+
             )}
         />
     );
