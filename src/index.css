@@ -87,13 +87,13 @@ header {
     margin-top: 6px;
     display: none;
     visibility: hidden;
-} 
+}
 
 #mySidenav.false {
     display: none;
     width: 0;
 }
-  
+
 #mySidenav.true {
     display: block;
     margin: 0;
@@ -157,30 +157,34 @@ nav a:hover {
     background-color: #fff;
 }
 .text-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     background-color: #fff;
     opacity: 0.5;
-    padding: 4%;
+    padding: 2%;
 }
 
-p {
+.text-box-span {
     text-align: center;
-    font-weight: bold;
+    flex-wrap: wrap;
+    font-size: 2rem;
     color: #4594d1;
+    margin: 2% 5%;
+    font-weight: bold;
+    flex: 1;
 }
-form {
+.landing-page-form {
     display: flex;
     justify-content: space-evenly;
-    padding: 5%;
 }
-form button {
-    padding: 2%;
+.landing-page-form button {
     border-radius: 5%;
     text-transform: uppercase;
     font-weight: bold;
+    width: 10rem;
 }
-.button {
-    flex-shrink: 2;
-}
+
 .button-register {
     color: orange;
     background: #4594d1;
@@ -220,7 +224,8 @@ footer {
     text-align: center;
 }
 
-@media only screen and (max-width: 900px) { /*mobile styles*/
+@media only screen and (max-width: 900px) {
+    /*mobile styles*/
     #hamburger {
         display: block;
         visibility: visible;
@@ -228,8 +233,8 @@ footer {
         top: 0;
         right: 0;
         padding-right: 6%;
-    } 
-    
+    }
+
     .logo {
         margin-left: auto;
         margin-right: auto;
