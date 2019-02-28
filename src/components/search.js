@@ -119,7 +119,7 @@ export default function Search(props) {
         fetchUserLocation();
         getEvent();
         getOrg();
-    }, [orgs]);
+    }, [location, orgs]);
 
     if (location === null) {
         return <div />;
