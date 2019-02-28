@@ -8,7 +8,6 @@ import {
 } from "react-google-maps";
 
 export const InitialMap = withGoogleMap(props => {
-
     const dots = props.markers.map((marker, index) => {
         return (
             <React.Fragment key={index}>
@@ -25,18 +24,17 @@ export const InitialMap = withGoogleMap(props => {
         );
     });
 
-
     return (
         <GoogleMap
             ref={props.onMapLoad}
             defaultZoom={14}
             defaultCenter={props.location}>
             <Marker position={props.location} />
-            <InfoWindow className='info-panel' position={props.location}>
-                <div className='marker-detail'>
-                    <span>Home</span>
-                </div>
-            </InfoWindow>
+            {/* <InfoWindow className='info-panel' position={props.location}> */}
+            {/* <div className='marker-detail'> */}
+            {/* <span>Home</span> */}
+            {/* </div> */}
+            {/* </InfoWindow> */}
 
             {dots}
         </GoogleMap>
@@ -50,14 +48,14 @@ export const PointMap = withGoogleMap(props => {
             defaultZoom={14}
             defaultCenter={props.marker.geoLocation}>
             <Marker position={props.marker.geoLocation} />
-            <InfoWindow
+            {/* <InfoWindow
                 className='info-panel'
                 position={props.marker.geoLocation}>
                 <div className='marker-detail'>
                     <span>{props.marker.name}</span>
                     <p>{props.marker.description}</p>
                 </div>
-            </InfoWindow>
+            </InfoWindow> */}
         </GoogleMap>
     );
 });
