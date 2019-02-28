@@ -87,14 +87,12 @@ export function EventPage(props) {
 
     let rsvpButton;
     if (!rsvp) {
-        console.log(rsvp)
         rsvpButton = (
             <button className='event-rsvp-button' onClick={() => createRsvp()}>
                 RSVP
             </button>
         );
     } else {
-        console.log(rsvp)
         rsvpButton = (
             <button className='event-rsvp-button' onClick={() => removeRsvp()}>
                 Cancel Reservation
