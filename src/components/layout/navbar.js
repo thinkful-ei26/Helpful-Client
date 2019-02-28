@@ -176,6 +176,14 @@ const NavBar = props => {
                 <li>
                     <div className='divider' />
                 </li>
+                <li>
+                    <a
+                        href='/createdorgs'
+                        onClick={() => props.history.push("/createdorgs")}>
+                        <i className='material-icons'>subscriptions</i>
+                        My Groups
+                    </a>
+                </li>
                 {/* <li>
                     <a
                         href='#createmeetup'
@@ -193,8 +201,8 @@ const NavBar = props => {
                         href='#followedorganizations'
                         // className='waves-effect'
                         onClick={() => props.history.push("/followedorgs")}>
-                        <i className='material-icons'>subscriptions</i>Followed
-                        Organizations
+                        <i className='material-icons'>subscriptions</i>
+                        Followed Groups
                     </a>
                 </li>
                 <li>
