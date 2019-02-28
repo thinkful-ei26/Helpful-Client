@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css?family=Montserrat|PT+Sans|PT+Sans+Narrow|Source+Sans+Pro"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <section class="header-container">
@@ -26,6 +27,19 @@
             <li><a href="./logout">Logout</a></li>
           </ul>
         </nav>
+        <!-- <nav class='topnav' id='top-nav'>
+          <ul>
+            <li><a href='./dashboard.html'>Dashboard</a></li>
+            <li><a href="./myevents">My Events</a></li>
+            <li><a href="./creategroup">Create Group</a></li>
+            <li><a href="./created-org">My Groups</a></li>
+            <li><a href="./followed">Followed</a></li>
+            <li><a href="./Search">Search</a></li>
+            <li><a href="./logout">Logout</a></li>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+          </ul>
+        </nav> -->
       </header>
     </section>
     <section class="container">
@@ -53,6 +67,15 @@
           <span>brogrammers&copy2019. Photos by rawpixel on Unsplash</span> 
           </section>
     </section>
-  
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
   </body>
 </html>
