@@ -4,6 +4,8 @@ import OrganizationCard from "./organization-card";
 import createOrgForm from "./create-org-form";
 import { API_BASE_URL } from "../config";
 
+import "../stylesheets/created-organizations.css";
+
 export default function CreatedOrgs(props) {
     // PRODUCTION TODO --> currently getting all orgs, need to refactor to
     // get only user created orgs
@@ -61,9 +63,8 @@ export default function CreatedOrgs(props) {
 
     return (
         <div>
-            <section className='followedOrgsList'>
-                <h3>Orgnizations I Created</h3>
-
+            <section className='created-orgs-container'>
+                <h2>My Organizations</h2>
                 <div>{orgCards}</div>
             </section>
         </div>

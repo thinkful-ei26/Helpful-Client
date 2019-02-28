@@ -1,5 +1,39 @@
-.event-card {
-    background-color: #f2ecea;
-    padding: 2%;
-    margin-top: 5%;
+h3 {
+    /* color: #4594d1; */
+    color: black;
+    margin-bottom: 0;
+}
+
+h2 {
+    color: orange;
+}
+
+h3:hover {
+    color: #4594d1;
+}
+
+p {
+    color: black;
+    text-align: left;
+    font-weight: normal;
+    margin: 1% 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.card-details {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+img {
+    max-width: 250px;
+    max-height: 200px;
+    font-size: 16px;
+}
+
+i.material-icons {
+    font-size: 20px;
+    margin-right: 1%;
 }

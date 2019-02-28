@@ -40,11 +40,9 @@ export default function FollowedOrgs(props) {
 
     if (orgs === null || orgs.length === 0) {
         return (
-            <section className='noFollowedOrgs'>
+            <section className='followed-orgs-container'>
+                <h2>Followed Organizations</h2>
                 <p>Looks like you haven't followed any organizations yet...</p>
-                <p>Click here to checkout the organizations near you!</p>
-
-
                 <Link to='/search'> Search for Organizations near you!</Link>
             </section>
         );
@@ -52,10 +50,11 @@ export default function FollowedOrgs(props) {
 
     return (
         <React.Fragment>
-            <div className='container'>
-                <span className='title'>Organizations I Follow</span>
+            <div className='followed-orgs-container'>
+                <h2>Followed Organizations</h2>
+            
+                <div>{followedOrgCards}</div>
             </div>
-            <div className='row'>{followedOrgCards}</div>
         </React.Fragment>
     );
 }

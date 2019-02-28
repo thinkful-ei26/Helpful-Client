@@ -1,13 +1,7 @@
-.followedOrgsList {
-    margin-right: auto;
-    margin-left: auto;
-    width: 40%;
+.followed-orgs-container {
+    margin: 0 5% 5% 5%;
 }
 
-.followedOrgsList > h3 {
-    text-align: center;
-}
-
-.noFollowedOrgs {
-    text-align: center;
+a:hover {
+    color: #4594d1;
 }

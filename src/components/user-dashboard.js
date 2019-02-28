@@ -5,6 +5,8 @@ import RenderUserRole from "./renderuserrole";
 import CreatedOrgs from "./created-organizations";
 import FollowedOrgs from "./followed-organizations";
 
+import '../stylesheets/dashboard.css';
+
 export default function UserDashboard(props) {
 
     // const [showView, setView] = useState(<EventList />);
@@ -12,13 +14,13 @@ export default function UserDashboard(props) {
 
     // setView((<EventList />, 'url-string')=>(component,url){ ... } );
     return (
-        <div className='container'>
+        <section className='dashboard-container'>
             <EventList />
-            <CreatedOrgs />
             <FollowedOrgs />
+            <CreatedOrgs />
             {/* <OrganizationList /> */}
             {/* <RenderUserRole />  --> for extension */} 
-        </div>
+        </section>
     );
 
 }
