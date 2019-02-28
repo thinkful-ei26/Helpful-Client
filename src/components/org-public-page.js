@@ -35,14 +35,16 @@ export default function OrgPublicPage(props) {
     const generateFollowButton = () => {
         if (!following) {
             return (
-                <button className='follow-button' onClick={() => followOrg()}>
+                <button
+                    className='follow-button button-center'
+                    onClick={() => followOrg()}>
                     Follow
                 </button>
             );
         } else if (following) {
             return (
                 <button
-                    className='unfollow-button'
+                    className='unfollow-button button-center'
                     onClick={() => unFollowOrg()}>
                     Unfollow
                 </button>
@@ -142,28 +144,42 @@ export default function OrgPublicPage(props) {
 
     if (orgs) {
         return (
-            <div className='org-public-page-main center container valign-wrapper'>
-                <div className='org-public-content container'>
-                    <div className='org-public-text-area'>
-                        <span className='header'>{orgs.name}</span>
-                        <img
-                            alt='Organization Logo'
-                            className='responsive-img'
-                            src={orgs.imgUrl}
-                        />
-                        {orgMap}
-                        <UserCanRateOrg orgId={orgId}/>
-                        {/* <UserComments/> */}
-                        <p className='flow-text'>{orgs.description}</p>
-                        <p className='flow-text'>{orgs.location}</p>
-                    </div>
-
-                    {generateFollowButton()}
-
-                    <div className='container'>
-                        <p>{orgEvents}</p>
+            <div className='org-public-page containerB'>
+                {orgMap}
+                {/* <div className='org-public-content container'> */}
+                <div className='org-public-text-area'>
+                    <h2 className='text-center'>{orgs.name}</h2>
+                    <img
+                        alt='Organization Logo'
+                        className='responsive-img'
+                        src={orgs.imgUrl}
+                    />
+                    <UserCanRateOrg orgId={orgId} />
+                    {/* <UserComments/> */}
+                    <p className='flow-text'>
+                        {" "}
+                        <span className='text-bold'>
+                            {" "}
+                            About our group:
+                        </span>{" "}
+                        {orgs.description}
+                    </p>
+                    <p>
+                        <span className='location text-bold'> Where: </span>
+                        {orgs.location}
+                    </p>
+                    <div className='button-center'>
+                        {generateFollowButton()}
                     </div>
                 </div>
+
+                <div className='container'>
+                    <p>
+                        <span className='title'>Events: </span>{" "}
+                        <ul>{orgEvents}</ul>
+                    </p>
+                </div>
+                {/* </div> */}
             </div>
         );
     }

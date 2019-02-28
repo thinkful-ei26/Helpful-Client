@@ -47,9 +47,12 @@ export default function CreatedOrgs(props) {
 
     if (orgs === null || orgs.length < 1) {
         return (
-            <section className='created-orgs-container'>
-                <h2>My Organizations</h2>
-                <p>Looks like you haven't created any organiations yet...</p>
+            <section className='noFollowedOrgs'>
+                <p>Looks like you haven't created any organizations yet...</p>
+                <p>
+                    Click here to create an organization and start hosting
+                    events
+                </p>
 
                 <button onClick={() => props.setView(createOrgForm)}>
                     Create Organization
