@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import { API_BASE_URL } from "../../config";
+import "../../stylesheets/register.css";
 const Register = () => {
     // onChange = e => {
     //   this.setState({ [e.target.id]: e.target.value })
@@ -35,75 +36,66 @@ const Register = () => {
     return (
         <Route
             render={({ history }) => (
-                <div className='container'>
+                <div className='registration-container'>
                     <div className='row' style={{ marginTop: "4rem" }}>
-                        <div className='col s8 offset-s2'>
+                        <div className=''>
                             <Link to='/' className=' waves-effect btn-flat'>
                                 <i className='material-icons left'>
                                     keyboard_backspace
                                 </i>
                                 Back to home
                             </Link>
-                            <div
-                                className='col s12'
-                                style={{ paddingLeft: "11.25px" }}>
+                            <div className=''>
                                 <h4>Register below</h4>
-                                <p className='grey-text text-darken-1'>
+                                <p className='1'>
                                     Already have an account?{" "}
                                     <Link to='/login'>Log In</Link>
                                 </p>
                             </div>
-                            <form noValidate onSubmit={e => e.preventDefault()}>
-                                <div className='input-field col s12'>
-                                    <input
-                                        value={userName}
-                                        onChange={e =>
-                                            setUserName(e.target.value)
-                                        }
-                                        id='name'
-                                        type='text'
-                                    />
-                                    <label htmlFor='name'>Name</label>
-                                </div>
-                                <div className='input-field col s12'>
-                                    <input
-                                        value={email}
-                                        onChange={e => setEmail(e.target.value)}
-                                        id='email'
-                                        type='email'
-                                    />
-                                    <label htmlFor='email'>Email</label>
-                                </div>
-                                <div className='input-field col s12'>
-                                    <input
-                                        value={password}
-                                        onChange={e =>
-                                            setPassword(e.target.value)
-                                        }
-                                        id='password'
-                                        type='password'
-                                    />
-                                    <label htmlFor='password'>Password</label>
-                                </div>
-                                <div className='input-field col s12'>
-                                    <input
-                                        value={passwordConfirmation}
-                                        onChange={e =>
-                                            setPasswordConfirmation(
-                                                e.target.value
-                                            )
-                                        }
-                                        id='passwordConfirmation'
-                                        type='password'
-                                    />
-                                    <label htmlFor='passwordConfirmation'>
-                                        Confirm Password
-                                    </label>
-                                </div>
-                                <div
-                                    className='col s12'
-                                    style={{ paddingLeft: "11.25px" }}>
+                            <form
+                                className='registration-form'
+                                noValidate
+                                onSubmit={e => e.preventDefault()}>
+                                <label htmlFor='name'>Name</label>
+                                <input
+                                    className='registration-inputs'
+                                    value={userName}
+                                    onChange={e => setUserName(e.target.value)}
+                                    id='name'
+                                    type='text'
+                                />
+                                <label htmlFor='email'>Email</label>
+                                <input
+                                    className='registration-inputs'
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                    id='email'
+                                    type='email'
+                                />
+                                <label htmlFor='password'>Password</label>
+                                <input
+                                    className='registration-inputs'
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
+                                    id='password'
+                                    type='password'
+                                />
+                                <label htmlFor='passwordConfirmation'>
+                                    Confirm Password
+                                </label>
+                                <input
+                                    className='registration-inputs'
+                                    value={passwordConfirmation}
+                                    onChange={e =>
+                                        setPasswordConfirmation(e.target.value)
+                                    }
+                                    id='passwordConfirmation'
+                                    type='password'
+                                />
+
+                                
                                     <button
+                                        className='registration-form-submit-button'
                                         onClick={() => registerUser(history)}
                                         style={{
                                             width: "150px",
@@ -111,11 +103,9 @@ const Register = () => {
                                             letterSpacing: "1.5px",
                                             marginTop: "1rem",
                                         }}
-                                        type='submit'
-                                        className='btn btn-large waves-effect waves-light hoverable teal lighten-2'>
+                                        type='submit'>
                                         Sign Up
                                     </button>
-                                </div>
                             </form>
                         </div>
                     </div>

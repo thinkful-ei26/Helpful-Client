@@ -49,10 +49,10 @@ const Login = () => {
                 <div className='login-container'>
                     <div className='row'>
                         <div className=''>
-                            {/* <Link to='/' className=' '>
-                                <i className=''>keyboard_backspace</i>
+                            <Link to='/' className=' '>
+                                <i className='material-icons left'>keyboard_backspace</i>
                                 Back to home
-                            </Link> */}
+                            </Link>
                             <div className=''>
                                 <h4>Login below</h4>
                                 <p className='grey-text text-darken-1'>
