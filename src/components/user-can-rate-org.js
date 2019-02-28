@@ -7,10 +7,9 @@ export default function UserCanRateOrg(props) {
     const [userRating, setUserRating] = useState([]);
     const [avg, setAvg] = useState(0);
     const [length, setLength] = useState(0);
-    const onChange = event => {
-        console.log(`$$$$$$$$$$$$`, event.target.value);
-        setRating(event.target.value);
-    };
+    // const onChange = event => {
+    //     setRating(event.target.value);
+    // };
 
     const createRating = async rating => {
         await axios({
@@ -62,7 +61,7 @@ export default function UserCanRateOrg(props) {
                 },
             }
         );
-        setUserRating(fetchUserRating.data)
+        await setUserRating(fetchUserRating.data);
     };
 
     useEffect(() => {
@@ -71,35 +70,59 @@ export default function UserCanRateOrg(props) {
 
     const onSubmit = event => {
         event.preventDefault();
+        let form = event.target;
+        let rating = form.rating.value;
+        setRating(rating);
         createRating(rating);
     };
 
     if (userRating.length) {
-        return(
+        return (
             <div>
-                <p>Average Rating: {avg} out of {length} reviews</p>
-                <p> Your Rating: {rating}</p>
+                <p>
+                    Average Rating: {avg} out of {length} reviews
+                </p>
+                {/* <p> Your Rating: {userRating.rating}</p> */}
             </div>
         );
-    } 
+    }
 
     return (
-        <div className='container'>
-            <div className='row'>
-                <div className='center'>
-                    <form onSubmit={onSubmit}>
-                        <fieldset>
-                            <div className='create-org-row'>
-                                <div style={{ height: "3rem" }}>
-                                    <label>Rate this group</label>
-                                    <input
-                                        onChange={onChange}
-                                        type='number'
-                                        list='userrating'
-                                        min='1'
-                                        max='5'
-                                    />
-                                    {/* <ratinglist
+        <div className=''>
+            <form onSubmit={onSubmit}>
+                {/* <div className='create-org-row'> */}
+                {/* <label>Rate this group</label>
+                        <input
+                            onChange={onChange}
+                            type='number'
+                            // list='userrating'
+                            min='1'
+                            max='5'
+                        /> */}
+                <div class='rate-area'>
+                    <input type='radio' id='5-star' name='rating' value='5' />
+                    <label for='5-star' title='Amazing'>
+                        5 stars
+                    </label>
+                    <input type='radio' id='4-star' name='rating' value='4' />
+                    <label for='4-star' title='Good'>
+                        4 stars
+                    </label>
+                    <input type='radio' id='3-star' name='rating' value='3' />
+                    <label for='3-star' title='Average'>
+                        3 stars
+                    </label>
+                    <input type='radio' id='2-star' name='rating' value='2' />
+                    <label for='2-star' title='Not Good'>
+                        2 stars
+                    </label>
+                    <input type='radio' id='1-star' name='rating' value='1' />
+                    <label for='1-star' title='Bad'>
+                        1 star
+                    </label>
+                </div>
+
+                {/* <ratinglist
                                         id='rating'
                                         className='browser-default'>
                                         <option defaultValue='1' />
@@ -108,17 +131,13 @@ export default function UserCanRateOrg(props) {
                                         <option defaultValue='4' />
                                         <option defaultValue='5' />
                                     </ratinglist> */}
-                                </div>
-                            </div>
-                        </fieldset>
-                        <button type='submit'>Submit your rating</button>
-                    </form>
-                    <div>
-                        Average Rating: {avg} out of {length} reviews
-                    </div>
-                    <ul> Your Rating: {rating}</ul>
-                </div>
+                {/* </div> */}
+                <button type='submit'>Submit your rating</button>
+            </form>
+            <div>
+                Average Rating: {avg} out of {length} reviews
             </div>
+            <ul> Your Rating: {userRating.rating}</ul>
         </div>
     );
 }
