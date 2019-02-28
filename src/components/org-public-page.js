@@ -142,7 +142,7 @@ export default function OrgPublicPage(props) {
 
     if (orgs) {
         return (
-            <div className='org-public-page-main center container valign-wrapper'>
+            <div className='org-public-page containerB'>
                 <div className='org-public-content container'>
                     <div className='org-public-text-area'>
                         <span className='header'>{orgs.name}</span>
@@ -152,7 +152,7 @@ export default function OrgPublicPage(props) {
                             src={orgs.imgUrl}
                         />
                         {orgMap}
-                        <UserCanRateOrg orgId={orgId}/>
+                        <UserCanRateOrg orgId={orgId} />
                         {/* <UserComments/> */}
                         <p className='flow-text'>{orgs.description}</p>
                         <p className='flow-text'>{orgs.location}</p>

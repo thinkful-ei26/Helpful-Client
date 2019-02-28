@@ -20,7 +20,6 @@ import EventList from "./components/event-list";
 // import MeetupPage from "./components/meetup-page";
 
 const App = () => {
-
     return (
         <Router>
             <div className='App'>
@@ -43,11 +42,7 @@ const App = () => {
                     <Route exact path='/dashboard' component={UserDashboard} />
                     <Route exact path='/search' component={Search} />
                     {/* <Route exact path="/organization" component={OrgPublicPage} /> */}
-                    <Route
-                        exact
-                        path='/event/:eventId'
-                        component={EventPage}
-                    />
+                    <Route exact path='/event/:eventId' component={EventPage} />
                     {/* <Route
                         exact
                         path='/meetup/:eventId'
@@ -76,7 +71,6 @@ const App = () => {
             </div>
         </Router>
     );
-
 };
 
 export default App;
