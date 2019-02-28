@@ -41,7 +41,7 @@ export default function FollowedOrgs(props) {
     if (orgs === null || orgs.length === 0) {
         return (
             <section className='followed-orgs-container'>
-                <h2>Followed Organizaions</h2>
+                <h2>Followed Organizations</h2>
                 <p>Looks like you haven't followed any organizations yet...</p>
                 <Link to='/search'> Search for Organizations near you!</Link>
             </section>
