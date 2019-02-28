@@ -1,41 +1,35 @@
 import React from "react";
 import { Route } from "react-router-dom";
 const LandingPage = props => {
-
     let token = localStorage.getItem("jwtToken");
     if (token) {
         props.history.push("/dashboard");
     }
 
-
     return (
         <Route
             render={({ history }) => (
-                
-                <section className="container">
+                <section className='container'>
                     <main className='landing-page-main'>
-                            
-                        <div className="text-box">
-                            <p>
-                                Helpfull is where communities come together. 
-                                <p>Help. Do good. Make friends.  </p> 
-                            </p>
+                        <div className='text-box'>
+                            <span className='text-box-span'>
+                                Helpfull is where communities come together.
+                            </span>
+                              <span className='text-box-span'>
+                                Help. Do good. Make friends.
+                            </span>
                         </div>
 
-                        <form action="">
+                        <form className='landing-page-form' action=''>
                             <button
                                 className='button-register'
-                                onClick={() => history.push(`/register`)}
-                                
-                            >
+                                onClick={() => history.push(`/register`)}>
                                 Register
                             </button>
-                            
+
                             <button
                                 className='button-login'
-                                onClick={() => history.push(`/login`)}
-                                
-                            >
+                                onClick={() => history.push(`/login`)}>
                                 Log In
                             </button>
                         </form>
