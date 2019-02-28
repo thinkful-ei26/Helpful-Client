@@ -99,13 +99,13 @@ const NavBar = props => {
     
     return (
         <React.Fragment>
-            <section class="header-container">
+            <section className="header-container">
                 <header>
-                    <span class="logo">
+                    <span className="logo">
                         <a href="/">
                             <h1>
-                                <span class='logo-style-one'>Help</span>
-                                <span class='logo-style-two'>full</span>
+                                <span className='logo-style-one'>Help</span>
+                                <span className='logo-style-two'>full</span>
                             </h1>
                         </a>
                     </span>
@@ -142,7 +142,7 @@ const NavBar = props => {
 
             <ul id='mySidenav' className={navClass}>
                 
-                <a href="#closemenu" class="closebtn" 
+                <a href="#closemenu" className="closebtn" 
                     onClick={e => {
                         e.preventDefault();
                         setNavClass("false");
@@ -170,11 +170,19 @@ const NavBar = props => {
                         // className='waves-effect'
                         onClick={() => props.history.push("/createorgform")}>
                         <i className='material-icons black-text'>create</i>
-                        Create Organization
+                        Create Group
                     </a>
                 </li>
                 <li>
                     <div className='divider' />
+                </li>
+                <li>
+                    <a
+                        href='/createdorgs'
+                        onClick={() => props.history.push("/createdorgs")}>
+                        <i className='material-icons'>subscriptions</i>
+                        My Groups
+                    </a>
                 </li>
                 {/* <li>
                     <a
@@ -193,8 +201,8 @@ const NavBar = props => {
                         href='#followedorganizations'
                         // className='waves-effect'
                         onClick={() => props.history.push("/followedorgs")}>
-                        <i className='material-icons'>subscriptions</i>Followed
-                        Organizations
+                        <i className='material-icons'>subscriptions</i>
+                        Followed Groups
                     </a>
                 </li>
                 <li>
