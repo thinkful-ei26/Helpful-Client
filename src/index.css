@@ -259,7 +259,6 @@ button,
 }
 .text-box {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     background-color: #fff;
     opacity: 0.5;
@@ -268,16 +267,10 @@ button,
 
 .text-box-span {
     text-align: center;
-    flex-wrap: wrap;
     font-size: 2rem;
     color: #4594d1;
     margin: 2% 5%;
     font-weight: bold;
-    flex: 1;
-}
-.landing-page-form {
-    display: flex;
-    justify-content: space-evenly;
 }
 .landing-page-form button {
     border-radius: 5%;
