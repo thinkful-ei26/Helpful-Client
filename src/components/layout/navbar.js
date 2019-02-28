@@ -1,38 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 
 const NavBar = props => {
+    const [navClass, setNavClass] = useState("false");
     let token = localStorage.getItem("jwtToken");
     let navRight, sideNav;
+
     if (token) {
+
         navRight = (
-            <ul
-                id='nav-mobile'
-                className='right hide-on-med-and-down text-black'>
+            <ul>
                 <li>
                     <a
                         href='#dashboard'
-                        className='waves-effect waves-teal'
                         onClick={() => props.history.push("/dashboard")}>
                         Dashboard
                     </a>
                 </li>
 
-                <li>
+                {/* <li>
                     <a
                         href='#events'
                         className='waves-effect waves-teal'
                         onClick={() => props.history.push("/events")}>
                         My Events
                     </a>
-                </li>
+                </li> */}
 
                 <li>
                     <a
                         href='#createorganization'
-                        className='waves-effect waves-teal'
                         onClick={() => props.history.push("/createorgform")}>
-                        Create Organization
+                        Create Group
                     </a>
                 </li>
 
@@ -47,17 +46,15 @@ const NavBar = props => {
 
                 <li>
                     <a
-                        href='#createdorganizations'
-                        className='waves-effect waves-teal'
+                        href='/createdorgs'
                         onClick={() => props.history.push("/createdorgs")}>
-                        My Created Organizations
+                        My Groups
                     </a>
                 </li>
 
                 <li>
                     <a
                         href='#followedorganizations'
-                        className='waves-effect waves-teal'
                         onClick={() => props.history.push("/followedorgs")}>
                         Followed
                     </a>
@@ -65,7 +62,6 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#search'
-                        className='waves-effect waves-teal'
                         onClick={() => props.history.push("/search")}>
                         Search Tool
                     </a>
@@ -74,7 +70,6 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#logout'
-                        className='waves-effect waves-teal'
                         onClick={() => logoutUser()}>
                         Logout
                     </a>
@@ -83,10 +78,15 @@ const NavBar = props => {
         );
         sideNav = (
             <a
+                onClick={e => {
+                    e.preventDefault();
+                    setNavClass("true");
+                }}
                 href='#menu'
                 id='hamburger'
                 data-target='slide-out'
-                className='sidenav-trigger hide-on-large-only text-teal darken-4'>
+                className='sidenav-trigger'
+            >
                 <i className='material-icons hamburger'>menu</i>
             </a>
         );
@@ -102,9 +102,27 @@ const NavBar = props => {
         // let instances = M.Sidenav.init(elems, {});
         // return instances;
     }, []);
+    
     return (
         <React.Fragment>
-            <div className='navbar-fixed'>
+            <section class="header-container">
+                <header>
+                    <span class="logo">
+                        <a href="/">
+                            <h1>
+                                <span class='logo-style-one'>Help</span>
+                                <span class='logo-style-two'>full</span>
+                            </h1>
+                        </a>
+                    </span>
+
+                    <nav>
+                        {navRight}
+                    </nav>
+                    {sideNav}
+                </header>
+            </section>
+            {/* <div className='navbar-fixed'>
                 <nav className='white' role='navigation'>
                     <div className='container'>
                         <div className='nav-wrapper'>
@@ -126,39 +144,22 @@ const NavBar = props => {
                     </div>
                     {sideNav}
                 </nav>
-            </div>
+            </div> */}
 
-            <ul id='slide-out' className='sidenav'>
-                <li>
-                    <div className='user-view'>
-                        <div className='background'>
-                            <img
-                                src='http://lorempixel.com/300/300'
-                                alt='user background'
-                            />
-                        </div>
-                        <a href='#user'>
-                            <img
-                                className='circle'
-                                src='http://lorempixel.com/150/150'
-                                alt='user profile'
-                            />
-                        </a>
-                        <a href='#name'>
-                            <span className='white-text name'>Johnny User</span>
-                        </a>
-                        <a href='#email'>
-                            <span className='white-text email'>
-                                johnnyquest@test.com
-                            </span>
-                        </a>
-                    </div>
-                </li>
-
+            <ul id='mySidenav' className={navClass}>
+                
+                <a href="#closemenu" class="closebtn" 
+                    onClick={e => {
+                        e.preventDefault();
+                        setNavClass("false");
+                    }}
+                >
+                &times;</a>
+        
                 <li>
                     <a
                         href='#dashboard'
-                        className='waves-effect waves-teal'
+                        // className='waves-effect waves-teal'
                         onClick={() => props.history.push("/dashboard")}>
                         <i className='material-icons'>dashboard</i>Dashboard
                     </a>
@@ -167,20 +168,12 @@ const NavBar = props => {
                     <div className='divider' />
                 </li>
                 <li>
-                    <a
-                        href='#events'
-                        className='waves-effect'
-                        onClick={() => props.history.push("/event")}>
-                        <i className='material-icons'>assignment</i>My Events
-                    </a>
-                </li>
-                <li>
                     <div className='divider' />
                 </li>
                 <li>
                     <a
                         href='#createorganization'
-                        className='waves-effect'
+                        // className='waves-effect'
                         onClick={() => props.history.push("/createorgform")}>
                         <i className='material-icons black-text'>create</i>
                         Create Organization
@@ -204,7 +197,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#followedorganizations'
-                        className='waves-effect'
+                        // className='waves-effect'
                         onClick={() => props.history.push("/followedorgs")}>
                         <i className='material-icons'>subscriptions</i>Followed
                         Organizations
@@ -216,7 +209,7 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#search'
-                        className='waves-effect'
+                        // className='waves-effect'
                         onClick={() => props.history.push("/search")}>
                         <i className='material-icons'>search</i>Search Tool
                     </a>
@@ -227,13 +220,13 @@ const NavBar = props => {
                 <li>
                     <a
                         href='#logout'
-                        className='waves-effect'
+                        // className='waves-effect'
                         onClick={() => logoutUser()}>
                         <i className='material-icons'>power_settings_new</i>
                         Logout
                     </a>
                 </li>
-            </ul>
+            </ul> 
         </React.Fragment>
     );
 };
