@@ -1,0 +1,31 @@
+.registration-container {
+    background: whitesmoke;
+    margin: 0 15%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin: auto;
+}
+.registration-inputs, label {
+    padding: 2%;
+    width: 15rem;
+    margin: auto;
+}
+
+.registration-form-submit-button {
+    color: white;
+    margin: 2% auto;
+    background-color: #4594d1;
+    border-radius: 5%;
+}
+
+.registration-form-submit-button:hover{
+    background: orange;
+    transition: 0.5s;
+}
