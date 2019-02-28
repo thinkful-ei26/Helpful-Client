@@ -92,19 +92,22 @@ export default function Search(props) {
     };
 
     const getOrg = async () => {
-        const getOrgs = await axios({
-            method: "get",
-            url: `${API_BASE_URL}/org/location/${distance}/${location.lat}/${
-                location.lng
-                }`,
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer ".concat(
-                    localStorage.getItem("jwtToken")
-                ),
-            },
-        });
-        setOrgs(getOrgs.data);
+        if (location === null) {
+        } else {
+            const getOrgs = await axios({
+                method: "get",
+                url: `${API_BASE_URL}/org/location/${distance}/${location.lat}/${
+                    location.lng
+                    }`,
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer ".concat(
+                        localStorage.getItem("jwtToken")
+                    ),
+                },
+            });
+            setOrgs(getOrgs.data);
+        }
     };
 
     useEffect(() => {
