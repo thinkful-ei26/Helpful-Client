@@ -1,3 +1,5 @@
 .followed-orgs-container {
-    margin: 5%;
+    margin: 0 15%;
+    border-left: 40px solid orange;
+    padding: 5%;
 }
