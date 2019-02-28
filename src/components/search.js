@@ -117,27 +117,6 @@ export default function Search(props) {
     } else {
         return (
             <React.Fragment>
-                <section class="header-container">
-                    <header>
-                        <span class="logo">
-                            <h1>
-                                <span class="logo-style-one">Help</span>
-                                <span class="logo-style-two">full</span>
-                            </h1>
-                        </span>
-                        <nav>
-                            <ul>
-                                <li><a href="./dashboard.html">Dashboard</a></li>
-                                <li><a href="./myevents">My Events</a></li>
-                                <li><a href="./creategroup">Create Group</a></li>
-                                <li><a href="./created-org">My Groups</a></li>
-                                <li><a href="./followed">Followed</a></li>
-                                <li><a href="./Search">Search</a></li>
-                                <li><a href="./logout">Logout</a></li>
-                            </ul>
-                        </nav>
-                    </header>
-                </section>
                 <div class="container-search">
                     <div class='flex-container'>
                         <div class="hero-box">

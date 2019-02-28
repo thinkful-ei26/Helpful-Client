@@ -12,17 +12,22 @@ export default function SearchEvent(props) {
             return (
                 <Link key={index} to={linkUrl}>
                     <div className='card'>
-                        <div >
-                            <span >{event.name}</span>
-                            <p className='search-description'>{event.description}</p>
-                        </div>
-                        <div >
-                            <span>{event.date}</span>
-                            <span>{event.location}</span>
-                            <span>{event.contact}</span>
+                        <img className='search-img' alt='' src={event.imgUrl}></img>
+                        <div className='search-column'>
+                            <div>
+                                <span className='search-title'>{event.name}</span>
+                                <p className='search-description'>{event.description}</p>
+                            </div>
+                            <div className='customHr'></div>
+                            <div className='search-info'>
+                                <span><span>When:</span> {event.date}</span>
+                                <span><span>Where:</span> {event.location}</span>
+                                <span><span>Contact us:</span> {event.contact}</span>
+                            </div>
                         </div>
                     </div>
-                </Link>
+
+                </Link >
             );
         });
         return (

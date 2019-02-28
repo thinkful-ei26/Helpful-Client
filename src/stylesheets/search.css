@@ -1,3 +1,5 @@
+
+
 .flex-container{
     display: flex;
 }
@@ -54,4 +56,19 @@ input {
 .blocker{
     display: block;
 
+}
+
+@media only screen and (max-width: 900px) {
+
+.hero-box{
+    display: none !important; 
+}
+
+.form-search {
+    margin: -15% 0 0 -10%;
+}
+.container-search {
+    margin: 0 2%;
+
+}
 }
