@@ -11,12 +11,12 @@ export default function SearchEvent(props) {
             const linkUrl = `/event/${event.id}`;
             return (
                 <Link key={index} to={linkUrl}>
-                    <div className='card blue-grey darken-1'>
-                        <div className='card-content white-text'>
-                            <span className='card-title'>{event.name}</span>
-                            <p>{event.description}</p>
+                    <div className='card'>
+                        <div >
+                            <span >{event.name}</span>
+                            <p className='search-description'>{event.description}</p>
                         </div>
-                        <div className='card-action'>
+                        <div >
                             <span>{event.date}</span>
                             <span>{event.location}</span>
                             <span>{event.contact}</span>
