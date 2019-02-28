@@ -6,11 +6,15 @@
     /* padding: 5%; */
 }
 
+.login-flex{
+    display:flex;
+    justify-content: center;
+}
+
 .login-form {
     display: flex;
     flex-direction: column;
-    /* padding: 2%; */
-    margin: auto;
+    padding: 2%;
 }
 #email,
 #password,
@@ -20,13 +24,14 @@ label {
     /* margin: auto; */
 }
 
-.login-form-submit-button {
-    /* width: 5rem; */
-    /* margin: 2% auto; */
-    /* background-color: #4594d1; */
-    /* border-radius: 5%; */
+button.login-form-submit-button {
+    color: white;
+    margin: 2% auto;
+    background-color: #4594d1;
+    border: none;
+    width: 15rem;
 }
-.login-form-submit-button:hover {
-    /* background: orange; */
-    /* transition: 0.5s; */
+button.login-form-submit-button:hover {
+    background: orange;
+    transition: 0.5s;
 }

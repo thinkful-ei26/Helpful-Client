@@ -9,13 +9,13 @@ const LandingPage = props => {
     return (
         <Route
             render={({ history }) => (
-                <section className='container'>
+                <section >
                     <main className='landing-page-main'>
                         <div className='text-box'>
                             <span className='text-box-span'>
                                 Helpfull is where communities come together.
                             </span>
-                              <span className='text-box-span'>
+                            <span className='text-box-span'>
                                 Help. Do good. Make friends.
                             </span>
                         </div>
