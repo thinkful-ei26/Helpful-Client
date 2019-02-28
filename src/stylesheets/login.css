@@ -3,7 +3,7 @@
     margin: 0 15%;
     display: flex;
     flex-direction: column;
-    padding: 5%;
+    /* padding: 5%; */
 }
 
 .login-flex{
@@ -19,9 +19,9 @@
 #email,
 #password,
 label {
-    padding: 2%;
-    width: 15rem;
-    margin: auto;
+    /* padding: 2%; */
+    /* width: 15rem; */
+    /* margin: auto; */
 }
 
 button.login-form-submit-button {
