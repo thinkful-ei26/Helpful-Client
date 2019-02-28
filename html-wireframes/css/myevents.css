@@ -1,0 +1,19 @@
+.myevents-container {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    margin: 0 15%;
+    border-left: solid 40px #4594d1;
+    background: whitesmoke;
+    padding: 2%;
+}
+.event-gallerylist{
+        display:flex;
+        flex-direction: column;
+}
+.event-gallerylist,.event-details{
+    display:flex;
+    flex-direction:column;
+    line-height: 2;
+}

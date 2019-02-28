@@ -1,50 +1,99 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>helpful</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Caveat|Concert+One|Prompt"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./index.css" />
-    <script src="main.js"></script>
-  </head>
-  <body>
-    <header>
-      <h1><span id="red">help</span><span id="orange">full</span></h1>
-      <nav>
-        <ul>
-          <li id="login">Login</li>
-          <li>About</li>
-          <li>AnotherLink</li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <fieldset>
-        <legend>Search</legend>
-        <h2>Find events and volunteer opportunities.</h2>
-        <form action="submit" class="form-search">
-            <label for="search">Filter your search by...</label>
-            <select name="event-search" id="event-search-select">
-              <option value="organization">Organization</option>
-              <option value="area-code-city">Area code or city</option>
-              <option value="area-code-city">Another search option</option>
-              <option value="area-code-city">Another search option</option>
-            </select>
-            <input type="text" />
-          
-            <button>Search</button>
-          
-        </form>
-      </fieldset>
-      <div class='search-results'></div>
-    </main>
-    <footer><span id="credit">brogrammers 2019</span></footer>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Search Mockup</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Caveat|Concert+One|Prompt"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="./css/search.css" />
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <section class="header-container">
+            <header>
+                <span class="logo"
+                    ><h1>
+                        <span class="logo-style-one">Help</span
+                        ><span class="logo-style-two">full</span>
+                    </h1></span
+                >
+                <nav>
+                    <ul>
+                        <li><a href="./dashboard.html">Dashboard</a></li>
+                        <li><a href="./myevents">My Events</a></li>
+                        <li><a href="./creategroup">Create Group</a></li>
+                        <li><a href="./created-org">My Groups</a></li>
+                        <li><a href="./followed">Followed</a></li>
+                        <li><a href="./Search">Search</a></li>
+                        <li><a href="./logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </section>
+        <main class="container-search">
+            <div class="hero-box">
+                <hero class="search-hero">
+                    <div class="text-box">Find events.</div>
+                    <img
+                        src="./img/community5.jpg"
+                        alt=""
+                    />
+                </hero>
+                <hero class="search-hero">
+                    <div class="text-box">Volunteer.</div>
+                    <img
+                        src="./img/community3.jpg"
+                        alt=""
+                    />
+                </hero>
+                <hero class="search-hero">
+                    <div class="text-box">Make Friends.</div>
+                    <img
+                        src="./img/community4.jpg"
+                        alt=""
+                    />
+                </hero>
+            </div>
+            <form action="submit" class="form-search">
+                <label for="search">Filter your search by...</label>
+                <select name="event-search" id="event-search-select">
+                    <option value="organization">Organization</option>
+                    <option value="area-code-city">Area code or city</option>
+                    <option value="area-code-city"
+                        >Another search option</option
+                    >
+                    <option value="area-code-city"
+                        >Another search option</option
+                    >
+                </select>
+                <input type="text" placeholder="I'm looking for ..." />
+
+                <button id="search-button">Search</button>
+            </form>
+            <div class="search-results"></div>
+        </main>
+        <section class="footer-container">
+            <footer>
+                <h1>About Helpful</h1>
+                <section class="about">
+                    Helpful brings community organizations and volunteers
+                    together. If you want to make a difference in your
+                    community, you can find groups and events that would love to
+                    get your help. If you are an organization in need of
+                    volunteers, you can post your organization's profile and
+                    publicize your events here.
+                </section>
+            </footer>
+            <section class="sub-footer">
+                &copy Lorem ipsum .
+            </section>
+        </section>
+    </body>
 </html>
 '

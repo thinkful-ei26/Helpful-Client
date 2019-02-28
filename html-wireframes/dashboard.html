@@ -15,19 +15,15 @@
   <body>
     <section class="header-container">
       <header>
-        <span class="logo"
-          ><h1>
-            <span class="logo-style-one">Help</span
-            ><span class="logo-style-two">full</span>
-          </h1></span
-        >
+        <span class="logo"><h1><span class='logo-style-one'>Help</span><span class='logo-style-two'>full</span></h1></span>
         <nav>
           <ul>
-            <li><a href="./dashboard.html">Dashboard</a></li>
+            <li><a href='./dashboard.html'>Dashboard</a></li>
+            <li><a href="./myevents">My Events</a></li>
             <li><a href="./creategroup">Create Group</a></li>
+            <li><a href="./created-org">My Groups</a></li>
             <li><a href="./followed">Followed</a></li>
             <li><a href="./Search">Search</a></li>
-            <li><a href="./myevents">My Events</a></li>
             <li><a href="./logout">Logout</a></li>
           </ul>
         </nav>
@@ -36,7 +32,7 @@
     <section class="container">
       <main class='dashboard-main'>
           <div class="my-events">
-        <h1>My upcoming events</h1>
+        <h1>Upcoming events</h1>
           <ul class="event-gallerylist">
             <li>
               <p class='title-date'><h2 class="event-title">Clean Up Whoopy Pond!</h2>Thursday, 04/08/19</p>
@@ -60,10 +56,10 @@
                   <span class="event-contact-name">Contact: Bowler Jim</span>
                   <span class="event-contact-phone">222-222-2222</span>
                   <span class="event-contact-other">@bowlerjim</span>
-                    <div class="event-comment-area">
+                    <!-- <div class="event-comment-area">
                         <textarea name="" id="" cols="33"rows="5" placeholder="Ask a question or leave a comment"></textarea>
                         <button>Submit</button>
-                    </div>
+                    </div> -->
                 </div>
               </div>
          
@@ -90,10 +86,10 @@
                         <span class="event-contact-name">Contact: Bowler Jim</span>
                         <span class="event-contact-phone">222-222-2222</span>
                         <span class="event-contact-other">@bowlerjim</span>
-                          <div class="event-comment-area">
+                          <!-- <div class="event-comment-area">
                               <textarea name="" id="" cols="33"rows="5" placeholder="Ask a question or leave a comment"></textarea>
                               <button>Submit</button>
-                          </div>
+                          </div> -->
                       </div>
                     </div>
                
@@ -120,37 +116,59 @@
                             <span class="event-contact-name">Contact: Bowler Jim</span>
                             <span class="event-contact-phone">222-222-2222</span>
                             <span class="event-contact-other">@bowlerjim</span>
-                              <div class="event-comment-area">
+                              <!-- <div class="event-comment-area">
                                   <textarea name="" id="" cols="33"rows="5" placeholder="Ask a question or leave a comment"></textarea>
                                   <button>Submit</button>
-                              </div>
+                              </div> -->
                           </div>
                         </div>
                    
                       </li>
           </ul>
         </div>
-          <aside class="my-groups">
+          <aside class="dashboard-aside-mygroups">
               <h3>My Groups</h3>
               <ul>
                   <li>
-                        <span class="org-title">Friends of the Canyon</span>
-                        <span class="org-img"><img src='http://lorempixel.com/50/50'></span>
+                        <span class="org-title"><a href="">Friends of the Canyon</a></span>
+                        <!-- <span class="org-img"><img src='http://lorempixel.com/50/50'></span> -->
                   </li>
                   <li>
-                        <span class="org-title">V.V.B.R</span>
-                        <span class="org-img"><img src='http://lorempixel.com/49/50'></span>
+                    <span class="org-title"><a href="">Another Group</a></span>
+                        <!-- <span class="org-img"><img src='http://lorempixel.com/49/50'></span> -->
                   </li>
                   <li>
-                        <span class="org-title">The Smith Shelter</span>
-                        <span class="org-img"><img src='http://lorempixel.com/50/51'></span>
+                    <span class="org-title"><a href="">Shelter for things</a></span>
+                        <!-- <span class="org-img"><img src='http://lorempixel.com/50/51'></span> -->
                   </li>
                   <li>
-                        <span class="org-title">Addiction No More</span>
-                        <span class="org-img"><img src='http://lorempixel.com/51/50'></span>
+                    <span class="org-title"><a href="">Things for shelters</a></span>
+                        <!-- <span class="org-img"><img src='http://lorempixel.com/51/50'></span> -->
                   </li>
               </ul>
           </aside>
+          <aside class="dashboard-aside-following">
+            <h3>Following</h3>
+            <ul>
+                <li>
+                      <span class="org-title"><a>Friends of the Canyon</a></span>
+                      <!-- <span class="org-img"><img src='http://lorempixel.com/50/50'></span> -->
+                </li>
+                <li>
+                  <span class="org-title"><a>Another Group</a></span>
+                      <!-- <span class="org-img"><img src='http://lorempixel.com/49/50'></span> -->
+                </li>
+                <li>
+                  <span class="org-title"><a>Shelter for things</a></span>
+                      <!-- <span class="org-img"><img src='http://lorempixel.com/50/51'></span> -->
+                </li>
+                <li>
+                  <span class="org-title"><a>Things for shelters</a></span>
+                      <!-- <span class="org-img"><img src='http://lorempixel.com/51/50'></span> -->
+                </li>
+            </ul>
+        </aside>
+      </div>
       </main>
     </section>
     <section class="footer-container">
