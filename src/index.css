@@ -258,30 +258,27 @@ button,
     background-color: #fff;
 }
 .text-box {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     opacity: 0.5;
-    padding: 4%;
+    padding: 2%;
 }
 
-p {
+.text-box-span {
     text-align: center;
-    font-weight: bold;
+    font-size: 2rem;
     color: #4594d1;
+    margin: 2% 5%;
+    font-weight: bold;
 }
-form {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 5%;
-}
-form button {
-    padding: 2%;
+.landing-page-form button {
     border-radius: 5%;
     text-transform: uppercase;
     font-weight: bold;
+    width: 10rem;
 }
-.button {
-    flex-shrink: 2;
-}
+
 .button-register {
     color: orange;
     background: #4594d1;
