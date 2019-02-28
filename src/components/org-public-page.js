@@ -174,7 +174,10 @@ export default function OrgPublicPage(props) {
                 </div>
 
                 <div className='container'>
-                    <p>{orgEvents}</p>
+                    <p>
+                        <span className='title'>Events: </span>{" "}
+                        <ul>{orgEvents}</ul>
+                    </p>
                 </div>
                 {/* </div> */}
             </div>
