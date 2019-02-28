@@ -69,6 +69,26 @@ body {
     background: whitesmoke;
 }
 
+/* Bryan */
+
+.containerB {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+}
+
+@media only screen and (min-width: 601px) {
+    .containerB {
+        width: 85%;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .containerB {
+        width: 70%;
+    }
+}
+
 /************MAIN******************************************/
 
 .landing-page-main {
