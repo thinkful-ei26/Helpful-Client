@@ -1,0 +1,47 @@
+.create-org-form {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    background: whitesmoke;
+    border-left: 40px solid orange;
+    font-size: 75%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.create-org-form-button {
+    width: 8rem;
+    margin: 5% auto;
+    background: orange;
+    border-radius: 5%;
+}
+.create-org-form-button:hover {
+    width: 8rem;
+    margin: 5% auto;
+    background: #4594d1;
+    color: white;
+    transition: 0.5s;
+    border-radius: 5%;
+}
+
+.form-row {
+    display: flex;
+    margin: 2% auto;
+}
+
+.form-row,
+input {
+    width: 30rem;
+    padding: 2%;
+    /* text-align: center; */
+}
+.form-row,
+textarea {
+    width: 30rem;
+    padding: 2%;
+    /* text-align: center; */
+}
+
+
