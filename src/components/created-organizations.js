@@ -10,7 +10,6 @@ export default function CreatedOrgs(props) {
 
     const [orgs, setOrgs] = useState(null);
 
-
     const fetchData = async () => {
         const request = await axios(`${API_BASE_URL}/role/user`, {
             headers: {
@@ -23,11 +22,9 @@ export default function CreatedOrgs(props) {
         setOrgs(request.data);
     };
 
-
     useEffect(() => {
         fetchData();
     }, []);
-
 
     let orgCards;
     if (orgs) {
@@ -46,11 +43,10 @@ export default function CreatedOrgs(props) {
         });
     }
 
-
-    if (orgs === null) {
+    if (orgs === null || orgs.length < 1) {
         return (
             <section className='noFollowedOrgs'>
-                <p>Looks like you haven't created any organiations yet...</p>
+                <p>Looks like you haven't created any organizations yet...</p>
                 <p>
                     Click here to create an organization and start hosting
                     events
@@ -63,7 +59,6 @@ export default function CreatedOrgs(props) {
         );
     }
 
-
     return (
         <div>
             <section className='followedOrgsList'>
@@ -73,5 +68,4 @@ export default function CreatedOrgs(props) {
             </section>
         </div>
     );
-
 }

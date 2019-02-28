@@ -26,24 +26,13 @@ code {
     left: 50px;
 }
 
+nav ul a {
+    color: teal !important;
+}*/
+
 .sidenav-trigger {
     position: absolute;
 }
-
-nav ul a {
-    color: teal !important;
-}
-
-.hamburger {
-    color: teal !important;
-    height: 50px;
-}
-
-#hamburger {
-    font-size: 2.5rem !important;
-    margin-left: 12px;
-    margin-top: 2px;
-} */
 
 body {
     margin: 0;
@@ -69,14 +58,111 @@ body {
     background: whitesmoke;
 }
 
+/****************HEADER************************************/
+.header-container {
+    border-bottom: 3px solid #e0e2e2;
+}
+header {
+    margin: 0 15%;
+    max-height: 4rem;
+    display: flex;
+}
+
+.logo {
+    font-size: 90%;
+    padding-right: 20%;
+    align-self: center;
+}
+.logo-style-one {
+    color: red;
+}
+.logo-style-two {
+    color: orange;
+}
+
+/*********NAV*******************************************/
+.hamburger {
+    color: teal !important;
+    height: 50px;
+}
+
+#hamburger {
+    font-size: 2.5rem !important;
+    margin-left: 12px;
+    margin-top: 2px;
+    display: none;
+    visibility: hidden;
+}
+
+#mySidenav.false {
+    display: none;
+    width: 0;
+}
+
+#mySidenav.true {
+    display: block;
+    margin: 0;
+    width: 250px;
+    height: 100%; /* 100% Full-height */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #4594d1; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+#mySidenav a {
+    padding: 8px 8px 8px 32px;
+    font-size: 25px;
+    display: block;
+}
+
+#mySidenav.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+nav {
+    color: orange;
+    font-weight: bold;
+}
+nav ul {
+    visibility: visible;
+    display: flex;
+    flex-wrap: wrap;
+}
+ul li {
+    padding-right: 1.5rem;
+    list-style: none;
+    font-size: 50%;
+}
+a {
+    text-decoration: none;
+    color: orange;
+}
+
+nav a:hover {
+    color: #a0e4e5;
+    transition: 0.5s;
+}
 /* Bryan */
 
 .containerB {
     margin: 0 auto;
     max-width: 1280px;
     width: 90%;
+    background: whitesmoke;
 }
 
+.text-center {
+    text-align: center;
+}
 @media only screen and (min-width: 601px) {
     .containerB {
         width: 85%;
@@ -88,6 +174,83 @@ body {
         width: 70%;
     }
 }
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+}
+
+.rate-area {
+    float: left;
+    border-style: none;
+}
+
+.rate-area:not(:checked) > input {
+    position: absolute;
+    left: -9999px;
+    clip: rect(0, 0, 0, 0);
+}
+
+.rate-area:not(:checked) > label {
+    float: right;
+    width: 1em;
+    padding: 0 0.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 400%;
+    line-height: 1.2;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+
+.rate-area:not(:checked) > label:before {
+    content: "★ ";
+}
+
+.rate-area > input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+    font-size: 450% !important;
+}
+
+.rate-area:not(:checked) > label:hover,
+.rate-area:not(:checked) > label:hover ~ label {
+    color: gold;
+}
+
+.rate-area > input:checked + label:hover,
+.rate-area > input:checked + label:hover ~ label,
+.rate-area > input:checked ~ label:hover,
+.rate-area > input:checked ~ label:hover ~ label,
+.rate-area > label:hover ~ input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+}
+
+.rate-area > label:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+.follow-button,
+.unfollow-button {
+    /* width: 8rem; */
+    /* padding: 3%; */
+    /* border-radius: 5%; */
+    background: orange;
+    /* margin: 5% auto; */
+    font-weight: bold;
+}
+
+button,
+.button-center {
+    position: relative;
+    left: 19.59378439743%;
+}
+
+/* End Bryan CSS */
 
 /************MAIN******************************************/
 
@@ -116,7 +279,6 @@ form {
 }
 form button {
     padding: 2%;
-    width: 17%;
     border-radius: 5%;
     text-transform: uppercase;
     font-weight: bold;
@@ -161,4 +323,33 @@ footer {
     background: rgb(29, 147, 187);
     color: white;
     text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    /*mobile styles*/
+    #hamburger {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-right: 10px;
+    }
+
+    .logo {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    nav {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 350px) {
+    mobile styles */ body {
+        background: green;
+    }
 }
