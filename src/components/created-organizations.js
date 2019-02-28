@@ -61,7 +61,7 @@ export default function CreatedOrgs(props) {
     return (
         <div>
             <section className='created-orgs-container'>
-                <h2>My Orgnizations</h2>
+                <h2>My Organizations</h2>
 
                 <div>{orgCards}</div>
             </section>
