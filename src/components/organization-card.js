@@ -30,8 +30,18 @@ export default function OrganizationCard(props) {
                 <img src={props.org.imgUrl} alt={props.org.name}></img>
                 <p className='card-details'>Details:</p>
                 <p>{props.org.description}</p>
-                <p>{props.org.location}</p>
-                <p>{props.org.contact}</p>
+                <p>
+                    <i className='material-icons'>
+                        location_on
+                    </i>
+                    {props.org.location}
+                </p>
+                <p>
+                    <i className='material-icons'>
+                        person
+                    </i>
+                    {props.org.contact}
+                </p>
             </div>
         </div>
     );

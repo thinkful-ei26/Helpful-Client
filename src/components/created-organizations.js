@@ -52,7 +52,7 @@ export default function CreatedOrgs(props) {
     if (orgs === null) {
         return (
             <section className='created-orgs-container'>
-                <h2>My Orgnizations</h2>
+                <h2>My Organizations</h2>
                 <p>Looks like you haven't created any organiations yet...</p>
 
                 <button onClick={() => props.setView(createOrgForm)}>
@@ -66,7 +66,7 @@ export default function CreatedOrgs(props) {
     return (
         <div>
             <section className='created-orgs-container'>
-                <h2>My Orgnizations</h2>
+                <h2>My Organizations</h2>
                 <div>{orgCards}</div>
             </section>
         </div>

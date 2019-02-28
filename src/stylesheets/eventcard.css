@@ -18,6 +18,8 @@ p {
     font-weight: normal;
     margin: 1% 0;
     font-size: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .card-details {
@@ -29,4 +31,9 @@ img {
     max-width: 250px;
     max-height: 200px;
     font-size: 16px;
+}
+
+i.material-icons {
+    font-size: 20px;
+    margin-right: 1%;
 }

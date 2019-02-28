@@ -18,9 +18,20 @@ export default function EventCard(props) {
           <p>{props.event.date}</p>
           <img src={props.event.imgUrl} alt={props.event.name}></img>
           <p className='card-details'>Details:</p>
-          <p>{props.event.description}</p>
-          <p>{props.event.location}</p>
-          <p>{props.event.contact}</p>
+          <p>
+            {props.event.description}</p>
+          <p>
+            <i className='material-icons'>
+            location_on
+            </i>
+            {props.event.location}
+          </p>
+          <p>
+            <i className='material-icons'>
+              person
+            </i>
+            {props.event.contact}
+          </p>
         </div>
     </div>
   );
