@@ -1,4 +1,4 @@
-.login-container {
+.registration-container {
     background: whitesmoke;
     margin: 0 15%;
     display: flex;
@@ -6,27 +6,26 @@
     padding: 5%;
 }
 
-.login-form {
+.registration-form {
     display: flex;
     flex-direction: column;
     padding: 2%;
     margin: auto;
 }
-#email,
-#password,
-label {
+.registration-inputs, label {
     padding: 2%;
     width: 15rem;
     margin: auto;
 }
 
-.login-form-submit-button {
-    /* width: 5rem; */
+.registration-form-submit-button {
+    color: white;
     margin: 2% auto;
     background-color: #4594d1;
     border-radius: 5%;
 }
-.login-form-submit-button:hover {
+
+.registration-form-submit-button:hover{
     background: orange;
     transition: 0.5s;
 }

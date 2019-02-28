@@ -241,9 +241,3 @@ footer {
         visibility: hidden;
     }
 }
-
-@media only screen and (min-width: 350px) { mobile styles */
-    body {
-        background: green;
-    }
-}

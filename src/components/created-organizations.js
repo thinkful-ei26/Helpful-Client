@@ -4,14 +4,13 @@ import OrganizationCard from "./organization-card";
 import createOrgForm from "./create-org-form";
 import { API_BASE_URL } from "../config";
 
-import '../stylesheets/created-organizations.css';
+import "../stylesheets/created-organizations.css";
 
 export default function CreatedOrgs(props) {
     // PRODUCTION TODO --> currently getting all orgs, need to refactor to
     // get only user created orgs
 
     const [orgs, setOrgs] = useState(null);
-
 
     const fetchData = async () => {
         const request = await axios(`${API_BASE_URL}/role/user`, {
@@ -25,11 +24,9 @@ export default function CreatedOrgs(props) {
         setOrgs(request.data);
     };
 
-
     useEffect(() => {
         fetchData();
     }, []);
-
 
     let orgCards;
     if (orgs) {
@@ -48,8 +45,7 @@ export default function CreatedOrgs(props) {
         });
     }
 
-
-    if (orgs === null) {
+    if (orgs === null || orgs.length < 1) {
         return (
             <section className='created-orgs-container'>
                 <h2>My Organizations</h2>
@@ -62,7 +58,6 @@ export default function CreatedOrgs(props) {
         );
     }
 
-
     return (
         <div>
             <section className='created-orgs-container'>
@@ -71,5 +66,4 @@ export default function CreatedOrgs(props) {
             </section>
         </div>
     );
-
 }

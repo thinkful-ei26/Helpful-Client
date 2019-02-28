@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DashboardCreateEvent from "./dashboard-create-event";
-import OrgDashboardAddUser from "./org-dashboard-add-user";
+// import OrgDashboardAddUser from "./org-dashboard-add-user";
 import getOrgs from "../utils/fetchOrg";
 import getOrgEvents from "../utils/fetchEvent";
 import OrgPublicPageEventList from "./org-public-page-event-list";
@@ -26,15 +26,15 @@ const OrganizationDashboard = props => {
   if (org && events) {
     return (
       <article className='orgDash'>
-        <h2>{org.name}</h2>
+        <div className='org-dash-side-bar'>
+          <h2>{org.name}</h2>
 
-        <img
-          className='profilePic'
-          alt='user profile pic'
-          src={org.imgUrl}
-        />
+          <img
+            className='profilePic'
+            alt='user profile pic'
+            src={org.imgUrl}
+          />
 
-        <div className='org-dash-main-wrapper'>
           <div className='org-main-buttons'>
             <button
               className='org-main-button'
@@ -42,7 +42,7 @@ const OrganizationDashboard = props => {
                 setView(<OrgPublicPageEventList id={orgId} />)
               }>
               Show Scheduled Events
-                        </button>
+            </button>
 
             <button
               className='org-main-button'
@@ -50,7 +50,7 @@ const OrganizationDashboard = props => {
                 setView(<DashboardCreateEvent id={orgId} />)
               }>
               Create a new event
-                        </button>
+            </button>
 
             {/* <button
               className='org-main-button'
@@ -70,15 +70,15 @@ const OrganizationDashboard = props => {
               onClick={() => setView()}>
               Promote Event
                         </button> */}
-            <button
-              className="org-main-button"
-            >
-              <Link to={publicPageUrl}>View your public page</Link>
-            </button>
+            <Link to={publicPageUrl}>
+              <button className="org-main-button">
+                View your public page
+              </button>
+            </Link>
           </div>
-
-          <div className='org-main-events'>{view}</div>
         </div>
+        
+        <div className='org-main-events'>{view}</div>
       </article>
     );
   }
