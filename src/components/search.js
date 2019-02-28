@@ -33,11 +33,11 @@ export default function Search(props) {
     const onSelectChange = e => {
         console.log(e.target.value);
         setType(e.target.value);
-        getEvent();
-        getOrg();
     }
 
     const onSubmit = e => {
+        getEvent();
+        getOrg();
         e.preventDefault();
         console.log(distance);
         if (type === 'organizations') {
