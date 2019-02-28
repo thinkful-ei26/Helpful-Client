@@ -51,7 +51,7 @@ export default function FollowedOrgs(props) {
     return (
         <React.Fragment>
             <div className='followed-orgs-container'>
-                <h2>Followed Organizaions</h2>
+                <h2>Followed Organizations</h2>
             
                 <div>{followedOrgCards}</div>
             </div>
