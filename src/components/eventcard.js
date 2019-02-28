@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-// import "../stylesheets/org-dashboard-styles/eventcard.css";
+import "../stylesheets/eventcard.css";
 
 export default function EventCard(props) {
   const linkUrl = `/event/${props.event.id}`;
@@ -10,18 +10,17 @@ export default function EventCard(props) {
   }
 
   return (
-    
-      <div className="card blue-grey darken-1">
+      <div className="dashboard-event-card">
         <Link to={linkUrl}>
-          <div className="card-content white-text">
-            <span className="card-title">{props.event.name}</span>
-            <p>{props.event.description}</p>
-          </div>
+          <h3>{props.event.name}</h3>
         </Link>
-        <div className="card-action">
-          <span>{props.event.date}</span>
-          <span>{props.event.location}</span>
-          <span>{props.event.contact}</span>
+        <div className="event-card-content">
+          <p>{props.event.date}</p>
+          <img src={props.event.imgUrl} alt={props.event.name}></img>
+          <p className='card-details'>Details:</p>
+          <p>{props.event.description}</p>
+          <p>{props.event.location}</p>
+          <p>{props.event.contact}</p>
         </div>
     </div>
   );

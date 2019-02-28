@@ -159,22 +159,17 @@ export default function EventList() {
     }
 
     return (
-        <div className='row'>
-            <div className='col s12'>
-                <div className='section'>
-                    <div className='col s12'>
-                        <span className='title'>My Upcoming Events</span>
-                    </div>
-                    <div className='eventsContainer col s12 m6 l4'>
+        <section className='event-container'>
+                <div className='rsvp-events'>
+                    <h2>Upcoming Events</h2>
+                    <div className='event-list'>
                         {rsvpEventCardList}
                         {/* {rsvpMeetupCardList} */}
                     </div>
                 </div>
-                <div className='section'>
-                    <div className='col s12'>
-                        <span className='nearby'>{eventTitle}</span>
-                    </div>
-                    <div className='eventsContainer col s12 m6 l4'>
+                <div className='events'>
+                    <h2>Nearby Events</h2>
+                    <div className='event-list'>
                         {localEventCardList}
                     </div>
                 </div>
@@ -186,8 +181,7 @@ export default function EventList() {
                         {meetupCardList}
                     </div>
                 </div> */}
-            </div>
-        </div>
+        </section>
     );
 }
 

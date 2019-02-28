@@ -1,11 +1,21 @@
-.org-blob {
-    width: 50px;
-    height: 50px;
-    color: white;
-    background-color: black;
-    padding: 2%;
-}
-.dashboard-content {
+.dashboard-container {
+    display: -webkit-flex;
     display: flex;
-    padding-top: 5%;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    margin: 0 15%;
+    background: whitesmoke;
+    border-left: 40px solid orange;
+}
+
+@media only screen and (max-width: 900px) {
+    .dashboard-container {
+      margin: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .dashboard-container {
+      border-left: none;
+    }
 }
