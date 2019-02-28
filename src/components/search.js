@@ -94,7 +94,9 @@ export default function Search(props) {
     const getOrg = async () => {
         const getOrgs = await axios({
             method: "get",
-            url: `${API_BASE_URL}/org/location/${distance}/45/-105`,
+            url: `${API_BASE_URL}/org/location/${distance}/${location.lat}/${
+                location.lng
+                }`,
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer ".concat(
@@ -102,7 +104,6 @@ export default function Search(props) {
                 ),
             },
         });
-
         setOrgs(getOrgs.data);
     };
 
