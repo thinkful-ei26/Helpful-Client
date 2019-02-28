@@ -1,10 +1,10 @@
-.event {
+/* .event {
     display: flex;
     align-items: flex-start;
 }
 
 .event-container {
-    /* optional */
+    
     margin: 20px;
     margin-left: 10px;
     padding: 30px;
@@ -14,7 +14,7 @@
 .organization-container {
     flex-grow: 1;
 
-    /* optional */
+    
     margin: 20px;
     margin-right: 10px;
-}
+} */

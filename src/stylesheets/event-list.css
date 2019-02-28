@@ -1,15 +1,4 @@
-.upcomingEvents {
-    margin-right: auto;
-    margin-left: auto;
-    width: 40%;
+.event-container {
+    margin: 5%;
 }
 
-.nearbyEvents {
-    margin-right: auto;
-    margin-left: auto;
-    width: 40%;
-}
-
-.eventsHeader {
-    text-align: center;
-}
