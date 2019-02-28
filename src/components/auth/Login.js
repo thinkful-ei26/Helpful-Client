@@ -47,19 +47,15 @@ const Login = () => {
         <Route
             render={({ history }) => (
                 <div className='login-container'>
-                    <div className='row'>
-                        <div className=''>
                             <Link to='/' className=' '>
                                 <i className='material-icons left'>keyboard_backspace</i>
                                 Back to home
                             </Link>
-                            <div className=''>
                                 <h4>Login below</h4>
                                 <p className='grey-text text-darken-1'>
                                     Don't have an account?{" "}
                                     <Link to='/register'>Register</Link>
                                 </p>
-                            </div>
                             <form
                                 className='login-form'
                                 noValidate
@@ -91,8 +87,6 @@ const Login = () => {
                                     </button>
                             </form>
                         </div>
-                    </div>
-                </div>
             )}
         />
     );

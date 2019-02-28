@@ -37,21 +37,17 @@ const Register = () => {
         <Route
             render={({ history }) => (
                 <div className='registration-container'>
-                    <div className='row' style={{ marginTop: "4rem" }}>
-                        <div className=''>
                             <Link to='/' className=' waves-effect btn-flat'>
                                 <i className='material-icons left'>
                                     keyboard_backspace
                                 </i>
                                 Back to home
                             </Link>
-                            <div className=''>
                                 <h4>Register below</h4>
                                 <p className='1'>
                                     Already have an account?{" "}
                                     <Link to='/login'>Log In</Link>
                                 </p>
-                            </div>
                             <form
                                 className='registration-form'
                                 noValidate
@@ -108,8 +104,6 @@ const Register = () => {
                                     </button>
                             </form>
                         </div>
-                    </div>
-                </div>
             )}
         />
     );
