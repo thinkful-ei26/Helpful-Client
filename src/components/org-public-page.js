@@ -185,7 +185,7 @@ export default function OrgPublicPage(props) {
     }
     return (
         <div>
-            <p>I am loading text</p>
+            <p>Loading...</p>
         </div>
     );
 }

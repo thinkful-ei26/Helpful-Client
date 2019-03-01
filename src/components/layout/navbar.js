@@ -31,7 +31,7 @@ const NavBar = props => {
                     <a
                         href='#createorganization'
                         onClick={() => props.history.push("/createorgform")}>
-                        Create Group
+                        Create Org
                     </a>
                 </li>
 
@@ -48,7 +48,7 @@ const NavBar = props => {
                     <a
                         href='/createdorgs'
                         onClick={() => props.history.push("/createdorgs")}>
-                        My Groups
+                        My Orgs
                     </a>
                 </li>
 
@@ -56,14 +56,14 @@ const NavBar = props => {
                     <a
                         href='#followedorganizations'
                         onClick={() => props.history.push("/followedorgs")}>
-                        Followed
+                        Followed Orgs
                     </a>
                 </li>
                 <li>
                     <a
                         href='#search'
                         onClick={() => props.history.push("/search")}>
-                        Search Tool
+                        Search
                     </a>
                 </li>
 
@@ -170,7 +170,7 @@ const NavBar = props => {
                         // className='waves-effect'
                         onClick={() => props.history.push("/createorgform")}>
                         <i className='material-icons black-text'>create</i>
-                        Create Group
+                        Create Org
                     </a>
                 </li>
                 <li>
@@ -181,7 +181,7 @@ const NavBar = props => {
                         href='/createdorgs'
                         onClick={() => props.history.push("/createdorgs")}>
                         <i className='material-icons'>subscriptions</i>
-                        My Groups
+                        My Orgs
                     </a>
                 </li>
                 {/* <li>
@@ -202,7 +202,7 @@ const NavBar = props => {
                         // className='waves-effect'
                         onClick={() => props.history.push("/followedorgs")}>
                         <i className='material-icons'>subscriptions</i>
-                        Followed Groups
+                        Followed Orgs
                     </a>
                 </li>
                 <li>

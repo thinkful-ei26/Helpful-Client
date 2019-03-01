@@ -54,7 +54,7 @@ export default function CreateOrgForm() {
                 className='create-org-form'
                 id='createOrgForm'
                 onSubmit={e => handleSubmit(e)}>
-                <h1>Create a new group</h1>
+                <h1>Create a new Organization</h1>
                 {/* <div class='form-row'> */}
                     <label htmlFor='org-name'></label>
                     <input
