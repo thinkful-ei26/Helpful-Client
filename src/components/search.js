@@ -125,9 +125,9 @@ export default function Search(props) {
                     action='submit'
                     className='form-search'>
                     <div className='search-form-container'>
-                        <label className='search-form-child'>
+                        {/* <label className='search-form-child'>
                             Filter your search by...
-                        </label>
+                        </label> */}
                         <select
                             onChange={onSelectChange}
                             className='search-form-child'
