@@ -130,6 +130,7 @@ header {
 nav {
     color: orange;
     font-weight: bold;
+    margin-left: auto;
 }
 nav ul {
     visibility: visible;
