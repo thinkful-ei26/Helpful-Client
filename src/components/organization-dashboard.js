@@ -26,7 +26,7 @@ const OrganizationDashboard = props => {
     if (org && events) {
         return (
             <article className='orgDash'>
-                <div className='orgdash-col1'>
+                <div className='orgdash-col-1'>
                     <h2>{org.name}</h2>
 
                     <img
