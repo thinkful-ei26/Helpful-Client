@@ -58,6 +58,7 @@ export default function CreateOrgForm() {
                 {/* <div class='form-row'> */}
                     <label htmlFor='org-name'> Name</label>
                     <input
+                    className='org-form-center-text'
                         required
                         type='text'
                         placeholder='Organization name'
@@ -70,7 +71,7 @@ export default function CreateOrgForm() {
                     <label htmlFor='org-description'> Description</label>
                     <textarea
                         required
-                        className="creatOrgForm-desc"
+                        className="creatOrgForm-desc org-form-center-text"
                         type='text'
                         form='createOrgForm'
                         rows='5'
@@ -86,6 +87,7 @@ export default function CreateOrgForm() {
                 {/* <div class='form-row'> */}
                     <label htmlFor='org-location'>Location</label>
                     <input
+                      className='org-form-center-text'
                         required
                         type='textarea'
                         placeholder='Location'
@@ -101,6 +103,7 @@ export default function CreateOrgForm() {
                 {/* <div class='form-row'> */}
                     <label htmlFor='org-contact'> Contact</label>
                     <input
+                      className='org-form-center-text'
                         required
                         type='text'
                         placeholder='Contact info'
@@ -116,6 +119,7 @@ export default function CreateOrgForm() {
                 {/* <div class='form-row'> */}
                     <label htmlFor='orgImg'> Image</label>
                     <input
+                      className='org-form-center-text'
                         type='text'
                         placeholder='Paste Image URL here!'
                         onChange={e =>
