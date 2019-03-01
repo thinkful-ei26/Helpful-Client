@@ -26,7 +26,12 @@ export default function OrgPublicPage(props) {
     const fetchEvents = () => {
         getOrgEvents(orgId).then(res => {
             let newList = res.data.map((event, index) => {
-                return <li key={index}>{event.name}</li>;
+                console.log(event);
+                return (
+                    <li key={index}>
+                        <a href={`/event/${event.id}`}>{event.name}</a>
+                    </li>
+                );
             });
             setOrgEvents(newList);
         });
