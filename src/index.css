@@ -32,8 +32,6 @@ nav ul a {
 
 /* END CSS RESET */
 
-
-
 .sidenav-trigger {
     position: absolute;
 }
@@ -276,7 +274,7 @@ nav a:hover {
     font-weight: bold;
 }
 
-.landing-page-form{
+.landing-page-form {
     display: flex;
     justify-content: center;
 }
@@ -293,7 +291,7 @@ button.button-register {
     background: #4594d1;
     border: none;
     font-size: 2vw;
-    width:15vw;
+    width: 15vw;
 }
 button.button-register:hover {
     color: #4594d1;
@@ -305,7 +303,7 @@ button.button-login {
     background: orange;
     border: none;
     font-size: 2vw;
-    width:15vw;
+    width: 15vw;
 }
 button.button-login:hover {
     color: orange;
