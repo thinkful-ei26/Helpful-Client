@@ -42,10 +42,19 @@ img .search-img{
     margin-right: 3vw;
 }
 .customHr{
+    margin: auto;
     border-radius: 50%;
     background-color: orange;
     height:5px;
     width: 30vw;
+    margin-bottom: 1vw;
+}
+
+.dashHr{
+    border-radius: 50%;
+    background-color: orange;
+    height:5px;
+    width: 100%;
     margin-bottom: 1vw;
 }
 
@@ -74,8 +83,7 @@ img .search-img{
         justify-content: center;
     }
     .search-description{
-        color: white;
-        font-size: 3vw;
+        display:none;
     }
     .search-info{
         display: flex;

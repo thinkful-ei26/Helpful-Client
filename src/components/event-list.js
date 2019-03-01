@@ -16,7 +16,7 @@ export default function EventList() {
     const fetchUserLocation = async () => {
         if (!location) {
             if ("geolocation" in navigator) {
-                navigator.geolocation.getCurrentPosition(function(position) {
+                navigator.geolocation.getCurrentPosition(function (position) {
                     let results = {
                         lat: Number(position.coords.latitude.toFixed(7)),
                         lng: Number(position.coords.longitude.toFixed(7)),
@@ -73,7 +73,7 @@ export default function EventList() {
             axios
                 .get(
                     `${API_BASE_URL}/event/location/2000/${location.lat}/${
-                        location.lng
+                    location.lng
                     }`, // set at 2000 for testing
                     {
                         headers: {
@@ -160,20 +160,15 @@ export default function EventList() {
 
     return (
         <section className='event-container'>
-                <div className='rsvp-events'>
-                    <h2>Upcoming Events</h2>
-                    <div className='event-list'>
-                        {rsvpEventCardList}
-                        {/* {rsvpMeetupCardList} */}
-                    </div>
+            <div className='rsvp-events'>
+                <h2>Upcoming Events</h2>
+                <div className='event-list'>
+                    {localEventCardList}
+                    {rsvpEventCardList}
+                    {/* {rsvpMeetupCardList} */}
                 </div>
-                <div className='events'>
-                    <h2>Nearby Events</h2>
-                    <div className='event-list'>
-                        {localEventCardList}
-                    </div>
-                </div>
-                {/* <div className='section'>
+            </div>
+            {/* <div className='section'>
                     <div className='col s12'>
                         <span className='title'>My Meetups</span>
                     </div>
