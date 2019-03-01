@@ -2,15 +2,11 @@
     display: flex;
     align-items: flex-start;
 }
-
-.event-container {
-    
-    margin: 20px;
-    margin-left: 10px;
-    padding: 30px;
-    border: 1px solid black;
-}
 */
+.event-container {  
+    margin: 5%;
+}
+
 .organization-container {
     display: flex;
     justify-content: center;
