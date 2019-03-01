@@ -12,9 +12,7 @@ export default function Search(props) {
     const [location, setLocation] = useState(null);
     const [distance, setDistance] = useState(10000);
     const [type, setType] = useState("organizations");
-    const [component, setComponent] = useState(
-        <SearchOrg history={props.history} location={location} />
-    );
+    const [component, setComponent] = useState(null);
 
     // get user location
     const fetchUserLocation = async () => {
@@ -40,7 +38,7 @@ export default function Search(props) {
         getEvent();
         getOrg();
         e.preventDefault();
-        console.log(distance);
+        console.log(type);
         if (type === "organizations") {
             setComponent(
                 <SearchOrg
@@ -105,6 +103,7 @@ export default function Search(props) {
                     ),
                 },
             });
+            console.log(getOrgs.data)
             setOrgs(getOrgs.data);
         }
     };

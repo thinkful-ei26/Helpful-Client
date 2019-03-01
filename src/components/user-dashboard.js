@@ -16,10 +16,12 @@ export default function UserDashboard(props) {
     return (
         <section className='dashboard-container'>
             <EventList />
+            <div className='dashHr'></div>
             <FollowedOrgs />
+            <div className='dashHr'></div>
             <CreatedOrgs />
             {/* <OrganizationList /> */}
-            {/* <RenderUserRole />  --> for extension */} 
+            {/* <RenderUserRole />  --> for extension */}
         </section>
     );
 
