@@ -49,7 +49,7 @@ const Register = () => {
                                 <h4>Register below</h4>
                                 <p className='1'>
                                     Already have an account?{" "}
-                                    <Link to='/login'>Log In</Link>
+                                    <Link className="loginLink" to='/login'>Log In</Link>
                                 </p>
                             <form
                                 className='registration-form'
@@ -68,7 +68,7 @@ const Register = () => {
                                     className='registration-inputs'
                                     value={email}
                                     onChange={e => setEmail(e.target.value)}
-                                    id='email'
+                                    // id='email'
                                     type='email'
                                 />
                                 <label htmlFor='password'>Password</label>
@@ -76,7 +76,7 @@ const Register = () => {
                                     className='registration-inputs'
                                     value={password}
                                     onChange={e => setPassword(e.target.value)}
-                                    id='password'
+                                    // id='password'
                                     type='password'
                                 />
                                 <label htmlFor='passwordConfirmation'>

@@ -32,40 +32,7 @@ nav ul a {
 
 /* END CSS RESET */
 
-@media only screen and (max-width: 900px) {
-    /*mobile styles*/
-    #hamburger {
-        display: block;
-        visibility: visible;
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding-right: 6%;
-    }
 
-    .logo {
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0;
-    }
-
-    nav {
-        display: none;
-        visibility: hidden;
-    }
-}
-
-@media only screen and (max-width: 360px) {
-    .landing-page-form {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .landing-page-form button {
-        margin-right: auto;
-        margin-left: auto;
-    }
-}
 
 .sidenav-trigger {
     position: absolute;
@@ -369,4 +336,37 @@ footer {
     text-align: center;
 }
 
+@media only screen and (max-width: 900px) {
+    /*mobile styles*/
+    #hamburger {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-right: 6%;
+    }
 
+    .logo {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+
+    nav {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .landing-page-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .landing-page-form button {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

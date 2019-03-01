@@ -58,7 +58,7 @@ const Login = () => {
                                 <h4>Login below</h4>
                                 <p className='grey-text text-darken-1'>
                                     Don't have an account?{" "}
-                                    <Link to='/register'>Register</Link>
+                                    <Link className="register" to='/register'>Register</Link>
                                 </p>
                             </div>
                             <form
@@ -67,7 +67,7 @@ const Login = () => {
                                 onSubmit={e => e.preventDefault()}>
                             
                                     <label className="emailLabel" htmlFor='email'>
-                                        Username or Email
+                                        Username
                                     </label>
                                     <input
                                         id='email'
