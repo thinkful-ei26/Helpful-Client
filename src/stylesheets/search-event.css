@@ -36,7 +36,7 @@
     align-items: center;
 }
 
-img .search-img{
+img.search-img{
     width: 20vw;
     height: 20vw;
     margin-right: 3vw;
@@ -70,7 +70,7 @@ img .search-img{
         flex-direction: column;
         align-items: center;
     }
-    img .search-img{
+    img.search-img{
         width: 20vw;
         height: 20vw;
         margin-right: 3vw;

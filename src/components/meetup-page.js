@@ -93,7 +93,7 @@ export function MeetupPage(props) {
             </button>
         );
     } else {
-      console.log(rsvp)
+        console.log(rsvp)
         rsvpButton = (
             <button className='event-rsvp-button' onClick={() => removeRsvp()}>
                 Cancel Reservation
@@ -136,7 +136,7 @@ export function MeetupPage(props) {
                     <h1 className='event-name'>{event.name}</h1>
                     <div className='event-date'>{event.date}</div>
                 </div>
-                <div className='event-description'>{event.description}</div>
+                <div className='event-public-description'>{event.description}</div>
                 <div className='event-contact'>{event.contact}</div>
                 {rsvpButton}
             </div>
