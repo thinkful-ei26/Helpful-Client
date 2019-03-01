@@ -1,0 +1,39 @@
+.eventcard-main {
+    display: flex;
+    flex-direction: column;
+    font-size: 75%;
+    padding: 5%;
+    border-left: 40px solid #4594d1;
+}
+.eventcard-geobox {
+    min-height: 50vh;
+    text-align: center;
+    background-color:lightsalmon;
+}
+
+.eventcard-single {
+    display: flex;
+}
+.event-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+}
+
+.event-comment-area {
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+    text-transform: uppercase;
+}
+button {
+    width: 8rem;
+    padding: 3%;
+    text-transform: uppercase;
+    border-radius: 5%;
+    color: #4594d1;
+    background: orange;
+    margin: auto;
+    margin-top: 3%;
+    font-weight: bold;
+}
