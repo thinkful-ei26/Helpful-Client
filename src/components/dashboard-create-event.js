@@ -52,11 +52,12 @@ export default function DashboardCreateEvent(props) {
                     <legend>Create an event</legend>
 
                     <div className='create-event-row'>
-                        <label htmlFor='event-name'> Event name</label>
+                        <label htmlFor='event-name'></label>
                         <input
+                            className = 'event-input'
                             required
                             type='text'
-                            placeholder='Event-name'
+                            placeholder='Event Name'
                             onChange={e =>
                                 setFormData({
                                     ...formData,
@@ -67,10 +68,12 @@ export default function DashboardCreateEvent(props) {
                     </div>
 
                     <div className='create-event-row'>
-                        <label htmlFor='event-description'> Description</label>
+                        <label htmlFor='event-description'></label>
                         <input
+                            className = 'event-input'
                             required
-                            type='text'
+                            type='text-area'
+                            rows='5'
                             placeholder='Description'
                             onChange={e =>
                                 setFormData({
@@ -81,12 +84,13 @@ export default function DashboardCreateEvent(props) {
                         />
                     </div>
                     <div className='create-event-row'>
-                        <label htmlFor='event-location' placeholder='Location'>
-                            Location
+                        <label htmlFor='event-location' >
                         </label>
                         <input
+                            className = 'event-input'
                             required
                             type='text'
+                            placeholder='Location'
                             onChange={e =>
                                 setFormData({
                                     ...formData,
@@ -96,8 +100,9 @@ export default function DashboardCreateEvent(props) {
                         />
                     </div>
                     <div className='create-event-row'>
-                        <label htmlFor='event-date'> Date</label>
+                        <label htmlFor='event-date'></label>
                         <input
+                            className = 'event-input'
                             required
                             type='text'
                             placeholder='Date'
@@ -110,10 +115,12 @@ export default function DashboardCreateEvent(props) {
                         />
                     </div>
                     <div className='create-event-row'>
-                        <label htmlFor='event-contact'> Contact</label>
+                        <label htmlFor='event-contact'></label>
                         <input
+                            className = 'event-input'
                             required
                             type='text'
+                            placeholder='Contact'
                             onChange={e =>
                                 setFormData({
                                     ...formData,
@@ -124,8 +131,9 @@ export default function DashboardCreateEvent(props) {
                     </div>
 
                     <div className='create-event-row'>
-                        <label htmlFor='eventImg'>Image</label>
+                        <label htmlFor='eventImg'></label>
                         <input
+                            className = 'event-input'
                             type='text'
                             placeholder='Paste Image URL here!'
                             onChange={e =>
