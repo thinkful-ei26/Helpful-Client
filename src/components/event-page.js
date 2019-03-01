@@ -108,7 +108,7 @@ export function EventPage(props) {
                     isMarkerShown
                     googleMapURL='https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places'
                     loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `400px` }} />}
+                    containerElement={<div style={{ height: `400px`, margin: '5%' }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
             );
@@ -120,11 +120,11 @@ export function EventPage(props) {
     return (
         <section className='event'>
             <div className='organization-container'>
-                <img
+                {/* <img
                     className='event-image'
                     src={organization.imgUrl}
                     alt={organization.name}
-                />
+                /> */}
                 <h2 className='organization-name'>{organization.name}</h2>
                 {eventMap}
                 <div className='organization-contact'>

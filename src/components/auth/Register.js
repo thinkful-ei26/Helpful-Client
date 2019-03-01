@@ -55,32 +55,34 @@ const Register = () => {
                                 className='registration-form'
                                 noValidate
                                 onSubmit={e => e.preventDefault()}>
-                                <label htmlFor='name'>Name</label>
+                                <label htmlFor='name'></label>
                                 <input
                                     className='registration-inputs'
                                     value={userName}
                                     onChange={e => setUserName(e.target.value)}
                                     id='name'
                                     type='text'
+                                    placeholder='Username'
                                 />
-                                <label htmlFor='email'>Email</label>
+                                <label htmlFor='email'></label>
                                 <input
                                     className='registration-inputs'
                                     value={email}
                                     onChange={e => setEmail(e.target.value)}
                                     // id='email'
                                     type='email'
+                                    placeholder='Email'
                                 />
-                                <label htmlFor='password'>Password</label>
+                                <label htmlFor='password'></label>
                                 <input
                                     className='registration-inputs'
                                     value={password}
                                     onChange={e => setPassword(e.target.value)}
                                     // id='password'
                                     type='password'
+                                    placeholder='Password'
                                 />
                                 <label htmlFor='passwordConfirmation'>
-                                    Confirm Password
                                 </label>
                                 <input
                                     className='registration-inputs'
@@ -90,6 +92,7 @@ const Register = () => {
                                     }
                                     id='passwordConfirmation'
                                     type='password'
+                                    placeholder='Confirm Password'
                                 />
 
 
@@ -97,7 +100,6 @@ const Register = () => {
                                     className='registration-form-submit-button'
                                     onClick={() => registerUser(history)}
                                     style={{
-                                        width: "150px",
                                         borderRadius: "3px",
                                         letterSpacing: "1.5px",
                                         marginTop: "1rem",

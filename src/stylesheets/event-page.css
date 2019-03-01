@@ -18,3 +18,13 @@
     margin: 20px;
     margin-right: 10px;
 } */
+
+.event-page-container {
+    margin: 5%;
+}
+
+.organization-name, .organization-contact, .event-image {
+    margin-left: 5%;
+}
+
+
