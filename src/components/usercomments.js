@@ -55,8 +55,8 @@ const UserComments = (props) => {
     return (
         <div className='user-comments'>
             <form onSubmit={onSubmit} id="comment-form">
-                <label>Comments</label>
-                <textarea style={{ background: "#ccc" }} onChange={onChange} />
+                <label></label>
+                <textarea style={{ background: "#ccc" }} onChange={onChange} placeholder='Comment' />
                 <button type='submit'>Add a public comment</button>
             </form>
             <ul>{mapComments}</ul>

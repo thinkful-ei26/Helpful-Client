@@ -27,7 +27,7 @@ const OrganizationDashboard = props => {
         return (
             <article className='orgDash'>
                 <div className='orgdash-col-1'>
-                    <h2>{org.name}</h2>
+                    <h2 className='org-dashboard-name'>{org.name}</h2>
 
                     <img
                         className='profilePic'

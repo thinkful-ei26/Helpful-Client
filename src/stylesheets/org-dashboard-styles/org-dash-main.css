@@ -4,10 +4,9 @@
     display: flex;
 }
 
-.profilePic {
-    padding-left: 10px;
+.profilePic, .org-dashboard-name {
+    padding-left: 5%;
 }
-
 
 .org-main-button {
     background: #4594d1;

@@ -56,7 +56,7 @@ export default function CreateOrgForm() {
                 onSubmit={e => handleSubmit(e)}>
                 <h1>Create a new group</h1>
                 {/* <div class='form-row'> */}
-                    <label htmlFor='org-name'> Name</label>
+                    <label htmlFor='org-name'></label>
                     <input
                     className='org-form-center-text'
                         required
@@ -68,7 +68,7 @@ export default function CreateOrgForm() {
                     />
                 {/* </div> */}
                 {/* <div class='form-row'> */}
-                    <label htmlFor='org-description'> Description</label>
+                    <label htmlFor='org-description'></label>
                     <textarea
                         required
                         className="creatOrgForm-desc org-form-center-text"
@@ -85,7 +85,7 @@ export default function CreateOrgForm() {
                     />
                 {/* </div> */}
                 {/* <div class='form-row'> */}
-                    <label htmlFor='org-location'>Location</label>
+                    <label htmlFor='org-location'></label>
                     <input
                       className='org-form-center-text'
                         required
@@ -101,7 +101,7 @@ export default function CreateOrgForm() {
                 {/* </div> */}
 
                 {/* <div class='form-row'> */}
-                    <label htmlFor='org-contact'> Contact</label>
+                    <label htmlFor='org-contact'></label>
                     <input
                       className='org-form-center-text'
                         required
@@ -117,7 +117,7 @@ export default function CreateOrgForm() {
                 {/* </div> */}
 
                 {/* <div class='form-row'> */}
-                    <label htmlFor='orgImg'> Image</label>
+                    <label htmlFor='orgImg'></label>
                     <input
                       className='org-form-center-text'
                         type='text'

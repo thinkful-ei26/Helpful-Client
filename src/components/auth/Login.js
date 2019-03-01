@@ -67,18 +67,19 @@ const Login = () => {
                                 onSubmit={e => e.preventDefault()}>
                             
                                     <label className="emailLabel" htmlFor='email'>
-                                        Username
                                     </label>
                                     <input
                                         id='email'
                                         type='text'
+                                        placeholder='Username'
                                         onChange={e => setUser(e.target.value)}
                                     />
                               
-                                    <label className="passwordLabel" htmlFor='password'>Password</label>
+                                    <label className="passwordLabel" htmlFor='password'></label>
                                     <input
                                         id='password'
                                         type='password'
+                                        placeholder='Password'
                                         onChange={e =>
                                             setPassword(e.target.value)
                                         }

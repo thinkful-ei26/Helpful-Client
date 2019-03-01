@@ -22,15 +22,20 @@
     text-align: center;
 }
 .registration-inputs, label {
-    padding: 2%;
     width: 15rem;
     margin: auto;
+    text-align: center;
+    padding: 4%;
+    font-size: 1rem;
 }
 
 .registration-form-submit-button {
+    border: none;
     color: white;
+    margin: 5% auto;
     background-color: #4594d1;
     border: none;
+    width: 16.5rem;
 }
 
 .registration-form-submit-button:hover{
