@@ -15,13 +15,8 @@ const Footer = () => {
                 </section>
             </footer>
 
-<<<<<<< HEAD
-            <section className="sub-footer">
-                <span>&copy; Brogrammers 2019 </span>
-=======
             <section className='sub-footer'>
                 <span>&copy; 2019 brogrammers</span>
->>>>>>> readme finished
             </section>
         </section>
     );
