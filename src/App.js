@@ -18,12 +18,14 @@ import CreatedOrgs from "./components/created-organizations";
 import OrganizationDashboard from "./components/organization-dashboard";
 import EventList from "./components/event-list";
 // import MeetupPage from "./components/meetup-page";
+import "./App.css"
 
 const App = () => {
     return (
         <Router>
             <div className='App'>
                 <NavBar />
+                <div className="App-min-height">
                 {/* <OrganizationList /> */}
                 <Switch>
                     <Route exact path='/' component={LandingPage} />
@@ -67,6 +69,7 @@ const App = () => {
                     <Route exact path='/events' component={EventList} />
                     <Route component={ErrorPage} />
                 </Switch>
+                </div>
                 <Footer />
             </div>
         </Router>

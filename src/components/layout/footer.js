@@ -15,7 +15,7 @@ const Footer = () => {
             </footer>
 
             <section className="sub-footer">
-                <span>brogrammers&copy2019. Photos by rawpixel on Unsplash</span>
+                <span>&copy; Brogrammers 2019 </span>
             </section>
         </section>
     );
