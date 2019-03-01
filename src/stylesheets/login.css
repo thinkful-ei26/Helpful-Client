@@ -1,9 +1,24 @@
+/* @media only screen and (max-width: 360px) {
+
+    #email, #password, .emailLabel, .passwordLabel {
+        width: 12rem;
+    }
+
+    button.login-form-submit-button {
+        width: 12rem;
+    }
+} */
+
 .login-container {
     background: whitesmoke;
     margin: 0 15%;
     display: flex;
     flex-direction: column;
     /* padding: 5%; */
+}
+
+.register {
+    margin-left: 5px;
 }
 
 .login-flex{
@@ -15,7 +30,9 @@
     display: flex;
     flex-direction: column;
     padding: 2%;
+    text-align: center;
 }
+
 #email,
 #password,
 label {
@@ -29,9 +46,11 @@ button.login-form-submit-button {
     margin: 2% auto;
     background-color: #4594d1;
     border: none;
-    width: 15rem;
+    width: 8rem;
 }
 button.login-form-submit-button:hover {
     background: orange;
     transition: 0.5s;
 }
+
+

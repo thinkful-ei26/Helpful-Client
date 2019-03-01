@@ -55,7 +55,7 @@ export default function CreateOrgForm() {
                 id='createOrgForm'
                 onSubmit={e => handleSubmit(e)}>
                 <h1>Create a new group</h1>
-                <div class='form-row'>
+                {/* <div class='form-row'> */}
                     <label htmlFor='org-name'> Name</label>
                     <input
                         required
@@ -65,11 +65,12 @@ export default function CreateOrgForm() {
                             setFormData({ ...formData, name: e.target.value })
                         }
                     />
-                </div>
-                <div class='form-row'>
+                {/* </div> */}
+                {/* <div class='form-row'> */}
                     <label htmlFor='org-description'> Description</label>
                     <textarea
                         required
+                        className="creatOrgForm-desc"
                         type='text'
                         form='createOrgForm'
                         rows='5'
@@ -81,8 +82,8 @@ export default function CreateOrgForm() {
                             })
                         }
                     />
-                </div>
-                <div class='form-row'>
+                {/* </div> */}
+                {/* <div class='form-row'> */}
                     <label htmlFor='org-location'>Location</label>
                     <input
                         required
@@ -95,9 +96,9 @@ export default function CreateOrgForm() {
                             })
                         }
                     />
-                </div>
+                {/* </div> */}
 
-                <div class='form-row'>
+                {/* <div class='form-row'> */}
                     <label htmlFor='org-contact'> Contact</label>
                     <input
                         required
@@ -110,9 +111,9 @@ export default function CreateOrgForm() {
                             })
                         }
                     />
-                </div>
+                {/* </div> */}
 
-                <div class='form-row'>
+                {/* <div class='form-row'> */}
                     <label htmlFor='orgImg'> Image</label>
                     <input
                         type='text'
@@ -121,7 +122,7 @@ export default function CreateOrgForm() {
                             setFormData({ ...formData, imgUrl: e.target.value })
                         }
                     />
-                </div>
+                {/* </div> */}
 
                 <button className='create-org-form-button' type='submit'>
                     Submit

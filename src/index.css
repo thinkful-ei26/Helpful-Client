@@ -31,6 +31,9 @@ nav ul a {
 }*/
 
 /* END CSS RESET */
+
+
+
 .sidenav-trigger {
     position: absolute;
 }
@@ -240,6 +243,11 @@ nav a:hover {
     font-weight: bold;
 }
 
+/* button,
+.button-center {
+    position: relative;
+    left: 19.59378439743%;
+} */
 
 /* End Bryan CSS */
 
@@ -348,8 +356,14 @@ footer {
     }
 }
 
-@media only screen and (min-width: 350px) {
-    mobile styles */ body {
-        background: green;
+@media only screen and (max-width: 360px) {
+    .landing-page-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .landing-page-form button {
+        margin-right: auto;
+        margin-left: auto;
     }
 }

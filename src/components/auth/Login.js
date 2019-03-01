@@ -54,41 +54,41 @@ const Login = () => {
                             <i className='material-icons left'>keyboard_backspace</i>
                             Back to home
                             </Link>
-                        <div className=''>
-                            <h4>Login below</h4>
-                            <p className='grey-text text-darken-1'>
-                                Don't have an account?{" "}
-                                <Link to='/register'>Register</Link>
-                            </p>
-                        </div>
-                        <form
-                            className='login-form'
-                            noValidate
-                            onSubmit={e => e.preventDefault()}>
-
-                            <label htmlFor='email'>
-                                Username or Email
+                            <div className=''>
+                                <h4>Login below</h4>
+                                <p className='grey-text text-darken-1'>
+                                    Don't have an account?{" "}
+                                    <Link className="register" to='/register'>Register</Link>
+                                </p>
+                            </div>
+                            <form
+                                className='login-form'
+                                noValidate
+                                onSubmit={e => e.preventDefault()}>
+                            
+                                    <label className="emailLabel" htmlFor='email'>
+                                        Username
                                     </label>
-                            <input
-                                id='email'
-                                type='text'
-                                onChange={e => setUser(e.target.value)}
-                            />
-
-                            <label htmlFor='password'>Password</label>
-                            <input
-                                id='password'
-                                type='password'
-                                onChange={e =>
-                                    setPassword(e.target.value)
-                                }
-                            />
-
-                            <button
-                                onClick={() => loginUser(history)}
-                                type='submit'
-                                className='login-form-submit-button'>
-                                Log In
+                                    <input
+                                        id='email'
+                                        type='text'
+                                        onChange={e => setUser(e.target.value)}
+                                    />
+                              
+                                    <label className="passwordLabel" htmlFor='password'>Password</label>
+                                    <input
+                                        id='password'
+                                        type='password'
+                                        onChange={e =>
+                                            setPassword(e.target.value)
+                                        }
+                                    />
+                             
+                                    <button
+                                        onClick={() => loginUser(history)}
+                                        type='submit'
+                                        className='login-form-submit-button'>
+                                        Log In
                                     </button>
 
                         </form>
