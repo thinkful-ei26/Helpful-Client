@@ -26,7 +26,12 @@ export default function OrgPublicPage(props) {
     const fetchEvents = () => {
         getOrgEvents(orgId).then(res => {
             let newList = res.data.map((event, index) => {
-                return <li key={index}>{event.name}</li>;
+                console.log(event);
+                return (
+                    <li key={index}>
+                        <a href={`/event/${event.id}`}>{event.name}</a>
+                    </li>
+                );
             });
             setOrgEvents(newList);
         });
@@ -126,16 +131,6 @@ export default function OrgPublicPage(props) {
         }
     }
 
-    // document.addEventListener('DOMContentLoaded', function() {
-    //   let elems = document.querySelectorAll('.fixed-action-btn');
-    //   let instances = M.FloatingActionButton.init(elems, {
-    //     direction: "left",
-    //     // toolbarEnabled: true
-    //     hoverEnabled: true
-    //   });
-    //   return instances;
-    // }, []);
-
     useEffect(() => {
         fetchFollow();
         fetchData(props);
@@ -147,37 +142,40 @@ export default function OrgPublicPage(props) {
             <div className='org-public-page containerB'>
                 {orgMap}
                 {/* <div className='org-public-content container'> */}
-                <div className='org-public-text-area'>
-                    <h2 className='text-center'>{orgs.name}</h2>
-                    <img
-                        alt='Organization Logo'
-                        className='responsive-img'
-                        src={orgs.imgUrl}
-                    />
-                    <UserCanRateOrg orgId={orgId} />
-                    {/* <UserComments/> */}
-                    <p className='flow-text'>
-                        {" "}
-                        <span className='text-bold'>
+                <div className='row'>
+                    <div className='org-public-text-area'>
+                        <h2 className='text-center'>{orgs.name}</h2>
+                        <img
+                            alt='Organization Logo'
+                            className='responsive-img'
+                            src={orgs.imgUrl}
+                        />
+                        <UserCanRateOrg orgId={orgId} />
+                        {/* <UserComments/> */}
+                        <p className='flow-text'>
                             {" "}
-                            About our group:
-                        </span>{" "}
-                        {orgs.description}
-                    </p>
-                    <p>
-                        <span className='location text-bold'> Where: </span>
-                        {orgs.location}
-                    </p>
-                    <div className='button-center'>
-                        {generateFollowButton()}
-                    </div>
-                </div>
+                            <span className='text-bold'>
+                                {" "}
+                                About our group:
+                            </span>{" "}
+                            {orgs.description}
+                        </p>
+                        <p>
+                            <span className='location text-bold'> Where: </span>
+                            {"  "}
+                            {orgs.location}
+                        </p>
+                        <div className='button-center'>
+                            {generateFollowButton()}
+                        </div>
 
-                <div className='container'>
-                    <p>
-                        <span className='title'>Events: </span>{" "}
-                        <ul>{orgEvents}</ul>
-                    </p>
+                        <div className='container'>
+                            <p>
+                                <span className='title'>Events List: </span>{" "}
+                                <ul className='reset-ul'>{orgEvents}</ul>
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 {/* </div> */}
             </div>

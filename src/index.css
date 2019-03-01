@@ -242,11 +242,27 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* button,
-.button-center {
+/* button, */
+/* .button-center {
     position: relative;
     left: 19.59378439743%;
 } */
+
+.text-bold {
+    font-weight: bold;
+}
+
+.reset-ul {
+    font-size: 1rem;
+}
+
+div > .org-public-text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
 
 /* End Bryan CSS */
 
