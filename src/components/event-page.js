@@ -88,13 +88,13 @@ export function EventPage(props) {
     let rsvpButton;
     if (!rsvp) {
         rsvpButton = (
-            <button className='event-rsvp-button' onClick={() => createRsvp()}>
+            <button className='event-public-rsvp-button' onClick={() => createRsvp()}>
                 RSVP
             </button>
         );
     } else {
         rsvpButton = (
-            <button className='event-rsvp-button' onClick={() => removeRsvp()}>
+            <button className='event-public-rsvp-button' onClick={() => removeRsvp()}>
                 Cancel Reservation
             </button>
         );
@@ -119,27 +119,33 @@ export function EventPage(props) {
 
     return (
         <section className='event'>
-            <div className='organization-container'>
-                {/* <img
+            {/* <img
                     className='event-image'
                     src={organization.imgUrl}
                     alt={organization.name}
                 /> */}
+            <div className='organization-container'>
                 <h2 className='organization-name'>{organization.name}</h2>
-                {eventMap}
-                <div className='organization-contact'>
-                    {organization.contact}
-                </div>
             </div>
-            <div className='event-container'>
+            {eventMap}
+            <div className='event-public-container'>
                 <div className='event-header'>
                     <h1 className='event-name'>{event.name}</h1>
-                    <div className='event-date'>{event.date}</div>
                 </div>
-                <div className='event-description'>{event.description}</div>
-                <div className='event-contact'>{event.contact}</div>
-                {rsvpButton}
-                <UserComments eventId={eventId} />
+                <div className='event-public-description'>
+                    {event.description}
+                    <div className='event-public-date'><span>When:</span> {event.date}</div>
+                    <div className='event-public-date'><span>Where:</span> {event.date}</div>
+                    <div className='event-public-date'><span>Contact:</span> {event.contact}</div>
+                    {rsvpButton}
+                    <UserComments eventId={eventId} />
+                </div>
+
+            </div>
+            <div className='organization-container'>
+                <div className='organization-contact'>
+                    Find out more: {organization.contact}
+                </div>
             </div>
         </section>
     );

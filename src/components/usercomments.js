@@ -24,9 +24,9 @@ const UserComments = (props) => {
       })
       .then(() => {
         fetchComments();
-       })
+      })
       .catch(error => console.error(error));
-    };
+  };
 
   const fetchComments = async () => {
     const fetchCommentsResult = await axios(`${API_BASE_URL}/comments/event/${props.eventId}`, {
@@ -41,27 +41,27 @@ const UserComments = (props) => {
     fetchComments();
   }, []);
 
-    const onSubmit = event => {
-        event.preventDefault();
-        setComments([...comments, comment]);
-        createComment(comment);
-        document.getElementById("comment-form").reset();
-    };
+  const onSubmit = event => {
+    event.preventDefault();
+    setComments([...comments, comment]);
+    createComment(comment);
+    document.getElementById("comment-form").reset();
+  };
 
-    const mapComments = comments.map((item, index) => (
-        <li key={index}>{item.comment}</li>
-    ));
+  const mapComments = comments.map((item, index) => (
+    <li key={index}>{item.comment}</li>
+  ));
 
-    return (
-        <div className='user-comments'>
-            <form onSubmit={onSubmit} id="comment-form">
-                <label></label>
-                <textarea style={{ background: "#ccc" }} onChange={onChange} placeholder='Comment' />
-                <button type='submit'>Add a public comment</button>
-            </form>
-            <ul>{mapComments}</ul>
-        </div>
-    );
+  return (
+    <React.Fragment>
+      <form className='event-public-user-comments' onSubmit={onSubmit} id="comment-form">
+        <textarea className='event-public-comment' style={{ background: "#ccc" }} onChange={onChange} placeholder='Comment' />
+        <br />
+        <button className="event-public-rsvp-button" type='submit'>Add a public comment</button>
+      </form>
+      <ul>{mapComments}</ul>
+    </React.Fragment >
+  );
 
 };
 
