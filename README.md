@@ -18,20 +18,20 @@ Helpful brings community organizations and volunteers together. If you want to m
 
 ## MVP (v.1.0.0)
 
-<input type="checkbox" disabled checked> **Create an Organization:** Users can create Volunteer Organizations  
-<input type="checkbox" disabled checked> **Create Events within an Organization:** Organizations can create unlimited events in which users can attend  
-<input type="checkbox" disabled checked> **Rate your favorite Events:** Persistent storage of all events  
-<input type="checkbox" disabled checked> **View relevant opportunities by proximity:** Integration with Google Maps API for proximity based search
+<input type="checkbox" disabled checked /> **Create an Organization:** Users can create Volunteer Organizations  
+<input type="checkbox" disabled checked /> **Create Events within an Organization:** Organizations can create unlimited events in which users can attend  
+<input type="checkbox" disabled checked /> **Rate your favorite Events:** Persistent storage of all events  
+<input type="checkbox" disabled checked /> **View relevant opportunities by proximity:** Integration with Google Maps API for proximity based search
 
 ## V2 feature list
 
-<input type="checkbox" disabled> **Export RSVP Data to CSV**  
-<input type="checkbox" disabled> **Leave comments on organization page**  
-<input type="checkbox" disabled> **Gamification:** Add kudos, karma or some awards system to give to users. Shareable badges.  
-<input type="checkbox" disabled> **User availability calendar and active flag**  
-<input type="checkbox" disabled> **Heatmap based on attendee density**  
-<input type="checkbox" disabled> **Frequent User Data**  
-<input type="checkbox" disabled> **Additional styling/accessibility**
+<input type="checkbox" disabled /> **Export RSVP Data to CSV**  
+<input type="checkbox" disabled /> **Leave comments on organization page**  
+<input type="checkbox" disabled /> **Gamification:** Add kudos, karma or some awards system to give to users. Shareable badges.  
+<input type="checkbox" disabled /> **User availability calendar and active flag**  
+<input type="checkbox" disabled /> **Heatmap based on attendee density**  
+<input type="checkbox" disabled /> **Frequent User Data**  
+<input type="checkbox" disabled /> **Additional styling/accessibility**
 
 ### Tech Stack
 
