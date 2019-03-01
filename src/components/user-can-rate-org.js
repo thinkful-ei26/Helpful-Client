@@ -88,7 +88,7 @@ export default function UserCanRateOrg(props) {
     }
 
     return (
-        <div className=''>
+        <React.Fragment>
             <form onSubmit={onSubmit}>
                 {/* <div className='create-org-row'> */}
                 {/* <label>Rate this group</label>
@@ -138,6 +138,6 @@ export default function UserCanRateOrg(props) {
                 Average Rating: {avg} out of {length} reviews
             </div>
             <ul> Your Rating: {userRating.rating}</ul>
-        </div>
+        </React.Fragment>
     );
 }
