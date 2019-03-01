@@ -12,9 +12,9 @@ Helpful brings community organizations and volunteers together. If you want to m
 
 # Screenshots
 
-![Screenshot](./html-wireframes/CAPTURE.png "Screenshot")  
-![Screenshot](./html-wireframes/CAPTURE1.png "Screenshot 2")  
-![Screenshot](./html-wireframes/CAPTURE2.png "Screenshot 3")
+![Screenshot](./html-wireframes/Capture.png "Screenshot")  
+![Screenshot](./html-wireframes/Capture1.png "Screenshot 2")  
+![Screenshot](./html-wireframes/Capture2.png "Screenshot 3")
 
 ## MVP (v.1.0.0)
 
