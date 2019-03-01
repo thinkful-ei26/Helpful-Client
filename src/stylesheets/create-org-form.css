@@ -11,6 +11,7 @@ h1 {
 }
 
 .create-org-form-button {
+    padding: 10px;
     width: 8rem;
     margin: 5% auto;
     background: orange;
@@ -20,12 +21,9 @@ h1 {
     font-size: 1rem;
 }
 .create-org-form-button:hover {
-    width: 8rem;
-    margin: 5% auto;
     background: #4594d1;
     color: white;
     transition: 0.5s;
-    border-radius: 5%;
 }
 
 .create-org-form label {
