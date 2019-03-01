@@ -18,7 +18,7 @@ export default function Search(props) {
     const fetchUserLocation = async () => {
         if (!location) {
             if ("geolocation" in navigator) {
-                navigator.geolocation.getCurrentPosition(function (position) {
+                navigator.geolocation.getCurrentPosition(function(position) {
                     let results = {
                         lat: Number(position.coords.latitude.toFixed(7)),
                         lng: Number(position.coords.longitude.toFixed(7)),
@@ -73,7 +73,7 @@ export default function Search(props) {
         } else {
             const url = `${API_BASE_URL}/event/location/${distance}/${
                 location.lat
-                }/${location.lng}`;
+            }/${location.lng}`;
             const getEvents = await axios({
                 method: "get",
                 url: url,
@@ -95,7 +95,7 @@ export default function Search(props) {
                 method: "get",
                 url: `${API_BASE_URL}/org/location/${distance}/${
                     location.lat
-                    }/${location.lng}`,
+                }/${location.lng}`,
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: "Bearer ".concat(
@@ -103,7 +103,7 @@ export default function Search(props) {
                     ),
                 },
             });
-            console.log(getOrgs.data)
+            console.log(getOrgs.data);
             setOrgs(getOrgs.data);
         }
     };
