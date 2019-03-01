@@ -15,6 +15,9 @@ h1 {
     margin: 5% auto;
     background: orange;
     border-radius: 5%;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
 }
 .create-org-form-button:hover {
     width: 8rem;
@@ -33,9 +36,13 @@ h1 {
     width: 50%;
     margin: auto;
 }
-
+.org-form-center-text {
+    text-align: center;
+    padding: 1%;
+    font-size: 1rem;
+}
 .create-org-form textarea {
-    width: 50%; 
+    width: 50%;
     margin: auto;
 }
 
@@ -68,11 +75,11 @@ textarea {
 
     .create-org-form input {
         margin-top: 10px;
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
     }
 
     .create-org-form textarea {
         margin-top: 10px;
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
     }
 }
