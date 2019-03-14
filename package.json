@@ -9,6 +9,7 @@
     "enzyme-adapter-react-16": "^1.9.1",
     "jwt-decode": "^2.2.0",
     "materialize-css": "^1.0.0",
+    "npm-check-updates": "^3.0.8",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-google-maps": "^9.4.5",
