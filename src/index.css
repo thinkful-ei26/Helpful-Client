@@ -138,7 +138,6 @@ nav ul {
 ul li {
     padding-right: 1.5rem;
     list-style: none;
-    font-size: 50%;
 }
 
 a{
@@ -175,8 +174,8 @@ nav a:hover {
 }
 
 .responsive-img {
-    width: 100%;
-    height: auto;
+    width: 80%;
+    max-height: 50vh;
 }
 
 .rate-area {
@@ -254,7 +253,11 @@ nav a:hover {
 }
 
 .reset-ul {
-    font-size: 1rem;
+    font-size: 1.5rem;
+}
+
+.reset-ul li a {
+    color:black;
 }
 
 div > .org-public-text-area {

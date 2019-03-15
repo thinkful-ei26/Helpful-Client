@@ -140,7 +140,7 @@ export default function OrgPublicPage(props) {
     if (orgs) {
         return (
             <div className='org-public-page containerB'>
-                {orgMap}
+
                 {/* <div className='org-public-content container'> */}
                 <div className='row'>
                     <div className='org-public-text-area'>
@@ -150,34 +150,27 @@ export default function OrgPublicPage(props) {
                             className='responsive-img'
                             src={orgs.imgUrl}
                         />
-                        <UserCanRateOrg orgId={orgId} />
                         {/* <UserComments/> */}
-                        <p className='flow-text'>
-                            {" "}
-                            <span className='text-bold'>
-                                {" "}
-                                About our group:
-                            </span>{" "}
-                            {orgs.description}
-                        </p>
-                        <p>
-                            <span className='location text-bold'> Where: </span>
-                            {"  "}
-                            {orgs.location}
-                        </p>
-                        <div className='button-center'>
-                            {generateFollowButton()}
-                        </div>
-
-                        <div className='container'>
-                            <p>
-                                <span className='title'>Events List: </span>{" "}
-                                <ul className='reset-ul'>{orgEvents}</ul>
-                            </p>
+                        {/*orgMap*/}
+                        <div className='event-public-container'>
+                            <div className='event-public-description'>
+                                <div className='event-public-date'><span>Mission:</span> {orgs.description}</div>
+                                <div className='event-public-date'><span>Where:</span> {orgs.location}</div>
+                                <div className='event-public-date'><span>Contact:</span> {orgs.contact}</div>
+                                <div>
+                                    <p>
+                                        <span className='logo-style-two'>Events List: </span>{" "}
+                                        <ul className='reset-ul'>{orgEvents}</ul>
+                                    </p>
+                                </div>
+                                <div className='button-center'>
+                                    {generateFollowButton()}
+                                </div>
+                                <UserCanRateOrg orgId={orgId} />
+                            </div>
                         </div>
                     </div>
                 </div>
-                {/* </div> */}
             </div>
         );
     }
