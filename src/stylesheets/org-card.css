@@ -27,12 +27,6 @@ p {
     font-weight: bold;
 }
 
-img {
-    max-width: 250px;
-    max-height: 200px;
-    font-size: 16px;
-}
-
 i.material-icons {
     font-size: 20px;
     margin-right: 1%;

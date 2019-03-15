@@ -53,4 +53,18 @@ button.login-form-submit-button:hover {
     transition: 0.5s;
 }
 
+.font-increase{
+    font-size: 1vw;
+}
 
+@media only screen and (max-width: 1050px) {
+    .font-increase{
+        font-size: 3vw;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .font-increase{
+        font-size: 4vw;
+    }
+  }

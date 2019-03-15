@@ -40,20 +40,6 @@ export default function EventList() {
         setRsvpEvents(rsvpEventsRequest.data);
     };
 
-    // get all meetuprsvps
-    // const fetchMeetupRsvpData = async () => {
-    //     const rsvpMeetupsRequest = await axios(`${API_BASE_URL}/rsvpmeetup/user`, {
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             Authorization: "Bearer ".concat(
-    //                 localStorage.getItem("jwtToken")
-    //             ),
-    //         },
-    //     });
-    //     setRsvpMeetups(rsvpMeetupsRequest.data);
-    //     console.log(rsvpMeetups)
-    // };
-
     // get all events *filter if user allows location*
     const fetchEventData = async () => {
         if (!location) {
@@ -92,25 +78,10 @@ export default function EventList() {
         }
     };
 
-    // get all user meetup
-    // const fetchMeetupData = async () => {
-    //     const meetupRequest = await axios(`${API_BASE_URL}/meetup/owner`, {
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             Authorization: "Bearer ".concat(
-    //                 localStorage.getItem("jwtToken")
-    //             ),
-    //         },
-    //     });
-    //     setMeetups(meetupRequest.data);
-    // };
-
     useEffect(() => {
         fetchUserLocation();
         fetchRsvpData();
         fetchEventData();
-        // fetchMeetupData();
-        // fetchMeetupRsvpData();
     }, [location]);
 
     // gets all the events out of each individual rsvp.eventId and into array
@@ -121,16 +92,9 @@ export default function EventList() {
         });
     };
 
-    // let rsvpMeetupList = [];
-    // const generateRsvpMeetupList = rsvpData => {
-    //     rsvpData.forEach(rsvp => {
-    //         rsvpMeetupList.push(rsvp.eventId);
-    //     });
-    // };
 
     // generate EventCard components with event data
     let rsvpEventCardList, localEventCardList;
-    // let rsvpMeetupCardList, meetupCardList;
     let eventTitle = "Nearby Events";
     if (rsvpEvents) {
         generateRsvpEventList(rsvpEvents);
@@ -138,22 +102,13 @@ export default function EventList() {
             return <EventCard key={index} event={event} />;
         });
     }
-    // if (rsvpMeetups) {
-    //     generateRsvpMeetupList(rsvpMeetups);
-    //     rsvpMeetupCardList = rsvpMeetupList.map((event, index) => {
-    //         return <MeetupCard key={index} event={event} />;
-    //     });
-    // }
+
     if (events) {
         localEventCardList = events.map((event, index) => {
             return <EventCard key={index} event={event} />;
         });
     }
-    // if (meetups) {
-    //     meetupCardList = meetups.map((event, index) => {
-    //         return <MeetupCard key={index} event={event} />;
-    //     });
-    // }
+
     if (!location) {
         eventTitle = "All Events";
     }
@@ -165,19 +120,9 @@ export default function EventList() {
                 <div className='event-list'>
                     {localEventCardList}
                     {rsvpEventCardList}
-                    {/* {rsvpMeetupCardList} */}
                 </div>
             </div>
-            {/* <div className='section'>
-                    <div className='col s12'>
-                        <span className='title'>My Meetups</span>
-                    </div>
-                    <div className='eventsContainer col s12 m6 l4'>
-                        {meetupCardList}
-                    </div>
-                </div> */}
         </section>
     );
 }
 
-// TODO add button to toggle between nearby and all events or searching methods.

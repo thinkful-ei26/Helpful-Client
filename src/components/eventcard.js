@@ -10,17 +10,16 @@ export default function EventCard(props) {
   }
 
   return (
+    <Link to={linkUrl}>
       <div className="dashboard-event-card">
-        <Link to={linkUrl}>
-          <h3>{props.event.name}</h3>
-        </Link>
+        <h3>{props.event.name}</h3>
         <div className="event-card-content">
           <p>{props.event.date}</p>
           <img src={props.event.imgUrl} alt={props.event.name}></img>
           <p className='card-details'>Details:</p>
           <p>
             {props.event.description}</p>
-          <p>
+          {/* <p>
             <i className='material-icons'>
             location_on
             </i>
@@ -31,8 +30,9 @@ export default function EventCard(props) {
               person
             </i>
             {props.event.contact}
-          </p>
+          </p> */}
         </div>
-    </div>
+      </div>
+    </Link>
   );
 }

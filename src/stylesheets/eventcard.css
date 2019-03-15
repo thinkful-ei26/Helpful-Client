@@ -27,13 +27,19 @@ p {
     font-weight: bold;
 }
 
-img {
-    max-width: 250px;
-    max-height: 200px;
-    font-size: 16px;
-}
 
 i.material-icons {
     font-size: 20px;
     margin-right: 1%;
+}
+
+.dashboard-event-card{
+    border: 2px solid orange;
+    margin: 0 0 3% 0;
+    padding: 15px;
+}
+
+.event-card-content img{
+    width: 15vw;
+    height: 10vw;
 }

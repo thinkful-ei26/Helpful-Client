@@ -1,16 +1,12 @@
 
 @media only screen and (min-width: 900px) {
 .card{
-    background-color: #4594d1;
-    color: white;
+    border: orange 2px solid;
+    color: black;
     padding: 1vw;
     margin-bottom: 1vh;
     display:flex;
     flex-direction: row;
-}
-
-.search-description{
-    color: white;
 }
 
 .search-title{
@@ -62,8 +58,7 @@ img.search-img{
 
 @media only screen and (max-width: 900px) {
     .card{
-        background-color: #4594d1;
-        color: white;
+        color: black;
         padding: 1vw;
         margin-bottom: 1vh;
         display:flex;

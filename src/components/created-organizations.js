@@ -7,10 +7,8 @@ import { API_BASE_URL } from "../config";
 import "../stylesheets/created-organizations.css";
 
 export default function CreatedOrgs(props) {
-    // PRODUCTION TODO --> currently getting all orgs, need to refactor to
-    // get only user created orgs
 
-    const [orgs, setOrgs] = useState(null);
+    const [orgs, setOrgs] = useState([]);
 
     const fetchData = async () => {
         const request = await axios(`${API_BASE_URL}/role/user`, {
@@ -46,27 +44,33 @@ export default function CreatedOrgs(props) {
     }
 
     if (orgs === null || orgs.length < 1) {
+        console.log(orgs === []);
+        console.log(orgs);
         return (
             <section className='noFollowedOrgs'>
+                <h2>My Organizations</h2>
                 <p>Looks like you haven't created any organizations yet...</p>
                 <p>
                     Click here to create an organization and start hosting
                     events
                 </p>
 
-                <button onClick={() => props.setView(createOrgForm)}>
+                <button class='login-form-submit-button font-increase' onClick={() => props.history.push('/createorgform')}>
                     Create Organization
                 </button>
             </section>
         );
+    } else {
+        console.log(orgs);
+        return (
+            <div>
+                <section className='created-orgs-container'>
+                    <h2>My Organizations</h2>
+                    <div>{orgCards}</div>
+                </section>
+            </div>
+        );
     }
 
-    return (
-        <div>
-            <section className='created-orgs-container'>
-                <h2>My Organizations</h2>
-                <div>{orgCards}</div>
-            </section>
-        </div>
-    );
+
 }

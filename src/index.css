@@ -140,7 +140,8 @@ ul li {
     list-style: none;
     font-size: 50%;
 }
-a {
+
+a{
     text-decoration: none;
     color: orange;
 }
