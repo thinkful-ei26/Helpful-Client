@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/marker-details.css";
+import "../stylesheets/markerDetails.css";
 import {
     withGoogleMap,
     GoogleMap,
@@ -65,7 +65,7 @@ export const LoadingMap = withGoogleMap(props => {
         <GoogleMap
             ref={props.onMapLoad}
             defaultZoom={14}
-            defaultCenter={props.location}>
-        </GoogleMap>
+            defaultCenter={props.location}
+        />
     );
 });

@@ -3,9 +3,7 @@ import { API_BASE_URL } from "../config";
 import axios from "axios";
 
 const RenderUserRole = () => {
-
     const [role, setRole] = useState("Member");
-
     const fetchRole = async () => {
         await axios(`${API_BASE_URL}/role/user`, {
             headers: {
@@ -21,7 +19,6 @@ const RenderUserRole = () => {
     useEffect(() => {
         fetchRole();
     }, [role]);
-
 
     return (
         <div>

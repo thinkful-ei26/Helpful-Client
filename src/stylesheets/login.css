@@ -1,28 +1,16 @@
-/* @media only screen and (max-width: 360px) {
-
-    #email, #password, .emailLabel, .passwordLabel {
-        width: 12rem;
-    }
-
-    button.login-form-submit-button {
-        width: 12rem;
-    }
-} */
-
 .login-container {
     background: whitesmoke;
     margin: 0 15%;
     display: flex;
     flex-direction: column;
-    /* padding: 5%; */
 }
 
 .register {
     margin-left: 5px;
 }
 
-.login-flex{
-    display:flex;
+.login-flex {
+    display: flex;
     justify-content: center;
     padding: 5%;
 }
@@ -48,23 +36,24 @@ button.login-form-submit-button {
     border: none;
     width: 16rem;
 }
+
 button.login-form-submit-button:hover {
     background: orange;
     transition: 0.5s;
 }
 
-.font-increase{
+.font-increase {
     font-size: 1vw;
 }
 
 @media only screen and (max-width: 1050px) {
-    .font-increase{
+    .font-increase {
         font-size: 3vw;
     }
-  }
+}
 
-  @media only screen and (max-width: 500px) {
-    .font-increase{
+@media only screen and (max-width: 500px) {
+    .font-increase {
         font-size: 4vw;
     }
-  }
+}

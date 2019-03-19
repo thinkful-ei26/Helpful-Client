@@ -1,0 +1,32 @@
+h3 {
+    color: black;
+    margin-bottom: 0;
+}
+
+h2 {
+    color: orange;
+}
+
+h3:hover {
+    color: #4594d1;
+}
+
+p {
+    color: black;
+    text-align: left;
+    font-weight: normal;
+    margin: 1% 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-details {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+i.material-icons {
+    font-size: 20px;
+    margin-right: 1%;
+}

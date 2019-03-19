@@ -7,7 +7,6 @@ const NavBar = props => {
     let navRight, sideNav;
 
     if (token) {
-
         navRight = (
             <ul>
                 <li>
@@ -39,7 +38,7 @@ const NavBar = props => {
                     <a
                         href='#meetup'
                         className='waves-effect waves-teal'
-                        onClick={() => props.history.push("/create-meetup")}>
+                        onClick={() => props.history.push("/createMeetup")}>
                         Create Meetup
                     </a>
                 </li> */}
@@ -68,9 +67,7 @@ const NavBar = props => {
                 </li>
 
                 <li>
-                    <a
-                        href='#logout'
-                        onClick={() => logoutUser()}>
+                    <a href='#logout' onClick={() => logoutUser()}>
                         Logout
                     </a>
                 </li>
@@ -85,8 +82,7 @@ const NavBar = props => {
                 href='#menu'
                 id='hamburger'
                 data-target='slide-out'
-                className='sidenav-trigger'
-            >
+                className='sidenav-trigger'>
                 <i className='material-icons hamburger'>menu</i>
             </a>
         );
@@ -96,13 +92,13 @@ const NavBar = props => {
         await localStorage.removeItem("jwtToken");
         props.history.push("/");
     };
-    
+
     return (
         <React.Fragment>
-            <section className="header-container">
+            <section className='header-container'>
                 <header>
-                    <span className="logo">
-                        <a href="/">
+                    <span className='logo'>
+                        <a href='/'>
                             <h1>
                                 <span className='logo-style-one'>Help</span>
                                 <span className='logo-style-two'>full</span>
@@ -110,46 +106,21 @@ const NavBar = props => {
                         </a>
                     </span>
 
-                    <nav>
-                        {navRight}
-                    </nav>
+                    <nav>{navRight}</nav>
                     {sideNav}
                 </header>
             </section>
-            {/* <div className='navbar-fixed'>
-                <nav className='white' role='navigation'>
-                    <div className='container'>
-                        <div className='nav-wrapper'>
-                            <div className='logo-container'>
-                                <a href='/' className=''>
-                                    <img
-                                        className='logo hide-on-med-and-down'
-                                        id='logo'
-                                        src='/icon.png'
-                                        alt='helpful'
-                                    />
-                                </a>
-                                <a href='/' className='brand-logo black-text'>
-                                    Helpful
-                                </a>
-                            </div>
-                            {navRight}
-                        </div>
-                    </div>
-                    {sideNav}
-                </nav>
-            </div> */}
 
             <ul id='mySidenav' className={navClass}>
-                
-                <a href="#closemenu" className="closebtn" 
+                <a
+                    href='#closemenu'
+                    className='closebtn'
                     onClick={e => {
                         e.preventDefault();
                         setNavClass("false");
-                    }}
-                >
-                &times;</a>
-        
+                    }}>
+                    &times;
+                </a>
                 <li>
                     <a
                         href='#dashboard'
@@ -184,15 +155,6 @@ const NavBar = props => {
                         My Orgs
                     </a>
                 </li>
-                {/* <li>
-                    <a
-                        href='#createmeetup'
-                        className='waves-effect'
-                        onClick={() => props.history.push("/create-meetup")}>
-                        <i className='material-icons black-text'>create</i>
-                        Create Meetup
-                    </a>
-                </li> */}
                 <li>
                     <div className='divider' />
                 </li>
@@ -228,7 +190,7 @@ const NavBar = props => {
                         Logout
                     </a>
                 </li>
-            </ul> 
+            </ul>
         </React.Fragment>
     );
 };

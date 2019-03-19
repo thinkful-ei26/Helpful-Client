@@ -1,8 +1,6 @@
 import axios from "axios";
 import { API_BASE_URL } from "../config";
 
-// follow an organization
-
 const followOrg = async orgId => {
     await axios({
         method: "post",
@@ -14,7 +12,7 @@ const followOrg = async orgId => {
         },
     });
 };
-// unfollow
+
 const unFollowOrg = async followData => {
     await axios({
         method: "delete",
@@ -37,4 +35,5 @@ const fetchFollow = async orgId => {
         },
     });
 };
+
 export { followOrg, unFollowOrg, fetchFollow };

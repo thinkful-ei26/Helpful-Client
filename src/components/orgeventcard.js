@@ -1,6 +1,6 @@
 import React from "react";
-import UserComments from "./usercomments";
-import "../stylesheets/org-dashboard-styles/eventcard.css";
+import UserComments from "./userComments";
+import "../stylesheets/orgDashboardStyles/eventCard.css";
 
 export default function OrgEventCard() {
     return (

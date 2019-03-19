@@ -3,23 +3,12 @@ import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import { API_BASE_URL } from "../../config";
 import "../../stylesheets/register.css";
+
 const Register = () => {
-    // onChange = e => {
-    //   this.setState({ [e.target.id]: e.target.value })
-    // }
-    // Non-asynchronous actions are very similar to useState hook
-    // window.localStorage.getitem(user) || localStorage
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    // const [submitting, setSubmitting] = useState(false);
-    // const newUser = {
-    //   userName: state.userName,
-    //   email: state.email,
-    //   password: state.password,
-    //   passwordConfirmation: state.passwordConfirmation
-    // };
     const registerUser = history => {
         let usersData = {
             username: userName,
@@ -29,7 +18,7 @@ const Register = () => {
         };
         axios
             .post(`${API_BASE_URL}/users/register`, usersData)
-            .then(() => history.push("/login")) // re-direct to login on successful register
+            .then(() => history.push("/login"))
             .catch(err => alert("Username already Exists"));
     };
 
@@ -37,25 +26,26 @@ const Register = () => {
         <Route
             render={({ history }) => (
                 <div className='registration-container'>
-                    <div className='registraion-flex' >
+                    <div className='registraion-flex'>
                         <div className=''>
-
                             <Link to='/' className=' waves-effect btn-flat'>
                                 <i className='material-icons left'>
                                     keyboard_backspace
                                 </i>
                                 Back to home
                             </Link>
-                                <h4>Register below</h4>
-                                <p className='1'>
-                                    Already have an account?{" "}
-                                    <Link className="loginLink" to='/login'>Log In</Link>
-                                </p>
+                            <h4>Register below</h4>
+                            <p className='1'>
+                                Already have an account?{" "}
+                                <Link className='loginLink' to='/login'>
+                                    Log In
+                                </Link>
+                            </p>
                             <form
                                 className='registration-form'
                                 noValidate
                                 onSubmit={e => e.preventDefault()}>
-                                <label htmlFor='name'></label>
+                                <label htmlFor='name' />
                                 <input
                                     className='registration-inputs'
                                     value={userName}
@@ -64,7 +54,7 @@ const Register = () => {
                                     type='text'
                                     placeholder='Username'
                                 />
-                                <label htmlFor='email'></label>
+                                <label htmlFor='email' />
                                 <input
                                     className='registration-inputs'
                                     value={email}
@@ -73,7 +63,7 @@ const Register = () => {
                                     type='email'
                                     placeholder='Email'
                                 />
-                                <label htmlFor='password'></label>
+                                <label htmlFor='password' />
                                 <input
                                     className='registration-inputs'
                                     value={password}
@@ -82,8 +72,7 @@ const Register = () => {
                                     type='password'
                                     placeholder='Password'
                                 />
-                                <label htmlFor='passwordConfirmation'>
-                                </label>
+                                <label htmlFor='passwordConfirmation' />
                                 <input
                                     className='registration-inputs'
                                     value={passwordConfirmation}
@@ -94,8 +83,6 @@ const Register = () => {
                                     type='password'
                                     placeholder='Confirm Password'
                                 />
-
-
                                 <button
                                     className='registration-form-submit-button'
                                     onClick={() => registerUser(history)}
@@ -106,13 +93,11 @@ const Register = () => {
                                     }}
                                     type='submit'>
                                     Sign Up
-                                    </button>
+                                </button>
                             </form>
                         </div>
-
                     </div>
                 </div>
-
             )}
         />
     );
