@@ -7,3 +7,33 @@ Code Cleanup:
   ✔ Remove obsolete commented code @started(19-03-19 14:54) @done(19-03-19 15:27) @lasted(33m35s)
   ✔ Remove console.logs for debugging @started(19-03-19 14:54) @done(19-03-19 15:27) @lasted(33m36s)
   ✔ Remove unused variables, namespacing @started(19-03-19 15:07) @done(19-03-19 17:04) @lasted(1h57m27s)
+
+UI UX:
+  ☐ Change cursor to pointer and highlight the text or background of the element being hovered over on desktop screens for all interactable elements (buttons, links, etc.)
+  ☐ Event listings need more attention to present a professional UI
+  ☐ Balance size and spacing of elements
+  ☐ Create Organization button does not work
+  ☐ Success message needs to be styled
+  ☐ Redirect the user to new listing once it is created.
+  ☐ Debug flash of content when clicking on my orgs
+  ☐ Create loading component
+  ☐ Organization details on public page need attention to design
+  ☐ Style comments
+
+Functionality:
+  ☐ Sign up validation - no matter what goes wrong with the form, always receive Username does not exist
+  ☐ Sign in/up - implement form validations as UI elements rather than alerts
+  ☐ Search Organizations/Events doesn't appear to be working
+  ☐ Follow Organizations (RSVP button) doesn't seem to be appearing
+  ☐ Add Edit/Delete functionality for existing resources
+  ☐ Screenshot links are broken in READme
+
+Accessibility: 
+  ☐ Background image does not fill the full content area on small screens
+  ☐ Opacity of the hero text is low on the landing page, making it hard to read
+  ☐ Increase opacity of the background and/or text so the contrast increases
+  ☐ Increase size of buttons on small screens to increase usability
+  ☐ Yellow on blue is a low contrast color scheme and hard to read
+  ☐ Increase spacing between links in the hamburger menu for usability
+  ☐ Close the hamburger menu when a link is clicked
+  ☐ Seach organization screen does not respond well on mobile
