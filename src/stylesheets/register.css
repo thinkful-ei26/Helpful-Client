@@ -5,7 +5,7 @@
     justify-content: center;
 }
 
-.registraion-flex{
+.registraion-flex {
     display: flex;
     justify-content: center;
 }
@@ -21,7 +21,9 @@
     margin: auto;
     text-align: center;
 }
-.registration-inputs, label {
+
+.registration-inputs,
+label {
     width: 15rem;
     margin: auto;
     text-align: center;
@@ -38,7 +40,7 @@
     width: 16.5rem;
 }
 
-.registration-form-submit-button:hover{
+.registration-form-submit-button:hover {
     background: orange;
     transition: 0.5s;
 }

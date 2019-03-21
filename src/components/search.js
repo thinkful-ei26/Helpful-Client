@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
-import SearchOrg from "./search-org";
-import SearchEvent from "./search-event";
+import SearchOrg from "./searchOrg";
+import SearchEvent from "./searchEvent";
 import "../stylesheets/search.css";
 
 export default function Search(props) {
@@ -14,11 +14,10 @@ export default function Search(props) {
     const [type, setType] = useState("organizations");
     const [component, setComponent] = useState(null);
 
-    // get user location
     const fetchUserLocation = async () => {
         if (!location) {
             if ("geolocation" in navigator) {
-                navigator.geolocation.getCurrentPosition(function (position) {
+                navigator.geolocation.getCurrentPosition(function(position) {
                     let results = {
                         lat: Number(position.coords.latitude.toFixed(7)),
                         lng: Number(position.coords.longitude.toFixed(7)),
@@ -28,17 +27,13 @@ export default function Search(props) {
             }
         }
     };
-
     const onSelectChange = e => {
-        console.log(e.target.value);
         setType(e.target.value);
     };
-
     const onSubmit = e => {
         getEvent();
         getOrg();
         e.preventDefault();
-        console.log(type);
         if (type === "organizations") {
             setComponent(
                 <SearchOrg
@@ -58,22 +53,16 @@ export default function Search(props) {
             );
         }
     };
-
-    /* on click */
-
     const onChange = e => {
         e.preventDefault();
-        console.log(e.target.value);
         setDistance(e.target.value);
     };
-
-    /* Call these on click */
     const getEvent = async () => {
         if (location === null) {
         } else {
             const url = `${API_BASE_URL}/event/location/${distance}/${
                 location.lat
-                }/${location.lng}`;
+            }/${location.lng}`;
             const getEvents = await axios({
                 method: "get",
                 url: url,
@@ -87,7 +76,6 @@ export default function Search(props) {
             setEvents(getEvents.data);
         }
     };
-
     const getOrg = async () => {
         if (location === null) {
         } else {
@@ -95,7 +83,7 @@ export default function Search(props) {
                 method: "get",
                 url: `${API_BASE_URL}/org/location/${distance}/${
                     location.lat
-                    }/${location.lng}`,
+                }/${location.lng}`,
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: "Bearer ".concat(
@@ -103,7 +91,6 @@ export default function Search(props) {
                     ),
                 },
             });
-            console.log(getOrgs.data);
             setOrgs(getOrgs.data);
         }
     };
@@ -118,8 +105,6 @@ export default function Search(props) {
     if (location === null) {
         return <div />;
     } else {
-        console.log(orgs);
-        console.log(events);
         return (
             <div className='container-search'>
                 <form
@@ -127,9 +112,6 @@ export default function Search(props) {
                     action='submit'
                     className='form-search'>
                     <div className='search-form-container'>
-                        {/* <label className='search-form-child'>
-                            Filter your search by...
-                        </label> */}
                         <select
                             onChange={onSelectChange}
                             className='search-form-child'

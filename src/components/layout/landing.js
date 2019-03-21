@@ -1,5 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
+
 const LandingPage = props => {
     let token = localStorage.getItem("jwtToken");
     if (token) {
@@ -9,7 +10,7 @@ const LandingPage = props => {
     return (
         <Route
             render={({ history }) => (
-                <section >
+                <section>
                     <main className='landing-page-main'>
                         <div className='text-box'>
                             <span className='text-box-span'>
@@ -19,14 +20,12 @@ const LandingPage = props => {
                                 Help. Do good. Make friends.
                             </span>
                         </div>
-
                         <form className='landing-page-form' action=''>
                             <button
                                 className='button-register'
                                 onClick={() => history.push(`/register`)}>
                                 Register
                             </button>
-
                             <button
                                 className='button-login'
                                 onClick={() => history.push(`/login`)}>
