@@ -4,7 +4,7 @@ import "./App.css";
 import NavBar from "./components/layout/navBar";
 import LandingPage from "./components/layout/landing";
 import Register from "./components/auth/Register";
-import Login from "./components/auth/login";
+import Login from "./components/auth/Login";
 import UserDashboard from "./components/userDashboard";
 import Search from "./components/search";
 import OrgPublicPage from "./components/orgPublicPage";
