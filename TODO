@@ -7,3 +7,5 @@ Code Cleanup:
   ✔ Remove obsolete commented code @started(19-03-19 14:54) @done(19-03-19 15:27) @lasted(33m35s)
   ✔ Remove console.logs for debugging @started(19-03-19 14:54) @done(19-03-19 15:27) @lasted(33m36s)
   ✔ Remove unused variables, namespacing @started(19-03-19 15:07) @done(19-03-19 17:04) @lasted(1h57m27s)
+
+  Add demo user credentials to log in page
