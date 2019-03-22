@@ -8,14 +8,14 @@ Code Cleanup:
   ✔ Remove unused variables, namespacing @started(19-03-19 15:07) @done(19-03-19 17:04) @lasted(1h57m27s)
 
 UI UX:
-  ☐ Change cursor to pointer and highlight the text or background of the element being hovered over on desktop screens for all interactable elements (buttons, links, etc.)
+  ✔ Change cursor to pointer and highlight the text or background of the element being hovered over on desktop screens for all interactable elements (buttons, links, etc.) @done(19-03-22 12:21)
   ☐ Event listings need more attention to present a professional UI
   ☐ Balance size and spacing of elements
-  ☐ Create Organization button does not work
+  ✔ Create Organization button does not work @done(19-03-22 12:22)
   ☐ Success message needs to be styled
   ☐ Redirect the user to new listing once it is created.
-  ☐ Debug flash of content when clicking on my orgs
-  ☐ Create loading component
+  ☐ Debug flash of content when clicking on my orgs @started(19-03-22 12:29)
+  ☐ Create loading component @started(19-03-22 12:29)
   ☐ Organization details on public page need attention to design
   ☐ Style comments
 
