@@ -41,3 +41,14 @@ i.material-icons {
     width: 15vw;
     height: 10vw;
 }
+
+@media only screen and (max-width: 360px) {
+    p {
+        font-size: 1.0rem;
+    }
+
+    .event-card-content img {
+        width: 71vw;
+        height: 55vw;
+    }
+}

@@ -5,7 +5,7 @@
 body {
     margin: 0;
     box-sizing: border-box;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
 }
 
 * {
@@ -38,7 +38,7 @@ header {
 }
 
 .logo {
-    font-size: 90%;
+    font-size: 1.5rem;
     padding-right: 20%;
     align-self: center;
 }
@@ -114,6 +114,10 @@ ul li {
 a {
     text-decoration: none;
     color: orange;
+}
+
+nav a {
+    font-size: 1.0rem;
 }
 
 nav a:hover {
@@ -346,5 +350,8 @@ footer {
     .landing-page-form button {
         margin-right: auto;
         margin-left: auto;
+        width: 70px;
+        height: 40px;
+        font-size: 3vw;
     }
 }

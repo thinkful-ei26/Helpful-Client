@@ -65,9 +65,11 @@
 
 @media only screen and (max-width: 400px) {
     #search-form-input {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
+        width: 50%
     }
     #event-search-select {
         font-size: 0.25em;
+        width: 50%;
     }
 }

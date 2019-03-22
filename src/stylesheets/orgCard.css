@@ -30,3 +30,25 @@ i.material-icons {
     font-size: 20px;
     margin-right: 1%;
 }
+
+.org-card-content img {
+    width: 15vw;
+    height: 10vw;
+}
+
+.org-card {
+    border: 2px solid orange;
+    margin: 0 0 3% 0;
+    padding: 15px;
+}
+
+@media only screen and (max-width: 360px) {
+    p {
+        font-size: 1.0rem;
+    }
+
+    .org-card-content img {
+        width: 80vw;
+        height: 55vw;
+    }
+}
