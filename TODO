@@ -8,6 +8,7 @@ Code Cleanup:
   ✔ Remove console.logs for debugging @started(19-03-19 14:54) @done(19-03-19 15:27) @lasted(33m36s)
   ✔ Remove unused variables, namespacing @started(19-03-19 15:07) @done(19-03-19 17:04) @lasted(1h57m27s)
 
+<<<<<<< HEAD
 UI UX:
   ☐ Change cursor to pointer and highlight the text or background of the element being hovered over on desktop screens for all interactable elements (buttons, links, etc.)
   ☐ Event listings need more attention to present a professional UI
@@ -37,3 +38,6 @@ Accessibility:
   ☐ Increase spacing between links in the hamburger menu for usability
   ☐ Close the hamburger menu when a link is clicked
   ☐ Seach organization screen does not respond well on mobile
+=======
+  Add demo user credentials to log in page
+>>>>>>> master

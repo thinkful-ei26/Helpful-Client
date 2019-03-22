@@ -57,9 +57,17 @@ const Login = () => {
                             <p className='grey-text text-darken-1'>
                                 Don't have an account?{" "}
                                 <Link className='register' to='/register'>
-                                    Register
-                                </Link>
+                                    Register 
+                                </Link> 
                             </p>
+                            <div className='demo-credentials'>
+                                <p className='grey-text text-darken-1'>
+                                    Or try Helpfull with a demo user
+                                </p>
+                                <p className='grey-text text-darken-1'>Username: demo </p>
+                                <p className='grey-text text-darken-1'>Password: password12</p>
+                            </div>
+                            
                         </div>
                         <form
                             className='login-form'
