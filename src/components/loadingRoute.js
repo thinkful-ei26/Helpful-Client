@@ -5,8 +5,11 @@ import "nprogress/nprogress.css";
 import "../stylesheets/routes.css";
 
 const LoadingRoute = props => {
+    console.log(NProgress.done());
     NProgress.start();
-    useEffect(() => NProgress.done(), []);
+    useEffect(() => {
+        NProgress.done();
+    }, []);
     return <Route {...props} />;
 };
 
