@@ -43,6 +43,11 @@
     }
 
     .profilePic {
-        padding-left: 0;
+        width: 75%;
+    }
+
+    .orgDash {
+        flex-direction: column;
+        margin: 0;
     }
 }

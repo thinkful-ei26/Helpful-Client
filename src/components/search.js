@@ -134,8 +134,8 @@ export default function Search(props) {
                         </button>
                     </div>
                 </form>
-                <div class='search-results' />
-                <div class='blocker'>{component}</div>
+                <div className='search-results' />
+                <div className='blocker'>{component}</div>
             </div>
         );
     }

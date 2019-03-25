@@ -40,3 +40,13 @@ button.event-public-rsvp-button:hover {
     width: 20rem;
     height: 7rem;
 }
+
+@media only screen and (max-width: 360px) {
+    button.event-public-rsvp-button {
+        width: 10rem;
+    }
+
+    .event-public-comment {
+        width: 11rem;
+    }
+}
