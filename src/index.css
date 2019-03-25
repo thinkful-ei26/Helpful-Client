@@ -98,6 +98,8 @@ nav {
     color: orange;
     font-weight: bold;
     margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 nav ul {
@@ -117,7 +119,7 @@ a {
 }
 
 nav a {
-    font-size: 1.0rem;
+    font-size: 1rem;
 }
 
 nav a:hover {
@@ -304,14 +306,14 @@ button.button-login:hover {
 }
 
 footer {
-    font-size: 70%;
+    font-size: 1.25;
     margin: 0 15%;
     color: white;
-    padding: 3%;
+    padding-bottom: 15px;
 }
 
 .sub-footer {
-    font-size: 60%;
+    font-size: 90%;
     padding: 2vh;
     background: rgb(29, 147, 187);
     color: white;
