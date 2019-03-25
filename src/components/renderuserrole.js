@@ -18,7 +18,7 @@ const RenderUserRole = () => {
     };
     useEffect(() => {
         fetchRole();
-    }, [role]);
+    }, []);
 
     return (
         <div>
