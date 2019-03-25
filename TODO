@@ -15,7 +15,7 @@ UI UX:
   ☐ Success message needs to be styled
   ☐ Redirect the user to new listing once it is created.
   ☐ Debug flash of content when clicking on my orgs @started(19-03-22 12:29)
-  ☐ Create loading component @started(19-03-22 12:29)
+  ✔ Create loading component @started(19-03-22 12:29) @done(19-03-25 10:26) @lasted(2d21h57m24s)
   ☐ Organization details on public page need attention to design
   ☐ Style comments
 
@@ -25,7 +25,7 @@ Functionality:
   ☐ Search Organizations/Events doesn't appear to be working
   ☐ Follow Organizations (RSVP button) doesn't seem to be appearing
   ☐ Add Edit/Delete functionality for existing resources
-  ☐ Screenshot links are broken in READme
+  ✔ Screenshot links are broken in READme @done(19-03-25 10:27)
   ✔ Add demo user credentials to log in page @started(19-03-21 23:54) @done(19-03-21 23:54) @lasted(2s)
 
 Accessibility: 
