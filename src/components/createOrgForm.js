@@ -86,7 +86,7 @@ export default function CreateOrgForm() {
                             />
                         </div>
                         <div className='pure-control-group'>
-                            <label htmlFor='org-location' />
+                            <label htmlFor='org-location'>Address</label>
                             <input
                                 className=''
                                 required
@@ -100,13 +100,28 @@ export default function CreateOrgForm() {
                                 }
                             />
                         </div>
-                        <div className='pure-control-group'>
-                            <label htmlFor='org-contact' />
+                        {/* <div className='pure-control-group'>
+                            <label htmlFor='org-location'>Address 2</label>
                             <input
                                 className=''
                                 required
                                 type='text'
-                                placeholder='Contact info'
+                                placeholder='Location'
+                                onChange={e =>
+                                    setFormData({
+                                        ...formData,
+                                        location: e.target.value,
+                                    })
+                                }
+                            />
+                        </div> */}
+                        <div className='pure-control-group'>
+                            <label htmlFor='org-contact'>Phone Number</label>
+                            <input
+                                className=''
+                                required
+                                type='text'
+                                placeholder='(800) 867-5309'
                                 onChange={e =>
                                     setFormData({
                                         ...formData,
@@ -116,11 +131,11 @@ export default function CreateOrgForm() {
                             />
                         </div>
                         <div className='pure-control-group'>
-                            <label htmlFor='orgImg' />
+                            <label htmlFor='orgImg'>Image URL</label>
                             <input
                                 className=''
                                 type='text'
-                                placeholder='Paste Image URL here!'
+                                placeholder='https://www.lorempixel.com/300'
                                 onChange={e =>
                                     setFormData({
                                         ...formData,

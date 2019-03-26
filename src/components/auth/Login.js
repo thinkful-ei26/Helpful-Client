@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, Route } from "react-router-dom";
 import { API_BASE_URL } from "../../config";
+import Swal from "sweetalert2";
+
 import "../../stylesheets/login.css";
 
 import jwt_decode from "jwt-decode";
@@ -20,24 +22,32 @@ const Login = () => {
             .post(`${API_BASE_URL}/auth/login`, data)
             .then(res => {
                 // Set token to localStorage
-                if (res.data.reason) {
-                    alert(res.data.message);
-                    return "login";
-                } else {
-                    const token = res.data.authToken;
-                    localStorage.setItem("jwtToken", token);
-                    // Set token to Auth header
-                    //setAuthToken(token);
-                    // Decode token to get user data
-                    const decoded = jwt_decode(token);
-                    // Set current user
-                    setCurrentUser(decoded);
-                    let mytoken = localStorage.getItem("jwtToken");
-                    return "dashboard";
-                }
+                // if (res.data.reason) {
+                //     // alert(res.data.message);
+                //     return "login";
+                // } else {
+                const token = res.data.authToken;
+                localStorage.setItem("jwtToken", token);
+                // Set token to Auth header
+                //setAuthToken(token);
+                // Decode token to get user data
+                const decoded = jwt_decode(token);
+                // Set current user
+                setCurrentUser(decoded);
+                let mytoken = localStorage.getItem("jwtToken");
+                return "dashboard";
+                // }
             })
             .then(destination => {
                 history.push(`/${destination}`);
+            })
+            .catch(err => {
+                console.log(JSON.stringify(err, null, 2));
+                return Swal.fire({
+                    type: "error",
+                    title: "Oops...",
+                    text: err.message,
+                });
             });
     };
 
@@ -57,17 +67,20 @@ const Login = () => {
                             <p className='grey-text text-darken-1'>
                                 Don't have an account?{" "}
                                 <Link className='register' to='/register'>
-                                    Register 
-                                </Link> 
+                                    Register
+                                </Link>
                             </p>
                             <div className='demo-credentials'>
                                 <p className='grey-text text-darken-1'>
                                     Or try Helpfull with a demo user
                                 </p>
-                                <p className='grey-text text-darken-1'>Username: demo </p>
-                                <p className='grey-text text-darken-1'>Password: password12</p>
+                                <p className='grey-text text-darken-1'>
+                                    Username: demo{" "}
+                                </p>
+                                <p className='grey-text text-darken-1'>
+                                    Password: password12
+                                </p>
                             </div>
-                            
                         </div>
                         <form
                             className='login-form'
