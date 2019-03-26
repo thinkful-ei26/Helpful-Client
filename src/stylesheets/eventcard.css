@@ -44,7 +44,7 @@ i.material-icons {
 
 @media only screen and (max-width: 360px) {
     p {
-        font-size: 1.0rem;
+        font-size: 1rem;
     }
 
     .event-card-content img {
