@@ -22,33 +22,37 @@ const Login = () => {
             .post(`${API_BASE_URL}/auth/login`, data)
             .then(res => {
                 // Set token to localStorage
-                // if (res.data.reason) {
-                //     // alert(res.data.message);
-                //     return "login";
-                // } else {
-                const token = res.data.authToken;
-                localStorage.setItem("jwtToken", token);
-                // Set token to Auth header
-                //setAuthToken(token);
-                // Decode token to get user data
-                const decoded = jwt_decode(token);
-                // Set current user
-                setCurrentUser(decoded);
-                let mytoken = localStorage.getItem("jwtToken");
-                return "dashboard";
-                // }
+                if (res.data.reason) {
+                    Swal.fire({
+                        type: "error",
+                        title: "Oops...",
+                        text: res.data.message,
+                    });
+                    return "login";
+                } else {
+                    const token = res.data.authToken;
+                    localStorage.setItem("jwtToken", token);
+                    // Set token to Auth header
+                    //setAuthToken(token);
+                    // Decode token to get user data
+                    const decoded = jwt_decode(token);
+                    // Set current user
+                    setCurrentUser(decoded);
+                    let mytoken = localStorage.getItem("jwtToken");
+                    return "dashboard";
+                }
             })
             .then(destination => {
                 history.push(`/${destination}`);
-            })
-            .catch(err => {
-                console.log(JSON.stringify(err, null, 2));
-                return Swal.fire({
-                    type: "error",
-                    title: "Oops...",
-                    text: err.message,
-                });
             });
+        // .catch(err => {
+        //     console.log(JSON.stringify(err, null, 2));
+        //     return Swal.fire({
+        //         type: "error",
+        //         title: "Oops...",
+        //         text: res.data.message,
+        //     });
+        // });
     };
 
     return (
