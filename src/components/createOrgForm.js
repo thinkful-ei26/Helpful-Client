@@ -34,6 +34,7 @@ export default function CreateOrgForm() {
                 setSuccess(true);
             })
             .catch(err => {
+                console.log(err);
                 alert("Organization already Exists");
                 setSuccess(false);
             });
@@ -50,14 +51,7 @@ export default function CreateOrgForm() {
             "Your organization has been successfully created!",
             "success"
         );
-        return (
-            // <p className='orgCreateSuccess'>
-            //     Organization created successfully!
-            // </p>
-            // <div className='alert'>
-            <Redirect to='/createdorgs' />
-            // </div>
-        );
+        return <Redirect to='/createdorgs' />;
     }
 
     return (
