@@ -23,7 +23,7 @@ export default function CreatedOrgs(props) {
 
     useEffect(() => {
         fetchData();
-    }, [orgs]);
+    }, []);
 
     let orgCards;
     if (orgs) {

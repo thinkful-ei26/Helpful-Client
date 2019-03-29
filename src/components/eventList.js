@@ -76,7 +76,7 @@ export default function EventList() {
         fetchUserLocation();
         fetchRsvpData();
         fetchEventData();
-    }, [location]);
+    }, []);
 
     let rsvpEventList = [];
     const generateRsvpEventList = rsvpData => {

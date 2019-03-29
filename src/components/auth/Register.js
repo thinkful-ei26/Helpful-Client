@@ -3,6 +3,7 @@ import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import { API_BASE_URL } from "../../config";
 import "../../stylesheets/register.css";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const [userName, setUserName] = useState("");
@@ -16,10 +17,20 @@ const Register = () => {
             password,
             passwordConfirmation,
         };
-        axios
+        return axios
             .post(`${API_BASE_URL}/users/register`, usersData)
             .then(() => history.push("/login"))
-            .catch(err => alert("Username already Exists"));
+            .catch(err => {
+                console.log(err.response);
+                const { code, location, message, reason } = err.response.data;
+                console.log(message);
+                Swal.fire({
+                    type: "error",
+                    title: location,
+                    text: message,
+                    footer: code + " " + reason,
+                });
+            });
     };
 
     return (
