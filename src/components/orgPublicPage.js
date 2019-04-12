@@ -131,50 +131,43 @@ export default function OrgPublicPage(props) {
 
     if (orgs) {
         return (
-            <div className='org-public-page containerB'>
-                <div className='row'>
-                    <div className='org-public-text-area'>
-                        <h2 className='text-center'>{orgs.name}</h2>
-                        <img
-                            alt='Organization Logo'
-                            className='responsive-img'
-                            src={orgs.imgUrl}
-                        />
-                        <div className='event-public-container'>
-                            <div className='event-public-description'>
-                                <div className='event-public-date'>
-                                    <span>Mission:</span> {orgs.description}
-                                </div>
-                                <div className='event-public-date'>
-                                    <span>Where:</span> {orgs.location}
-                                </div>
-                                <div className='event-public-date'>
-                                    <span>Contact:</span> {orgs.contact}
-                                </div>
-                                <div>
-                                    <p>
-                                        <span className='logo-style-two'>
-                                            Events List:{" "}
-                                        </span>{" "}
-                                        <ul className='reset-ul'>
-                                            {orgEvents}
-                                        </ul>
-                                    </p>
-                                </div>
-                                <div className='button-center'>
-                                    {generateFollowButton()}
-                                </div>
-                                <UserCanRateOrg orgId={orgId} />
+            <div className='container'>
+                <div className='org-public-text-area'>
+                    <h2 className='text-center'>{orgs.name}</h2>
+                    <img
+                        alt='Organization Logo'
+                        className='responsive-img'
+                        src={orgs.imgUrl}
+                    />
+                    <div className='event-public-container'>
+                        <div className='event-public-description'>
+                            <div className='event-public-date'>
+                                <span>Mission:</span> {orgs.description}
                             </div>
+                            <div className='event-public-date'>
+                                <span>Where:</span> {orgs.location}
+                            </div>
+                            <div className='event-public-date'>
+                                <span>Contact:</span> {orgs.contact}
+                            </div>
+                            <div>
+                                <p className='logo-style-two'>Events List: </p>{" "}
+                                <ul className='reset-ul'>{orgEvents}</ul>
+                            </div>
+                            <div className='button-center'>
+                                {generateFollowButton()}
+                            </div>
+                            <UserCanRateOrg orgId={orgId} />
                         </div>
                     </div>
                 </div>
             </div>
         );
+    } else {
+        return (
+            <div>
+                <p>Loading...</p>
+            </div>
+        );
     }
-    return (
-        <div>
-            <p>Loading...</p>
-        </div>
-    );
 }
