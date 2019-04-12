@@ -110,29 +110,37 @@ export default function Search(props) {
                     <div className='field'>
                         <label className='label'>Type</label>
                     </div>
-                    <div className='control'>
-                        <select
-                            onChange={onSelectChange}
-                            id='event-search-select'>
-                            <option value='organizations'>Organizations</option>
-                            <option value='events'>Events</option>
-                        </select>
+                    <div className='field'>
+                        <div className='control'>
+                            <div className='select is-primary'>
+                                <select
+                                    className=''
+                                    onChange={onSelectChange}
+                                    id='event-search-select'>
+                                    <option value='organizations'>
+                                        Organizations
+                                    </option>
+                                    <option value='events'>Events</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div className='field'>
                         <label className='label'>Distance</label>
                     </div>
-                    <div className='contro'>
-                        <input
-                            className='input'
-                            id='search-form-input'
-                            onChange={onChange}
-                            type='text'
-                            placeholder='Enter Distance'
-                        />
-
-                        <button className='' id='search-form-button'>
-                            Search
-                        </button>
+                    <div className='field has-addons'>
+                        <div className='control'>
+                            <input
+                                className='input'
+                                id='search-form-input'
+                                onChange={onChange}
+                                type='text'
+                                placeholder='Enter Distance'
+                            />
+                        </div>
+                        <div className='control'>
+                            <button className='button'>Search</button>
+                        </div>
                     </div>
                 </form>
                 <div className='' />
