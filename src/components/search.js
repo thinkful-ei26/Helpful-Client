@@ -105,36 +105,38 @@ export default function Search(props) {
         return <div />;
     } else {
         return (
-            <div className='container-search'>
-                <form
-                    onSubmit={onSubmit}
-                    action='submit'
-                    className='form-search'>
-                    <div className='search-form-container'>
+            <div className='container'>
+                <form onSubmit={onSubmit} action='submit' className=''>
+                    <div className='field'>
+                        <label className='label'>Type</label>
+                    </div>
+                    <div className='control'>
                         <select
                             onChange={onSelectChange}
-                            className='search-form-child'
                             id='event-search-select'>
                             <option value='organizations'>Organizations</option>
                             <option value='events'>Events</option>
                         </select>
+                    </div>
+                    <div className='field'>
+                        <label className='label'>Distance</label>
+                    </div>
+                    <div className='contro'>
                         <input
-                            className='search-form-child'
+                            className='input'
                             id='search-form-input'
                             onChange={onChange}
                             type='text'
                             placeholder='Enter Distance'
                         />
 
-                        <button
-                            className='search-form-child'
-                            id='search-form-button'>
+                        <button className='' id='search-form-button'>
                             Search
                         </button>
                     </div>
                 </form>
-                <div className='search-results' />
-                <div className='blocker'>{component}</div>
+                <div className='' />
+                <div className=''>{component}</div>
             </div>
         );
     }

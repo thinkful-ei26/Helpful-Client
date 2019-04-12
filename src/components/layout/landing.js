@@ -10,29 +10,29 @@ const LandingPage = props => {
     return (
         <Route
             render={({ history }) => (
-                <section>
-                    <main className='landing-page-main'>
-                        <div className='text-box'>
-                            <span className='text-box-span'>
+                <section className='hero is-link is-fullheight-with-navbar'>
+                    <div className='hero-body'>
+                        <div className='container'>
+                            <p className='title'>
                                 Helpfull is where communities come together.
-                            </span>
-                            <span className='text-box-span'>
+                            </p>
+                            <p className='title'>
                                 Help. Do good. Make friends.
-                            </span>
+                            </p>
+                            <form className='landing-page-form' action=''>
+                                <button
+                                    className='button'
+                                    onClick={() => history.push(`/register`)}>
+                                    Register
+                                </button>
+                                <button
+                                    className='button'
+                                    onClick={() => history.push(`/login`)}>
+                                    Log In
+                                </button>
+                            </form>
                         </div>
-                        <form className='landing-page-form' action=''>
-                            <button
-                                className='button-register'
-                                onClick={() => history.push(`/register`)}>
-                                Register
-                            </button>
-                            <button
-                                className='button-login'
-                                onClick={() => history.push(`/login`)}>
-                                Log In
-                            </button>
-                        </form>
-                    </main>
+                    </div>
                 </section>
             )}
         />
