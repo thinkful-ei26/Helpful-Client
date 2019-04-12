@@ -81,7 +81,7 @@ const NavBar = props => {
         <React.Fragment>
             <header>
                 <nav
-                    className='navbar'
+                    className='navbar is-fixed-top'
                     role='navigation'
                     aria-label='main navigation'>
                     <div className='navbar-brand'>
