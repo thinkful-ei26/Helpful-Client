@@ -99,9 +99,12 @@ export default function EventList() {
     }
 
     return (
-        <div className='columns'>
-            {rsvpEventCardList}
-            {localEventCardList}
-        </div>
+        <React.Fragment>
+            <h2>My Events</h2>
+            <div className='columns'>
+                {rsvpEventCardList}
+                {localEventCardList}
+            </div>
+        </React.Fragment>
     );
 }

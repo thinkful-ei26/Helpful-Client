@@ -19,23 +19,34 @@ export default function OrganizationCard(props) {
     }
 
     return (
-        <div className='org-card'>
+        <div className='column is-one-third'>
             <Link to={link}>
-                <h3>{props.org.name}</h3>
+                <div className='card'>
+                    <div className='card-image'>
+                        <figure className='image is-square'>
+                            <img src={props.org.imgUrl} alt={props.org.name} />
+                        </figure>
+                    </div>
+                    <div className='card-content'>
+                        <div className='media'>
+                            <div className='media-content'>
+                                <p className='title is-4'>{props.org.name}</p>
+                                <p className='subtitle is-6'>
+                                    {props.org.contact}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className='content'>
+                            {props.org.description}
+                            <br />
+                            <time dateTime={props.org.date}>
+                                {props.org.date}
+                            </time>
+                        </div>
+                    </div>
+                </div>
             </Link>
-            <div className='org-card-content'>
-                <img src={props.org.imgUrl} alt={props.org.name} />
-                <p className='card-details'>Details:</p>
-                <p>{props.org.description}</p>
-                <p>
-                    <i className='material-icons'>location_on</i>
-                    {props.org.location}
-                </p>
-                <p>
-                    <i className='material-icons'>person</i>
-                    {props.org.contact}
-                </p>
-            </div>
         </div>
     );
 }
