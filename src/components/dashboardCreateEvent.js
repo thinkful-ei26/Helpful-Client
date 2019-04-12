@@ -43,15 +43,16 @@ export default function DashboardCreateEvent(props) {
     }
 
     return (
-        <div className='create-event-form'>
-            <form action='submit' onSubmit={e => handleSubmit(e)}>
-                <fieldset>
-                    <legend>Create an event</legend>
-                    <div className='create-event-row'>
-                        <label htmlFor='event-name' />
+        <div className='container'>
+            <form
+                action='submit'
+                className='form'
+                onSubmit={e => handleSubmit(e)}>
+                <div className='field'>
+                    <label className='label'>Event Name</label>
+                    <div className='control has-icons-left'>
                         <input
-                            className='event-input'
-                            required
+                            className='input'
                             type='text'
                             placeholder='Event Name'
                             onChange={e =>
@@ -61,30 +62,36 @@ export default function DashboardCreateEvent(props) {
                                 })
                             }
                         />
+                        <span className='icon is-small is-left'>
+                            <i className='fas fa-signature' />
+                        </span>
                     </div>
-                    <div className='create-event-row'>
-                        <label htmlFor='event-description' />
-                        <input
-                            className='event-input'
-                            required
-                            type='text-area'
-                            rows='5'
-                            placeholder='Description'
+                </div>
+
+                <div className='field'>
+                    <label className='label'>Description</label>
+                    <div className='control'>
+                        <textarea
                             onChange={e =>
                                 setFormData({
                                     ...formData,
                                     description: e.target.value,
                                 })
                             }
+                            className='textarea has-fixed-size'
+                            placeholder='Event Description'
+                            rows='3'
                         />
                     </div>
-                    <div className='create-event-row'>
-                        <label htmlFor='event-location' />
+                </div>
+
+                <div className='field'>
+                    <label className='label'>Location</label>
+                    <div className='control has-icons-left'>
                         <input
-                            className='event-input'
-                            required
+                            className='input'
                             type='text'
-                            placeholder='Location'
+                            placeholder='123 Anywhere Lane, Nowhereville, NA'
                             onChange={e =>
                                 setFormData({
                                     ...formData,
@@ -92,14 +99,19 @@ export default function DashboardCreateEvent(props) {
                                 })
                             }
                         />
+                        <span className='icon is-small is-left'>
+                            <i className='fas fa-map-marked-alt' />
+                        </span>
                     </div>
-                    <div className='create-event-row'>
-                        <label htmlFor='event-date' />
+                </div>
+
+                <div className='field'>
+                    <label className='label'>Date</label>
+                    <div className='control has-icons-left'>
                         <input
-                            className='event-input'
-                            required
-                            type='text'
-                            placeholder='Date'
+                            className='input'
+                            type='tel'
+                            placeholder='26 December 2019'
                             onChange={e =>
                                 setFormData({
                                     ...formData,
@@ -107,14 +119,19 @@ export default function DashboardCreateEvent(props) {
                                 })
                             }
                         />
+                        <span className='icon is-small is-left'>
+                            <i class='fas fa-calendar-day' />
+                        </span>
                     </div>
-                    <div className='create-event-row'>
-                        <label htmlFor='event-contact' />
+                </div>
+
+                <div className='field'>
+                    <label className='label'>Organizer</label>
+                    <div className='control has-icons-left'>
                         <input
-                            className='event-input'
-                            required
-                            type='text'
-                            placeholder='Contact'
+                            className='input'
+                            type='tel'
+                            placeholder='Jane Doe'
                             onChange={e =>
                                 setFormData({
                                     ...formData,
@@ -122,13 +139,19 @@ export default function DashboardCreateEvent(props) {
                                 })
                             }
                         />
+                        <span className='icon is-small is-left'>
+                            <i class='fas fa-user-cog' />
+                        </span>
                     </div>
-                    <div className='create-event-row'>
-                        <label htmlFor='eventImg' />
+                </div>
+
+                <div className='field'>
+                    <label className='label'>Image URL</label>
+                    <div className='control has-icons-left'>
                         <input
-                            className='event-input'
-                            type='text'
-                            placeholder='Paste Image URL here!'
+                            className='input'
+                            type='tel'
+                            placeholder='https://www.lorempixel.com/300/300'
                             onChange={e =>
                                 setFormData({
                                     ...formData,
@@ -136,12 +159,20 @@ export default function DashboardCreateEvent(props) {
                                 })
                             }
                         />
+                        <span className='icon is-small is-left'>
+                            <i className='fas fa-external-link-alt' />
+                        </span>
                     </div>
-                    <div className='submit-cancel-buttons'>
-                        <button className='submit'>Submit</button>
-                        <button>Cancel</button>
+                    <p className='help'>Recommended 300px * 300px or larger</p>
+                </div>
+
+                <div className='field'>
+                    <div className='control'>
+                        <button className='button is-link' type='submit'>
+                            Submit
+                        </button>
                     </div>
-                </fieldset>
+                </div>
             </form>
         </div>
     );
