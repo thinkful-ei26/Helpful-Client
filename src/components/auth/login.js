@@ -62,7 +62,7 @@ const Login = () => {
                                 onChange={e => setUser(e.target.value)}
                             />
                             <span className='icon is-small is-left'>
-                                <i className='fas fa-envelope' />
+                                <i className='fas fa-user' />
                             </span>
                         </p>
                         <p className='help'>

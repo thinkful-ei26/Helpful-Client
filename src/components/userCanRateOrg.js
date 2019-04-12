@@ -85,7 +85,7 @@ export default function UserCanRateOrg(props) {
     return (
         <React.Fragment>
             <form onSubmit={onSubmit}>
-                <div class='rate-area'>
+                <div className='rate-area'>
                     <input type='radio' id='5-star' name='rating' value='5' />
                     <label for='5-star' title='Amazing'>
                         5 stars

@@ -35,78 +35,86 @@ const Register = () => {
     return (
         <Route
             render={({ history }) => (
-                <div className='registration-container'>
-                    <div className='registraion-flex'>
-                        <div className=''>
-                            <Link to='/' className=' waves-effect btn-flat'>
-                                <i className='material-icons left'>
-                                    keyboard_backspace
-                                </i>
-                                Back to home
+                <div className='container'>
+                    <div className='field'>
+                        <Link to='/' className=''>
+                            <i className='far fa-hand-point-left' />
+                            <span> Back to home</span>
+                        </Link>
+                    </div>
+                    <div className='field'>
+                        <p>
+                            Already have an account?{" "}
+                            <Link className='loginLink' to='/login'>
+                                Log In
                             </Link>
-                            <h4>Register below</h4>
-                            <p className='1'>
-                                Already have an account?{" "}
-                                <Link className='loginLink' to='/login'>
-                                    Log In
-                                </Link>
-                            </p>
-                            <form
-                                className='registration-form'
-                                noValidate
-                                onSubmit={e => e.preventDefault()}>
-                                <label htmlFor='name' />
-                                <input
-                                    className='registration-inputs'
-                                    value={userName}
-                                    onChange={e => setUserName(e.target.value)}
-                                    id='name'
-                                    type='text'
-                                    placeholder='Username'
-                                />
-                                <label htmlFor='email' />
-                                <input
-                                    className='registration-inputs'
-                                    value={email}
-                                    onChange={e => setEmail(e.target.value)}
-                                    // id='email'
-                                    type='email'
-                                    placeholder='Email'
-                                />
-                                <label htmlFor='password' />
-                                <input
-                                    className='registration-inputs'
-                                    value={password}
-                                    onChange={e => setPassword(e.target.value)}
-                                    // id='password'
-                                    type='password'
-                                    placeholder='Password'
-                                />
-                                <label htmlFor='passwordConfirmation' />
-                                <input
-                                    className='registration-inputs'
-                                    value={passwordConfirmation}
-                                    onChange={e =>
-                                        setPasswordConfirmation(e.target.value)
-                                    }
-                                    id='passwordConfirmation'
-                                    type='password'
-                                    placeholder='Confirm Password'
-                                />
-                                <button
-                                    className='registration-form-submit-button'
-                                    onClick={() => registerUser(history)}
-                                    style={{
-                                        borderRadius: "3px",
-                                        letterSpacing: "1.5px",
-                                        marginTop: "1rem",
-                                    }}
-                                    type='submit'>
-                                    Sign Up
-                                </button>
-                            </form>
+                        </p>
+                    </div>
+                    <div className='field'>
+                        <label className='label'>Username</label>
+                        <div className='control has-icons-left'>
+                            <input
+                                className='input'
+                                type='text'
+                                placeholder='User1234'
+                                onChange={e => setUserName(e.target.value)}
+                            />
+                            <span className='icon is-small is-left'>
+                                <i className='fas fa-user' />
+                            </span>
                         </div>
                     </div>
+
+                    <div className='field'>
+                        <label className='label'>Email</label>
+                        <div className='control has-icons-left'>
+                            <input
+                                className='input'
+                                type='text'
+                                placeholder='user@email.com'
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                            <span className='icon is-small is-left'>
+                                <i className='fas fa-envelope' />
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className='field'>
+                        <label className='label'>Password</label>
+                        <div className='control has-icons-left'>
+                            <input
+                                className='input'
+                                type='password'
+                                placeholder='Password'
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                            <span className='icon is-small is-left'>
+                                <i className='fas fa-lock' />
+                            </span>
+                        </div>
+                    </div>
+                    <div className='field'>
+                        <label className='label'>Confirm Password</label>
+                        <div className='control has-icons-left'>
+                            <input
+                                className='input'
+                                type='password'
+                                placeholder='Confirm Password'
+                                onChange={e =>
+                                    setPasswordConfirmation(e.target.value)
+                                }
+                            />
+                            <span className='icon is-small is-left'>
+                                <i className='fas fa-lock' />
+                            </span>
+                        </div>
+                    </div>
+                    <button
+                        className='button is-primary'
+                        onClick={() => registerUser(history)}>
+                        Register
+                    </button>
                 </div>
             )}
         />
