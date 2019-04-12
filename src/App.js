@@ -7,7 +7,7 @@ import LoadingRoute from "./components/loadingRoute";
 
 const App = () => {
     return (
-        <div className='App App-min-height'>
+        <div className='App'>
             <NavBar />
             <Switch>
                 {routes.map((route, i) => (

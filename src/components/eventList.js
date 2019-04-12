@@ -104,14 +104,9 @@ export default function EventList() {
     }
 
     return (
-        <section className='event-container'>
-            <div className='rsvp-events'>
-                <h2>Upcoming Events</h2>
-                <div className='event-list'>
-                    {localEventCardList}
-                    {rsvpEventCardList}
-                </div>
-            </div>
-        </section>
+        <div className='columns'>
+            {rsvpEventCardList}
+            {localEventCardList}
+        </div>
     );
 }

@@ -2,89 +2,73 @@ import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 
 const NavBar = props => {
-    const [navClass, setNavClass] = useState("false");
+    const [toggle, setToggle] = useState(false);
     let token = localStorage.getItem("jwtToken");
-    let navRight, sideNav;
+    let navRight, sideNav, toggleBurgerClass, toggleMenuClass;
+
+    if (toggle) {
+        toggleBurgerClass = "navbar-burger burger is-active";
+        toggleMenuClass = "navbar-menu is-active";
+    } else {
+        toggleBurgerClass = "navbar-burger burger";
+        toggleMenuClass = "navbar-menu";
+    }
 
     if (token) {
         navRight = (
-            <ul>
-                <li>
+            <div id='navbarBasicExample' className={toggleMenuClass}>
+                <div className='navbar-start' />
+
+                <div className='navbar-end'>
                     <a
-                        href='#dashboard'
+                        className='navbar-item'
                         onClick={() => props.history.push("/dashboard")}>
                         Dashboard
                     </a>
-                </li>
 
-                {/* <li>
                     <a
-                        href='#events'
-                        className='waves-effect waves-teal'
-                        onClick={() => props.history.push("/events")}>
-                        My Events
-                    </a>
-                </li> */}
-
-                <li>
-                    <a
-                        href='#createorganization'
-                        onClick={() => props.history.push("/createorgform")}>
-                        Create Org
-                    </a>
-                </li>
-
-                {/* <li>
-                    <a
-                        href='#meetup'
-                        className='waves-effect waves-teal'
-                        onClick={() => props.history.push("/createMeetup")}>
-                        Create Meetup
-                    </a>
-                </li> */}
-
-                <li>
-                    <a
-                        href='/createdorgs'
-                        onClick={() => props.history.push("/createdorgs")}>
-                        My Orgs
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href='#followedorganizations'
-                        onClick={() => props.history.push("/followedorgs")}>
-                        Followed Orgs
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href='#search'
+                        className='navbar-item'
                         onClick={() => props.history.push("/search")}>
                         Search
                     </a>
-                </li>
 
-                <li>
-                    <a href='#logout' onClick={() => logoutUser()}>
-                        Logout
-                    </a>
-                </li>
-            </ul>
-        );
-        sideNav = (
-            <a
-                onClick={e => {
-                    e.preventDefault();
-                    setNavClass("true");
-                }}
-                href='#menu'
-                id='hamburger'
-                data-target='slide-out'
-                className='sidenav-trigger'>
-                <i className='material-icons hamburger'>menu</i>
-            </a>
+                    <div className='navbar-item has-dropdown is-hoverable'>
+                        <a className='navbar-link'>Organizations</a>
+
+                        <div className='navbar-dropdown'>
+                            <a
+                                className='navbar-item'
+                                onClick={() =>
+                                    props.history.push("/createorgform")
+                                }>
+                                Create
+                            </a>
+                            <a
+                                className='navbar-item'
+                                onClick={() =>
+                                    props.history.push("/followedorgs")
+                                }>
+                                Followed
+                            </a>
+                            <hr className='navbar-divider' />
+                            <a
+                                className='navbar-item'
+                                onClick={() =>
+                                    props.history.push("/createdorgs")
+                                }>
+                                Mine
+                            </a>
+                        </div>
+                    </div>
+                    <div className='navbar-item'>
+                        <div className='buttons'>
+                            <a className='button' onClick={() => logoutUser()}>
+                                Log out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         );
     }
 
@@ -95,102 +79,32 @@ const NavBar = props => {
 
     return (
         <React.Fragment>
-            <section className='header-container'>
-                <header>
-                    <span className='logo'>
-                        <a href='/'>
-                            <h1>
-                                <span className='logo-style-one'>Help</span>
-                                <span className='logo-style-two'>full</span>
-                            </h1>
+            <header>
+                <nav
+                    className='navbar'
+                    role='navigation'
+                    aria-label='main navigation'>
+                    <div className='navbar-brand'>
+                        <a className='navbar-item' href='/'>
+                            <img src='/logo.png' />
+                            Helpfull
                         </a>
-                    </span>
-
-                    <nav>{navRight}</nav>
-                    {sideNav}
-                </header>
-            </section>
-
-            <ul id='mySidenav' className={navClass}>
-                <a
-                    href='#closemenu'
-                    className='closebtn'
-                    onClick={e => {
-                        e.preventDefault();
-                        setNavClass("false");
-                    }}>
-                    &times;
-                </a>
-                <li>
-                    <a
-                        href='#dashboard'
-                        // className='waves-effect waves-teal'
-                        onClick={() => props.history.push("/dashboard")}>
-                        <i className='material-icons'>dashboard</i>Dashboard
-                    </a>
-                </li>
-                <li>
-                    <div className='divider' />
-                </li>
-                <li>
-                    <div className='divider' />
-                </li>
-                <li>
-                    <a
-                        href='#createorganization'
-                        // className='waves-effect'
-                        onClick={() => props.history.push("/createorgform")}>
-                        <i className='material-icons black-text'>create</i>
-                        Create Org
-                    </a>
-                </li>
-                <li>
-                    <div className='divider' />
-                </li>
-                <li>
-                    <a
-                        href='/createdorgs'
-                        onClick={() => props.history.push("/createdorgs")}>
-                        <i className='material-icons'>subscriptions</i>
-                        My Orgs
-                    </a>
-                </li>
-                <li>
-                    <div className='divider' />
-                </li>
-                <li>
-                    <a
-                        href='#followedorganizations'
-                        // className='waves-effect'
-                        onClick={() => props.history.push("/followedorgs")}>
-                        <i className='material-icons'>subscriptions</i>
-                        Followed Orgs
-                    </a>
-                </li>
-                <li>
-                    <div className='divider' />
-                </li>
-                <li>
-                    <a
-                        href='#search'
-                        // className='waves-effect'
-                        onClick={() => props.history.push("/search")}>
-                        <i className='material-icons'>search</i>Search Tool
-                    </a>
-                </li>
-                <li>
-                    <div className='divider' />
-                </li>
-                <li>
-                    <a
-                        href='#logout'
-                        // className='waves-effect'
-                        onClick={() => logoutUser()}>
-                        <i className='material-icons'>power_settings_new</i>
-                        Logout
-                    </a>
-                </li>
-            </ul>
+                        <a
+                            role='button'
+                            className={toggleBurgerClass}
+                            aria-label='menu'
+                            aria-expanded='false'
+                            data-target='navbarBurger'
+                            onClick={() => setToggle(!toggle)}>
+                            <span aria-hidden='true' />
+                            <span aria-hidden='true' />
+                            <span aria-hidden='true' />
+                        </a>
+                    </div>
+                    {navRight}
+                </nav>
+                {sideNav}
+            </header>
         </React.Fragment>
     );
 };

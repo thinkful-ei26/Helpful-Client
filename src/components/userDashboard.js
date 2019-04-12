@@ -5,12 +5,10 @@ import FollowedOrgs from "./followedOrganizations";
 
 export default function UserDashboard() {
     return (
-        <section className='dashboard-container'>
+        <div className='container'>
             <EventList />
-            <div className='dashHr' />
             <FollowedOrgs />
-            <div className='dashHr' />
             <CreatedOrgs />
-        </section>
+        </div>
     );
 }
