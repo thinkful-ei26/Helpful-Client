@@ -55,78 +55,116 @@ export default function CreateOrgForm() {
     return (
         <div className='container'>
             <p>Create an Organization</p>
-            <div className='field'>
-                <label className='label'>Name</label>
-                <div className='control has-icons-left'>
-                    <input
-                        className='input'
-                        type='text'
-                        placeholder='Organization Name'
-                    />
-                    <span className='icon is-small is-left'>
-                        <i class='fas fa-signature' />
-                    </span>
+            <form
+                action='submit'
+                className='pure-form pure-form-aligned'
+                id='createOrgForm'
+                onSubmit={e => handleSubmit(e)}>
+                <div className='field'>
+                    <label className='label'>Name</label>
+                    <div className='control has-icons-left'>
+                        <input
+                            className='input'
+                            type='text'
+                            placeholder='Organization Name'
+                            onChange={e =>
+                                setFormData({
+                                    ...formData,
+                                    name: e.target.value,
+                                })
+                            }
+                        />
+                        <span className='icon is-small is-left'>
+                            <i className='fas fa-signature' />
+                        </span>
+                    </div>
                 </div>
-            </div>
 
-            <div className='field'>
-                <label className='label'>Address</label>
-                <div className='control has-icons-left'>
-                    <input
-                        className='input'
-                        type='text'
-                        placeholder='123 Anywhere Lane, Nowhereville, NA'
-                    />
-                    <span className='icon is-small is-left'>
-                        <i className='fas fa-map-marked-alt' />
-                    </span>
+                <div className='field'>
+                    <label className='label'>Address</label>
+                    <div className='control has-icons-left'>
+                        <input
+                            className='input'
+                            type='text'
+                            placeholder='123 Anywhere Lane, Nowhereville, NA'
+                            onChange={e =>
+                                setFormData({
+                                    ...formData,
+                                    location: e.target.value,
+                                })
+                            }
+                        />
+                        <span className='icon is-small is-left'>
+                            <i className='fas fa-map-marked-alt' />
+                        </span>
+                    </div>
                 </div>
-            </div>
 
-            <div className='field'>
-                <label className='label'>Phone Number</label>
-                <div className='control has-icons-left'>
-                    <input
-                        className='input'
-                        type='tel'
-                        placeholder='+1 (800) 867-5309'
-                    />
-                    <span className='icon is-small is-left'>
-                        <i className='fas fa-phone' />
-                    </span>
+                <div className='field'>
+                    <label className='label'>Phone Number</label>
+                    <div className='control has-icons-left'>
+                        <input
+                            className='input'
+                            type='tel'
+                            placeholder='+1 (800) 867-5309'
+                            onChange={e =>
+                                setFormData({
+                                    ...formData,
+                                    contact: e.target.value,
+                                })
+                            }
+                        />
+                        <span className='icon is-small is-left'>
+                            <i className='fas fa-phone' />
+                        </span>
+                    </div>
                 </div>
-            </div>
 
-            <div className='field'>
-                <label className='label'>Image URL</label>
-                <div className='control has-icons-left'>
-                    <input
-                        className='input'
-                        type='tel'
-                        placeholder='https://www.lorempixel.com/300/300'
-                    />
-                    <span className='icon is-small is-left'>
-                        <i className='fas fa-external-link-alt' />
-                    </span>
+                <div className='field'>
+                    <label className='label'>Image URL</label>
+                    <div className='control has-icons-left'>
+                        <input
+                            className='input'
+                            type='tel'
+                            placeholder='https://www.lorempixel.com/300/300'
+                            onChange={e =>
+                                setFormData({
+                                    ...formData,
+                                    imgUrl: e.target.value,
+                                })
+                            }
+                        />
+                        <span className='icon is-small is-left'>
+                            <i className='fas fa-external-link-alt' />
+                        </span>
+                    </div>
+                    <p className='help'>Recommended 300px * 300px or larger</p>
                 </div>
-                <p className='help'>Recommended 300px * 300px or larger</p>
-            </div>
 
-            <div className='field'>
-                <label className='label'>Description</label>
-                <div className='control'>
-                    <textarea
-                        className='textarea has-fixed-size'
-                        placeholder='Organization Name is a non-profit specializing in x, y and z sectors. Founded in Nowheresville, NA: Organization Name has been critical to serving a, b and c communities'
-                    />
+                <div className='field'>
+                    <label className='label'>Description</label>
+                    <div className='control'>
+                        <textarea
+                            onChange={e =>
+                                setFormData({
+                                    ...formData,
+                                    description: e.target.value,
+                                })
+                            }
+                            className='textarea has-fixed-size'
+                            placeholder='Organization Name is a non-profit specializing in x, y and z sectors. Founded in Nowheresville, NA: Organization Name has been critical to serving a, b and c communities'
+                        />
+                    </div>
                 </div>
-            </div>
 
-            <div className='field'>
-                <div className='control'>
-                    <button className='button is-link'>Submit</button>
+                <div className='field'>
+                    <div className='control'>
+                        <button className='button is-link' type='submit'>
+                            Submit
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     );
 }
