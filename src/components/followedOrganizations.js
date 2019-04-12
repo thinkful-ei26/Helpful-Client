@@ -3,7 +3,6 @@ import axios from "axios";
 import { API_BASE_URL } from "../config";
 import { Link } from "react-router-dom";
 import OrganizationCard from "./organizationCard";
-import "../stylesheets/followedOrgs.css";
 
 export default function FollowedOrgs(props) {
     const [orgs, setOrgs] = useState([]);

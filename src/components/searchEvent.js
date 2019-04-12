@@ -1,6 +1,5 @@
 import React from "react";
 import { InitialMap } from "./map";
-import "../stylesheets/searchEvent.css";
 import { Link } from "react-router-dom";
 
 export default function SearchEvent(props) {

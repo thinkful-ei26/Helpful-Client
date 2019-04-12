@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import { API_BASE_URL } from "../../config";
-import "../../stylesheets/register.css";
 import Swal from "sweetalert2";
 
 const Register = () => {

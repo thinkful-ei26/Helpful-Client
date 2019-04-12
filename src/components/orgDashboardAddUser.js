@@ -1,5 +1,4 @@
 import React from "react";
-import "../stylesheets/dashboardCreateEvent.css";
 
 export default function OrgDashboardAddUser() {
     return (

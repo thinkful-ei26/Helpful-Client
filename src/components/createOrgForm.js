@@ -5,8 +5,6 @@ import { Redirect } from "react-router-dom";
 
 import { API_BASE_URL } from "../config";
 
-import "../stylesheets/createOrgForm.css";
-
 export default function CreateOrgForm() {
     const [formData, setFormData] = useState({
         name: "",

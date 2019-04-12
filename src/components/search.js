@@ -3,7 +3,6 @@ import axios from "axios";
 import { API_BASE_URL } from "../config";
 import SearchOrg from "./searchOrg";
 import SearchEvent from "./searchEvent";
-import "../stylesheets/search.css";
 
 export default function Search(props) {
     const [events, setEvents] = useState(null);

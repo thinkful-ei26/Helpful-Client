@@ -3,7 +3,6 @@ import DashboardCreateEvent from "./dashboardCreateEvent";
 import getOrgs from "../utils/fetchOrg";
 import getOrgEvents from "../utils/fetchEvent";
 import OrgPublicPageEventList from "./orgPublicPageEventList";
-import "../stylesheets/orgDashboardStyles/orgDashMain.css";
 import { Link } from "react-router-dom";
 
 const OrganizationDashboard = props => {

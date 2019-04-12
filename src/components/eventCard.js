@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../stylesheets/eventCard.css";
 
 export default function EventCard(props) {
     const linkUrl = `/event/${props.event.id}`;

@@ -4,8 +4,6 @@ import { Link, Route } from "react-router-dom";
 import { API_BASE_URL } from "../../config";
 import Swal from "sweetalert2";
 
-import "../../stylesheets/login.css";
-
 import jwt_decode from "jwt-decode";
 
 const Login = () => {

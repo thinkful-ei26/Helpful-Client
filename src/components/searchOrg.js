@@ -1,6 +1,5 @@
 import React from "react";
 import { InitialMap, LoadingMap } from "./map";
-import "../stylesheets/searchOrg.css";
 import { Link } from "react-router-dom";
 
 export default function SearchOrg(props) {

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
 import { PointMap } from "./map";
-import "../stylesheets/eventPage.css";
 
 export function MeetupPage(props) {
     const [event, setEvent] = useState(null);

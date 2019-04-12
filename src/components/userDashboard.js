@@ -3,8 +3,6 @@ import EventList from "./eventList";
 import CreatedOrgs from "./createdOrganizations";
 import FollowedOrgs from "./followedOrganizations";
 
-import "../stylesheets/dashboard.css";
-
 export default function UserDashboard() {
     return (
         <section className='dashboard-container'>

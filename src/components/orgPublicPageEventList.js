@@ -3,8 +3,6 @@ import axios from "axios";
 import EventCard from "./eventCard";
 import { API_BASE_URL } from "../config";
 
-import "../stylesheets/eventList.css";
-
 export default function OrgPublicPageEventList(props) {
     const [events, setEvents] = useState(null);
 

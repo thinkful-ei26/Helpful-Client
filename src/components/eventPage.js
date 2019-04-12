@@ -3,7 +3,6 @@ import axios from "axios";
 import { API_BASE_URL } from "../config";
 import { PointMap } from "./map";
 import UserComments from "./userComments";
-import "../stylesheets/eventPage.css";
 
 export function EventPage(props) {
     const [event, setEvent] = useState(null);

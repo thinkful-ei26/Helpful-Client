@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../config";
-import "../stylesheets/dashboardCreateEvent.css";
 
 export default function CreateMeetup() {
     const [formData, setFormData] = useState({
