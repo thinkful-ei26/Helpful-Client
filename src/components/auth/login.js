@@ -56,62 +56,44 @@ const Login = () => {
     return (
         <Route
             render={({ history }) => (
-                <div className='login-flex'>
-                    <div className=''>
+                <div className='container'>
+                    <div className='field'>
                         <Link to='/' className=''>
-                            <i className='material-icons left'>
-                                keyboard_backspace
-                            </i>
-                            Back to home
+                            <i className='far fa-hand-point-left' />
+                            <span> Back to home</span>
                         </Link>
-                        <div className=''>
-                            <h4>Login below</h4>
-                            <p className='grey-text text-darken-1'>
-                                Don't have an account?{" "}
-                                <Link className='register' to='/register'>
-                                    Register
-                                </Link>
-                            </p>
-                            <div className='demo-credentials'>
-                                <p className='grey-text text-darken-1'>
-                                    Or try Helpfull with a demo user
-                                </p>
-                                <p className='grey-text text-darken-1'>
-                                    Username: demo{" "}
-                                </p>
-                                <p className='grey-text text-darken-1'>
-                                    Password: password12
-                                </p>
-                            </div>
-                        </div>
-                        <form
-                            className='login-form'
-                            noValidate
-                            onSubmit={e => e.preventDefault()}>
-                            <label className='emailLabel' htmlFor='email' />
+                    </div>
+                    <div className='field'>
+                        <p className='control has-icons-left has-icons-right'>
                             <input
-                                id='email'
-                                type='text'
-                                placeholder='Username'
-                                onChange={e => setUser(e.target.value)}
+                                className='input'
+                                type='email'
+                                placeholder='Email'
                             />
-                            <label
-                                className='passwordLabel'
-                                htmlFor='password'
-                            />
+                            <span className='icon is-small is-left'>
+                                <i className='fas fa-envelope' />
+                            </span>
+                            <span className='icon is-small is-right'>
+                                <i className='fas fa-check' />
+                            </span>
+                        </p>
+                    </div>
+                    <div className='field'>
+                        <p className='control has-icons-left'>
                             <input
-                                id='password'
+                                className='input'
                                 type='password'
                                 placeholder='Password'
-                                onChange={e => setPassword(e.target.value)}
                             />
-                            <button
-                                onClick={() => loginUser(history)}
-                                type='submit'
-                                className='login-form-submit-button'>
-                                Log In
-                            </button>
-                        </form>
+                            <span className='icon is-small is-left'>
+                                <i className='fas fa-lock' />
+                            </span>
+                        </p>
+                    </div>
+                    <div className='field'>
+                        <p className='control'>
+                            <button className='button is-success'>Login</button>
+                        </p>
                     </div>
                 </div>
             )}
