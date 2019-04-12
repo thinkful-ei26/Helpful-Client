@@ -57,8 +57,7 @@ export default function CreateOrgForm() {
             <p>Create an Organization</p>
             <form
                 action='submit'
-                className='pure-form pure-form-aligned'
-                id='createOrgForm'
+                className='form'
                 onSubmit={e => handleSubmit(e)}>
                 <div className='field'>
                     <label className='label'>Name</label>
