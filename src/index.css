@@ -114,7 +114,7 @@
 
 .loader, .control.is-loading::after, .select.is-loading::after, .button.is-loading::after {
   animation: spinAround 500ms infinite linear;
-  border: 2px solid #dbdbdb;
+  border: 2px solid #edeaee;
   border-radius: 290486px;
   border-right-color: transparent;
   border-top-color: transparent;
@@ -1022,11 +1022,11 @@ a.has-text-danger:hover, a.has-text-danger:focus {
 }
 
 .has-text-grey-lighter {
-  color: #dbdbdb !important;
+  color: #edeaee !important;
 }
 
 .has-background-grey-lighter {
-  background-color: #dbdbdb !important;
+  background-color: #edeaee !important;
 }
 
 .has-text-white-ter {
@@ -1469,7 +1469,7 @@ a.box:active {
 
 .button {
   background-color: white;
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   border-width: 1px;
   color: #363636;
   cursor: pointer;
@@ -2319,7 +2319,7 @@ a.box:active {
 }
 .button[disabled], fieldset[disabled] .button {
   background-color: white;
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   box-shadow: none;
   opacity: 0.5;
 }
@@ -2339,7 +2339,7 @@ a.box:active {
 }
 .button.is-static {
   background-color: whitesmoke;
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   color: #7a7a7a;
   box-shadow: none;
   pointer-events: none;
@@ -2507,7 +2507,7 @@ a.box:active {
 }
 .content blockquote {
   background-color: whitesmoke;
-  border-left: 5px solid #dbdbdb;
+  border-left: 5px solid #edeaee;
   padding: 1.25em 1.5em;
 }
 .content ol {
@@ -2578,7 +2578,7 @@ a.box:active {
 }
 .content table td,
 .content table th {
-  border: 1px solid #dbdbdb;
+  border: 1px solid #edeaee;
   border-width: 0 0 1px;
   padding: 0.5em 0.75em;
   vertical-align: top;
@@ -2614,7 +2614,7 @@ a.box:active {
 .input,
 .textarea {
   background-color: white;
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   color: #363636;
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   max-width: 100%;
@@ -2892,7 +2892,7 @@ fieldset[disabled] .radio {
 }
 .select select {
   background-color: white;
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   color: #363636;
   cursor: pointer;
   display: block;
@@ -3416,14 +3416,14 @@ fieldset[disabled] .radio {
   color: #363636;
 }
 .file-label:hover .file-name {
-  border-color: #d5d5d5;
+  border-color: #e7e3e8;
 }
 .file-label:active .file-cta {
   background-color: #e8e8e8;
   color: #363636;
 }
 .file-label:active .file-name {
-  border-color: #cfcfcf;
+  border-color: #e1dce3;
 }
 
 .file-input {
@@ -3438,7 +3438,7 @@ fieldset[disabled] .radio {
 
 .file-cta,
 .file-name {
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   border-radius: 4px;
   font-size: 1em;
   padding-left: 1em;
@@ -3452,7 +3452,7 @@ fieldset[disabled] .radio {
 }
 
 .file-name {
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   border-style: solid;
   border-width: 1px 1px 1px 0;
   display: block;
@@ -3722,7 +3722,7 @@ fieldset[disabled] .radio {
   font-size: 1.5rem;
 }
 .control.has-icons-left .icon, .control.has-icons-right .icon {
-  color: #dbdbdb;
+  color: #edeaee;
   height: 2.25em;
   pointer-events: none;
   position: absolute;
@@ -3969,7 +3969,7 @@ fieldset[disabled] .radio {
   width: 100%;
 }
 .progress::-webkit-progress-bar {
-  background-color: #dbdbdb;
+  background-color: #edeaee;
 }
 .progress::-webkit-progress-value {
   background-color: #4a4a4a;
@@ -3986,8 +3986,8 @@ fieldset[disabled] .radio {
   animation-iteration-count: infinite;
   animation-name: moveIndeterminate;
   animation-timing-function: linear;
-  background-color: #dbdbdb;
-  background-image: linear-gradient(to right, #4a4a4a 30%, #dbdbdb 30%);
+  background-color: #edeaee;
+  background-image: linear-gradient(to right, #4a4a4a 30%, #edeaee 30%);
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 150% 150%;
@@ -4008,7 +4008,7 @@ fieldset[disabled] .radio {
   background-color: white;
 }
 .progress.is-white:indeterminate {
-  background-image: linear-gradient(to right, white 30%, #dbdbdb 30%);
+  background-image: linear-gradient(to right, white 30%, #edeaee 30%);
 }
 .progress.is-black::-webkit-progress-value {
   background-color: #0a0a0a;
@@ -4020,7 +4020,7 @@ fieldset[disabled] .radio {
   background-color: #0a0a0a;
 }
 .progress.is-black:indeterminate {
-  background-image: linear-gradient(to right, #0a0a0a 30%, #dbdbdb 30%);
+  background-image: linear-gradient(to right, #0a0a0a 30%, #edeaee 30%);
 }
 .progress.is-light::-webkit-progress-value {
   background-color: whitesmoke;
@@ -4032,7 +4032,7 @@ fieldset[disabled] .radio {
   background-color: whitesmoke;
 }
 .progress.is-light:indeterminate {
-  background-image: linear-gradient(to right, whitesmoke 30%, #dbdbdb 30%);
+  background-image: linear-gradient(to right, whitesmoke 30%, #edeaee 30%);
 }
 .progress.is-dark::-webkit-progress-value {
   background-color: #363636;
@@ -4044,7 +4044,7 @@ fieldset[disabled] .radio {
   background-color: #363636;
 }
 .progress.is-dark:indeterminate {
-  background-image: linear-gradient(to right, #363636 30%, #dbdbdb 30%);
+  background-image: linear-gradient(to right, #363636 30%, #edeaee 30%);
 }
 .progress.is-primary::-webkit-progress-value {
   background-color: #DC1B18;
@@ -4056,7 +4056,7 @@ fieldset[disabled] .radio {
   background-color: #DC1B18;
 }
 .progress.is-primary:indeterminate {
-  background-image: linear-gradient(to right, #DC1B18 30%, #dbdbdb 30%);
+  background-image: linear-gradient(to right, #DC1B18 30%, #edeaee 30%);
 }
 .progress.is-link::-webkit-progress-value {
   background-color: #3273dc;
@@ -4068,7 +4068,7 @@ fieldset[disabled] .radio {
   background-color: #3273dc;
 }
 .progress.is-link:indeterminate {
-  background-image: linear-gradient(to right, #3273dc 30%, #dbdbdb 30%);
+  background-image: linear-gradient(to right, #3273dc 30%, #edeaee 30%);
 }
 .progress.is-info::-webkit-progress-value {
   background-color: #491a1a;
@@ -4080,7 +4080,7 @@ fieldset[disabled] .radio {
   background-color: #491a1a;
 }
 .progress.is-info:indeterminate {
-  background-image: linear-gradient(to right, #491a1a 30%, #dbdbdb 30%);
+  background-image: linear-gradient(to right, #491a1a 30%, #edeaee 30%);
 }
 .progress.is-success::-webkit-progress-value {
   background-color: #77833f;
@@ -4092,7 +4092,7 @@ fieldset[disabled] .radio {
   background-color: #77833f;
 }
 .progress.is-success:indeterminate {
-  background-image: linear-gradient(to right, #77833f 30%, #dbdbdb 30%);
+  background-image: linear-gradient(to right, #77833f 30%, #edeaee 30%);
 }
 .progress.is-warning::-webkit-progress-value {
   background-color: #f57207;
@@ -4104,7 +4104,7 @@ fieldset[disabled] .radio {
   background-color: #f57207;
 }
 .progress.is-warning:indeterminate {
-  background-image: linear-gradient(to right, #f57207 30%, #dbdbdb 30%);
+  background-image: linear-gradient(to right, #f57207 30%, #edeaee 30%);
 }
 .progress.is-danger::-webkit-progress-value {
   background-color: #f44336;
@@ -4116,7 +4116,7 @@ fieldset[disabled] .radio {
   background-color: #f44336;
 }
 .progress.is-danger:indeterminate {
-  background-image: linear-gradient(to right, #f44336 30%, #dbdbdb 30%);
+  background-image: linear-gradient(to right, #f44336 30%, #edeaee 30%);
 }
 .progress.is-small {
   height: 0.75rem;
@@ -4142,7 +4142,7 @@ fieldset[disabled] .radio {
 }
 .table td,
 .table th {
-  border: 1px solid #dbdbdb;
+  border: 1px solid #edeaee;
   border-width: 0 0 1px;
   padding: 0.5em 0.75em;
   vertical-align: top;
@@ -4729,7 +4729,7 @@ a.tag:hover {
 
 .card-footer {
   background-color: transparent;
-  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid #edeaee;
   align-items: stretch;
   display: flex;
 }
@@ -4744,7 +4744,7 @@ a.tag:hover {
   padding: 0.75rem;
 }
 .card-footer-item:not(:last-child) {
-  border-right: 1px solid #dbdbdb;
+  border-right: 1px solid #edeaee;
 }
 
 .card .media:not(:last-child) {
@@ -4816,7 +4816,7 @@ button.dropdown-item.is-active {
 }
 
 .dropdown-divider {
-  background-color: #dbdbdb;
+  background-color: #edeaee;
   border: none;
   display: block;
   height: 1px;
@@ -4942,7 +4942,7 @@ button.dropdown-item.is-active {
   border-top-right-radius: 4px;
 }
 .list-item:not(:last-child) {
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid #edeaee;
 }
 .list-item.is-active {
   background-color: #3273dc;
@@ -4963,7 +4963,7 @@ a.list-item {
   margin-bottom: 0.75rem;
 }
 .media .media {
-  border-top: 1px solid rgba(219, 219, 219, 0.5);
+  border-top: 1px solid rgba(237, 234, 238, 0.5);
   display: flex;
   padding-top: 0.75rem;
 }
@@ -4978,7 +4978,7 @@ a.list-item {
   margin-top: 0.5rem;
 }
 .media + .media {
-  border-top: 1px solid rgba(219, 219, 219, 0.5);
+  border-top: 1px solid rgba(237, 234, 238, 0.5);
   margin-top: 1rem;
   padding-top: 1rem;
 }
@@ -5045,7 +5045,7 @@ a.list-item {
   color: #fff;
 }
 .menu-list li ul {
-  border-left: 1px solid #dbdbdb;
+  border-left: 1px solid #edeaee;
   margin: 0.75em;
   padding-left: 0.75em;
 }
@@ -5219,7 +5219,7 @@ a.list-item {
 }
 
 .message-body {
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   border-radius: 4px;
   border-style: solid;
   border-width: 0 0 0 4px;
@@ -5297,7 +5297,7 @@ a.list-item {
 }
 
 .modal-card-head {
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid #edeaee;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
@@ -5313,7 +5313,7 @@ a.list-item {
 .modal-card-foot {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid #edeaee;
 }
 .modal-card-foot .button:not(:last-child) {
   margin-right: 10px;
@@ -6148,7 +6148,7 @@ body.has-navbar-fixed-bottom-touch {
     transform: rotate(135deg) translate(0.25em, -0.25em);
   }
   .navbar-item.has-dropdown-up .navbar-dropdown {
-    border-bottom: 2px solid #dbdbdb;
+    border-bottom: 2px solid #edeaee;
     border-radius: 6px 6px 0 0;
     border-top: none;
     bottom: 100%;
@@ -6183,7 +6183,7 @@ body.has-navbar-fixed-bottom-touch {
     background-color: white;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-    border-top: 2px solid #dbdbdb;
+    border-top: 2px solid #edeaee;
     box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
     display: none;
     font-size: 0.875rem;
@@ -6334,7 +6334,7 @@ body.has-spaced-navbar-fixed-bottom {
 .pagination-previous,
 .pagination-next,
 .pagination-link {
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   color: #363636;
   min-width: 2.25em;
 }
@@ -6357,8 +6357,8 @@ body.has-spaced-navbar-fixed-bottom {
 .pagination-previous[disabled],
 .pagination-next[disabled],
 .pagination-link[disabled] {
-  background-color: #dbdbdb;
-  border-color: #dbdbdb;
+  background-color: #edeaee;
+  border-color: #edeaee;
   box-shadow: none;
   color: #7a7a7a;
   opacity: 0.5;
@@ -6452,14 +6452,14 @@ body.has-spaced-navbar-fixed-bottom {
 .panel-heading,
 .panel-tabs,
 .panel-block {
-  border-bottom: 1px solid #dbdbdb;
-  border-left: 1px solid #dbdbdb;
-  border-right: 1px solid #dbdbdb;
+  border-bottom: 1px solid #edeaee;
+  border-left: 1px solid #edeaee;
+  border-right: 1px solid #edeaee;
 }
 .panel-heading:first-child,
 .panel-tabs:first-child,
 .panel-block:first-child {
-  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid #edeaee;
 }
 
 .panel-heading {
@@ -6479,7 +6479,7 @@ body.has-spaced-navbar-fixed-bottom {
   justify-content: center;
 }
 .panel-tabs a {
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid #edeaee;
   margin-bottom: -1px;
   padding: 0.5em;
 }
@@ -6558,7 +6558,7 @@ label.panel-block:hover {
 }
 .tabs a {
   align-items: center;
-  border-bottom-color: #dbdbdb;
+  border-bottom-color: #edeaee;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   color: #4a4a4a;
@@ -6581,7 +6581,7 @@ label.panel-block:hover {
 }
 .tabs ul {
   align-items: center;
-  border-bottom-color: #dbdbdb;
+  border-bottom-color: #edeaee;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   display: flex;
@@ -6620,11 +6620,11 @@ label.panel-block:hover {
 }
 .tabs.is-boxed a:hover {
   background-color: whitesmoke;
-  border-bottom-color: #dbdbdb;
+  border-bottom-color: #edeaee;
 }
 .tabs.is-boxed li.is-active a {
   background-color: white;
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   border-bottom-color: transparent !important;
 }
 .tabs.is-fullwidth li {
@@ -6632,7 +6632,7 @@ label.panel-block:hover {
   flex-shrink: 0;
 }
 .tabs.is-toggle a {
-  border-color: #dbdbdb;
+  border-color: #edeaee;
   border-style: solid;
   border-width: 1px;
   margin-bottom: 0;
@@ -9090,10 +9090,6 @@ label.panel-block:hover {
 
 .columns {
   flex-wrap: wrap;
-}
-
-.container {
-  padding-top: 52px;
 }
 
 /*# sourceMappingURL=index.css.map */

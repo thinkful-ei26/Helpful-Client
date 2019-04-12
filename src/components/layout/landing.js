@@ -10,7 +10,7 @@ const LandingPage = props => {
     return (
         <Route
             render={({ history }) => (
-                <section className='hero is-link is-fullheight-with-navbar'>
+                <section className='hero is-link is-fullheight-with-navbar is-info'>
                     <div className='hero-body'>
                         <div className='container'>
                             <p className='title'>
@@ -21,12 +21,12 @@ const LandingPage = props => {
                             </p>
                             <form className='landing-page-form' action=''>
                                 <button
-                                    className='button'
+                                    className='button has-background-grey-lighter'
                                     onClick={() => history.push(`/register`)}>
                                     Register
                                 </button>
                                 <button
-                                    className='button'
+                                    className='button is-primary'
                                     onClick={() => history.push(`/login`)}>
                                     Log In
                                 </button>
