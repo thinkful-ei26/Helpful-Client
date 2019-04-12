@@ -21,22 +21,27 @@ const NavBar = props => {
 
                 <div className='navbar-end'>
                     <a
+                        href='#dashboard'
                         className='navbar-item'
                         onClick={() => props.history.push("/dashboard")}>
                         Dashboard
                     </a>
 
                     <a
+                        href='#search'
                         className='navbar-item'
                         onClick={() => props.history.push("/search")}>
                         Search
                     </a>
 
                     <div className='navbar-item has-dropdown is-hoverable'>
-                        <a className='navbar-link'>Organizations</a>
+                        <a href='#organizations' className='navbar-link'>
+                            Organizations
+                        </a>
 
                         <div className='navbar-dropdown'>
                             <a
+                                href='#createorgform'
                                 className='navbar-item'
                                 onClick={() =>
                                     props.history.push("/createorgform")
@@ -44,6 +49,7 @@ const NavBar = props => {
                                 Create
                             </a>
                             <a
+                                href='#followedorgs'
                                 className='navbar-item'
                                 onClick={() =>
                                     props.history.push("/followedorgs")
@@ -52,6 +58,7 @@ const NavBar = props => {
                             </a>
                             <hr className='navbar-divider' />
                             <a
+                                href='#createdorgs'
                                 className='navbar-item'
                                 onClick={() =>
                                     props.history.push("/createdorgs")
@@ -62,7 +69,10 @@ const NavBar = props => {
                     </div>
                     <div className='navbar-item'>
                         <div className='buttons'>
-                            <a className='button' onClick={() => logoutUser()}>
+                            <a
+                                href='#logout'
+                                className='button'
+                                onClick={() => logoutUser()}>
                                 Log out
                             </a>
                         </div>
@@ -86,10 +96,11 @@ const NavBar = props => {
                     aria-label='main navigation'>
                     <div className='navbar-brand'>
                         <a className='navbar-item' href='/'>
-                            <img src='/logo.png' />
+                            <img src='/logo.png' alt='logo' />
                             Helpfull
                         </a>
                         <a
+                            href='#burger'
                             role='button'
                             className={toggleBurgerClass}
                             aria-label='menu'

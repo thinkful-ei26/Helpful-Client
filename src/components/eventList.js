@@ -85,7 +85,6 @@ export default function EventList() {
     };
 
     let rsvpEventCardList, localEventCardList;
-    let eventTitle = "Nearby Events";
     if (rsvpEvents) {
         generateRsvpEventList(rsvpEvents);
         rsvpEventCardList = rsvpEventList.map((event, index) => {
@@ -97,10 +96,6 @@ export default function EventList() {
         localEventCardList = events.map((event, index) => {
             return <EventCard key={index} event={event} />;
         });
-    }
-
-    if (!location) {
-        eventTitle = "All Events";
     }
 
     return (

@@ -4,10 +4,7 @@ import { Link, Route } from "react-router-dom";
 import { API_BASE_URL } from "../../config";
 import Swal from "sweetalert2";
 
-import jwt_decode from "jwt-decode";
-
 const Login = () => {
-    const [currentUser, setCurrentUser] = useState(null);
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
 
@@ -30,13 +27,6 @@ const Login = () => {
                 } else {
                     const token = res.data.authToken;
                     localStorage.setItem("jwtToken", token);
-                    // Set token to Auth header
-                    //setAuthToken(token);
-                    // Decode token to get user data
-                    const decoded = jwt_decode(token);
-                    // Set current user
-                    setCurrentUser(decoded);
-                    let mytoken = localStorage.getItem("jwtToken");
                     return "dashboard";
                 }
             })
@@ -75,6 +65,10 @@ const Login = () => {
                                 <i className='fas fa-envelope' />
                             </span>
                         </p>
+                        <p className='help'>
+                            {" "}
+                            <strong>Trial user:</strong> demo
+                        </p>
                     </div>
                     <div className='field'>
                         <p className='control has-icons-left'>
@@ -87,6 +81,10 @@ const Login = () => {
                             <span className='icon is-small is-left'>
                                 <i className='fas fa-lock' />
                             </span>
+                        </p>
+                        <p className='help'>
+                            {" "}
+                            <strong>Trial password:</strong> password12
                         </p>
                     </div>
                     <div className='field'>
