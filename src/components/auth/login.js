@@ -64,17 +64,15 @@ const Login = () => {
                         </Link>
                     </div>
                     <div className='field'>
-                        <p className='control has-icons-left has-icons-right'>
+                        <p className='control has-icons-left'>
                             <input
                                 className='input'
                                 type='email'
                                 placeholder='Email'
+                                onChange={e => setUser(e.target.value)}
                             />
                             <span className='icon is-small is-left'>
                                 <i className='fas fa-envelope' />
-                            </span>
-                            <span className='icon is-small is-right'>
-                                <i className='fas fa-check' />
                             </span>
                         </p>
                     </div>
@@ -84,6 +82,7 @@ const Login = () => {
                                 className='input'
                                 type='password'
                                 placeholder='Password'
+                                onChange={e => setPassword(e.target.value)}
                             />
                             <span className='icon is-small is-left'>
                                 <i className='fas fa-lock' />
@@ -92,7 +91,11 @@ const Login = () => {
                     </div>
                     <div className='field'>
                         <p className='control'>
-                            <button className='button is-success'>Login</button>
+                            <button
+                                className='button is-success'
+                                onClick={() => loginUser(history)}>
+                                Login
+                            </button>
                         </p>
                     </div>
                 </div>
