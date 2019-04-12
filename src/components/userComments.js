@@ -72,7 +72,7 @@ const UserComments = props => {
                     placeholder='Comment'
                 />
                 <br />
-                <button className='event-public-rsvp-button' type='submit'>
+                <button className='button' type='submit'>
                     Add a public comment
                 </button>
             </form>

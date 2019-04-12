@@ -84,17 +84,13 @@ export function EventPage(props) {
     let rsvpButton;
     if (!rsvp) {
         rsvpButton = (
-            <button
-                className='event-public-rsvp-button'
-                onClick={() => createRsvp()}>
+            <button className='button' onClick={() => createRsvp()}>
                 RSVP
             </button>
         );
     } else {
         rsvpButton = (
-            <button
-                className='event-public-rsvp-button'
-                onClick={() => removeRsvp()}>
+            <button className='button' onClick={() => removeRsvp()}>
                 Cancel Reservation
             </button>
         );
@@ -118,17 +114,17 @@ export function EventPage(props) {
     }
 
     return (
-        <section className='event'>
-            {/* <img
-                    className='event-image'
-                    src={organization.imgUrl}
-                    alt={organization.name}
-                /> */}
+        <div className='container'>
             <div className='organization-container'>
                 <h2 className='organization-name'>{organization.name}</h2>
             </div>
             {eventMap}
             <div className='event-public-container'>
+                <img
+                    className='event-image'
+                    src={organization.imgUrl}
+                    alt={organization.name}
+                />
                 <div className='event-header'>
                     <h1 className='event-name'>{event.name}</h1>
                 </div>
@@ -152,7 +148,7 @@ export function EventPage(props) {
                     Find out more: {organization.contact}
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
 

@@ -64,7 +64,7 @@ export default function UserCanRateOrg(props) {
         fetchRatings();
     }, []);
 
-    const onSubmit = event => {
+    const onRatingClick = event => {
         event.preventDefault();
         let form = event.target;
         let rating = form.rating.value;
@@ -84,7 +84,7 @@ export default function UserCanRateOrg(props) {
 
     return (
         <React.Fragment>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onRatingClick}>
                 <div className='rate-area'>
                     <input type='radio' id='5-star' name='rating' value='5' />
                     <label for='5-star' title='Amazing'>
