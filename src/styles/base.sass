@@ -8,6 +8,27 @@ $grey-lighter: #edeaee
   
 @import "../../node_modules/bulma/bulma.sass"
 
-.columns 
+.columns, .eventsContainer 
+  display: flex
   flex-wrap: wrap
+  .column
+    flex-wrap: wrap
 
+
+.App
+  background-color: $danger
+  background-size: 100%
+
+body
+  background-color: $danger
+  
+.media-content
+  .title, .subtitle
+    color: rgb(99, 136, 191)
+
+.card-content
+  .content
+    p
+      color: rgb(99, 136, 191)
+    time
+      color: rgb(99, 136, 191)

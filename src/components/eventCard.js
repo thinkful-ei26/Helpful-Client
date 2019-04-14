@@ -42,8 +42,7 @@ export default function EventCard(props) {
                         </div>
 
                         <div className='content'>
-                            {props.event.description}
-                            <br />
+                            <p>{props.event.description}</p>
                             <time dateTime={props.event.date}>
                                 {props.event.date}
                             </time>

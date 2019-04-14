@@ -22,24 +22,24 @@ const NavBar = props => {
                 <div className='navbar-end'>
                     <a
                         href='#dashboard'
-                        className='navbar-item'
+                        className='navbar-item is-danger'
                         onClick={() => props.history.push("/dashboard")}>
                         Dashboard
                     </a>
 
                     <a
                         href='#search'
-                        className='navbar-item'
+                        className='navbar-item is-danger'
                         onClick={() => props.history.push("/search")}>
                         Search
                     </a>
 
-                    <div className='navbar-item has-dropdown is-hoverable'>
+                    <div className='navbar-item has-dropdown is-hoverable is-danger'>
                         <a href='#organizations' className='navbar-link'>
                             Organizations
                         </a>
 
-                        <div className='navbar-dropdown'>
+                        <div className='navbar-dropdown is-danger'>
                             <a
                                 href='#createorgform'
                                 className='navbar-item'
@@ -68,7 +68,7 @@ const NavBar = props => {
                         </div>
                     </div>
                     <div className='navbar-item'>
-                        <div className='buttons'>
+                        <div className='buttons is-danger'>
                             <a
                                 href='#logout'
                                 className='button'
@@ -91,13 +91,17 @@ const NavBar = props => {
         <React.Fragment>
             <header>
                 <nav
-                    className='navbar is-fixed-top'
+                    className='navbar is-fixed-top is-primary'
                     role='navigation'
                     aria-label='main navigation'>
                     <div className='navbar-brand'>
                         <a className='navbar-item' href='/'>
-                            <img src='/logo.png' alt='logo' />
-                            Helpfull
+                            <img
+                                className='image is-64x64'
+                                src='/logo.png'
+                                alt='logo'
+                            />
+                            <span className='is-size-3'>Helpfull</span>
                         </a>
                         <a
                             href='#burger'

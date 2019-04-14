@@ -9088,8 +9088,32 @@ label.panel-block:hover {
   padding: 1.5rem 1.5rem;
 }
 
-.columns {
+.columns, .eventsContainer {
+  display: flex;
   flex-wrap: wrap;
+}
+.columns .column, .eventsContainer .column {
+  flex-wrap: wrap;
+}
+
+.App {
+  background-color: #FAF8F5;
+  background-size: 100%;
+}
+
+body {
+  background-color: #FAF8F5;
+}
+
+.media-content .title, .media-content .subtitle {
+  color: #6388bf;
+}
+
+.card-content .content p {
+  color: #6388bf;
+}
+.card-content .content time {
+  color: #6388bf;
 }
 
 /*# sourceMappingURL=index.css.map */
