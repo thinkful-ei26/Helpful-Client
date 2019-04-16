@@ -7,11 +7,11 @@ const NavBar = props => {
     let navRight, sideNav, toggleBurgerClass, toggleMenuClass;
 
     if (toggle) {
-        toggleBurgerClass = "navbar-burger burger is-active";
-        toggleMenuClass = "navbar-menu is-active";
+        toggleBurgerClass = "navbar-item navbar-burger burger is-active";
+        toggleMenuClass = "navbar-item navbar-menu is-active";
     } else {
-        toggleBurgerClass = "navbar-burger burger";
-        toggleMenuClass = "navbar-menu";
+        toggleBurgerClass = " navbar-burger burger";
+        toggleMenuClass = " navbar-menu";
     }
 
     if (token) {
@@ -101,20 +101,26 @@ const NavBar = props => {
                                 src='/logo.png'
                                 alt='logo'
                             />
-                            <span className='is-size-3'>Helpfull</span>
+                            <span className='is-size-3 is-family-primary has-text-weight-bold'>
+                                Helpfull
+                            </span>
                         </a>
-                        <a
-                            href='#burger'
-                            role='button'
-                            className={toggleBurgerClass}
-                            aria-label='menu'
-                            aria-expanded='false'
-                            data-target='navbarBurger'
-                            onClick={() => setToggle(!toggle)}>
-                            <span aria-hidden='true' />
-                            <span aria-hidden='true' />
-                            <span aria-hidden='true' />
-                        </a>
+                        {token ? (
+                            <a
+                                href='#burger'
+                                role='button'
+                                className={toggleBurgerClass}
+                                aria-label='menu'
+                                aria-expanded='false'
+                                data-target='navbarBurger'
+                                onClick={() => setToggle(!toggle)}>
+                                <span aria-hidden='true' />
+                                <span aria-hidden='true' />
+                                <span aria-hidden='true' />
+                            </a>
+                        ) : (
+                            <div />
+                        )}
                     </div>
                     {navRight}
                 </nav>
