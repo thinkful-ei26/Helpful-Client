@@ -23,38 +23,38 @@ const OrganizationDashboard = props => {
 
     if (org && events) {
         return (
-            <article className='orgDash'>
-                <div className='orgdash-col-1'>
-                    <h2 className='org-dashboard-name'>{org.name}</h2>
-                    <img
-                        className='profilePic'
-                        alt='user profile pic'
-                        src={org.imgUrl}
-                    />
-                    <div className='org-main-buttons'>
-                        <button
-                            className='org-main-button'
-                            onClick={() =>
-                                setView(<OrgPublicPageEventList id={orgId} />)
-                            }>
-                            Show Scheduled Events
-                        </button>
-                        <button
-                            className='org-main-button'
-                            onClick={() =>
-                                setView(<DashboardCreateEvent id={orgId} />)
-                            }>
-                            Create a new event
-                        </button>
-                    </div>
-                    <Link to={publicPageUrl}>
-                        <button className='org-main-button'>
-                            View your public page
-                        </button>
-                    </Link>
+            <div className='container'>
+                <h2 className='org-dashboard-name'>{org.name}</h2>
+                <div className='tabs is-medium is-centered'>
+                    <ul>
+                        <li>
+                            <a
+                                href='#ScheduledEvents'
+                                onClick={() =>
+                                    setView(
+                                        <OrgPublicPageEventList id={orgId} />
+                                    )
+                                }>
+                                Scheduled Events
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href='#createevent'
+                                onClick={() =>
+                                    setView(<DashboardCreateEvent id={orgId} />)
+                                }>
+                                Create Event
+                            </a>
+                        </li>
+                        <li>
+                            {" "}
+                            <Link to={publicPageUrl}>View Public Page</Link>
+                        </li>
+                    </ul>
                 </div>
-                <div className='org-main-events'>{view}</div>
-            </article>
+                {view}
+            </div>
         );
     }
     return <p className='loading'>Loading...</p>;
