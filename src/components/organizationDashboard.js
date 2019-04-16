@@ -8,18 +8,25 @@ import { Link } from "react-router-dom";
 const OrganizationDashboard = props => {
     const orgId = props.match.params.id;
     const publicPageUrl = `/organization/${orgId}`;
+
     const [view, setView] = useState(<OrgPublicPageEventList id={orgId} />);
+    const [isActive, setIsActive] = useState("OrgPublicPageEventList");
     const [org, setOrgs] = useState(null);
     const [events, setEvents] = useState(null);
 
-    const fetchData = props => {
+    const fetchData = () => {
         getOrgs(orgId).then(res => setOrgs(res.data));
         getOrgEvents(orgId).then(res => setEvents(res.data));
     };
 
+    const handleActive = (renderedComponent, viewState) => {
+        setIsActive(renderedComponent);
+        setView(viewState);
+    };
+
     useEffect(() => {
         fetchData();
-    }, [props.match.params.id]);
+    }, [orgId]);
 
     if (org && events) {
         return (
@@ -27,26 +34,65 @@ const OrganizationDashboard = props => {
                 <h2 className='org-dashboard-name'>{org.name}</h2>
                 <div className='tabs is-medium is-centered'>
                     <ul>
-                        <li>
-                            <a
-                                href='#ScheduledEvents'
-                                onClick={() =>
-                                    setView(
-                                        <OrgPublicPageEventList id={orgId} />
-                                    )
-                                }>
-                                Scheduled Events
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href='#createevent'
-                                onClick={() =>
-                                    setView(<DashboardCreateEvent id={orgId} />)
-                                }>
-                                Create Event
-                            </a>
-                        </li>
+                        {isActive === "OrgPublicPageEventList" ? (
+                            <li className='is-active'>
+                                <a
+                                    href='#ScheduledEvents'
+                                    onClick={() =>
+                                        handleActive(
+                                            "OrgPublicPageEventList",
+                                            <OrgPublicPageEventList
+                                                id={orgId}
+                                            />
+                                        )
+                                    }>
+                                    Scheduled Events
+                                </a>
+                            </li>
+                        ) : (
+                            <li>
+                                <a
+                                    href='#ScheduledEvents'
+                                    onClick={() =>
+                                        handleActive(
+                                            "OrgPublicPageEventList",
+                                            <OrgPublicPageEventList
+                                                id={orgId}
+                                            />
+                                        )
+                                    }>
+                                    Scheduled Events
+                                </a>
+                            </li>
+                        )}
+
+                        {isActive === "DashboardCreateEvent" ? (
+                            <li className='is-active'>
+                                <a
+                                    href='#createevent'
+                                    onClick={() =>
+                                        handleActive(
+                                            "DashboardCreateEvent",
+                                            <DashboardCreateEvent id={orgId} />
+                                        )
+                                    }>
+                                    Create Event
+                                </a>
+                            </li>
+                        ) : (
+                            <li>
+                                <a
+                                    href='#createevent'
+                                    onClick={() =>
+                                        handleActive(
+                                            "DashboardCreateEvent",
+                                            <DashboardCreateEvent id={orgId} />
+                                        )
+                                    }>
+                                    Create Event
+                                </a>
+                            </li>
+                        )}
                         <li>
                             {" "}
                             <Link to={publicPageUrl}>View Public Page</Link>
