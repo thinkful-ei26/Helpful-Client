@@ -43,7 +43,6 @@ export default function CreatedOrgs(props) {
     if (orgs === null || orgs.length < 1) {
         return (
             <section className='noFollowedOrgs'>
-                <h2>My Organizations</h2>
                 <p>Looks like you haven't created any organizations yet...</p>
                 <p>
                     Click here to create an organization and start hosting
@@ -56,7 +55,6 @@ export default function CreatedOrgs(props) {
         return (
             <div>
                 <section className='created-orgs-container'>
-                    <h2>My Organizations</h2>
                     <div>{orgCards}</div>
                 </section>
             </div>

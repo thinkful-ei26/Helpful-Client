@@ -97,7 +97,7 @@ const NavBar = props => {
                     <div className='navbar-brand'>
                         <a className='navbar-item' href='/'>
                             <img
-                                className='image is-64x64'
+                                className='image is-48x48'
                                 src='/logo.png'
                                 alt='logo'
                             />

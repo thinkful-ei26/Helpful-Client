@@ -10,7 +10,9 @@ const LandingPage = props => {
     return (
         <Route
             render={({ history }) => (
-                <section className='hero is-link is-fullheight-with-navbar is-info'>
+                <section
+                    className='hero is-fullheight-with-navbar is-info'
+                    id='no-padding'>
                     <div className='hero-body'>
                         <div className='container'>
                             <p className='title'>

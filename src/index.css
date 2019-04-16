@@ -9124,4 +9124,16 @@ body {
   height: 2px;
 }
 
+#reset-max-height {
+  max-height: 48px;
+}
+
+.has-navbar-fixed-top {
+  padding-top: 128px;
+}
+
+#no-padding {
+  padding: 0px;
+}
+
 /*# sourceMappingURL=index.css.map */

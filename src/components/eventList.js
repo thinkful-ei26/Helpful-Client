@@ -100,7 +100,6 @@ export default function EventList() {
 
     return (
         <React.Fragment>
-            <h2>My Events</h2>
             <div className='columns tile is-ancestor'>
                 {rsvpEventCardList}
                 {localEventCardList}

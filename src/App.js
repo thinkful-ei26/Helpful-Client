@@ -7,7 +7,7 @@ import LoadingRoute from "./components/loadingRoute";
 
 const App = () => {
     return (
-        <div className='App'>
+        <div className='App has-navbar-fixed-top'>
             <NavBar />
             <Switch>
                 {routes.map((route, i) => (
