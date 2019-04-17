@@ -62,7 +62,6 @@ export default function UserDashboard() {
                                         <FollowedOrgs />
                                     )
                                 }>
-                                {" "}
                                 Followed Orgs
                             </a>
                         </li>
@@ -85,7 +84,6 @@ export default function UserDashboard() {
                                 onClick={() =>
                                     handleActive("CreatedOrgs", <CreatedOrgs />)
                                 }>
-                                {" "}
                                 Created Orgs
                             </a>
                         </li>
