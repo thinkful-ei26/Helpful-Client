@@ -9,27 +9,27 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const registerUser = history => {
+    const registerUser = async history => {
         let usersData = {
             username: userName,
             email,
             password,
             passwordConfirmation,
         };
-        return axios
-            .post(`${API_BASE_URL}/users/register`, usersData)
-            .then(() => history.push("/login"))
-            .catch(err => {
-                console.log(err.response);
-                const { code, location, message, reason } = err.response.data;
-                console.log(message);
-                Swal.fire({
-                    type: "error",
-                    title: location,
-                    text: message,
-                    footer: code + " " + reason,
-                });
+        try {
+            await axios.post(`${API_BASE_URL}/users/register`, usersData);
+            return history.push("/login");
+        } catch (err) {
+            console.log(err.response);
+            const { code, location, message, reason } = err.response.data;
+            console.log(message);
+            Swal.fire({
+                type: "error",
+                title: location,
+                text: message,
+                footer: code + " " + reason,
             });
+        }
     };
 
     return (
